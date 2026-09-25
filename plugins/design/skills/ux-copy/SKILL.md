@@ -40,7 +40,7 @@ Trước khi viết, cần đủ 5 ý (thiếu thì hỏi gọn, không đoán):
 
 ### Tin Zalo
 - Tối đa 5 dòng. Dòng 1 chào và nói lý do nhắn. Dòng cuối là một việc cụ thể cho khách làm.
-- Ví dụ mở đầu: "Chào anh chị, em là [tên] từ [thương hiệu]."
+- Ví dụ mở đầu: "Chào anh chị, em là [tên] từ An Tâm Foods."
 
 ### Bài Facebook
 - Khoảng 120 chữ, kèm 3 gợi ý tiêu đề.

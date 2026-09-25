@@ -1,6 +1,6 @@
 # Plugin Design (bản tuỳ chỉnh cho công ty)
 
-Dựa trên plugin [Design](https://github.com/anthropics/knowledge-work-plugins/tree/main/design) của Anthropic (bản 1.2.0), chỉnh lại cho công ty bánh tortillas và Doner kebab tại TP.HCM: bán cho doanh nghiệp SMEs, cửa hàng, nhượng quyền; kênh chính là Facebook và Zalo.
+Dựa trên plugin [Design](https://github.com/anthropics/knowledge-work-plugins/tree/main/design) của Anthropic (bản 1.2.0), chỉnh lại cho An Tâm Foods (Công ty TNHH SX-TM Ẩm Thực An Tâm, antamfoods.com), công ty bánh tortillas và Doner kebab tại TP.HCM: bán cho doanh nghiệp SMEs, cửa hàng, nhượng quyền; kênh chính là Facebook và Zalo.
 
 ## Khác gì bản gốc
 

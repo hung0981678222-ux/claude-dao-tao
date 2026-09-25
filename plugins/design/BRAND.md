@@ -6,12 +6,14 @@
 
 | Mục | Nội dung |
 |---|---|
-| Tên công ty | **[Cần điền]** |
-| Tên thương hiệu trên sản phẩm | **[Cần điền]** |
+| Tên công ty | Công ty TNHH SX-TM Ẩm Thực An Tâm |
+| Tên thương hiệu trên sản phẩm | An Tâm Foods |
 | Khu vực | TP.HCM |
 | Sản phẩm chủ lực | Bánh tortillas, Doner kebab |
 | Mô hình | Bán sỉ bánh tortillas cho doanh nghiệp; cửa hàng thực phẩm; nhượng quyền cửa hàng |
-| Hotline, Zalo OA, fanpage, website | **[Cần điền]** |
+| Website | antamfoods.com |
+| Hotline | 0348.635.222 (viết đúng dạng này) |
+| Zalo OA, fanpage | **[Cần điền]** |
 
 ## Khách hàng và người đọc
 
@@ -31,11 +33,11 @@
 | Cửa hàng | Thực đơn treo, standee, poster, bảng giá, biển hiệu | Đọc từ xa 2 đến 3 mét |
 | Bao bì | Túi, hộp, nhãn bánh tortillas | Phải đủ nội dung nhãn bắt buộc |
 | Tài liệu bán hàng | Báo giá, hồ sơ năng lực, tài liệu nhượng quyền (PDF, PowerPoint) | Gửi cho SMEs và đối tác |
-| Website | **[Cần điền: có hay không]** | Áp dụng thêm chuẩn WCAG |
+| Website | antamfoods.com | Áp dụng thêm chuẩn WCAG |
 
 ## Giọng văn
 
-- Thân thiện, lịch sự, gọn. Xưng "chúng tôi" hoặc tên thương hiệu, gọi khách là "anh chị" (trừ khi người dùng chọn cách khác).
+- Thân thiện, lịch sự, gọn. Xưng "chúng tôi" hoặc "An Tâm Foods", gọi khách là "anh chị" (trừ khi người dùng chọn cách khác).
 - Câu ngắn, mỗi câu một ý. Viết tiếng Việt có dấu đầy đủ.
 - Nói lợi ích cụ thể (tiện, nhanh, no lâu, giao tận nơi), không dùng từ sáo rỗng như "đỉnh cao", "số 1".
 
@@ -47,7 +49,8 @@
 4. **Không bịa số liệu**: giá, thành phần, hạn dùng, định lượng, chứng nhận phải lấy từ người dùng.
 5. **Không đăng thông tin khách hàng** (tên, số điện thoại, ảnh) khi chưa được đồng ý.
 6. Mọi thứ gửi ra ngoài (khách, nhà in, đối tác) phải có người trong công ty duyệt trước.
-7. Đơn vị tiền: đồng (ví dụ 45.000đ). Ngày: dd/mm/yyyy.
+7. Tên pháp lý "Công ty TNHH SX-TM Ẩm Thực An Tâm" chỉ dùng trên nhãn bao bì, hoá đơn, báo giá, hợp đồng. Ấn phẩm quảng bá ghi "An Tâm Foods" kèm hotline hoặc website.
+8. Đơn vị tiền: đồng (ví dụ 45.000đ). Ngày: dd/mm/yyyy.
 
 ## Bộ nhận diện
 
