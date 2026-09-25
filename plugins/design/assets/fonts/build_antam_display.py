@@ -1,15 +1,17 @@
-"""Dựng font tiêu đề An Tâm Display (chữ in hoa, đủ dấu tiếng Việt).
+"""Dựng font tiêu đề An Tâm Display 3.0 (chữ in hoa, đủ dấu tiếng Việt).
 
 Chạy:  pip install fonttools skia-pathops brotli
        python3 build_antam_display.py
 Kết quả: AnTamDisplay-Black.otf và AnTamDisplay-Black.woff2 cạnh file này.
 
-Bản 2.0. Chi tiết riêng lấy từ logo Ẩm Thực An Tâm:
-- Nếp gấp ruy băng: ở A, V, W, M, N, X, Q, số 1 một nét đè lên nét kia, cách khe trắng GAP.
-- Đường gấp (seam) trên nét tròn O, C, G, số 0.
-- Chữ T bông lúa: hai thân song song, đỉnh cong ra hai bên.
-- Đỉnh thân cắt xiên (TILT) và đầu nét ngang cắt xiên (C) cùng nhịp ruy băng.
-- Dấu sắc, huyền, mũ là hạt lúa; dấu nặng và dấu chấm là hình tròn như chiếc bánh.
+Ý tưởng: "an tâm" là cảm giác được che chở, nên chữ tròn đầu nét, dày, vững,
+không góc nhọn. Nét Việt Nam lấy từ hai hình quen thuộc:
+- Đầu đao mái đình: đầu các nét ngang tự do (T, E, F, L, Z, số 2, 5, 7) cong vểnh
+  lên. Chữ A là mái nhà, hai chân vểnh ra như đầu đao: mái nhà che chở, an cư.
+- Nón lá: dấu mũ của Â, Ê, Ô là chiếc nón lá.
+- Hạt gạo: dấu nặng, dấu chấm, dấu phẩy là hạt gạo.
+
+Mọi chữ dựng từ "xương" (đường giữa nét) rồi tô dày bằng nét tròn đầu.
 """
 import math
 import os
@@ -21,10 +23,9 @@ from fontTools.pens.t2CharStringPen import T2CharStringPen
 from fontTools.ttLib import TTFont
 
 UPM, CAP = 1000, 700
-S = 130   # nét đứng
-B = 118   # nét ngang
-C = 42    # độ xiên đầu nét
-K = 0.5523
+R = 74                    # nửa bề dày nét
+YB, YT, YM = R, CAP - R, 350
+SIDE = 45                 # lề hai bên chữ
 
 
 # ---------- hình cơ bản ----------
@@ -37,54 +38,20 @@ def poly(pts):
     return p
 
 
-def rect(x0, y0, x1, y1):
-    return poly([(x0, y0), (x1, y0), (x1, y1), (x0, y1)])
-
-
-def rrect(x0, y0, x1, y1, r):
-    """Chữ nhật bo góc; r là số hoặc (trên-trái, trên-phải, dưới-phải, dưới-trái)."""
-    tl, tr, br, bl = (r, r, r, r) if isinstance(r, (int, float)) else r
-    p = pathops.Path()
-    p.moveTo(x0 + bl, y0)
-    p.lineTo(x1 - br, y0)
-    if br:
-        p.cubicTo(x1 - br + br * K, y0, x1, y0 + br - br * K, x1, y0 + br)
-    p.lineTo(x1, y1 - tr)
-    if tr:
-        p.cubicTo(x1, y1 - tr + tr * K, x1 - tr + tr * K, y1, x1 - tr, y1)
-    p.lineTo(x0 + tl, y1)
-    if tl:
-        p.cubicTo(x0 + tl - tl * K, y1, x0, y1 - tl + tl * K, x0, y1 - tl)
-    p.lineTo(x0, y0 + bl)
-    if bl:
-        p.cubicTo(x0, y0 + bl - bl * K, x0 + bl - bl * K, y0, x0 + bl, y0)
-    p.close()
-    return p
-
-
 def disc(cx, cy, r):
-    return rrect(cx - r, cy - r, cx + r, cy + r, r)
-
-
-def leaf(cx, cy, length, width, angle):
-    """Hạt lúa: hình thấu kính, xoay theo góc (độ)."""
-    h = length / 2
-    w = width * 0.75
-    a = math.radians(angle)
-    ca, sa = math.cos(a), math.sin(a)
-
-    def t(x, y):
-        return (cx + x * ca - y * sa, cy + x * sa + y * ca)
-
+    k = 0.5523 * r
     p = pathops.Path()
-    p.moveTo(*t(-h, 0))
-    p.cubicTo(*t(-h / 2, w), *t(h / 2, w), *t(h, 0))
-    p.cubicTo(*t(h / 2, -w), *t(-h / 2, -w), *t(-h, 0))
+    p.moveTo(cx + r, cy)
+    p.cubicTo(cx + r, cy + k, cx + k, cy + r, cx, cy + r)
+    p.cubicTo(cx - k, cy + r, cx - r, cy + k, cx - r, cy)
+    p.cubicTo(cx - r, cy - k, cx - k, cy - r, cx, cy - r)
+    p.cubicTo(cx + k, cy - r, cx + r, cy - k, cx + r, cy)
     p.close()
     return p
 
 
 def union(*ps):
+    ps = [p for p in ps if p is not None]
     out = ps[0]
     for p in ps[1:]:
         out = pathops.op(out, p, pathops.PathOp.UNION)
@@ -97,485 +64,458 @@ def diff(a, *bs):
     return a
 
 
-def move(p, dx, dy):
-    out = pathops.Path()
-    p.draw(_Shift(out, dx, dy, 1))
-    return out
+class _Xform:
+    def __init__(self, path, fn):
+        self.p, self.fn = path, fn
 
-
-def rot180(p, w, h):
-    out = pathops.Path()
-    p.draw(_Shift(out, w, h, -1))
-    return out
-
-
-class _Shift:
-    def __init__(self, path, dx, dy, s):
-        self.p, self.dx, self.dy, self.s = path, dx, dy, s
-
-    def _t(self, pt):
-        return (self.s * pt[0] + self.dx, self.s * pt[1] + self.dy)
-
-    def moveTo(self, pt): self.p.moveTo(*self._t(pt))
-    def lineTo(self, pt): self.p.lineTo(*self._t(pt))
-    def curveTo(self, *pts): self.p.cubicTo(*[c for q in pts for c in self._t(q)])
-    def qCurveTo(self, *pts): self.p.quadTo(*[c for q in pts for c in self._t(q)])
+    def moveTo(self, pt): self.p.moveTo(*self.fn(pt))
+    def lineTo(self, pt): self.p.lineTo(*self.fn(pt))
+    def curveTo(self, *pts): self.p.cubicTo(*[c for q in pts for c in self.fn(q)])
+    def qCurveTo(self, *pts): self.p.quadTo(*[c for q in pts for c in self.fn(q)])
     def closePath(self): self.p.close()
     def endPath(self): self.p.close()
 
 
-class _Mirror(_Shift):
-    """Lật ngang quanh bề rộng w."""
-    def __init__(self, path, w):
-        super().__init__(path, 0, 0, 1)
-        self.w = w
-
-    def _t(self, pt):
-        return (self.w - pt[0], pt[1])
-
-
-def arm_r(x0, y0, x1, y1):
-    """Nét ngang, đầu phải cắt xiên (mép trên dài hơn)."""
-    return poly([(x0, y0), (x1 - C, y0), (x1, y1), (x0, y1)])
-
-
-def arm_l(x0, y0, x1, y1):
-    """Nét ngang, đầu trái cắt xiên (mép dưới dài hơn)."""
-    return poly([(x0, y0), (x1, y0), (x1, y1), (x0 + C, y1)])
-
-
-def ring(x0, y0, x1, y1, ro, ri):
-    return diff(rrect(x0, y0, x1, y1, ro), rrect(x0 + S, y0 + B, x1 - S, y1 - B, ri))
-
-
-# ---------- chi tiết chữ ký (bản 2) ----------
-GAP = 26   # khe trắng giữa hai lớp ruy băng
-TILT = 30  # độ xiên đỉnh thân chữ
-
-
-def grow(p, d=GAP):
-    """Nở đường nét ra khoảng d (xấp xỉ bằng cách dời theo 12 hướng)."""
-    out = p
-    for i in range(12):
-        a = math.pi * 2 * i / 12
-        out = union(out, move(p, d * math.cos(a), d * math.sin(a)))
+def xform(p, fn):
+    out = pathops.Path()
+    p.draw(_Xform(out, fn))
     return out
 
 
-def over(front, back):
-    """Nếp gấp ruy băng: nét trước đè lên nét sau, cách một khe trắng."""
-    return union(front, diff(back, grow(front)))
+def move(p, dx, dy):
+    return xform(p, lambda q: (q[0] + dx, q[1] + dy))
 
 
-def inter(a, b):
-    return pathops.op(a, b, pathops.PathOp.INTERSECTION)
+def mirror_x(p, w):
+    return xform(p, lambda q: (w - q[0], q[1]))
 
 
-def stem(x0, x1, top=700, bottom=0):
-    """Thân đứng, đỉnh cắt xiên lên bên phải như mép ruy băng."""
-    return poly([(x0, bottom), (x1, bottom), (x1, top), (x0, top - TILT)])
+def rot180(p, cx, cy):
+    return xform(p, lambda q: (2 * cx - q[0], 2 * cy - q[1]))
 
 
-def seam(cx, cy, angle, length=300):
-    """Đường gấp: một khe mảnh cắt ngang nét tròn."""
-    a = math.radians(angle)
-    dx, dy = math.cos(a) * length / 2, math.sin(a) * length / 2
-    nx, ny = -math.sin(a) * GAP / 2, math.cos(a) * GAP / 2
-    return poly([(cx - dx - nx, cy - dy - ny), (cx + dx - nx, cy + dy - ny),
-                 (cx + dx + nx, cy + dy + ny), (cx - dx + nx, cy - dy + ny)])
+# ---------- nét tròn đầu ----------
+def capsule(a, b, r):
+    (x0, y0), (x1, y1) = a, b
+    dx, dy = x1 - x0, y1 - y0
+    L = math.hypot(dx, dy) or 1
+    nx, ny = -dy / L * r, dx / L * r
+    body = poly([(x0 + nx, y0 + ny), (x1 + nx, y1 + ny), (x1 - nx, y1 - ny), (x0 - nx, y0 - ny)])
+    return union(body, disc(x0, y0, r), disc(x1, y1, r))
+
+
+def stroke(pts, r=R):
+    parts = [capsule(pts[i], pts[i + 1], r) for i in range(len(pts) - 1)]
+    return union(*parts)
+
+
+def bez(p0, p1, p2, p3, n=18):
+    out = []
+    for i in range(n + 1):
+        t = i / n
+        u = 1 - t
+        out.append((u ** 3 * p0[0] + 3 * u * u * t * p1[0] + 3 * u * t * t * p2[0] + t ** 3 * p3[0],
+                    u ** 3 * p0[1] + 3 * u * u * t * p1[1] + 3 * u * t * t * p2[1] + t ** 3 * p3[1]))
+    return out
+
+
+def ell(cx, cy, rx, ry, a0=0, a1=360, n=48):
+    """Điểm trên elip (độ, ngược chiều kim đồng hồ từ a0 tới a1)."""
+    return [(cx + rx * math.cos(math.radians(a0 + (a1 - a0) * i / n)),
+             cy + ry * math.sin(math.radians(a0 + (a1 - a0) * i / n))) for i in range(n + 1)]
+
+
+def ring(cx, cy, rx, ry, r=R):
+    """Vòng kín, tô đặc giữa hai elip (mượt hơn nối nhiều nét)."""
+    def e(ax, ay):
+        pts = ell(cx, cy, ax, ay, 0, 360, 64)[:-1]
+        return poly(pts)
+    return diff(e(rx + r, ry + r), e(rx - r, ry - r))
+
+
+def path(*segs):
+    """Nối các đoạn điểm thành một đường xương."""
+    out = []
+    for s in segs:
+        out.extend(s if not out else s[1:] if s[0] == out[-1] else s)
+    return out
+
+
+def dao(x0, y, x1, up=1, side=1):
+    """Nét ngang có đầu đao: đi thẳng rồi cong vểnh lên ở đầu x1 (side=1 phải, -1 trái)."""
+    L = 70 * side
+    return path([(x0, y), (x1 - L, y)],
+                bez((x1 - L, y), (x1 - L * 0.35, y), (x1, y + 6 * up), (x1 + 16 * side, y + 50 * up), 10))
 
 
 # ---------- chữ ----------
-G = {}  # tên -> (đường nét, bề rộng nét vẽ, lề)
+G = {}
 
 
-def glyph(name, w, side=50):
+def glyph(name):
     def deco(fn):
-        G[name] = (fn(), w, side)
+        G[name] = fn()
         return fn
     return deco
 
 
-@glyph("A", 700, 20)
+@glyph("A")
 def _A():
-    left = poly([(0, 0), (150, 0), (425, 700), (275, 700)])
-    right = poly([(550, 0), (700, 0), (425, 700), (275, 700)])
-    hull = poly([(0, 0), (275, 700), (425, 700), (700, 0)])
-    bar = inter(rect(0, 170, 700, 282), hull)
-    return over(right, union(left, bar))
+    ax, ay = 310, YT
+    left = path([(ax, ay), (110, 190)], bez((110, 190), (82, 110), (30, 58), (-45, 118), 14))
+    right = [(620 - x, y) for x, y in left]
+    t = (ay - 270) / (ay - 170)
+    xl = ax + (100 - ax) * t
+    return union(stroke(left), stroke(right), stroke([(xl, 270), (620 - xl, 270)]))
 
-@glyph("B", 600)
+
+@glyph("B")
 def _B():
-    top = rrect(0, 300, 560, 700, (0, 170, 170, 0))
-    bot = rrect(0, 0, 600, 418, (0, 190, 190, 0))
-    return diff(union(top, bot, rect(0, 0, S, 700)),
-                rrect(S, 418, 560 - S, 700 - B, (0, 60, 60, 0)),
-                rrect(S, B, 600 - S, 300, (0, 70, 70, 0)))
+    top = path([(0, YT), (270, YT)], bez((270, YT), (440, YT), (440, 372), (270, 372)), [(270, 372), (0, 372)])
+    bot = path([(0, 372), (300, 372)], bez((300, 372), (480, 372), (480, YB), (300, YB)), [(300, YB), (0, YB)])
+    return union(stroke([(0, YB), (0, YT)]), stroke(top), stroke(bot))
 
 
-@glyph("C", 620)
+@glyph("C")
 def _C():
-    body = diff(ring(0, 0, 620, 700, 240, 110),
-                poly([(330, 270), (640, 220), (640, 480), (330, 430)]))
-    return diff(body, seam(116, 584, 135))
+    return stroke(ell(320, 350, 300, 284, 42, 318, 40))
 
-@glyph("D", 640)
+
+@glyph("D")
 def _D():
-    return diff(rrect(0, 0, 640, 700, (0, 260, 260, 0)),
-                rrect(S, B, 640 - S, 700 - B, (0, 130, 130, 0)))
+    d = path([(0, YT), (230, YT)], bez((230, YT), (580, YT), (580, YB), (230, YB)), [(230, YB), (0, YB)])
+    return union(stroke([(0, YB), (0, YT)]), stroke(d))
 
 
-@glyph("E", 520)
+@glyph("E")
 def _E():
-    return union(rect(0, 0, S, 700), arm_r(0, 700 - B, 520, 700),
-                 arm_r(0, 292, 480, 292 + B), arm_r(0, 0, 540, B))
+    return union(stroke([(0, YB), (0, YT)]), stroke(dao(0, YT, 430)), stroke(dao(0, YM, 370)),
+                 stroke(dao(0, YB, 450)))
 
 
-@glyph("F", 500)
+@glyph("F")
 def _F():
-    return union(rect(0, 0, S, 700), arm_r(0, 700 - B, 500, 700), arm_r(0, 280, 460, 280 + B))
+    return union(stroke([(0, YB), (0, YT)]), stroke(dao(0, YT, 430)), stroke(dao(0, YM - 10, 370)))
 
 
-@glyph("G", 650)
+@glyph("G")
 def _G():
-    body = diff(ring(0, 0, 650, 700, 240, 110),
-                poly([(340, 398), (670, 398), (670, 540), (340, 500)]))
-    return diff(union(body, rect(350, 280, 650, 398)), seam(116, 584, 135))
+    arc = ell(320, 350, 300, 284, 42, 360, 40)
+    return union(stroke(arc), stroke([(620, 350), (620, 300)]), stroke([(620, 330), (390, 330)]))
 
-@glyph("H", 620)
+
+@glyph("H")
 def _H():
-    return union(stem(0, S), stem(620 - S, 620), rect(0, 292, 620, 292 + B))
+    return union(stroke([(0, YB), (0, YT)]), stroke([(500, YB), (500, YT)]), stroke([(0, YM), (500, YM)]))
 
-@glyph("I", S)
+
+@glyph("I")
 def _I():
-    return stem(0, S)
+    return stroke([(0, YB), (0, YT)])
 
-@glyph("J", 520)
+
+@glyph("J")
 def _J():
-    hook = diff(rrect(0, 0, 520, 420, (0, 0, 210, 210)),
-                rrect(S, B, 520 - S, 520, (0, 0, 90, 90)),
-                poly([(-10, 180), (S + 10, 220), (S + 10, 520), (-10, 520)]))
-    return union(hook, rect(520 - S, 200, 520, 700))
+    return stroke(path([(420, YT), (420, 250)], bez((420, 250), (420, 20), (40, 10), (20, 220))))
 
 
-@glyph("K", 630)
+@glyph("K")
 def _K():
-    up = poly([(S + GAP, 270), (630, 700), (465, 700), (S + GAP, 450)])
-    leg = poly([(290, 360), (465, 0), (640, 0), (410, 450)])
-    return union(stem(0, S), up, leg)
+    return union(stroke([(0, YB), (0, YT)]), stroke([(470, YT), (40, 290)]), stroke([(170, 410), (500, YB)]))
 
-@glyph("L", 500)
+
+@glyph("L")
 def _L():
-    return union(stem(0, S), arm_r(0, 0, 520, B))
+    return union(stroke([(0, YB), (0, YT)]), stroke(dao(0, YB, 440)))
 
-@glyph("M", 790)
+
+@glyph("M")
 def _M():
-    dl = poly([(0, 700), (150, 700), (470, 170), (320, 170)])
-    dr = poly([(640, 700), (790, 700), (470, 170), (320, 170)])
-    v = over(dl, dr)
-    return over(v, union(stem(0, S), stem(790 - S, 790)))
+    return stroke([(0, YB), (0, YT), (320, 250), (640, YT), (640, YB)])
 
-@glyph("N", 640)
+
+@glyph("N")
 def _N():
-    return over(poly([(0, 700), (160, 700), (640, 0), (480, 0)]),
-                union(stem(0, S), stem(640 - S, 640)))
+    return stroke([(0, YB), (0, YT), (520, YB), (520, YT)])
 
-@glyph("O", 690)
+
+@glyph("O")
 def _O():
-    return diff(ring(0, 0, 690, 700, 250, 120), seam(119, 581, 135))
+    return ring(330, 350, 310, 284)
 
-@glyph("P", 590)
+
+@glyph("P")
 def _P():
-    bowl = diff(rrect(0, 260, 590, 700, (0, 210, 210, 0)),
-                rrect(S, 260 + B, 590 - S, 700 - B, (0, 90, 90, 0)))
-    return union(rect(0, 0, S, 700), bowl)
+    top = path([(0, YT), (270, YT)], bez((270, YT), (470, YT), (470, 300), (270, 300)), [(270, 300), (0, 300)])
+    return union(stroke([(0, YB), (0, YT)]), stroke(top))
 
 
-@glyph("Q", 690)
+@glyph("Q")
 def _Q():
-    return over(poly([(400, 210), (545, 240), (740, -60), (595, -90)]), G["O"][0])
+    return union(ring(330, 350, 310, 284), stroke([(420, 190), (660, -40)]))
 
-@glyph("R", 610)
+
+@glyph("R")
 def _R():
-    bowl = diff(rrect(0, 260, 590, 700, (0, 210, 210, 0)),
-                rrect(S, 260 + B, 590 - S, 700 - B, (0, 90, 90, 0)))
-    leg = poly([(250, 330), (410, 330), (620, 0), (455, 0)])
-    return union(rect(0, 0, S, 700), bowl, leg)
+    return union(_P(), stroke([(230, 300), (480, YB)]))
 
-@glyph("S", 580)
+
+@glyph("S")
 def _S():
-    up = diff(rrect(0, 292, 560, 700, (200, 0, 0, 170)),
-              rrect(S, 292 + B, 570, 700 - B, (80, 0, 0, 60)),
-              poly([(560 - C, 700 - B - 1), (570, 700 - B - 1), (570, 700)]))
-    lo = diff(rrect(20, 0, 580, 410, (0, 170, 200, 0)),
-              rrect(10, B, 580 - S, 410 - B, (0, 60, 80, 0)),
-              poly([(10, B + 1), (20 + C, B + 1), (10, -1)]))
-    return union(up, lo)
+    spine = path(bez((500, 560), (450, 670), (90, 680), (80, 520)),
+                 bez((80, 520), (70, 380), (520, 370), (520, 210)),
+                 bez((520, 210), (520, 20), (110, 20), (40, 150)))
+    return stroke(spine)
 
 
-@glyph("T", 620, 25)
+@glyph("T")
 def _T():
-    """T bông lúa: hai thân song song tách ra ở đỉnh, như chữ T giữa logo."""
-    h = GAP / 2
-    def half():
-        p = pathops.Path()
-        p.moveTo(310 - h, 0)
-        p.lineTo(310 - h - 118, 0)
-        p.lineTo(310 - h - 118, 440)
-        p.cubicTo(310 - h - 118, 590, 150, 612, 0, 628)
-        p.lineTo(0, 700)
-        p.lineTo(310 - h, 700)
-        p.close()
-        return p
-    left = half()
-    right = pathops.Path()
-    left.draw(_Mirror(right, 620))
-    return union(left, right)
+    bar = path(list(reversed(dao(280, YT, 0, 1, -1))), dao(280, YT, 560)[1:])
+    return union(stroke(bar), stroke([(280, YT), (280, YB)]))
 
-@glyph("U", 630)
+
+@glyph("U")
 def _U():
-    return diff(union(rrect(0, 0, 630, 640, (0, 0, 250, 250)), stem(0, S), stem(630 - S, 630)),
-                rrect(S, B, 630 - S, 760, (0, 0, 120, 120)))
+    return stroke(path([(0, YT), (0, 260)], bez((0, 260), (0, 10), (520, 10), (520, 260)), [(520, 260), (520, YT)]))
 
-@glyph("V", 660, 20)
+
+@glyph("V")
 def _V():
-    return over(poly([(0, 700), (150, 700), (405, 0), (255, 0)]),
-                poly([(510, 700), (660, 700), (405, 0), (255, 0)]))
+    return stroke([(0, YT), (300, YB), (600, YT)])
 
-@glyph("W", 900, 20)
+
+@glyph("W")
 def _W():
-    s1 = poly([(0, 700), (140, 700), (320, 0), (180, 0)])
-    s2 = poly([(180, 0), (320, 0), (510, 700), (390, 700)])
-    s3 = poly([(390, 700), (510, 700), (720, 0), (580, 0)])
-    s4 = poly([(580, 0), (720, 0), (900, 700), (760, 700)])
-    acc = over(s1, s2)
-    acc = over(s3, acc)
-    return over(acc, s4)
+    return stroke([(0, YT), (210, YB), (420, 560), (630, YB), (840, YT)])
 
-@glyph("X", 640, 20)
+
+@glyph("X")
 def _X():
-    return over(poly([(0, 700), (155, 700), (640, 0), (485, 0)]),
-                poly([(485, 700), (640, 700), (155, 0), (0, 0)]))
+    return union(stroke([(0, YT), (540, YB)]), stroke([(540, YT), (0, YB)]))
 
-@glyph("Y", 640, 20)
+
+@glyph("Y")
 def _Y():
-    return union(poly([(0, 700), (155, 700), (320, 440), (485, 700), (640, 700), (385, 300), (255, 300)]),
-                 rect(255, 0, 385, 330))
+    return union(stroke([(0, YT), (280, 330), (560, YT)]), stroke([(280, 330), (280, YB)]))
 
-@glyph("Z", 580, 30)
+
+@glyph("Z")
 def _Z():
-    return union(arm_l(0, 700 - B, 580, 700), poly([(420, 582), (580, 582), (160, B), (0, B)]),
-                 arm_r(0, 0, 580, B))
+    return stroke(path([(0, YT), (500, YT), (0, YB)], dao(0, YB, 520)[1:]))
 
-@glyph("Dcroat", 680)
+
+@glyph("Dcroat")
 def _Dcroat():
-    d = move(G["D"][0], 40, 0)
-    return union(d, rect(0, 292, 300, 292 + B))
+    return union(move(_D(), 70, 0), stroke([(0, YM), (230, YM)]))
 
 
 # ---------- số ----------
-@glyph("zero", 560)
+@glyph("zero")
 def _0():
-    return diff(ring(0, 0, 560, 700, 230, 110), seam(114, 586, 135))
+    return ring(260, 350, 240, 284)
 
-@glyph("one", 560)
+
+@glyph("one")
 def _1():
-    return over(poly([(110, 560), (300, 700), (430, 700), (170, 450)]), stem(300, 430))
+    return stroke([(90, 520), (290, YT), (290, YB)])
 
-@glyph("two", 560)
+
+@glyph("two")
 def _2():
-    top = diff(rrect(0, 330, 560, 700, (0, 220, 200, 0)),
-               rrect(-10, 330 + B, 560 - S, 700 - B, (0, 100, 90, 0)),
-               rect(-1, 320, 420, 330 + B + 1),
-               poly([(-1, 701), (C, 701), (-1, 700 - B)]))
-    diag = poly([(415, 460), (560, 430), (175, B), (0, B)])
-    return union(top, diag, arm_r(0, 0, 560, B))
+    return stroke(path(bez((40, 500), (40, 690), (470, 690), (470, 470)),
+                       bez((470, 470), (470, 330), (60, 250), (40, YB)),
+                       dao(40, YB, 500)[1:]))
 
 
-@glyph("three", 560)
+@glyph("three")
 def _3():
-    top = arm_l(0, 700 - B, 540, 700)
-    diag = poly([(390, 700 - B), (540, 700 - B), (350, 460 - B), (200, 460 - B)])
-    bowl = diff(rrect(0, 0, 560, 460, (0, 200, 210, 190)),
-                rrect(S, B, 560 - S, 460 - B, (0, 80, 90, 70)),
-                rect(-1, B, S + 1, 460 - B), rect(-1, 300, 200, 470))
-    return union(top, diag, bowl)
+    top = path(bez((40, 540), (90, 690), (450, 690), (450, 520)),
+               bez((450, 520), (450, 400), (330, 372), (220, 372)))
+    bot = path(bez((220, 372), (520, 372), (540, YB), (280, YB)),
+               bez((280, YB), (170, YB), (80, 90), (40, 150)))
+    return union(stroke(top), stroke(bot))
 
 
-@glyph("four", 560)
+@glyph("four")
 def _4():
-    return union(rect(360, 0, 490, 700), rect(0, 170, 560, 170 + B),
-                 poly([(0, 190), (350, 700), (490, 700), (150, 190)]))
+    return union(stroke([(390, YB), (390, YT), (20, 210), (530, 210)]))
 
 
-@glyph("five", 560)
+@glyph("five")
 def _5():
-    bowl = diff(rrect(0, 0, 560, 470, (0, 200, 210, 190)),
-                rrect(S, B, 560 - S, 470 - B, (0, 80, 90, 70)),
-                rect(-1, B, S + 1, 470 - B), rect(-1, 340, 40, 480))
-    return union(bowl, rect(40, 380, 170, 700), arm_r(40, 700 - B, 560, 700))
+    return stroke(path(list(reversed(dao(90, YT, 470))) + [(70, 380)],
+                       bez((70, 380), (200, 440), (520, 450), (510, 230)),
+                       bez((510, 230), (500, 30), (140, 30), (40, 150))))
 
 
-@glyph("six", 560)
+@glyph("six")
 def _6():
-    lo = ring(0, 0, 560, 470, 200, 90)
-    top = diff(rrect(0, 300, 560, 700, (210, 200, 0, 0)),
-               rrect(S, 290, 560 - S, 700 - B, (90, 80, 0, 0)),
-               rect(560 - S - 1, 290, 561, 560))
-    return union(lo, rect(0, 200, S, 560), top)
+    return union(stroke(bez((440, 610), (370, 690), (50, 660), (50, 320))), ring(270, 230, 220, 164))
 
 
-@glyph("seven", 560)
+@glyph("seven")
 def _7():
-    return union(arm_l(0, 700 - B, 560, 700), poly([(420, 700 - B), (560, 700 - B), (250, 0), (110, 0)]))
+    return stroke(path(list(reversed(dao(250, YT, 0, 1, -1))), [(250, YT), (500, YT), (170, YB)]))
 
 
-@glyph("eight", 560)
+@glyph("eight")
 def _8():
-    return union(ring(25, 330, 535, 700, 180, 70), ring(0, 0, 560, 430, 200, 90))
+    return union(ring(270, 500, 190, 136), ring(270, 200, 230, 136))
 
 
-@glyph("nine", 560)
+@glyph("nine")
 def _9():
-    return rot180(G["six"][0], 560, 700)
+    return rot180(_6(), 270, 350)
 
 
 # ---------- dấu câu ----------
-@glyph("period", 150, 40)
+def grain(cx, cy, rx=58, ry=40, ang=30):
+    """Hạt gạo: elip hơi thuôn, nghiêng."""
+    a = math.radians(ang)
+    pts = []
+    for i in range(40):
+        t = 2 * math.pi * i / 40
+        x, y = rx * math.cos(t), ry * math.sin(t) * (1 - 0.18 * math.cos(t))
+        pts.append((cx + x * math.cos(a) - y * math.sin(a), cy + x * math.sin(a) + y * math.cos(a)))
+    return poly(pts)
+
+
+@glyph("period")
 def _period():
-    return disc(75, 75, 75)
+    return disc(0, 72, 72)
 
 
-@glyph("comma", 150, 40)
+@glyph("comma")
 def _comma():
-    return union(disc(75, 75, 75), poly([(60, 20), (150, 60), (60, -150), (0, -150)]))
+    return union(disc(0, 72, 72), stroke([(30, 60), (-30, -120)], 34))
 
 
-@glyph("colon", 150, 40)
+@glyph("colon")
 def _colon():
-    return union(disc(75, 75, 75), disc(75, 420, 75))
+    return union(disc(0, 72, 72), disc(0, 420, 72))
 
 
-@glyph("semicolon", 150, 40)
+@glyph("semicolon")
 def _semicolon():
-    return union(G["comma"][0], disc(75, 420, 75))
+    return union(_comma(), disc(0, 420, 72))
 
 
-@glyph("exclam", 150, 40)
+@glyph("exclam")
 def _exclam():
-    return union(poly([(10, 700), (140, 700), (115, 230), (35, 230)]), disc(75, 75, 75))
+    return union(stroke([(0, YT), (0, 290)]), disc(0, 72, 72))
 
 
-@glyph("question", 520)
+@glyph("question")
 def _question():
-    hook = diff(rrect(0, 330, 520, 700, (0, 210, 190, 0)),
-                rrect(-10, 330 + B, 520 - S, 700 - B, (0, 90, 80, 0)),
-                rect(-1, 320, 200, 330 + B + 1),
-                poly([(-1, 701), (C, 701), (-1, 700 - B)]))
-    return union(hook, rect(200, 210, 330, 330 + B), disc(265, 75, 75))
+    return union(stroke(path(bez((20, 540), (40, 690), (440, 700), (440, 520)),
+                             bez((440, 520), (440, 400), (230, 400), (230, 280)))), disc(230, 72, 72))
 
 
-@glyph("hyphen", 320, 40)
+@glyph("hyphen")
 def _hyphen():
-    return poly([(0, 250), (320 - C, 250), (320, 250 + B), (C, 250 + B)])
+    return stroke([(0, 300), (240, 300)])
 
 
-@glyph("endash", 520, 40)
+@glyph("endash")
 def _endash():
-    return poly([(0, 250), (520 - C, 250), (520, 250 + B), (C, 250 + B)])
+    return stroke([(0, 300), (440, 300)])
 
 
-@glyph("quotesingle", 130, 50)
+@glyph("quotesingle")
 def _quotesingle():
-    return poly([(0, 700), (130, 700), (100, 450), (30, 450)])
+    return stroke([(0, YT), (0, 480)], 50)
 
 
-@glyph("quotedbl", 330, 50)
+@glyph("quotedbl")
 def _quotedbl():
-    return union(_quotesingle(), move(_quotesingle(), 200, 0))
+    return union(_quotesingle(), move(_quotesingle(), 170, 0))
 
 
-@glyph("parenleft", 260, 40)
+@glyph("parenleft")
 def _parenleft():
-    return diff(rrect(0, -120, 520, 820, (240, 0, 0, 240)), rrect(S, -120 + B, 700, 820 - B, (130, 0, 0, 130)),
-                rect(260, -200, 800, 900))
+    return stroke(ell(330, 350, 270, 470, 118, 242, 24))
 
 
-@glyph("parenright", 260, 40)
+@glyph("parenright")
 def _parenright():
-    return rot180(G["parenleft"][0], 260, 700)
+    return mirror_x(_parenleft(), 220)
 
 
-@glyph("slash", 420, 20)
+@glyph("slash")
 def _slash():
-    return poly([(0, -80), (140, -80), (420, 780), (280, 780)])
+    return stroke([(0, -60), (360, 760)])
 
 
-@glyph("plus", 500, 40)
+@glyph("plus")
 def _plus():
-    return union(rect(185, 70, 315, 570), rect(0, 262, 500, 262 + B))
+    return union(stroke([(0, 320), (440, 320)]), stroke([(220, 100), (220, 540)]))
 
 
-@glyph("percent", 760, 30)
+@glyph("percent")
 def _percent():
-    small = lambda x, y: diff(rrect(x, y, x + 260, y + 300, 110), rrect(x + 90, y + 85, x + 170, y + 215, 40))
-    return union(small(0, 400), small(500, 0), poly([(520, 700), (660, 700), (240, 0), (100, 0)]))
+    return union(ring(110, 530, 90, 110, 44), ring(560, 170, 90, 110, 44), stroke([(560, YT), (110, YB)], 44))
 
 
-@glyph("space", 240, 0)
-def _space():
-    return pathops.Path()
+G["space"] = pathops.Path()
 
 
 # ---------- dấu tiếng Việt (vẽ quanh x=0, đáy y=0) ----------
+MR = 40   # nửa bề dày nét dấu
+
+
 def m_acute():
-    return leaf(10, 72, 200, 64, 40)
+    return stroke([(-45, 22), (55, 128)], MR)
 
 
 def m_grave():
-    return leaf(-10, 72, 200, 64, 140)
+    return stroke([(45, 22), (-55, 128)], MR)
 
 
-def m_circ():
-    return union(leaf(-58, 92, 220, 70, 58), leaf(58, 92, 220, 70, 122))
+def m_non_la():
+    """Dấu mũ = chiếc nón lá: chóp nhọn, hai sườn hơi võng, vành cong."""
+    p = pathops.Path()
+    p.moveTo(-175, 34)
+    p.cubicTo(-95, 66, -35, 125, 0, 196)
+    p.cubicTo(35, 125, 95, 66, 175, 34)
+    p.cubicTo(95, 0, -95, 0, -175, 34)
+    p.close()
+    return p
 
 
 def m_breve():
-    return diff(rrect(-130, 0, 130, 140, (0, 0, 110, 110)), rrect(-75, 58, 75, 220, (0, 0, 55, 55)))
+    return stroke(ell(0, 120, 105, 95, 200, 340, 16), MR)
 
 
 def m_tilde():
-    pts_top, pts_bot = [], []
-    for i in range(21):
-        x = -140 + 280 * i / 20
-        y = 55 + 42 * math.sin(math.pi * 2 * i / 20)
-        pts_top.append((x, y + 34))
-        pts_bot.append((x, y - 34))
-    return poly(pts_top + pts_bot[::-1])
+    pts = [(-120 + 240 * i / 20, 70 + 38 * math.sin(math.pi * 2 * i / 20)) for i in range(21)]
+    return stroke(pts, MR - 4)
 
 
 def m_hook():
-    ringp = diff(rrect(-80, 70, 80, 230, 78), rrect(-30, 118, 30, 182, 30), rect(-90, 60, 0, 150))
-    return union(ringp, rect(-26, 0, 26, 100))
+    return stroke(path(bez((-55, 120), (-45, 205), (70, 205), (55, 125)),
+                       bez((55, 125), (45, 85), (0, 90), (0, 40))), MR - 6)
 
 
 def m_dot():
-    return disc(0, -130, 62)
-
-
-def m_horn(x):
-    """Móc của Ơ, Ư: hạt lúa mọc từ góc trên phải của chữ."""
-    a = math.radians(55)
-    return leaf(x - 70 + 85 * math.cos(a), 630 + 85 * math.sin(a), 170, 74, 55)
+    return grain(0, -140, 60, 42, 28)
 
 
 TONES = {"̀": m_grave, "́": m_acute, "̉": m_hook, "̃": m_tilde, "̣": m_dot}
-MOD = {"Ă": ("A", "breve"), "Â": ("A", "circ"), "Ê": ("E", "circ"), "Ô": ("O", "circ"),
-       "Ơ": ("O", "horn"), "Ư": ("U", "horn")}
+
+
+def bounds(p):
+    b = p.bounds
+    return b if b else (0, 0, 0, 0)
+
+
+def horn(base_path):
+    """Móc của Ơ, Ư: nét vểnh lên như đầu đao."""
+    x0, y0, x1, y1 = bounds(base_path)
+    sx = x1 - R - 10
+    return stroke(bez((sx, 560), (sx + 60, 600), (sx + 85, 640), (sx + 80, 720), 10), R - 12)
 
 
 def compose(ch):
-    """Ghép chữ gốc + dấu mũ/trăng/móc + dấu thanh cho một chữ hoa tiếng Việt."""
     d = unicodedata.normalize("NFD", ch)
     base, marks = d[0], d[1:]
     mod = None
@@ -583,44 +523,63 @@ def compose(ch):
     if "̆" in marks: mod = "breve"
     if "̛" in marks: mod = "horn"
     tone = next((m for m in marks if m in TONES), None)
-    path, w, side = G[base]
-    cx = w / 2
-    if base == "A": cx = 350
-    parts = [path]
-    extra = 0
+    bp = G[base]
+    x0, _, x1, _ = bounds(bp)
+    cx = (x0 + x1) / 2
+    if base == "A":
+        cx = 310
+    parts = [bp]
     if mod == "horn":
-        hx = w - 5
-        parts.append(m_horn(hx))
-        extra = 70
-        cx = w / 2 - 10
-    y = 770
+        parts.append(horn(bp))
+        cx -= 20
+    y = 790
     if mod in ("circ", "breve"):
-        m = m_circ() if mod == "circ" else m_breve()
-        dx = cx
-        if mod == "circ" and tone in ("̀", "́", "̉"):
-            dx = cx - 45
+        m = m_non_la() if mod == "circ" else m_breve()
+        dx = cx - 50 if (mod == "circ" and tone in ("̀", "́", "̉")) else cx
         parts.append(move(m, dx, y))
     if tone:
         t = TONES[tone]()
         if tone == "̣":
             parts.append(move(t, cx, 0))
         elif mod == "circ" and tone != "̃":
-            parts.append(move(t, cx + 150, 860))
+            parts.append(move(t, cx + 175, 890))
         elif mod in ("circ", "breve"):
-            parts.append(move(t, cx, 960))
+            parts.append(move(t, cx, 1010))
         else:
             parts.append(move(t, cx, y))
-    return union(*parts), w + extra, side
+    return union(*parts)
+
+
+def place(p):
+    """Dời nét để mép trái cách gốc SIDE; trả về (nét, bề rộng chữ)."""
+    if p.bounds is None or not list(_segs(p)):
+        return p, 260
+    x0, _, x1, _ = p.bounds
+    return move(p, SIDE - x0, 0), round(x1 - x0 + 2 * SIDE)
+
+
+def _segs(p):
+    class Rec:
+        def __init__(self): self.n = 0
+        def moveTo(self, pt): self.n += 1
+        def lineTo(self, pt): self.n += 1
+        def curveTo(self, *pts): self.n += 1
+        def qCurveTo(self, *pts): self.n += 1
+        def closePath(self): pass
+        def endPath(self): pass
+    r = Rec()
+    p.draw(r)
+    return range(r.n)
 
 
 def build(out_dir):
-    names = {}          # tên glyph -> (path, advance)
-    cmap = {}
-    for n, (p, w, side) in G.items():
-        names[n] = (move(p, side, 0), w + 2 * side)
-    for ch, n in [(c, c) for c in "ABCDEFGHIJKLMNOPQRSTUVWXYZ"] + [("Đ", "Dcroat")]:
-        cmap[ord(ch)] = n
-        cmap[ord(ch.lower())] = n
+    names, cmap = {}, {}
+    for n, p in G.items():
+        names[n] = place(p) if n != "space" else (p, 260)
+    for ch in "ABCDEFGHIJKLMNOPQRSTUVWXYZ":
+        cmap[ord(ch)] = ch
+        cmap[ord(ch.lower())] = ch
+    cmap[ord("Đ")] = cmap[ord("đ")] = "Dcroat"
     for ch, n in zip("0123456789", ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]):
         cmap[ord(ch)] = n
     for ch, n in {".": "period", ",": "comma", ":": "colon", ";": "semicolon", "!": "exclam", "?": "question",
@@ -628,7 +587,6 @@ def build(out_dir):
                   ")": "parenright", "/": "slash", "+": "plus", "%": "percent", " ": "space",
                   " ": "space", "’": "quotesingle"}.items():
         cmap[ord(ch)] = n
-    # nguyên âm tiếng Việt: gốc + mũ/trăng/móc + 5 thanh
     viet = set()
     for base in ["A", "Ă", "Â", "E", "Ê", "I", "O", "Ô", "Ơ", "U", "Ư", "Y"]:
         viet.add(base)
@@ -638,41 +596,38 @@ def build(out_dir):
         if len(ch) != 1 or ch in "AEIOUY":
             continue
         n = "uni%04X" % ord(ch)
-        p, w, side = compose(ch)
-        names[n] = (move(p, side, 0), w + 2 * side)
+        names[n] = place(compose(ch))
         cmap[ord(ch)] = n
-        lo = ch.lower()
-        if len(lo) == 1:
-            cmap[ord(lo)] = n
+        if len(ch.lower()) == 1:
+            cmap[ord(ch.lower())] = n
 
     order = [".notdef"] + sorted(names)
     fb = FontBuilder(UPM, isTTF=False)
     fb.setupGlyphOrder(order)
     fb.setupCharacterMap(cmap)
+    notdef = diff(poly([(50, 0), (450, 0), (450, 700), (50, 700)]), poly([(110, 60), (390, 60), (390, 640), (110, 640)]))
     charstrings, metrics = {}, {}
-    notdef = diff(rect(50, 0, 450, 700), rect(110, 60, 390, 640))
     for n in order:
-        p, adv = (move(notdef, 0, 0), 500) if n == ".notdef" else names[n]
+        p, adv = (notdef, 500) if n == ".notdef" else names[n]
         pen = T2CharStringPen(adv, None)
         p.draw(pen)
         charstrings[n] = pen.getCharString()
-        xs = [pt[0] for pt, _ in _points(p)] or [0]
-        metrics[n] = (adv, int(min(xs)))
-    fam = "An Tam Display"
+        b = p.bounds if list(_segs(p)) else None
+        metrics[n] = (adv, int(b[0]) if b else 0)
     fb.setupCFF("AnTamDisplay-Black", {"FullName": "An Tam Display Black"}, charstrings, {})
     fb.setupHorizontalMetrics(metrics)
-    fb.setupHorizontalHeader(ascent=1100, descent=-300)
+    fb.setupHorizontalHeader(ascent=1150, descent=-300)
     fb.setupNameTable({
-        "familyName": fam, "styleName": "Regular",
-        "uniqueFontIdentifier": "AnTamDisplay-Black-2.0",
+        "familyName": "An Tam Display", "styleName": "Regular",
+        "uniqueFontIdentifier": "AnTamDisplay-Black-3.0",
         "fullName": "An Tam Display Black", "psName": "AnTamDisplay-Black",
-        "version": "Version 2.000",
+        "version": "Version 3.000",
         "copyright": "© 2026 Công ty TNHH SX-TM Ẩm Thực An Tâm",
         "trademark": "Ẩm Thực An Tâm",
-        "description": "Font tiêu đề chữ in hoa của Ẩm Thực An Tâm, đủ dấu tiếng Việt.",
+        "description": "Font tiêu đề của Ẩm Thực An Tâm: chữ tròn, vững; đầu đao mái đình, dấu mũ nón lá, dấu nặng hạt gạo.",
     })
-    fb.setupOS2(sTypoAscender=900, sTypoDescender=-250, sTypoLineGap=100,
-                usWinAscent=1100, usWinDescent=300, sCapHeight=CAP, sxHeight=CAP,
+    fb.setupOS2(sTypoAscender=900, sTypoDescender=-250, sTypoLineGap=150,
+                usWinAscent=1150, usWinDescent=300, sCapHeight=CAP, sxHeight=CAP,
                 usWeightClass=900, achVendID="ANTM", fsType=0)
     fb.setupPost()
     otf = os.path.join(out_dir, "AnTamDisplay-Black.otf")
@@ -681,24 +636,6 @@ def build(out_dir):
     f.flavor = "woff2"
     f.save(os.path.join(out_dir, "AnTamDisplay-Black.woff2"))
     return otf, len(order), len(cmap)
-
-
-def _points(p):
-    return [(pt, on) for pt, on in p.segments_points()] if hasattr(p, "segments_points") else list(_iter_pts(p))
-
-
-def _iter_pts(p):
-    class Rec:
-        def __init__(self): self.pts = []
-        def moveTo(self, pt): self.pts.append((pt, True))
-        def lineTo(self, pt): self.pts.append((pt, True))
-        def curveTo(self, *pts): self.pts.extend((q, True) for q in pts)
-        def qCurveTo(self, *pts): self.pts.extend((q, True) for q in pts)
-        def closePath(self): pass
-        def endPath(self): pass
-    r = Rec()
-    p.draw(r)
-    return r.pts
 
 
 if __name__ == "__main__":
