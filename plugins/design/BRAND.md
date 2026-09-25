@@ -54,11 +54,15 @@
 | Mục | Giá trị |
 |---|---|
 | Logo (file gốc, vùng an toàn, kích thước tối thiểu) | **[Cần điền]** |
-| Màu chính | **[Cần điền: mã HEX, CMYK nếu in]** |
-| Màu phụ | **[Cần điền]** |
-| Font tiêu đề | **[Cần điền, phải hỗ trợ tiếng Việt]** |
-| Font nội dung | **[Cần điền, phải hỗ trợ tiếng Việt]** |
-| Phong cách ảnh món ăn | **[Cần điền]** |
+| Màu chính (60%) | Đỏ ớt `#C8161D` (khoảng C0 M89 Y86 K22), đỏ đậm `#8C0F14` |
+| Trắng (30%) | Trắng `#FFFFFF`, trắng bột `#FBF3E6` |
+| Vàng nhấn (10%) | Vàng ngô `#FFC20E` (khoảng C0 M24 Y95 K0). Chữ vàng trên đỏ `#C8161D` chỉ từ 24px |
+| Chữ | Nâu mực `#2B1512` trên nền trắng |
+| Font tiêu đề | Alfa Slab One (Google Fonts, có trong Canva) |
+| Font nội dung | Be Vietnam Pro (Google Fonts, có trong Canva) |
+| Phong cách ảnh món ăn | Bánh thật thấy rõ đốm cháy, nền trắng hoặc gỗ sáng, ánh sáng ấm |
+| Hình và hoạ tiết | Hình tròn (chiếc bánh), đốm cháy của chảo nướng, dải bậc thang, cờ giấy cắt. Mỗi ấn phẩm một hoạ tiết. Tránh sombrero, xương rồng, ria mép |
+| Bộ nhận diện đầy đủ | https://claude.ai/artifact/Erhw8zWK9pKgJYWgBc82Ep |
 | Thư mục mẫu (Canva, Google Drive) | **[Cần điền]** |
 
-> Bảng màu của trang khoá học (`index.html`) là màu của khoá học, không mặc định là màu thương hiệu công ty. Chỉ dùng nếu người dùng xác nhận.
+> Luật 60–30–10: đỏ chiếm 60% diện tích, trắng 30%, vàng 10%. Mỗi ấn phẩm chỉ một vùng vàng. Bảng màu của trang khoá học (`index.html`) không phải màu thương hiệu.
