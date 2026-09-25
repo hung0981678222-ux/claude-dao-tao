@@ -1,0 +1,64 @@
+# Hồ sơ thương hiệu công ty
+
+> Mọi kỹ năng trong plugin đọc file này trước khi làm việc. Chỗ nào ghi **[Cần điền]** là thông tin chưa có: Claude phải hỏi lại người dùng, không được tự bịa.
+
+## Công ty
+
+| Mục | Nội dung |
+|---|---|
+| Tên công ty | **[Cần điền]** |
+| Tên thương hiệu trên sản phẩm | **[Cần điền]** |
+| Khu vực | TP.HCM |
+| Sản phẩm chủ lực | Bánh tortillas, Doner kebab |
+| Mô hình | Bán sỉ bánh tortillas cho doanh nghiệp; cửa hàng thực phẩm; nhượng quyền cửa hàng |
+| Hotline, Zalo OA, fanpage, website | **[Cần điền]** |
+
+## Khách hàng và người đọc
+
+| Nhóm | Họ là ai | Họ cần gì |
+|---|---|---|
+| Doanh nghiệp SMEs | Chủ và nhân sự công ty 50 đến 200 nhân viên | Bữa nhẹ tiện lợi cho nhân viên, báo giá rõ, giao đúng hẹn |
+| Nhân viên văn phòng | Người ăn trưa, ăn nhẹ | Nhanh, ngon, tiện, sạch |
+| Đối tác nhượng quyền | Người muốn mở cửa hàng | Mô hình rõ ràng, chi phí, hỗ trợ, không hứa suông |
+| Khách tại cửa hàng | Người mua trực tiếp | Thực đơn dễ đọc, giá rõ, gọi món nhanh |
+
+## Kênh và định dạng thường làm
+
+| Kênh | Định dạng thiết kế | Ghi chú |
+|---|---|---|
+| Facebook | Bài đăng khoảng 120 chữ, ảnh vuông 1080×1080, ảnh dọc 1080×1350, video ngắn | Kênh chính cho truyền thông |
+| Zalo | Tin nhắn 5 dòng, ảnh kèm tin, Zalo OA | Kênh chính cho bán hàng và chăm sóc khách |
+| Cửa hàng | Thực đơn treo, standee, poster, bảng giá, biển hiệu | Đọc từ xa 2 đến 3 mét |
+| Bao bì | Túi, hộp, nhãn bánh tortillas | Phải đủ nội dung nhãn bắt buộc |
+| Tài liệu bán hàng | Báo giá, hồ sơ năng lực, tài liệu nhượng quyền (PDF, PowerPoint) | Gửi cho SMEs và đối tác |
+| Website | **[Cần điền: có hay không]** | Áp dụng thêm chuẩn WCAG |
+
+## Giọng văn
+
+- Thân thiện, lịch sự, gọn. Xưng "chúng tôi" hoặc tên thương hiệu, gọi khách là "anh chị" (trừ khi người dùng chọn cách khác).
+- Câu ngắn, mỗi câu một ý. Viết tiếng Việt có dấu đầy đủ.
+- Nói lợi ích cụ thể (tiện, nhanh, no lâu, giao tận nơi), không dùng từ sáo rỗng như "đỉnh cao", "số 1".
+
+## Luật cứng
+
+1. **Không nêu giá** trong bài đăng, tin nhắn giới thiệu, trừ khi người dùng đưa giá đã được phòng tài chính xác nhận.
+2. **Không so sánh với đối thủ**, không nêu tên đối thủ.
+3. **Không hứa điều chưa chắc**, đặc biệt trong tài liệu nhượng quyền (doanh thu, thời gian hoàn vốn, lợi nhuận).
+4. **Không bịa số liệu**: giá, thành phần, hạn dùng, định lượng, chứng nhận phải lấy từ người dùng.
+5. **Không đăng thông tin khách hàng** (tên, số điện thoại, ảnh) khi chưa được đồng ý.
+6. Mọi thứ gửi ra ngoài (khách, nhà in, đối tác) phải có người trong công ty duyệt trước.
+7. Đơn vị tiền: đồng (ví dụ 45.000đ). Ngày: dd/mm/yyyy.
+
+## Bộ nhận diện
+
+| Mục | Giá trị |
+|---|---|
+| Logo (file gốc, vùng an toàn, kích thước tối thiểu) | **[Cần điền]** |
+| Màu chính | **[Cần điền: mã HEX, CMYK nếu in]** |
+| Màu phụ | **[Cần điền]** |
+| Font tiêu đề | **[Cần điền, phải hỗ trợ tiếng Việt]** |
+| Font nội dung | **[Cần điền, phải hỗ trợ tiếng Việt]** |
+| Phong cách ảnh món ăn | **[Cần điền]** |
+| Thư mục mẫu (Canva, Google Drive) | **[Cần điền]** |
+
+> Bảng màu của trang khoá học (`index.html`) là màu của khoá học, không mặc định là màu thương hiệu công ty. Chỉ dùng nếu người dùng xác nhận.

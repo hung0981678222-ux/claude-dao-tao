@@ -1,0 +1,16 @@
+{
+  "name": "claude-dao-tao",
+  "owner": {
+    "name": "hung0981678222-ux"
+  },
+  "metadata": {
+    "description": "Plugin nội bộ cho khoá học Làm chủ Claude trong công việc"
+  },
+  "plugins": [
+    {
+      "name": "design",
+      "source": "./plugins/design",
+      "description": "Plugin Design tuỳ chỉnh cho công ty: duyệt thiết kế, viết chữ ngắn, bộ nhận diện, bàn giao in ấn, kiểm tra dễ đọc, tổng hợp ý kiến khách hàng."
+    }
+  ]
+}
