@@ -62,7 +62,7 @@
 | Trắng (30%) | Trắng `#FFFFFF`, trắng bột `#FBF3E6` |
 | Vàng nhấn (10%) | Vàng kim của bông lúa `#EFAE35` (khoảng C0 M27 Y78 K6), vàng kim đậm `#B87018` cho vạch kẻ. Không đặt chữ vàng trên nền đỏ `#D7150E` |
 | Chữ | Xám đậm `#2A2A2A` như khẩu hiệu logo, trên nền trắng |
-| Font tiêu đề | **An Tâm Display**, font chữ ký riêng: [assets/fonts/AnTamDisplay-Black.otf](assets/fonts/AnTamDisplay-Black.otf) (cài máy, Canva Brand Kit), `.woff2` cho web. Chỉ chữ in hoa, đủ dấu tiếng Việt; dùng cho 1–7 chữ, từ 18px. Dựng lại bằng `assets/fonts/build_antam_display.py` |
+| Font tiêu đề | **An Tâm Display**, font chữ ký riêng: [assets/fonts/AnTamDisplay-Black.otf](assets/fonts/AnTamDisplay-Black.otf) (cài máy, Canva Brand Kit), `.woff2` cho web. Bản 2.0: nét chéo gấp chồng như dải ruy băng của logo, chữ T hai thân như bông lúa, dấu thanh hình hạt lúa. Chỉ chữ in hoa, đủ dấu tiếng Việt; dùng cho 1–7 chữ, từ 18px. Dựng lại bằng `assets/fonts/build_antam_display.py` |
 | Font nội dung | Be Vietnam Pro (Google Fonts) |
 | Phong cách ảnh món ăn | Bánh thật thấy rõ đốm cháy, nền trắng hoặc gỗ sáng, ánh sáng ấm |
 | Hình và hoạ tiết | Hình tròn (chiếc bánh), đốm cháy của chảo nướng, dải bậc thang, cờ giấy cắt. Mỗi ấn phẩm một hoạ tiết. Tránh sombrero, xương rồng, ria mép |

@@ -4,9 +4,11 @@ Chạy:  pip install fonttools skia-pathops brotli
        python3 build_antam_display.py
 Kết quả: AnTamDisplay-Black.otf và AnTamDisplay-Black.woff2 cạnh file này.
 
-Ba chi tiết riêng lấy từ logo Ẩm Thực An Tâm:
-- Đầu nét ngang cắt xiên như mép dải ruy băng (E, F, L, T, Z, S, số 2, 5, 7).
-- Chữ A không đỉnh nhọn, đỉnh cắt nghiêng như nếp gấp ruy băng.
+Bản 2.0. Chi tiết riêng lấy từ logo Ẩm Thực An Tâm:
+- Nếp gấp ruy băng: ở A, V, W, M, N, X, Q, số 1 một nét đè lên nét kia, cách khe trắng GAP.
+- Đường gấp (seam) trên nét tròn O, C, G, số 0.
+- Chữ T bông lúa: hai thân song song, đỉnh cong ra hai bên.
+- Đỉnh thân cắt xiên (TILT) và đầu nét ngang cắt xiên (C) cùng nhịp ruy băng.
 - Dấu sắc, huyền, mũ là hạt lúa; dấu nặng và dấu chấm là hình tròn như chiếc bánh.
 """
 import math
@@ -122,6 +124,16 @@ class _Shift:
     def endPath(self): self.p.close()
 
 
+class _Mirror(_Shift):
+    """Lật ngang quanh bề rộng w."""
+    def __init__(self, path, w):
+        super().__init__(path, 0, 0, 1)
+        self.w = w
+
+    def _t(self, pt):
+        return (self.w - pt[0], pt[1])
+
+
 def arm_r(x0, y0, x1, y1):
     """Nét ngang, đầu phải cắt xiên (mép trên dài hơn)."""
     return poly([(x0, y0), (x1 - C, y0), (x1, y1), (x0, y1)])
@@ -134,6 +146,43 @@ def arm_l(x0, y0, x1, y1):
 
 def ring(x0, y0, x1, y1, ro, ri):
     return diff(rrect(x0, y0, x1, y1, ro), rrect(x0 + S, y0 + B, x1 - S, y1 - B, ri))
+
+
+# ---------- chi tiết chữ ký (bản 2) ----------
+GAP = 26   # khe trắng giữa hai lớp ruy băng
+TILT = 30  # độ xiên đỉnh thân chữ
+
+
+def grow(p, d=GAP):
+    """Nở đường nét ra khoảng d (xấp xỉ bằng cách dời theo 12 hướng)."""
+    out = p
+    for i in range(12):
+        a = math.pi * 2 * i / 12
+        out = union(out, move(p, d * math.cos(a), d * math.sin(a)))
+    return out
+
+
+def over(front, back):
+    """Nếp gấp ruy băng: nét trước đè lên nét sau, cách một khe trắng."""
+    return union(front, diff(back, grow(front)))
+
+
+def inter(a, b):
+    return pathops.op(a, b, pathops.PathOp.INTERSECTION)
+
+
+def stem(x0, x1, top=700, bottom=0):
+    """Thân đứng, đỉnh cắt xiên lên bên phải như mép ruy băng."""
+    return poly([(x0, bottom), (x1, bottom), (x1, top), (x0, top - TILT)])
+
+
+def seam(cx, cy, angle, length=300):
+    """Đường gấp: một khe mảnh cắt ngang nét tròn."""
+    a = math.radians(angle)
+    dx, dy = math.cos(a) * length / 2, math.sin(a) * length / 2
+    nx, ny = -math.sin(a) * GAP / 2, math.cos(a) * GAP / 2
+    return poly([(cx - dx - nx, cy - dy - ny), (cx + dx - nx, cy + dy - ny),
+                 (cx + dx + nx, cy + dy + ny), (cx - dx + nx, cy - dy + ny)])
 
 
 # ---------- chữ ----------
@@ -149,10 +198,11 @@ def glyph(name, w, side=50):
 
 @glyph("A", 700, 20)
 def _A():
-    outer = poly([(0, 0), (290, 668), (410, 700), (700, 0)])
-    inner = poly([(141, 0), (350, 505), (559, 0)])
-    return diff(outer, diff(inner, rect(0, 170, 700, 282)))
-
+    left = poly([(0, 0), (150, 0), (425, 700), (275, 700)])
+    right = poly([(550, 0), (700, 0), (425, 700), (275, 700)])
+    hull = poly([(0, 0), (275, 700), (425, 700), (700, 0)])
+    bar = inter(rect(0, 170, 700, 282), hull)
+    return over(right, union(left, bar))
 
 @glyph("B", 600)
 def _B():
@@ -165,9 +215,9 @@ def _B():
 
 @glyph("C", 620)
 def _C():
-    return diff(ring(0, 0, 620, 700, 240, 110),
+    body = diff(ring(0, 0, 620, 700, 240, 110),
                 poly([(330, 270), (640, 220), (640, 480), (330, 430)]))
-
+    return diff(body, seam(116, 584, 135))
 
 @glyph("D", 640)
 def _D():
@@ -190,18 +240,15 @@ def _F():
 def _G():
     body = diff(ring(0, 0, 650, 700, 240, 110),
                 poly([(340, 398), (670, 398), (670, 540), (340, 500)]))
-    return union(body, rect(350, 280, 650, 398))
-
+    return diff(union(body, rect(350, 280, 650, 398)), seam(116, 584, 135))
 
 @glyph("H", 620)
 def _H():
-    return union(rect(0, 0, S, 700), rect(620 - S, 0, 620, 700), rect(0, 292, 620, 292 + B))
-
+    return union(stem(0, S), stem(620 - S, 620), rect(0, 292, 620, 292 + B))
 
 @glyph("I", S)
 def _I():
-    return rect(0, 0, S, 700)
-
+    return stem(0, S)
 
 @glyph("J", 520)
 def _J():
@@ -213,33 +260,29 @@ def _J():
 
 @glyph("K", 630)
 def _K():
-    up = poly([(S, 250), (630, 700), (465, 700), (S, 430)])
-    leg = poly([(270, 340), (465, 0), (640, 0), (395, 440)])
-    return union(rect(0, 0, S, 700), up, leg)
-
+    up = poly([(S + GAP, 270), (630, 700), (465, 700), (S + GAP, 450)])
+    leg = poly([(290, 360), (465, 0), (640, 0), (410, 450)])
+    return union(stem(0, S), up, leg)
 
 @glyph("L", 500)
 def _L():
-    return union(rect(0, 0, S, 700), arm_r(0, 0, 520, B))
-
+    return union(stem(0, S), arm_r(0, 0, 520, B))
 
 @glyph("M", 790)
 def _M():
-    v = poly([(S - 10, 700), (S + 110, 700), (395, 360), (790 - S - 110, 700),
-              (800 - S, 700), (455, 180), (335, 180)])
-    return union(rect(0, 0, S, 700), rect(790 - S, 0, 790, 700), v)
-
+    dl = poly([(0, 700), (150, 700), (470, 170), (320, 170)])
+    dr = poly([(640, 700), (790, 700), (470, 170), (320, 170)])
+    v = over(dl, dr)
+    return over(v, union(stem(0, S), stem(790 - S, 790)))
 
 @glyph("N", 640)
 def _N():
-    return union(rect(0, 0, S, 700), rect(640 - S, 0, 640, 700),
-                 poly([(0, 700), (160, 700), (640, 0), (480, 0)]))
-
+    return over(poly([(0, 700), (160, 700), (640, 0), (480, 0)]),
+                union(stem(0, S), stem(640 - S, 640)))
 
 @glyph("O", 690)
 def _O():
-    return ring(0, 0, 690, 700, 250, 120)
-
+    return diff(ring(0, 0, 690, 700, 250, 120), seam(119, 581, 135))
 
 @glyph("P", 590)
 def _P():
@@ -250,17 +293,14 @@ def _P():
 
 @glyph("Q", 690)
 def _Q():
-    return union(ring(0, 0, 690, 700, 250, 120),
-                 poly([(400, 210), (545, 240), (740, -60), (595, -90)]))
-
+    return over(poly([(400, 210), (545, 240), (740, -60), (595, -90)]), G["O"][0])
 
 @glyph("R", 610)
 def _R():
     bowl = diff(rrect(0, 260, 590, 700, (0, 210, 210, 0)),
                 rrect(S, 260 + B, 590 - S, 700 - B, (0, 90, 90, 0)))
-    leg = poly([(250, 300), (410, 300), (620, 0), (455, 0)])
+    leg = poly([(250, 330), (410, 330), (620, 0), (455, 0)])
     return union(rect(0, 0, S, 700), bowl, leg)
-
 
 @glyph("S", 580)
 def _S():
@@ -273,45 +313,59 @@ def _S():
     return union(up, lo)
 
 
-@glyph("T", 600, 30)
+@glyph("T", 620, 25)
 def _T():
-    return union(rect(235, 0, 365, 700), poly([(0, 700), (600, 700), (600 - C, 700 - B), (C, 700 - B)]))
-
+    """T bông lúa: hai thân song song tách ra ở đỉnh, như chữ T giữa logo."""
+    h = GAP / 2
+    def half():
+        p = pathops.Path()
+        p.moveTo(310 - h, 0)
+        p.lineTo(310 - h - 118, 0)
+        p.lineTo(310 - h - 118, 440)
+        p.cubicTo(310 - h - 118, 590, 150, 612, 0, 628)
+        p.lineTo(0, 700)
+        p.lineTo(310 - h, 700)
+        p.close()
+        return p
+    left = half()
+    right = pathops.Path()
+    left.draw(_Mirror(right, 620))
+    return union(left, right)
 
 @glyph("U", 630)
 def _U():
-    return diff(rrect(0, 0, 630, 700, (0, 0, 250, 250)),
+    return diff(union(rrect(0, 0, 630, 640, (0, 0, 250, 250)), stem(0, S), stem(630 - S, 630)),
                 rrect(S, B, 630 - S, 760, (0, 0, 120, 120)))
-
 
 @glyph("V", 660, 20)
 def _V():
-    return poly([(0, 700), (150, 700), (330, 180), (510, 700), (660, 700), (400, 0), (260, 0)])
-
+    return over(poly([(0, 700), (150, 700), (405, 0), (255, 0)]),
+                poly([(510, 700), (660, 700), (405, 0), (255, 0)]))
 
 @glyph("W", 900, 20)
 def _W():
-    return poly([(0, 700), (140, 700), (250, 220), (390, 700), (510, 700), (650, 220),
-                 (760, 700), (900, 700), (720, 0), (580, 0), (450, 470), (320, 0), (180, 0)])
-
+    s1 = poly([(0, 700), (140, 700), (320, 0), (180, 0)])
+    s2 = poly([(180, 0), (320, 0), (510, 700), (390, 700)])
+    s3 = poly([(390, 700), (510, 700), (720, 0), (580, 0)])
+    s4 = poly([(580, 0), (720, 0), (900, 700), (760, 700)])
+    acc = over(s1, s2)
+    acc = over(s3, acc)
+    return over(acc, s4)
 
 @glyph("X", 640, 20)
 def _X():
-    return union(poly([(0, 700), (155, 700), (640, 0), (485, 0)]),
-                 poly([(485, 700), (640, 700), (155, 0), (0, 0)]))
-
+    return over(poly([(0, 700), (155, 700), (640, 0), (485, 0)]),
+                poly([(485, 700), (640, 700), (155, 0), (0, 0)]))
 
 @glyph("Y", 640, 20)
 def _Y():
     return union(poly([(0, 700), (155, 700), (320, 440), (485, 700), (640, 700), (385, 300), (255, 300)]),
                  rect(255, 0, 385, 330))
 
-
 @glyph("Z", 580, 30)
 def _Z():
     return union(arm_l(0, 700 - B, 580, 700), poly([(420, 582), (580, 582), (160, B), (0, B)]),
                  arm_r(0, 0, 580, B))
-
 
 @glyph("Dcroat", 680)
 def _Dcroat():
@@ -322,13 +376,11 @@ def _Dcroat():
 # ---------- số ----------
 @glyph("zero", 560)
 def _0():
-    return ring(0, 0, 560, 700, 230, 110)
-
+    return diff(ring(0, 0, 560, 700, 230, 110), seam(114, 586, 135))
 
 @glyph("one", 560)
 def _1():
-    return union(rect(300, 0, 430, 700), poly([(110, 560), (300, 700), (430, 700), (170, 450)]))
-
+    return over(poly([(110, 560), (300, 700), (430, 700), (170, 450)]), stem(300, 430))
 
 @glyph("two", 560)
 def _2():
@@ -612,9 +664,9 @@ def build(out_dir):
     fb.setupHorizontalHeader(ascent=1100, descent=-300)
     fb.setupNameTable({
         "familyName": fam, "styleName": "Regular",
-        "uniqueFontIdentifier": "AnTamDisplay-Black-1.0",
+        "uniqueFontIdentifier": "AnTamDisplay-Black-2.0",
         "fullName": "An Tam Display Black", "psName": "AnTamDisplay-Black",
-        "version": "Version 1.000",
+        "version": "Version 2.000",
         "copyright": "© 2026 Công ty TNHH SX-TM Ẩm Thực An Tâm",
         "trademark": "Ẩm Thực An Tâm",
         "description": "Font tiêu đề chữ in hoa của Ẩm Thực An Tâm, đủ dấu tiếng Việt.",
