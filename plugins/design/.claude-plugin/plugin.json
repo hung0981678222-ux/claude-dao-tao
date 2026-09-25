@@ -1,7 +1,7 @@
 {
   "name": "design",
   "version": "1.2.0-company.1",
-  "description": "Plugin Design của Anthropic, tuỳ chỉnh cho An Tâm Foods (Công ty TNHH SX-TM Ẩm Thực An Tâm), bánh tortillas và Doner kebab tại TP.HCM: duyệt bài đăng, thực đơn, bao bì; viết chữ cho Zalo, Facebook, nhãn; quản lý bộ nhận diện; bàn giao cho nhà in; tổng hợp ý kiến khách hàng SMEs và đối tác nhượng quyền.",
+  "description": "Plugin Design của Anthropic, tuỳ chỉnh cho Ẩm Thực An Tâm (Công ty TNHH SX-TM Ẩm Thực An Tâm, antamfoods.com), bánh tortillas và Doner kebab tại TP.HCM: duyệt bài đăng, thực đơn, bao bì; viết chữ cho Zalo, Facebook, nhãn; quản lý bộ nhận diện; bàn giao cho nhà in; tổng hợp ý kiến khách hàng SMEs và đối tác nhượng quyền.",
   "author": {
     "name": "hung0981678222-ux"
   }
