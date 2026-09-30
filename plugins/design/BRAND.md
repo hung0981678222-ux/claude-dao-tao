@@ -57,7 +57,7 @@
 
 | Mục | Giá trị |
 |---|---|
-| Logo | [assets/logo-am-thuc-an-tam.jpg](assets/logo-am-thuc-an-tam.jpg): chữ A ruy băng đỏ ôm bông lúa vàng kim, tên và khẩu hiệu. JPG nền trắng: chỉ đặt trên nền trắng hoặc trong ô trắng. Không kéo méo, đổi màu, vẽ lại. **[Cần điền: file vector và bản trắng]** |
+| Logo | [assets/logo-am-thuc-an-tam.jpg](assets/logo-am-thuc-an-tam.jpg): chữ A ruy băng đỏ ôm bông lúa vàng kim, tên và khẩu hiệu. JPG nền trắng: chỉ đặt trên nền trắng hoặc trong ô trắng. Không kéo méo, đổi màu. Bản vector vẽ lại (đề xuất, chờ duyệt): [assets/logo-an-tam/](assets/logo-an-tam/) gồm logo ngang, dọc, con dấu tròn, biểu tượng, cả bản trên nền đỏ. |
 | Màu chính (60%) | Đỏ ruy băng của logo `#D7150E` (khoảng C0 M90 Y93 K16), đỏ chữ logo `#BE0A0E`, đỏ đậm `#8C0F14` |
 | Trắng (30%) | Trắng `#FFFFFF`, trắng bột `#FBF3E6` |
 | Vàng nhấn (10%) | Vàng kim của bông lúa `#EFAE35` (khoảng C0 M27 Y78 K6), vàng kim đậm `#B87018` cho vạch kẻ. Không đặt chữ vàng trên nền đỏ `#D7150E` |
