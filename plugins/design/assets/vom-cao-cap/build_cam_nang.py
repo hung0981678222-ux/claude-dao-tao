@@ -43,12 +43,10 @@ def sprite():
 <symbol id="badge" viewBox="0 0 170 230"><path d="M0,230 V85 a85,85 0 0 1 170,0 V230 Z" fill="var(--bb,{RED})"/>
  <path d="M9,221 V85 a76,76 0 0 1 152,0 V221 Z" fill="none" stroke="var(--hat,{GOLD})" stroke-width="1.4"/>
  <use href="#a" x="47" y="72" width="76" height="128" style="color:var(--ba,{IVORY})"/></symbol>
-<symbol id="stack" viewBox="0 -30 494 208"><use href="#wm" x="0" y="-27" width="494" height="128"/>
- <path d="M0,161 H132 M362,161 H494" stroke="currentColor" stroke-width="1.3" opacity=".55"/>
- <use href="#amt" x="152" y="140" width="189.6" height="36.8"/></symbol>
+<symbol id="stack" viewBox="0 -48 494 150"><path fill="currentColor" d="{g['wm']}"/><path fill="var(--hat,{GOLD})" d="{g['wm_hat']}"/><path fill="currentColor" d="{g['top']}"/></symbol>
 <symbol id="horiz" viewBox="0 0 795 230"><use href="#badge" x="0" y="0" width="170" height="230"/>
  <path d="M212,46 V184" stroke="currentColor" stroke-width="1.3" opacity=".4"/>
- <use href="#stack" x="252" y="0" width="543" height="229"/></symbol>
+ <use href="#stack" x="252" y="32.5" width="543" height="164.9"/></symbol>
 <filter id="noise"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .09 0"/><feComposite in2="SourceGraphic" operator="in"/></filter>
 <filter id="soft" x="-20%" y="-20%" width="140%" height="160%"><feGaussianBlur stdDeviation="14"/></filter>
 </defs></svg>"""
@@ -56,7 +54,7 @@ def sprite():
 
 def use(sym, cls="", style="", label="Ẩm Thực An Tâm"):
     vb = {"wm": "0 -27 494 128", "amt": "0 -38 237 46", "a": "-2 -27 76 128", "badge": "0 0 170 230",
-          "stack": "0 -30 494 208", "horiz": "0 0 795 230"}[sym]
+          "stack": "0 -48 494 150", "horiz": "0 0 795 230"}[sym]
     x, y, w, h = vb.split()
     return (f'<svg class="{sym} {cls}" viewBox="{vb}" style="{style}" role="img" aria-label="{label}">'
             f'<use href="#{sym}" x="{x}" y="{y}" width="{w}" height="{h}"/></svg>')
@@ -82,7 +80,8 @@ def construction():
     for y, t in [(-1.6, "vượt đỉnh 1,6"), (0, "đỉnh chữ 0"), (64, "thanh ngang 64"), (100, "chân chữ 100"), (-10.6, ""), (-25.6, "dấu mũ")]:
         L.append(f'<line x1="-30" x2="524" y1="{y}" y2="{y}" stroke="{RED}" stroke-width=".35" stroke-dasharray="{"2 2" if t != "chân chữ 100" else "0"}" opacity=".8"/>')
         if t:
-            L.append(f'<text x="530" y="{y + 1.6}" class="cx">{t}</text>')
+            ly = {"vượt đỉnh 1,6": -5, "đỉnh chữ 0": 5}.get(t, y + 1.6)
+            L.append(f'<text x="530" y="{ly}" class="cx">{t}</text>')
     for x0, x1, _ in xs:
         L.append(f'<rect x="{x0}" y="-1.6" width="{x1 - x0}" height="101.6" fill="none" stroke="{MUTED}" stroke-width=".3"/>')
     for i in range(len(xs) - 1):
@@ -95,8 +94,10 @@ def construction():
         L.append(f'<circle cx="{x0 + 36}" cy="34.4" r="1.2" fill="{RED}"/>')
     L.append(f'<circle cx="346" cy="-10.6" r="15" fill="none" stroke="{RED}" stroke-width=".45" stroke-dasharray="1.5 1.5"/>')
     L.append(f'<path d="M96,40 h11" stroke="{RED}" stroke-width=".5"/><text x="101.5" y="36" class="cx" text-anchor="middle">x = 11</text>')
-    return (f'<svg class="cons" viewBox="-34 -44 640 172" role="img" aria-label="Lưới dựng chữ AN TÂM">'
-            f'<path fill="{INK}" d="{g["wm"]}"/><path fill="{GOLD}" d="{g["wm_hat"]}"/>{"".join(L)}</svg>')
+    return (f'<svg class="cons" viewBox="-34 -64 640 192" role="img" aria-label="Lưới dựng chữ AN TÂM">'
+            f'<path fill="{INK}" d="{g["wm"]}"/><path fill="{GOLD}" d="{g["wm_hat"]}"/><path fill="{INK}" d="{g["top"]}"/>'
+            f'<path d="M0,-50 V100 M286,-50 V100" stroke="{GOLD}" stroke-width=".5" stroke-dasharray="2 2"/>'
+            f'<text x="143" y="-52" class="cx" text-anchor="middle">ẨM THỰC giãn đúng bề ngang A N T · 286</text>{"".join(L)}</svg>')
 
 
 # ---------- hoạ tiết ----------
@@ -143,7 +144,7 @@ def bag_svg():
 <path d="M150,170 L400,170 L400,200 L150,200 Z" fill="#000" opacity=".06"/>
 <path d="M230,176 C230,90 320,90 320,176" fill="none" stroke="#A07A52" stroke-width="7" stroke-linecap="round"/>
 <g style="color:{RED}"><use href="#badge" x="232" y="250" width="86" height="116.4"/></g>
-<use href="#stack" x="190" y="390" width="170" height="71.6" style="color:{INK};--hat:{RED}"/>
+<use href="#stack" x="190" y="395" width="170" height="51.6" style="color:{INK};--hat:{RED}"/>
 <text x="275" y="560" text-anchor="middle" class="mk-t" fill="{INK}" opacity=".7">ANTAMFOODS.COM</text>
 <rect x="150" y="170" width="320" height="430" filter="url(#noise)" fill="#fff"/>
 </svg>"""
@@ -162,7 +163,7 @@ def pack_svg():
 <path d="M221,474 V330 a79,79 0 0 1 158,0 V474 Z" fill="none" stroke="{GOLD}" stroke-width="1.5"/>
 <path d="M225,470 V330 a75,75 0 0 1 150,0 V470 Z" fill="#F4E6C8"/>
 <image href="{ill('banh-tortillas')}" x="215" y="330" width="170" height="170" clip-path="url(#win)"/>
-<use href="#stack" x="205" y="130" width="190" height="80" style="color:{INK};--hat:{RED}"/>
+<use href="#stack" x="205" y="140" width="190" height="57.7" style="color:{INK};--hat:{RED}"/>
 <text x="300" y="530" text-anchor="middle" class="mk-t" fill="{IVORY}" style="letter-spacing:.32em;font-size:15px">BÁNH TORTILLAS</text>
 <text x="300" y="560" text-anchor="middle" class="mk-t" fill="{IVORY}" opacity=".7" style="font-size:10px">[Cần điền: khối lượng, hạn dùng]</text>
 <rect x="128" y="62" width="344" height="556" filter="url(#noise)" fill="#fff"/>
@@ -225,7 +226,7 @@ def phone_html():
   {"".join(f'<path d="M{540 - w},1350 V{900 - w} a{w},{w} 0 0 1 {2 * w},0 V1350" fill="none" stroke="{IVORY}" stroke-width="3" opacity="{.18 + i * .1:.2f}"/>' for i, w in enumerate([520, 440, 360]))}
   <path d="M290,1350 V770 a250,250 0 0 1 500,0 V1350 Z" fill="{IVORY}"/>
   <image href="{ill('doner-cuon')}" x="330" y="720" width="420" height="420"/>
-  <use href="#stack" x="300" y="110" width="480" height="202" style="color:{IVORY}"/>
+  <use href="#stack" x="300" y="140" width="480" height="145.7" style="color:{IVORY}"/>
   <text x="540" y="430" text-anchor="middle" fill="{IVORY}" style="font:300 70px 'BVP',sans-serif;letter-spacing:-.02em">Bữa nhẹ văn phòng,</text>
   <text x="540" y="510" text-anchor="middle" fill="{IVORY}" style="font:600 70px 'BVP',sans-serif;letter-spacing:-.02em">giao tận nơi.</text>
  </svg></div>
@@ -495,7 +496,7 @@ def page():
     busy = ill("nguyen-lieu")
     donts = "".join(
         f'<figure>{f"<div class=busy style=background-image:url({busy})></div>" if "busy" in s else ""}'
-        f'<svg class="stack" viewBox="0 -30 494 208" {s if "busy" not in s else ""} aria-hidden="true"><use href="#stack" x="0" y="-30" width="494" height="208"/></svg>'
+        f'<svg class="stack" viewBox="0 -48 494 150" {s if "busy" not in s else ""} aria-hidden="true"><use href="#stack" x="0" y="-48" width="494" height="150"/></svg>'
         f'<figcaption>{t}</figcaption></figure>'
         for t, s in MISUSE)
     # sửa: style trên svg phải gộp với position
@@ -525,7 +526,7 @@ def page():
 
 <section class="page paper"><div class="w">
  {page_head(2, "Logo chính")}
- <div class="head"><h2>Logo <strong>chính</strong></h2><p>Chữ AN TÂM vẽ riêng: nét mảnh đều, khoảng chữ rộng, hai chữ A là mái vòm. Dòng ẨM THỰC đặt dưới, kẹp giữa hai đường kẻ. Dấu mũ in vàng lúa.</p></div>
+ <div class="head"><h2>Logo <strong>chính</strong></h2><p>Chữ AN TÂM vẽ riêng: nét mảnh đều, khoảng chữ rộng, hai chữ A là mái vòm. Dòng ẨM THỰC đặt trên đầu chữ AN và chữ T, giãn đều đúng bằng bề ngang ba chữ này, ngang hàng với dấu mũ. Dấu mũ in vàng lúa.</p></div>
  <div class="hero-logo"><span class="corner tl">Bản đứng · dùng chính</span><span class="corner br">Mực trên kem</span>{use("stack")}</div>
 </div></section>
 
@@ -536,7 +537,7 @@ def page():
  <div class="spec3">
   <div><h3>Vòm đồng tâm</h3><p>Vòm ngoài bán kính 36, vòm trong 25. Lòng chữ A là một ô cửa vòm thu nhỏ.</p></div>
   <div><h3>Khoảng chữ 24, khoảng từ 54</h3><p>Khoảng chữ rộng hơn chữ thường, tạo cảm giác thong thả, cao cấp. Không co giãn khoảng chữ.</p></div>
-  <div><h3>Dấu mũ bán kính 15</h3><p>Cách đỉnh chữ 9 đơn vị. Luôn là nửa hình tròn, cạnh phẳng nằm dưới.</p></div>
+  <div><h3>Dấu mũ và dòng ẨM THỰC</h3><p>Dấu mũ bán kính 15, cách đỉnh chữ 9. Dòng ẨM THỰC cao 19, chân chữ cách đỉnh AN T 15 đơn vị, giãn đều từ mép chữ A tới mép chữ T.</p></div>
  </div>
 </div></section>
 

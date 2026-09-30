@@ -119,7 +119,7 @@ def mark():
 
 
 # ---------- ẨM THỰC từ font thật ----------
-def font_line(text, weight=500, track_em=0.42, cap_target=24.0):
+def font_line(text, weight=500, track_em=0.42, cap_target=24.0, y0=0.0):
     fonts = [TTFont(os.path.join(HERE, f"be-vietnam-pro/files/be-vietnam-pro-{s}-{weight}-normal.woff2"))
              for s in ("latin", "vietnamese", "latin-ext")]
     upm = fonts[0]["head"].unitsPerEm
@@ -135,11 +135,22 @@ def font_line(text, weight=500, track_em=0.42, cap_target=24.0):
                 break
         gs = f.getGlyphSet()
         gp = P()
-        gs[gname].draw(TransformPen(gp.getPen(), (sc, 0, 0, -sc, x, 0)))
+        gs[gname].draw(TransformPen(gp.getPen(), (sc, 0, 0, -sc, x, y0)))
         out = U_(out, gp) if len(list(out)) else gp
         x += f["hmtx"][gname][0] * sc + track_em * upm * sc
     x -= track_em * upm * sc
     return out, x, cap_target
+
+
+TOP_CAP, TOP_GAP = 19.0, 15.0
+
+
+def font_line_fit(text, width, cap, y0):
+    """ẨM THỰC giãn đều cho vừa đúng bề ngang width (từ mép trái chữ A tới mép phải chữ T)."""
+    _, w0, _ = font_line(text, track_em=0.0, cap_target=cap)
+    _, w1, _ = font_line(text, track_em=0.1, cap_target=cap)
+    per = (w1 - w0) / 0.1
+    return font_line(text, track_em=(width - w0) / per, cap_target=cap, y0=y0)
 
 
 def d(path):
@@ -155,7 +166,9 @@ if __name__ == "__main__":
     wl, wh, ww = wordmark()
     ml, mh, mw = mark()
     at, atw, atc = font_line("ẨM THỰC")
-    out = {"wm": d(wl), "wm_hat": d(wh), "wm_w": ww, "wm_bounds": bounds(U_(wl, wh)),
+    t_right = 220 + 66   # mép phải chữ T (xem hàm wordmark: A 72, N 70, T 66, khoảng 24/54)
+    top, topw, _ = font_line_fit("ẨM THỰC", t_right, TOP_CAP, -TOP_GAP)
+    out = {"wm": d(wl), "top": d(top), "top_w": topw, "top_bounds": bounds(top), "wm_hat": d(wh), "wm_w": ww, "wm_bounds": bounds(U_(wl, wh)),
            "mk": d(ml), "mk_hat": d(mh), "mk_w": mw,
            "amt": d(at), "amt_w": atw, "amt_bounds": bounds(at),
            "S": S, "H": H, "TRACK": TRACK, "HAT_R": HAT_R}
