@@ -1,7 +1,11 @@
-"""Trang so sánh 6 font mới của An Tâm (dấu mũ là chiếc bánh). Chạy: python3 build_font_moi.py OUT.html"""
+"""Trang so sánh các font mới của An Tâm (dấu mũ là chiếc bánh). Chạy: python3 build_font_moi.py OUT.html"""
 import base64
 import os
 import sys
+
+from functools import lru_cache
+
+from fontTools.ttLib import TTFont
 
 import bac_thang as BT
 import make_fonts_multi as M
@@ -18,7 +22,23 @@ MOOD = {
     "Baloo": (HONG, CH, CH2, "Ăn vặt, combo, khuyến mãi"),
     "Grandstander": (DEN, BO, HONG, "Story, sticker, ly và túi"),
     "Dela": (CH2, HONG, BO, "Tiêu đề lớn, băng rôn, xe giao hàng"),
+    "Unbounded": (DEN, KEM, CH, "Bao bì cao cấp, website, ứng dụng"),
+    "Playfair": (KEM, DEN, CH, "Hộp quà, thực đơn nhà hàng, hồ sơ đối tác"),
+    "Pacifico": (CH, KEM, BO, "Biển quán, ly, túi, mạng xã hội"),
+    "Bungee": (BO, CH, DEN, "Biển hiệu, xe đẩy, quầy kiosk"),
+    "Phudu": (HONG, DEN, CH, "Bảng giá, thùng hàng, tài liệu đại lý"),
+    "Paytone": (KEM, CH, CH2, "Logo thân thiện, tem nhãn, combo"),
+    "Sigmar": (CH2, BO, HONG, "Khuyến mãi, sticker, poster vui"),
 }
+NEW = {"Unbounded", "Playfair", "Pacifico", "Bungee", "Phudu", "Paytone", "Sigmar"}
+
+
+@lru_cache(None)
+def k_of(n):
+    """Hệ số cỡ chữ để chữ "an tâm" của mỗi font rộng gần bằng nhau."""
+    f = TTFont(os.path.join(FM, f"{M.FONTS[n][1]}.ttf")); cm = f.getBestCmap(); hm = f["hmtx"]
+    w = sum(hm[cm[ord(c)]][0] for c in "an tâm") / f["head"].unitsPerEm
+    return round(max(.55, min(1.15, 2.6 / w)), 2)
 
 
 def b64(p, mime):
@@ -31,7 +51,7 @@ def faces():
 
 
 def stair(n, fg, side, hi):
-    s = BT.stairs(["ẩm thực", "an tâm", "tận tâm"], fg, side=side, hi=hi, hi_idx=(1,), style=os.path.join(FM, f"{M.FONTS[n][1]}.ttf"), label=f"Chữ bậc thang font An Tam {n}")
+    s = BT.stairs(["ẩm thực", "an tâm", "tận tâm"], fg, side=side, hi=hi, hi_idx=(1,), style=os.path.join(FM, f"{M.FONTS[n][1]}.ttf"), label=f"Chữ bậc thang font An Tam {n}", pad=60 if n == "Pacifico" else 30)
     return s
 
 
@@ -62,6 +82,11 @@ body{background:var(--kem);color:var(--den);font:16px/1.5 system-ui,-apple-syste
 .meta b{font:600 13px system-ui;border:1.5px solid currentColor;border-radius:999px;padding:6px 12px}
 .st{border-radius:28px;background:#ffffff14;padding:18px}
 .st>svg{display:block;width:100%;height:auto}
+.num .new{background:var(--ac);color:var(--bg);border-radius:999px;padding:3px 8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-top:28px}
+.grid a{border-radius:20px;padding:14px 16px;text-decoration:none;display:flex;flex-direction:column;gap:4px;min-width:0;overflow:hidden}
+.grid i{font:700 12px system-ui;font-style:normal;opacity:.75}.grid b{font:600 12px system-ui;opacity:.8}
+.grid span{line-height:1.25;white-space:nowrap}
 .end{padding:56px 24px 72px;text-align:center}
 .end h2{font:400 clamp(34px,5vw,60px)/1 'An Tam Bricolage';color:var(--ch)}
 .end p{max-width:620px;margin:14px auto 0}
@@ -73,9 +98,9 @@ def card(i, n):
     bg, fg, ac, use = MOOD[n]
     fam = f"'An Tam {n}'"
     side = BT.shade(fg if fg != KEM else "#E8D9C6", .8)
-    return f"""<section class="f" id="f-{n.lower()}" style="--bg:{bg};--fg:{fg};--ac:{ac};--k:{ {"Dela": .62, "Grandstander": .85, "Baloo": .95}.get(n, 1)}">
+    return f"""<section class="f" id="f-{n.lower()}" style="--bg:{bg};--fg:{fg};--ac:{ac};--k:{k_of(n)}">
 <div class="in"><div style="font-family:{fam}">
-<div class="num" style="font-family:system-ui">Phương án {i:02d} · An Tâm {n}</div>
+<div class="num" style="font-family:system-ui">Phương án {i:02d} · An Tâm {n}{' · <span class="new">Mới</span>' if n in NEW else ''}</div>
 <div class="big t-live">an t<span>â</span>m</div>
 <div class="cap">ĂN LÀ AN TÂM</div>
 <div class="sen">Bánh tortilla mềm, taco giòn, doner kebab đậm vị — giao tận bếp mỗi sáng.</div>
@@ -87,6 +112,7 @@ def card(i, n):
 def page():
     names = list(M.FONTS)
     jump = "".join(f'<a href="#f-{n.lower()}">{i + 1:02d} {n}</a>' for i, n in enumerate(names))
+    grid = "".join(f'<a href="#f-{n.lower()}" style="background:{MOOD[n][0]};color:{MOOD[n][1]}"><i>{i + 1:02d}</i><span style="font-family:\'An Tam {n}\';font-size:{k_of(n) * 46:.0f}px">an tâm</span><b>{n}</b></a>' for i, n in enumerate(names))
     cards = "\n".join(card(i + 1, n) for i, n in enumerate(names))
     js = """<script>
 const inp=document.getElementById('t'),bigs=[...document.querySelectorAll('.t-live')],orig=bigs.map(b=>b.innerHTML);
@@ -97,11 +123,12 @@ inp.addEventListener('input',run);document.getElementById('r').onclick=()=>{inp.
 </script>"""
     return f"""<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Font Mới An Tâm</title><style>{faces()}\n{CSS}</style></head><body>
-<header class="top"><h1>6 font mới<br>cho an tâm</h1>
-<p>Sáu khung chữ khác hẳn nhau, cùng một nét riêng: mọi dấu mũ (â ê ô) là chiếc bánh vòm có đốm nướng. Đủ tiếng Việt, dùng được cho logo, bao bì, biển hiệu và chữ bậc thang. Gõ thử chữ của bạn ở thanh bên dưới.</p></header>
+<header class="top"><h1>{len(names)} font mới<br>cho an tâm</h1>
+<p>{len(names)} khung chữ khác hẳn nhau, cùng một nét riêng: mọi dấu mũ (â ê ô) là chiếc bánh vòm có đốm nướng. Đủ tiếng Việt, dùng được cho logo, bao bì, biển hiệu và chữ bậc thang. Gõ thử chữ của bạn ở thanh bên dưới. Phương án 07–{len(names):02d} là phần mới thêm.</p>
+<div class="grid">{grid}</div></header>
 <div class="bar"><label for="t">Gõ thử</label><input id="t" type="text" placeholder="an tâm" maxlength="40"><button id="r" type="button">Về mặc định</button><nav class="jump">{jump}</nav></div>
 {cards}
-<footer class="end"><h2>Chọn một số từ 01 đến 06</h2><p>Sau khi chọn, toàn bộ logo, chữ bậc thang, bộ nhận diện và trang trình chiếu sẽ dựng lại bằng font đó. Các font dựng từ khung chữ mã nguồn mở SIL OFL, đã đổi tên riêng cho An Tâm.</p></footer>
+<footer class="end"><h2>Chọn một số từ 01 đến {len(names):02d}</h2><p>Sau khi chọn, toàn bộ logo, chữ bậc thang, bộ nhận diện và trang trình chiếu sẽ dựng lại bằng font đó. Các font dựng từ khung chữ mã nguồn mở SIL OFL, đã đổi tên riêng cho An Tâm.</p></footer>
 {js}</body></html>"""
 
 
