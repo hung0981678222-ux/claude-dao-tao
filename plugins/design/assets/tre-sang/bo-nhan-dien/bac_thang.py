@@ -14,7 +14,7 @@ C, S = math.cos(math.pi / 6), math.sin(math.pi / 6)
 
 @lru_cache(None)
 def _font(style):
-    f = TTFont(os.path.join(HERE, f"AnTamSans-{style}.ttf"))
+    f = TTFont(style if style.endswith(".ttf") else os.path.join(HERE, f"AnTamSans-{style}.ttf"))
     gs = f.getGlyphSet(); cmap = f.getBestCmap()
     return f, gs, cmap, f["OS/2"].sCapHeight or 700
 
