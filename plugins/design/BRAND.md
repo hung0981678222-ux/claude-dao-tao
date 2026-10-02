@@ -75,6 +75,7 @@
 | Font | **An Tâm Tròn Bánh** (tên cài "An Tam Tron Banh"), dựng từ Baloo 2, giấy phép SIL OFL. Dấu mũ â ê ô là ba đường vân tay, dấu chấm là vòng xoáy vân tay, góc bo như mực loang. ExtraBold: logo, tiêu đề. SemiBold: tiêu đề phụ, nhãn, bảng giá. Regular: đoạn văn. Bộ cài: [assets/diem-chi/AnTamTronBanh.zip](assets/diem-chi/AnTamTronBanh.zip) (kèm hướng dẫn cài). Font thay thế khi không cài được: Baloo 2 |
 | Cỡ chữ | Tiêu đề lớn in 48–72 pt / số 48–64 px; tiêu đề 24–36 pt / 28–36 px; tiêu đề phụ 14–18 pt / 20–22 px; nội dung 9–11 pt / 16 px; chú thích 7–8 pt / 13 px. Chữ hoa nhỏ giãn chữ +20% |
 | Hoạ tiết | Nền đường vân (Đỏ An Tâm + Đỏ son), dấu vân tay rời, dấu tròn. Mỗi ấn phẩm tối đa một vân tay lớn. Không đặt chữ nhỏ trực tiếp trên nền đường vân |
+| Kho ảnh thật | Ảnh, video thật và ảnh sản phẩm: https://drive.google.com/drive/folders/1faO0hyZNPXgOjZmp6rSj8qp4vHBsMZR2 |
 | Ảnh | Ảnh thật: tay người làm bánh, bánh vừa ra lò, món ăn ở quán đối tác. Ánh sáng ấm, nền gỗ, kraft hoặc kem. Không lọc màu lạnh, không dùng ảnh mạng không rõ quyền |
 | Khổ chuẩn | Bài đăng 1080×1350 (lề 72 px); story 1080×1920; báo giá A4 (lề 15 mm); danh thiếp 90×54 mm (xén 2 mm); phiếu giao hàng A5; tem tròn Ø 40 mm |
 | Thư mục mẫu (Canva, Google Drive) | **[Cần điền]** |
