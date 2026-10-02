@@ -6,6 +6,11 @@ import sys
 
 import logo_van as V
 
+# Font đã chọn: phương án 04 Tròn Bánh – Chấm Vân, dấu mũ vân tay thấp
+V.F["xb"] = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fonts-tron", "AnTamTronChamNgan.ttf")
+V.F["md"] = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fonts-tron", "AnTamTronChamNganVua.ttf")
+V._f.cache_clear()
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 MH = "/home/user/claude-dao-tao/plugins/design/assets/minh-hoa"
 DO, DO2, SON, KEM, GIAY, MUC, NGO = V.DO, V.DO2, V.SON, V.KEM, V.GIAY, V.MUC, V.NGO
@@ -16,7 +21,7 @@ def b64(p, mime):
 
 
 def faces():
-    return "\n".join(f"@font-face{{font-family:'An Tam Van';font-weight:{w};font-display:swap;src:url({b64(os.path.join(HERE, 'fonts-van', f'AnTamVan-{n}.woff2'), 'font/woff2')}) format('woff2')}}" for n, w in (("ExtraBold", 800), ("Medium", 500)))
+    return "\n".join(f"@font-face{{font-family:'An Tam Van';font-weight:{w};font-display:swap;src:url({b64(os.path.join(HERE, 'fonts-tron', f'AnTamTron{n}.woff2'), 'font/woff2')}) format('woff2')}}" for n, w in (("ChamNgan", 800), ("ChamNganVua", 500)))
 
 
 def place(svg, x, y, w, h):
@@ -165,11 +170,11 @@ bs.forEach(b=>b.addEventListener('click',()=>{bs.forEach(x=>x.setAttribute('aria
 <p>Người Việt lăn tay điểm chỉ bằng son đỏ khi cam kết điều quan trọng. Ẩm Thực An Tâm lấy dấu vân tay son làm biểu tượng: mỗi mẻ bánh có người làm thật, chịu trách nhiệm thật. Các đường vân tròn cũng gợi chiếc bánh tortilla – và chính chúng trở thành dấu mũ trong font chữ riêng của thương hiệu.</p></div>
 <div class="card">{V.logo_dung()}</div></div></header>
 
-<section class="s"><div class="num">01 · Font thương hiệu</div><h2>An Tâm Vân</h2><p class="lead">Font riêng dựng từ Be Vietnam Pro (khung chữ do nhóm tác giả Việt thiết kế, SIL OFL), thêm hai nét chỉ An Tâm có: <b>dấu mũ â ê ô là ba đường vân tay lồng nhau</b>, và <b>mọi góc chữ được bo nhẹ như mực son loang</b> khi điểm chỉ – chữ trông ấm, mềm, không lạnh như chữ máy. Hai độ đậm: ExtraBold cho tiêu đề, Medium cho nội dung. Đủ dấu tiếng Việt.</p>
-<div class="card"><div class="tester"><input id="t" placeholder="Gõ thử chữ của bạn…" maxlength="60" aria-label="Gõ thử font An Tâm Vân"><button type="button" data-w="800" aria-pressed="true">ExtraBold</button><button type="button" data-w="500" aria-pressed="false">Medium</button></div>
+<section class="s"><div class="num">01 · Font thương hiệu</div><h2>An Tâm Tròn Bánh</h2><p class="lead">Font riêng dựng từ Baloo 2 (SIL OFL) – chữ tròn đầy như chiếc bánh, thêm ba nét chỉ An Tâm có: <b>dấu mũ â ê ô là ba đường vân tay lồng nhau, dáng thấp gọn</b>; <b>mọi dấu chấm (i, j, dấu nặng, dấu câu) là vòng xoáy vân tay nhỏ</b>; và <b>góc chữ bo như mực son loang</b>. Hai độ đậm: ExtraBold cho tiêu đề, SemiBold cho nội dung. Đủ dấu tiếng Việt.</p>
+<div class="card"><div class="tester"><input id="t" placeholder="Gõ thử chữ của bạn…" maxlength="60" aria-label="Gõ thử font An Tâm Vân"><button type="button" data-w="800" aria-pressed="true">ExtraBold</button><button type="button" data-w="500" aria-pressed="false">SemiBold</button></div>
 <div class="big" id="o">Bánh nóng, giao tận bếp</div>
 <div class="mid" style="margin-top:10px">ẨM THỰC AN TÂM · Sản Phẩm Tận Tâm – Phát Triển Xứng Tầm · ấầẩẫậ ếềểễệ ốồổỗộ</div></div>
-<div class="zoom"><div class="card"><div class="gl">â</div><p class="cap">Dấu mũ: ba đường vân tay</p></div><div class="card"><div class="gl">Ê</div><p class="cap">Trên chữ hoa vẫn rõ dấu</p></div><div class="card"><div class="gl">ộ</div><p class="cap">Đi cùng dấu thanh tiếng Việt</p></div></div></section>
+<div class="zoom"><div class="card"><div class="gl">â</div><p class="cap">Dấu mũ: ba đường vân tay, dáng thấp</p></div><div class="card"><div class="gl">ị</div><p class="cap">Dấu chấm: vòng xoáy vân tay</p></div><div class="card"><div class="gl">ộ</div><p class="cap">Đi cùng dấu thanh tiếng Việt</p></div></div></section>
 
 <section class="s"><div class="num">02 · Logo</div><h2>Logo và phiên bản</h2><p class="lead">Bản ngang cho biển hiệu, xe, website; bản đứng cho bao bì; biểu tượng vân tay cho ảnh đại diện; dấu tròn "Cam kết từ tâm" để đóng lên phiếu, tem, hộp.</p>
 <div class="g g2"><div class="card">{V.logo_ngang()}<p class="cap">Bản ngang</p></div><div class="card d">{V.logo_ngang(KEM, KEM)}<p class="cap">Bản ngang – nền đỏ</p></div>

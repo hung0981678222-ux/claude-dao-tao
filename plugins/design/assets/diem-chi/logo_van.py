@@ -72,12 +72,12 @@ def logo_ngang(fg=DO, sub=MUC, bg=None, mark=None):
 
 
 def logo_dung(fg=DO, sub=MUC, bg=None, mark=None):
-    m = van_tay(0, -215, 86, mark or fg)
-    t0, _ = text("ẨM THỰC", 22, "xb", 0, -66, sub, "middle", .34)
+    m = van_tay(0, -185, 86, mark or fg)
+    t0, _ = text("ẨM THỰC", 22, "xb", 0, -34, sub, "middle", .34)
     t1, w1 = text("An Tâm", 124, "xb", 0, 72, fg, "middle", -.02)
     t2, w2 = text("Sản Phẩm Tận Tâm · Phát Triển Xứng Tầm", 17, "md", 0, 112, sub, "middle", .02)
     W = max(w1, w2) + 60
-    return svg((-W / 2, -335, W, 465), m + t0 + t1 + t2, "Logo đứng Ẩm Thực An Tâm", bg)
+    return svg((-W / 2, -305, W, 435), m + t0 + t1 + t2, "Logo đứng Ẩm Thực An Tâm", bg)
 
 
 def con_dau(fg=DO, ink=KEM):
