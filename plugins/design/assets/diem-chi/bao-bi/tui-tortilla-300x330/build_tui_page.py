@@ -22,14 +22,14 @@ CAN = ["Thành phần, thông tin dị ứng theo công thức thật", "Khối 
 
 def run(out):
     def fig(src, cap, cls=""):
-        return f'<figure class="it {cls}"><a href="{src}" target="_blank" rel="noopener"><img src="{src}" alt="{cap}"></a><figcaption>{cap}</figcaption></figure>'
+        return f'<figure class="it {cls}"><img src="{src}" alt="{cap}"><figcaption>{cap}</figcaption></figure>'
     spec = "".join(f"<tr><td>{a}</td><td>{b}</td></tr>" for a, b in SPEC)
     legend = "".join(f'<li><i style="background:{c}"></i>{t}</li>' for c, t in T.chu_thich())
     can = "".join(f"<li>{t}</li>" for t in CAN)
     dl = [("tui-tortilla-300x330-in.pdf", "PDF in 2 trang (306 × 336 mm, có tràn lề)"), ("tui-tortilla-mat-truoc.svg", "SVG mặt trước – mở bằng Illustrator"),
           ("tui-tortilla-mat-sau.svg", "SVG mặt sau – mở bằng Illustrator"), ("ky-thuat-mat-truoc.svg", "Bản kỹ thuật mặt trước"), ("ky-thuat-mat-sau.svg", "Bản kỹ thuật mặt sau"),
           ("mockup-tui.png", "Ảnh mô phỏng PNG")]
-    dls = "".join(f'<a class="dl" href="{f}" download>{t}<span>{f}</span></a>' for f, t in dl)
+    dls = "".join(f'<div class="dl">{t}<span>{f}</span></div>' for f, t in dl)
     css = C.CSS + """
 .it{background:#fff;border-radius:6px;padding:14px;margin:0}.it img{display:block;width:100%;height:auto}.it figcaption{font-size:14px;margin-top:10px;color:#4a3a36}
 .hero .mk{background:#EFE7DC;border-radius:6px;overflow:hidden}.hero .mk img{display:block;width:100%}
@@ -55,7 +55,7 @@ ul.can{margin:8px 0 0 20px}ul.can li{margin:4px 0}
 <section class="s" id="dien"><div class="num">04 · Trước khi in</div><h2>Những chỗ cần điền</h2>
 <div class="card"><p>Các ô <code>[ ]</code> trên túi là thông tin công ty phải điền đúng thực tế – tôi không tự đặt số liệu:</p><ul class="can">{can}</ul>
 <p class="cap">Đối chiếu nội dung nhãn với quy định ghi nhãn hàng hoá hiện hành, và xin nhà in bản in thử màu trước khi chạy số lượng.</p></div></section>
-<section class="s" id="tai"><div class="num">05 · Tải về</div><h2>Tệp</h2><div class="dls">{dls}</div></section>
+<section class="s" id="tai"><div class="num">05 · Tải về</div><h2>Tệp</h2><p class="lead">Các tệp nằm trong repo, thư mục <code>plugins/design/assets/diem-chi/bao-bi/tui-tortilla-300x330/</code>.</p><div class="dls">{dls}</div></section>
 <div class="end"><h2 style="color:var(--do);font-weight:800;font-size:clamp(28px,4vw,44px)">Sản Phẩm Tận Tâm – Phát Triển Xứng Tầm</h2></div>
 </body></html>"""
     open(os.path.join(out, "tui-tortilla.html"), "w").write(html)
