@@ -11,7 +11,7 @@ SPEC = [
     ("Kiểu túi (giả định)", "Túi 3 biên hàn, miệng zip – đối chiếu khuôn của nhà in"),
     ("Biên hàn", "10 mm hông & đáy; zip cách mép trên 35 mm; vết xé 25 mm"),
     ("Vùng an toàn chữ", "Cách mép cắt 15 mm, nằm dưới zip"),
-    ("Cửa sổ", "Tròn Ø108 mm, tâm cách mép trên 184 mm – không in mực, không lót trắng"),
+    ("Cửa sổ", "Tròn, không in mực, không lót trắng – A: Ø108 mm, tâm cách mép trên 184 mm; B: Ø90 mm, tâm cách mép trên 213 mm"),
     ("Màu", "Đỏ An Tâm #D2141E · Đỏ sẫm #8F0D14 · Kem #FFF6EA · Mực #231716 · lót trắng dưới toàn bộ trừ cửa sổ"),
     ("Chữ", "An Tam Tron Banh – đã chuyển nét, nhà in không cần cài font"),
     ("Vừa bánh", "Bánh Ø 10 inch (≈ 254 mm) vừa lòng túi 280 mm; bánh 12 inch (≈ 305 mm) không vừa"),
@@ -26,7 +26,7 @@ def run(out):
     spec = "".join(f"<tr><td>{a}</td><td>{b}</td></tr>" for a, b in SPEC)
     legend = "".join(f'<li><i style="background:{c}"></i>{t}</li>' for c, t in T.chu_thich())
     can = "".join(f"<li>{t}</li>" for t in CAN)
-    dl = [("tui-tortilla-300x330-in.pdf", "PDF in 2 trang (306 × 336 mm, có tràn lề)"), ("tui-tortilla-mat-truoc.svg", "SVG mặt trước – mở bằng Illustrator"),
+    dl = [("tui-an-tam-300x330-in.pdf", "Phương án B – PDF in 2 trang"), ("tui-an-tam-mat-truoc.svg", "Phương án B – SVG mặt trước"), ("tui-tortilla-300x330-in.pdf", "PDF in 2 trang (306 × 336 mm, có tràn lề)"), ("tui-tortilla-mat-truoc.svg", "SVG mặt trước – mở bằng Illustrator"),
           ("tui-tortilla-mat-sau.svg", "SVG mặt sau – mở bằng Illustrator"), ("ky-thuat-mat-truoc.svg", "Bản kỹ thuật mặt trước"), ("ky-thuat-mat-sau.svg", "Bản kỹ thuật mặt sau"),
           ("mockup-tui.png", "Ảnh mô phỏng PNG")]
     dls = "".join(f'<div class="dl">{t}<span>{f}</span></div>' for f, t in dl)
@@ -42,11 +42,13 @@ ul.can{margin:8px 0 0 20px}ul.can li{margin:4px 0}
 """
     html = f"""<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Túi Tortilla An Tâm</title><style>{C.faces()}\n{css}</style></head><body>
-<header class="hero"><div class="in"><div><div class="k">Bao bì · Túi 300 × 330 mm</div><h1>Túi bánh tortilla</h1>
-<p>Ý tưởng: <b>chiếc bánh là tâm của dấu vân tay</b>. Cửa sổ tròn để khách thấy bánh thật, quanh cửa sổ là các vòng vân tay son đỏ, như lời cam kết điểm chỉ lên từng mẻ bánh. Mặt sau đủ các mục ghi nhãn, ô in phun ngày và gợi ý dùng cho quán.</p></div>
-<div class="mk"><img src="mockup-tui.png" alt="Mô phỏng túi bánh tortilla mặt trước và mặt sau"></div></div></header>
-<nav class="toc"><a href="#in">File in</a><a href="#kt">Kỹ thuật</a><a href="#ts">Thông số</a><a href="#dien">Cần điền</a><a href="#tai">Tải về</a></nav>
-<section class="s" id="in"><div class="num">01 · File in</div><h2>Hai mặt túi</h2><p class="lead">Tỷ lệ 1 : 1 (đơn vị mm), đã gồm tràn lề 3 mm. Cửa sổ ở mặt trước để trống, không in mực.</p>
+<header class="hero"><div class="in"><div><div class="k">Bao bì · Túi 300 × 330 mm · Phương án B</div><h1>Túi bánh tortilla AN TÂM</h1>
+<p>Tên <b>AN TÂM</b> làm chủ mặt trước – chữ lớn kem trên nền đỏ, dấu mũ là vân tay, đọc được từ xa trên kệ. Bên dưới: <b>chiếc bánh là tâm của dấu vân tay</b>. Cửa sổ tròn để khách thấy bánh thật, quanh cửa sổ là các vòng vân tay son đỏ, như lời cam kết điểm chỉ lên từng mẻ bánh. Mặt sau đủ các mục ghi nhãn, ô in phun ngày và gợi ý dùng cho quán.</p></div>
+<div class="mk"><img src="mockup-an-tam.png" alt="Mô phỏng túi bánh tortilla mặt trước và mặt sau"></div></div></header>
+<nav class="toc"><a href="#b">Phương án B</a><a href="#in">Phương án A</a><a href="#kt">Kỹ thuật</a><a href="#ts">Thông số</a><a href="#dien">Cần điền</a><a href="#tai">Tải về</a></nav>
+<section class="s" id="b"><div class="num">Phương án B · Tên AN TÂM làm chủ</div><h2>Mặt trước mới</h2><p class="lead">Mặt sau giữ nguyên. File in: <code>tui-an-tam-mat-truoc.svg</code>, <code>tui-an-tam-mat-sau.svg</code>, PDF <code>tui-an-tam-300x330-in.pdf</code>.</p>
+<div class="g g2">{fig("tui-an-tam-mat-truoc.svg", "Phương án B – mặt trước: AN TÂM chữ lớn, cửa sổ Ø90 mm, nhãn BÁNH TORTILLA")}{fig("ky-thuat-an-tam-mat-truoc.svg", "Phương án B – bản kỹ thuật mặt trước")}</div></section>
+<section class="s" id="in"><div class="num">01 · Phương án A</div><h2>Hai mặt túi (bản trước)</h2><p class="lead">Tỷ lệ 1 : 1 (đơn vị mm), đã gồm tràn lề 3 mm. Cửa sổ ở mặt trước để trống, không in mực.</p>
 <div class="g g2">{fig("tui-tortilla-mat-truoc.svg", "Mặt trước – logo, cửa sổ nhìn bánh, tên sản phẩm, khối lượng tịnh")}{fig("tui-tortilla-mat-sau.svg", "Mặt sau – thông tin sản phẩm, gợi ý dùng, ô in phun, mã vạch, liên hệ")}</div></section>
 <section class="s" id="kt"><div class="num">02 · Kỹ thuật</div><h2>Đường cắt, biên hàn, vùng an toàn</h2>
 <div class="g g2">{fig("ky-thuat-mat-truoc.svg", "Mặt trước kèm chỉ dẫn")}{fig("ky-thuat-mat-sau.svg", "Mặt sau kèm chỉ dẫn")}</div>
