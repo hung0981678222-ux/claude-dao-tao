@@ -151,16 +151,17 @@ VARIANTS = {
     # bản đã chọn: Chấm Vân, dấu mũ thấp; hai độ đậm
     "ChamNgan": (None, True, "Chấm Vân, dấu mũ vân tay thấp – ExtraBold (tiêu đề, logo)"),
     "ChamNganVua": (None, True, "Chấm Vân, dấu mũ vân tay thấp – SemiBold (nội dung)"),
+    "ChamNganThuong": (None, True, "Chấm Vân, dấu mũ vân tay thấp – Regular (văn bản dài)"),
 }
-WEIGHT = {"ChamNganVua": 600}
+WEIGHT = {"ChamNganVua": 600, "ChamNganThuong": 400}
 
 if __name__ == "__main__":
     for name in (sys.argv[1:] or VARIANTS):
         groove, cham, _ = VARIANTS[name]
         M.dome = van_ngan if name.startswith("ChamNgan") else V.van
         files = F2.fs("baloo-2", WEIGHT.get(name, 800))
-        def proc(f, groove=groove, cham=cham):
-            k = V._process(f); V.mem_muc(f, 10)
+        def proc(f, groove=groove, cham=cham, name=name):
+            k = V._process(f); V.mem_muc(f, 8 if WEIGHT.get(name, 800) < 600 else 10)
             if groove or cham:
                 them_net(f, groove, cham)
             return k
