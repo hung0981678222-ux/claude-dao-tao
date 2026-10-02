@@ -9,10 +9,37 @@ import sys
 import build_van as B
 import fanpage_t10 as P
 
-V, T, place, doc, khung_anh, cham = P.V, P.T, P.place, P.doc, P.khung_anh, P.cham
+V, T, place, doc, cham = P.V, P.T, P.place, P.doc, P.cham
 DO, DO2, KEM, MUC, NGO = P.DO, P.DO2, P.KEM, P.MUC, P.NGO
 HOTLINE = "0398 431 300"
 SLOGAN = "Mỗi mẻ bánh, một lời cam kết"
+ANH_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "anh-that")
+# mô tả khung → (ảnh thật trong kho Drive, căn ảnh)
+ANH = {
+    "Chồng bánh tortilla tại xưởng An Tâm": ("xuong-gia-banh-1", "xMidYMid"),
+    "Dây chuyền tự động tại xưởng": ("xuong-gia-banh-2", "xMidYMid"),
+    "Dây chuyền: bột vào máy → ép → nướng": ("banh-tren-khay", "xMidYMax"),
+    "Đo đường kính · cân · gập thử": ("kiem-tra-banh", "xMidYMid"),
+}
+
+
+def _khung_anh(x, y, w, h, mo_ta, dark=False, r=18, cy=None, k=None):
+    """Có ảnh thật cho khung này thì đặt ảnh (cắt vừa khung), không thì để KHUNG ẢNH THẬT."""
+    if mo_ta not in ANH:
+        return P.khung_anh(x, y, w, h, mo_ta, dark, r, cy, k)
+    import base64
+    n, al = ANH[mo_ta]
+    data = base64.b64encode(open(os.path.join(ANH_DIR, n + ".jpg"), "rb").read()).decode()
+    cid = f"ca{x}{y}{w}"
+    s = (f'<clipPath id="{cid}"><rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{r}"/></clipPath>'
+         f'<image href="data:image/jpeg;base64,{data}" x="{x}" y="{y}" width="{w}" height="{h}" preserveAspectRatio="{al} slice" clip-path="url(#{cid})"/>')
+    tw = V.text("Ảnh thật tại xưởng An Tâm", 20, "xb")[1] + 64
+    s += f'<rect x="{x + 16}" y="{y + h - 56}" width="{tw}" height="40" rx="20" fill="{KEM}" opacity=".94"/>' + cham(x + 40, y + h - 36, 11, DO)
+    s += T("Ảnh thật tại xưởng An Tâm", 20, x + 58, y + h - 29, MUC, "xb")
+    return s
+
+
+khung_anh = _khung_anh
 SIZES = [("22", "Taco, quesadilla"), ("25", "Wrap gà, cuốn salad"), ("28", "Burrito, wrap thịt"), ("31", "Doner kebab cuốn, burrito lớn")]
 LOAI = "Tươi · Nướng · Nguyên cám"
 
@@ -171,7 +198,7 @@ REELS = [
 
 def all_items():
     """(bài, ngày, slug, svg, ghi chú ảnh thật cần có)"""
-    out = [("1. Ảnh – Chào bạn", "T2 05/10", "b01-0510-chao-ban", bai_0510(), "Chồng bánh tortilla tại xưởng")]
+    out = [("1. Ảnh – Chào bạn", "T2 05/10", "b01-0510-chao-ban", bai_0510(), "Ảnh thật: giá vỏ bánh tại xưởng")]
     r = {x[0]: x for x in REELS}
 
     def reel(idx, title, so):
@@ -193,7 +220,7 @@ def all_items():
     for i, (cm, _) in enumerate(SIZES):
         out.append(("4. Album bảng size", "T6 09/10", f"b04-0910-size-{i + 2}-{cm}cm", size_tam(i), f"Vỏ {cm} cm cạnh thước + món"))
     out += reel("b05", "5. Reel R3 – Mở tiệm Doner", "R3")
-    out.append(("6. Ảnh – Năng lực sản xuất", "T2 12/10", "b06-1210-nang-luc", nang_luc(), "Dây chuyền tự động"))
+    out.append(("6. Ảnh – Năng lực sản xuất", "T2 12/10", "b06-1210-nang-luc", nang_luc(), "Ảnh thật: hàng bánh trên giá"))
     out += reel("b07", "7. Reel R4 – Kiểm tra từng mẻ", "R4")
     out += reel("b08", "8. Reel R5 – 3 món từ 1 tortilla", "R5")
     out.append(("9. Ảnh – Khách nói gì", "T6 16/10", "b09-1610-khach-noi", khach_noi(), "Ảnh 3 quán đối tác + đánh giá thật"))
