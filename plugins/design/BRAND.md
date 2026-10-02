@@ -55,6 +55,8 @@
 
 ## Bộ nhận diện (Điểm Chỉ, phiên bản 1.0)
 
+> **Đã chốt: Điểm Chỉ là bộ nhận diện chính thức duy nhất.** Không dùng và không đề xuất lại các hướng thiết kế cũ.
+
 > Cẩm nang đầy đủ: https://claude.ai/artifact/JpR7wYCxTAG4Ch9Ujs4JJf (bản trong kho: [assets/diem-chi/cam-nang-nhan-dien.html](assets/diem-chi/cam-nang-nhan-dien.html)). Ý tưởng: dấu vân tay son đỏ, như người Việt điểm chỉ để cam kết. Câu thương hiệu: "Mỗi mẻ bánh, một lời cam kết".
 
 | Mục | Giá trị |
