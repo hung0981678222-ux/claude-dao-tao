@@ -39,7 +39,36 @@ def _khung_anh(x, y, w, h, mo_ta, dark=False, r=18, cy=None, k=None):
     return s
 
 
-khung_anh = _khung_anh
+AI = {"4 size vỏ bánh thật xếp cạnh nhau", "Wrap gà · taco · quesadilla", "Một ngày ở cửa hàng đối tác", "Góc máy cố định: tay cuốn kebab"} | {
+    f"Vỏ bánh {c} cm thật cạnh thước đo + món phù hợp" for c in ("22", "25", "28", "31")}
+HOLES = []      # khung chờ ảnh AI: (x, y, w, h, r) – để trống trong suốt, ghép ảnh trong Canva
+
+
+def _khung(x, y, w, h, mo_ta, dark=False, r=18, cy=None, k=None):
+    if mo_ta in AI:
+        HOLES.append((x, y, w, h, r))
+        return ""
+    return _khung_anh(x, y, w, h, mo_ta, dark, r, cy, k)
+
+
+LO = []        # (khung) theo thứ tự tạo bài – all_items() gắn vào slug
+
+
+def cat_lo(s):
+    """Khoét các khung ảnh AI thành vùng trong suốt + nhãn "Ảnh minh hoạ AI"."""
+    LO.append(list(HOLES))
+    if not HOLES:
+        return s
+    m = "".join(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{r}" fill="#000"/>' for x, y, w, h, r in HOLES)
+    out = f'<mask id="lo"><rect width="1080" height="1920" fill="#fff"/>{m}</mask><g mask="url(#lo)">{s}</g>'
+    for x, y, w, h, r in HOLES:
+        tw = V.text("Ảnh minh hoạ AI", 20, "xb")[1] + 40
+        out += f'<rect x="{x + 16}" y="{y + h - 56}" width="{tw}" height="40" rx="20" fill="{KEM}" opacity=".94"/>' + T("Ảnh minh hoạ AI", 20, x + 36, y + h - 29, MUC, "xb")
+    HOLES.clear()
+    return out
+
+
+khung_anh = _khung
 SIZES = [("22", "Taco, quesadilla"), ("25", "Wrap gà, cuốn salad"), ("28", "Burrito, wrap thịt"), ("31", "Doner kebab cuốn, burrito lớn")]
 LOAI = "Tươi · Nướng · Nguyên cám"
 
@@ -53,7 +82,7 @@ def khung(kicker, body, label, w=1080, h=1350):
     s += f'<rect y="{h - 96}" width="{w}" height="96" fill="{DO}"/>' + V.van_tay(78, h - 48, 26, KEM, seed=31, rings=7)
     s += T(SLOGAN, 27, 122, h - 38, KEM, "xb", maxw=420)
     s += T(f"Hotline/Zalo {HOTLINE}  ·  antamfoods.com", 25, w - 50, h - 38, KEM, "md", "end", maxw=470)
-    return doc(w, h, s, label)
+    return doc(w, h, cat_lo(s), label)
 
 
 def chip3(items, y, h=118, w=1080):
@@ -145,7 +174,7 @@ def bia_reel(so, ngay, lines, mo_ta):
     fy = cy0 + 290 + len(lines) * 86 - 40
     s += khung_anh(120, fy, 840, cy1 - 110 - fy, mo_ta, r=20)
     s += T(f"Hotline/Zalo {HOTLINE}  ·  antamfoods.com", 26, 540, cy1 - 44, MUC, "md", "middle")
-    return doc(1080, 1920, s, f"Bìa Reel {so}")
+    return doc(1080, 1920, cat_lo(s), f"Bìa Reel {so}")
 
 
 def the_ket():
@@ -230,7 +259,16 @@ def all_items():
 
 
 if __name__ == "__main__":
+    import json
     out = sys.argv[1]; os.makedirs(out, exist_ok=True)
+    lo = {}
     for _, _, slug, s, _ in all_items():
         open(os.path.join(out, slug + ".svg"), "w").write(s)
+        if 'mask="url(#lo)"' in s:
+            lo[slug] = None
+    # khớp thứ tự: mỗi lần cat_lo chạy ứng với một bài có khung (khung() hoặc bia_reel())
+    holes = [h for h in LO if h]
+    for k, h in zip(lo, holes):
+        lo[k] = h
+    json.dump(lo, open(os.path.join(out, "khung-ai.json"), "w"), ensure_ascii=False, indent=1)
     print(len(all_items()))
