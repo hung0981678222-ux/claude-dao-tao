@@ -80,4 +80,4 @@
 | Khổ chuẩn | Bài đăng 1080×1350 (lề 72 px); story 1080×1920; báo giá A4 (lề 15 mm); danh thiếp 90×54 mm (xén 2 mm); phiếu giao hàng A5; tem tròn Ø 40 mm |
 | Thư mục mẫu (Canva, Google Drive) | **[Cần điền]** |
 
-> Logo trước đây (chữ A ruy băng đỏ ôm bông lúa, [assets/logo-am-thuc-an-tam.jpg](assets/logo-am-thuc-an-tam.jpg)) và các hướng thiết kế khác trong `assets/` chỉ giữ để đối chiếu, không dùng cho ấn phẩm mới. Thẻ "Mẻ bánh hôm nay" và câu "người làm bánh xác nhận" chỉ dùng khi xưởng thật sự ghi lại người làm từng mẻ.
+> Logo trước đây (chữ A ruy băng đỏ ôm bông lúa, [assets/logo-am-thuc-an-tam.jpg](assets/logo-am-thuc-an-tam.jpg)) chỉ giữ để đối chiếu, không dùng cho ấn phẩm mới (các hướng thiết kế khác đã xoá khỏi kho). Thẻ "Mẻ bánh hôm nay" và câu "người làm bánh xác nhận" chỉ dùng khi xưởng thật sự ghi lại người làm từng mẻ.
