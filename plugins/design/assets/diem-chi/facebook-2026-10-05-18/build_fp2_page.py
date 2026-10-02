@@ -6,20 +6,25 @@ from collections import OrderedDict
 import build_chuan as C
 import fanpage_1018 as F
 
+CANVA = "https://canva.link/e8o8u5wl980967w"
 DA_CO = {
     "1": "Ảnh thật: giá vỏ bánh kebab tại xưởng (Drive › HÌNH ẢNH KEBAB › DJI_…0316).",
     "2": "MP4 19 giây: đoạn quay thật ép bánh (Drive › VIDEO KEBAB › IMG_5896.MOV) + 3 ảnh thật (nướng, làm nguội trên giá, kiểm tra) + lớp chữ + thẻ kết.",
     "6": "Ảnh thật: hàng vỏ bánh kebab trên giá (DJI_…0319).",
-    "7": "Bìa dùng ảnh thật kiểm tra bánh, tay đeo găng (IMG_5929).",
+    "7": "MP4 15,5 giây từ 3 ảnh thật kiểm tra bánh (IMG_5929, IMG_5820, IMG_5837) + lớp chữ + thẻ kết.",
+    "3": f'Bìa có ảnh minh hoạ AI (ghi nhãn rõ) – bản ghép hoàn chỉnh trong <a href="{CANVA}">file Canva</a>, trang 7.',
+    "4": f'5 tấm có ảnh minh hoạ AI (ghi nhãn rõ) – bản ghép hoàn chỉnh trong <a href="{CANVA}">file Canva</a>, trang 1–5.',
+    "5": f'Bìa có ảnh minh hoạ AI – <a href="{CANVA}">file Canva</a>, trang 6.',
+    "8": f'Bìa có ảnh minh hoạ AI – <a href="{CANVA}">file Canva</a>, trang 8.',
 }
 THIEU = {
     "1": "Ảnh đang dùng là vỏ kebab; nếu muốn đúng tortilla: chụp chồng bánh tortilla tại xưởng.",
     "2": "Còn thiếu cảnh bột vào máy và đóng gói; các video dài hơn trong kho (>10 MB) chưa tải được qua kết nối Drive – thêm ở bản dựng sau.",
     "3": "1 góc máy cố định từ trên/chéo, quay liền 10 lần cuốn kebab (20–30 giây, có thể tua nhanh).",
-    "4": "4 ảnh vỏ bánh 22/25/28/31 cm đặt cạnh thước đo + món tương ứng; 1 ảnh 4 size xếp cạnh nhau. Xác nhận lại món gợi ý cho từng size.",
+    "4": "Khi có, thay ảnh AI bằng ảnh thật tortilla từng size cạnh thước. Xác nhận lại món gợi ý cho từng size.",
     "5": "Quay tại 1 cửa hàng đối tác (có đồng ý): chuẩn bị quầy, lò doner, vỏ bánh An Tâm, giờ cao điểm, lời chủ quán.",
     "6": "Số liệu: công suất (chiếc/ngày), số dây chuyền.",
-    "7": "Video: đo đường kính bằng thước, cân từng chiếc, gập thử bánh không nứt.",
+    "7": "Nếu muốn đúng kịch bản: quay đo đường kính bằng thước, cân từng chiếc.",
     "8": "Cảnh làm 3 món từ 1 chiếc tortilla: wrap gà, taco, quesadilla (tay người, góc trên xuống).",
     "9": "3 đánh giá thật nguyên văn + tên quán + đồng ý đăng; ảnh 3 quán/chủ quán.",
     "10": "Video khách thật (chủ xe bánh mì) kể chuyện, có đồng ý bằng văn bản; tên, tên xe, khu vực.",
@@ -40,6 +45,8 @@ def run(out):
         cards = "".join(f'<figure class="it {"lop" if ("-lop-" in s or "-dem-" in s) else ""}" id="{s}"><img src="{s}.png" alt="{s}" loading="lazy"><figcaption><code>{s}.png</code><br>{n}</figcaption></figure>' for s, n in files)
         miss = (f'<div class="card ok"><b>Đã dùng ảnh/video thật:</b> {DA_CO[num]}</div>' if num in DA_CO else "")
         miss += f'<div class="card miss"><b>Còn thiếu:</b> {THIEU.get(num, "")}</div>' if num in THIEU else ""
+        if num == "7":
+            cards = '<figure class="it"><video src="reel-r4-kiem-tra-tung-me.mp4" controls playsinline preload="metadata" poster="b07-r4-kiem-tra-tung-me-bia.png" style="width:100%;display:block"></video><figcaption><code>reel-r4-kiem-tra-tung-me.mp4</code><br>15,5 giây · 1080×1920</figcaption></figure>' + cards
         if num == "2":
             cards = '<figure class="it" id="reel-r1-mp4"><video src="reel-r1-vo-banh-lam-the-nay.mp4" controls playsinline preload="metadata" poster="b02-r1-vo-banh-lam-the-nay-bia.png" style="width:100%;display:block"></video><figcaption><code>reel-r1-vo-banh-lam-the-nay.mp4</code><br>19 giây · 1080×1920</figcaption></figure>' + cards
         secs.append(f'<section class="s" id="b{num}"><div class="num">{ngay}</div><h2>{bai}</h2>{miss}<div class="grid">{cards}</div></section>')
