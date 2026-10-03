@@ -56,17 +56,17 @@ Bình luận chữ cái bạn chọn nha. Mình đọc hết và sẽ lấy ý t
 
 ## Bài 3 | T3 06/10, 11:00 | Công thức | Reels 30–45 giây | Gợi ý chạy quảng cáo
 
-**Câu mở:** Món "Tây" mà làm chưa tới 10 phút. Thật đó cả nhà! 🌯
+**Câu mở:** Món "Tây" mà làm khoảng 10 phút thôi. Thật đó cả nhà! 🌯
 
 **Nội dung:**
-Món "Tây" mà làm chưa tới 10 phút. Thật đó cả nhà! 🌯
+Món "Tây" mà làm khoảng 10 phút thôi. Thật đó cả nhà! 🌯
 
 **Wrap gà áp chảo** (khoảng 10 phút, 1–2 phần)
 Nguyên liệu: 2 tấm [LOẠI BÁNH], thịt gà thái miếng nhỏ, tỏi, muối tiêu, xà lách, dưa leo, cà chua, rau thơm, mayo trộn chút chanh (hoặc nước mắm chua ngọt cho đúng vị Việt).
 
 Cách làm:
 1. Ướp gà với tỏi, muối, tiêu. Áp chảo cho chín vàng.
-2. Hâm bánh trên chảo nóng, mỗi mặt 10–15 giây cho mềm.
+2. Hâm bánh trên chảo nóng, mỗi mặt 10–15 giây cho mềm (tham khảo, tuỳ loại bánh).
 3. Xếp rau, gà, rưới sốt vừa phải.
 4. Gập hai mép, cuốn chặt. Cắt đôi là xong.
 
@@ -76,16 +76,16 @@ Mẹo nhỏ: đừng rưới quá nhiều sốt kẻo bánh nhão nha.
 
 #wrapga #tortilla #monngondelam #comtrua #bepnha
 
-**Chữ trên ảnh:** Wrap gà 10 phút, dễ ghê
+**Chữ trên ảnh:** Wrap gà mềm, dễ cuốn (nhãn: CÔNG THỨC · 10 PHÚT)
 
 ---
 
 ## Bài 4 | T4 07/10, 17:30 | Mẹo | Carousel 5 slide
 
-**Câu mở:** Bánh cuốn lên bị khô, bị nứt? Có thể chỉ thiếu 15 giây thôi. 🔥
+**Câu mở:** Cuốn bánh bị khô, bị nứt? Thử hâm đúng cách, chỉ mất vài chục giây thôi. 🔥
 
 **Nội dung:**
-Bánh cuốn lên bị khô, bị nứt? Có thể chỉ thiếu 15 giây thôi. 🔥
+Cuốn bánh bị khô, bị nứt? Thử hâm đúng cách, chỉ mất vài chục giây thôi. 🔥
 
 3 cách làm mềm bánh trước khi cuốn:
 
@@ -97,13 +97,13 @@ Hai lưu ý để bánh không hỏng:
 - Đừng hâm quá lâu, bánh sẽ khô và dễ rách.
 - Đừng cho quá nhiều sốt, bánh sẽ nhão.
 
-Cách nào cũng nhanh, cả nhà chọn cách tiện bếp nhà mình nhé. Lưu bài lại, đỡ phải nhớ.
+Thời gian trên chỉ để tham khảo, tuỳ loại bánh. Cách nào cũng nhanh, cả nhà chọn cách tiện bếp nhà mình nhé. Lưu bài lại, đỡ phải nhớ.
 
 👉 Bạn hay dùng cách nào? Kể mình nghe ở bình luận.
 
 #meobep #tortilla #banhtortilla #wrap #bepnha
 
-**Chữ trên ảnh:** 3 cách làm bánh mềm, 15 giây
+**Chữ trên ảnh:** Hâm bánh mềm, không khô: 3 cách
 
 Gợi ý slide: 1 tiêu đề; 2 chảo; 3 lò vi sóng; 4 hấp; 5 hai lưu ý.
 
@@ -111,13 +111,13 @@ Gợi ý slide: 1 tiêu đề; 2 chảo; 3 lò vi sóng; 4 hấp; 5 hai lưu ý.
 
 ## Bài 5 | T5 08/10, 11:30 | Hỏi đáp | Ảnh đơn
 
-**Câu mở:** "Bánh của mình cuốn là nứt, sao vậy?" Mình trả lời nhé. 🙋
+**Câu mở:** "Cuốn bánh là nứt, sao vậy?" Mình giải đáp nhé. 🙋
 
 **Nội dung:**
-"Bánh của mình cuốn là nứt, sao vậy?" Mình trả lời nhé. 🙋
+"Cuốn bánh là nứt, sao vậy?" Mình giải đáp nhé. 🙋
 
 Hỏi: Sao bánh khô, nứt khi cuốn?
-Đáp: Hay gặp nhất là hâm quá lâu hoặc nhân quá ướt. Hâm nhẹ 10–15 giây mỗi mặt trên chảo nóng, rồi cho sốt vừa phải là ổn.
+Đáp: Có thể do hâm quá lâu nên bánh khô, dễ rách. Hâm nhẹ khoảng 10–15 giây mỗi mặt trên chảo nóng (tham khảo, tuỳ loại bánh), rồi cho sốt vừa phải kẻo bánh nhão.
 
 Hỏi: Bánh nhà mình là loại nào?
 Đáp: [LOẠI BÁNH], [KÍCH CỠ/QUY CÁCH].
@@ -197,7 +197,7 @@ Nguyên liệu: [LOẠI BÁNH], thịt bò thái mỏng, sả băm, tỏi, dưa 
 
 Cách làm:
 1. Xào bò với sả, tỏi trên lửa lớn cho thơm. (Thay bằng gà nướng sả cũng được.)
-2. Hâm bánh trên chảo nóng 10–15 giây mỗi mặt.
+2. Hâm bánh trên chảo nóng 10–15 giây mỗi mặt (tham khảo, tuỳ loại bánh).
 3. Xếp dưa leo, rau thơm, hành tây, bò xào.
 4. Rưới ít nước mắm chua ngọt, cuốn chặt.
 

@@ -1,0 +1,178 @@
+<title>Tuần Tortillas 10 bài</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Bảng điều phối: việc cần điền + insight ở trên, lịch 10 bài theo ngày, chi tiết bài + ảnh mẫu. Màu theo bộ nhận diện tạm của thiết kế (ngô, ớt, rau, nâu). */
+:root{
+  --bg:#FBF6EC; --surface:#FFFFFF; --ink:#2B1D14; --muted:#6B5A4A; --line:#EADFCB;
+  --corn:#B9761A; --corn-soft:#FBEBCB; --chili:#B53D27; --chili-soft:#F8E1DA; --herb:#3F7D4E; --herb-soft:#E1EEE3;
+  --soft:#F2EADB; --mark:#FFE7A8; --mark-ink:#5A3A00;
+  --f-body:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1A1511; --surface:#241D17; --ink:#F2E9DC; --muted:#B3A28E; --line:#3A2F25;
+  --corn:#F0B455; --corn-soft:#3A2C14; --chili:#EE8A72; --chili-soft:#3D221B; --herb:#7FC191; --herb-soft:#1E3324;
+  --soft:#2E251D; --mark:#5A4413; --mark-ink:#FFE3A0; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1A1511; --surface:#241D17; --ink:#F2E9DC; --muted:#B3A28E; --line:#3A2F25;
+  --corn:#F0B455; --corn-soft:#3A2C14; --chili:#EE8A72; --chili-soft:#3D221B; --herb:#7FC191; --herb-soft:#1E3324;
+  --soft:#2E251D; --mark:#5A4413; --mark-ink:#FFE3A0; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.6;margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px;padding-block:32px 64px;display:flex;flex-direction:column;gap:40px}
+h1,h2,h3{text-wrap:balance;margin:0;line-height:1.2}
+h1{font-size:clamp(28px,5vw,42px);font-weight:800;letter-spacing:-.015em}
+h1 span{color:var(--corn)}
+h2{font-size:21px;font-weight:800} h3{font-size:17px;font-weight:700}
+p{margin:0}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+mark{background:var(--mark);color:var(--mark-ink);padding:0 3px;border-radius:3px;font-weight:600}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+header{display:flex;flex-direction:column;gap:14px}
+.lede{max-width:66ch;color:var(--muted);font-size:16px} .lede strong{color:var(--ink)}
+.status{display:flex;flex-wrap:wrap;gap:8px}
+.pill{font-size:13px;font-weight:600;padding:4px 11px;border-radius:999px;background:var(--soft)}
+.pill.warn{background:var(--chili-soft);color:var(--chili)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:760px){.grid2{grid-template-columns:1fr}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.panel ul,.panel ol{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:7px;font-size:14px}
+.fill{display:flex;flex-wrap:wrap;gap:6px}
+.barriers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:760px){.barriers{grid-template-columns:1fr}}
+.bar{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:6px;font-size:14px}
+.bar b{font-size:15px}
+.bar .ans{color:var(--herb);font-weight:600;font-size:13px}
+.tagS{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.06em}
+/* lịch */
+.days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
+@media (max-width:900px){.days{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.dcol{display:flex;flex-direction:column;gap:6px;min-width:0}
+.dcol .dh{font-weight:800;font-size:14px;display:flex;justify-content:space-between;padding-inline:2px}
+.dcol .dh span{color:var(--muted);font-weight:500;font-size:12px}
+.post{all:unset;cursor:pointer;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--g);border-radius:10px;padding:10px;display:flex;flex-direction:column;gap:4px}
+.post:hover{border-color:var(--g)} .post:focus-visible{outline:2px solid var(--g);outline-offset:2px}
+.post[aria-pressed="true"]{background:var(--gs);border-color:var(--g)}
+.post .top{display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}
+.post .top b{color:var(--ink)}
+.post .tp{font-size:13px;line-height:1.35}
+.post .k{font-size:11px;font-weight:700;color:var(--g);text-transform:uppercase;letter-spacing:.05em}
+.g-ban{--g:var(--chili);--gs:var(--chili-soft)} .g-cong{--g:var(--herb);--gs:var(--herb-soft)} .g-tuong{--g:var(--corn);--gs:var(--corn-soft)} .g-gioi{--g:var(--ink);--gs:var(--soft)}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:12px;height:4px;border-radius:2px;background:var(--g)}
+.ad{font-size:10px;font-weight:700;background:var(--chili);color:var(--surface);border-radius:4px;padding:1px 5px;align-self:flex-start}
+.detail{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:24px;align-items:start}
+@media (max-width:760px){.detail{grid-template-columns:1fr}}
+.visual{display:flex;flex-direction:column;gap:10px}
+.visual img{width:100%;max-width:100%;border-radius:10px;border:1px solid var(--line);display:block}
+.strip{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}
+.strip button{all:unset;cursor:pointer;flex:0 0 56px;border-radius:6px;border:2px solid transparent}
+.strip button[aria-current="true"]{border-color:var(--herb)} .strip button:focus-visible{outline:2px solid var(--herb)}
+.strip img{width:56px;display:block;border-radius:4px}
+.noimg{border:2px dashed var(--line);border-radius:12px;padding:22px;display:flex;flex-direction:column;gap:10px;background:var(--surface);min-height:280px;justify-content:center}
+.noimg .big{font-size:clamp(22px,3vw,30px);font-weight:800;line-height:1.2;text-wrap:balance}
+.caption{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.caption .body{display:flex;flex-direction:column;gap:9px;max-width:62ch}
+.caption ul,.caption ol{margin:0;padding-left:22px}
+.capbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.btn{all:unset;cursor:pointer;font-size:13px;font-weight:600;padding:6px 12px;border-radius:8px;border:1px solid var(--line);background:var(--bg)}
+.btn:hover{border-color:var(--ink)} .btn:focus-visible{outline:2px solid var(--herb)}
+details{border-top:1px solid var(--line);padding-top:10px;font-size:14px}
+summary{cursor:pointer;font-weight:600;color:var(--muted)}
+details .in{padding-top:8px;display:flex;flex-direction:column;gap:6px} details ul{margin:0;padding-left:20px}
+.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:760px){.cols3{grid-template-columns:1fr}}
+footer{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+footer code{font-family:var(--f-mono);font-size:12px}
+@media (prefers-reduced-motion:no-preference){.post,.btn{transition:border-color .15s,background .15s}}
+</style>
+
+<div class="wrap">
+<header>
+  <span class="eyebrow">Kế hoạch Facebook · Bánh tortillas · 05–11/10/2026</span>
+  <h1>10 bài trong 1 tuần: <span>mềm, dễ cuốn, 10 phút có bữa</span></h1>
+  <p class="lede">Khách ngại tortillas vì <strong>sợ bánh khô, nứt</strong> và nghĩ <strong>món Tây khó làm</strong>. Cả tuần dùng mẹo hâm bánh và công thức nhanh để gỡ hai nỗi lo đó, rồi mới mời đặt hàng. Chỗ <mark>[tô vàng]</mark> là thông tin chủ trang cần điền.</p>
+  <div class="status"><span class="pill warn" id="st">Bản nháp · biên tập đang soát</span><span class="pill">10 bài · 3 bán hàng · 4 công thức/mẹo · 2 tương tác · 1 giới thiệu</span><span class="pill">8 ảnh mẫu</span></div>
+</header>
+
+<section class="grid2">
+  <div class="panel">
+    <span class="eyebrow">Chủ trang cần điền trước khi đăng</span>
+    <div class="fill"><mark>[TÊN THƯƠNG HIỆU]</mark><mark>[LOẠI BÁNH]</mark><mark>[KÍCH CỠ/QUY CÁCH]</mark><mark>[GIÁ]</mark><mark>[HẠN DÙNG/BẢO QUẢN]</mark><mark>[KHU VỰC GIAO]</mark><mark>[CÁCH ĐẶT HÀNG]</mark><mark>[ƯU ĐÃI]</mark></div>
+    <ul>
+      <li>Bài 1, 5, 6, 9, 10 chưa đăng được khi chưa điền.</li>
+      <li>Bài 6 cần ảnh thật của sản phẩm. Ảnh AI không được dùng giả làm sản phẩm của trang.</li>
+      <li>Nấu thử và bấm giờ các món trước khi quay: "khoảng 10 phút" mới là ước tính.</li>
+      <li>Hâm thử bánh thật theo 3 cách ở bài 4, vì thời gian tuỳ loại bánh.</li>
+    </ul>
+  </div>
+  <div class="panel">
+    <span class="eyebrow">Khách là ai</span>
+    <ul>
+      <li><b>Nội trợ, dân văn phòng 28–38:</b> cần bữa nhanh, cơm trưa đổi món.</li>
+      <li><b>Người tập gym, ăn kiêng 22–32:</b> wrap chuẩn bị trước. Không nói công dụng sức khoẻ.</li>
+      <li><b>Mẹ có con nhỏ 27–40:</b> bữa sáng, đồ ăn vặt cầm tay cho bé.</li>
+      <li><b>Chủ quán nhỏ, xe đồ ăn, cà phê:</b> cần giá sỉ, nguồn đều, giao tận nơi.</li>
+    </ul>
+    <p class="tagS">Suy luận từ nghiên cứu, chưa có bình luận khách thật để đối chiếu.</p>
+  </div>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:14px">
+  <h2>Khách ngại gì, bài nào trả lời</h2>
+  <div class="barriers">
+    <div class="bar"><b>“Ăn với gì?”</b><span>Không biết cuốn nhân gì cho hợp miệng.</span><span class="ans">Bài 1, 2, 3, 7, 8</span></div>
+    <div class="bar"><b>“Bánh khô, nứt khi cuốn”</b><span>Hâm sai cách, cho quá nhiều sốt.</span><span class="ans">Bài 4, 5</span></div>
+    <div class="bar"><b>“Món Tây khó làm”</b><span>Ngại món lạ, sợ cầu kỳ.</span><span class="ans">Bài 3, 8: wrap 10 phút, cuốn bò xào sả kiểu Việt</span></div>
+    <div class="bar"><b>“Mở túi rồi để sao?”</b><span>Lo bảo quản, hạn dùng.</span><span class="ans">Bài 5 (chờ chủ trang điền cách bảo quản)</span></div>
+    <div class="bar"><b>“Đắt hơn bánh mì”</b><span>Giá tham khảo thị trường khoảng 5–10 nghìn/cái (chưa kiểm trang gốc).</span><span class="ans">Bài 6, 10: một bánh làm được nhiều món</span></div>
+    <div class="bar"><b>“Mua đâu cho đều?”</b><span>Quán cần nguồn ổn định.</span><span class="ans">Bài 9: bài cho khách sỉ</span></div>
+  </div>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:14px">
+  <div class="capbar"><h2>Lịch 10 bài</h2>
+    <div class="legend"><span class="g-gioi"><i></i>Giới thiệu</span><span class="g-tuong"><i></i>Tương tác, hỏi đáp</span><span class="g-cong"><i></i>Công thức, mẹo</span><span class="g-ban"><i></i>Bán hàng</span></div></div>
+  <div class="days" id="days" role="group" aria-label="Chọn bài"></div>
+  <div class="detail" id="detail"></div>
+</section>
+
+<section class="cols3">
+  <div class="panel"><span class="eyebrow">Ai làm phần nào</span><ul>
+    <li><b>Nghiên cứu:</b> thị trường, 4 nhóm khách, rào cản, mẹo hâm bánh, giờ đăng</li>
+    <li><b>Viết bài:</b> lịch và 10 bài</li>
+    <li><b>Thiết kế:</b> nhận diện tạm, 10 ý tưởng hình, 8 ảnh mẫu</li>
+    <li><b>Biên tập:</b> đang soát</li></ul></div>
+  <div class="panel"><span class="eyebrow">Giả định đã dùng</span><ul>
+    <li>Không đọc được trang Facebook (mạng chặn), nên chưa biết thương hiệu, giá, giọng văn hiện tại.</li>
+    <li>Màu sắc và hình là đề xuất tạm, thay bằng logo và màu thật khi có.</li>
+    <li>Ảnh mẫu chụp bằng font thay thế.</li></ul></div>
+  <div class="panel"><span class="eyebrow">Quảng cáo gợi ý</span><ul>
+    <li><b>Bài 3</b> (video wrap gà): chạy để có lượt xem, rồi nhắm lại người đã xem.</li>
+    <li><b>Bài 6</b> (bán hàng): nhắm tin nhắn, chỉ chạy khi đã điền giá, ưu đãi, khu vực giao.</li></ul></div>
+</section>
+
+<footer>Hồ sơ đầy đủ trong repo, thư mục <code>marketing/2026-10-03-ke-hoach-1-tuan-10-bai-banh-tortillas/</code>.</footer>
+</div>
+
+<script>
+const P=[{"n": 1, "day": "T2 05/10", "time": "11:30", "kind": "Giới thiệu", "fmt": "Ảnh đơn", "grp": "gioi", "ads": false, "topic": "Tortillas là gì, ăn với gì (điền thông tin SP)", "cap": "<p>Một tấm bánh, cuốn gì cũng thành bữa. 🌯<\/p><p>Chào cả nhà, mình là <mark>[TÊN THƯƠNG HIỆU]<\/mark>, bán bánh tortillas: loại vỏ bánh tròn dẹt để cuốn hoặc gập thành wrap, burrito, taco, quesadilla.<\/p><p>Nhà mình đang có <mark>[LOẠI BÁNH]<\/mark>, <mark>[KÍCH CỠ/QUY CÁCH]<\/mark>.<\/p><p>Ăn với gì? Gà áp chảo, bò xào, trứng, rau sống, dưa leo, chút phô mai. Hâm bánh một chút rồi cuốn là xong bữa.<\/p><p>Tuần này mình chia sẻ mẹo làm bánh mềm và mấy công thức khoảng 10 phút. Cả nhà theo dõi trang để không lỡ nha.<\/p><p>👉 Muốn hỏi về bánh, nhắn mình ngay nhé.<\/p><p>#tortilla #banhtortilla #wrap #monngondelam #bepnha<\/p>", "raw": "Một tấm bánh, cuốn gì cũng thành bữa. 🌯\n\nChào cả nhà, mình là [TÊN THƯƠNG HIỆU], bán bánh tortillas: loại vỏ bánh tròn dẹt để cuốn hoặc gập thành wrap, burrito, taco, quesadilla.\n\nNhà mình đang có [LOẠI BÁNH], [KÍCH CỠ/QUY CÁCH].\n\nĂn với gì? Gà áp chảo, bò xào, trứng, rau sống, dưa leo, chút phô mai. Hâm bánh một chút rồi cuốn là xong bữa.\n\nTuần này mình chia sẻ mẹo làm bánh mềm và mấy công thức khoảng 10 phút. Cả nhà theo dõi trang để không lỡ nha.\n\n👉 Muốn hỏi về bánh, nhắn mình ngay nhé.\n\n#tortilla #banhtortilla #wrap #monngondelam #bepnha", "on": "Một tấm bánh, cuốn gì cũng ngon", "alt": "<ul><li>Phương án chính: \"Một tấm bánh, cuốn gì cũng thành bữa. 🌯\"<\/li><li>Phương án A: \"Hôm nay ăn gì? Hay là... thử cuốn?\"<\/li><li>Phương án B: \"Bánh mì ăn mãi cũng ngán, cơm hộp cũng vậy. Cả nhà thử đổi vị bằng một tấm bánh tròn dẹt chưa?\"<\/li><\/ul>", "note": "", "imgs": []}, {"n": 2, "day": "T2 05/10", "time": "18:30", "kind": "Tương tác", "fmt": "Ảnh đơn", "grp": "tuong", "ads": false, "topic": "Hỏi: cả nhà hay cuốn gì?", "cap": "<p>Tối nay cuốn gì đây cả nhà? 🤔<\/p><p>Cùng một tấm bánh, mỗi nhà cuốn một kiểu. Mình tò mò nhà bạn hay chọn nhân nào nhất:<\/p><p>A. Gà áp chảo + rau sống<\/p><p>B. Bò xào + hành tây<\/p><p>C. Trứng + phô mai<\/p><p>D. Nhân khác (kể mình nghe với)<\/p><p>Bình luận chữ cái bạn chọn nha. Mình đọc hết và sẽ lấy ý tưởng cho các bài công thức tới. 😋<\/p><p>#tortilla #wrap #cuonlatuthich #bepnha<\/p>", "raw": "Tối nay cuốn gì đây cả nhà? 🤔\n\nCùng một tấm bánh, mỗi nhà cuốn một kiểu. Mình tò mò nhà bạn hay chọn nhân nào nhất:\n\nA. Gà áp chảo + rau sống\nB. Bò xào + hành tây\nC. Trứng + phô mai\nD. Nhân khác (kể mình nghe với)\n\nBình luận chữ cái bạn chọn nha. Mình đọc hết và sẽ lấy ý tưởng cho các bài công thức tới. 😋\n\n#tortilla #wrap #cuonlatuthich #bepnha", "on": "Cuốn gì tối nay? A, B, C hay D?", "alt": "", "note": "", "imgs": []}, {"n": 3, "day": "T3 06/10", "time": "11:00", "kind": "Công thức", "fmt": "Reels 30–45 giây", "grp": "cong", "ads": true, "topic": "Wrap gà 10 phút (có biến tấu rau thơm, nước mắm chua ngọt)", "cap": "<p>Món \"Tây\" mà làm khoảng 10 phút thôi. Thật đó cả nhà! 🌯<\/p><p><strong>Wrap gà áp chảo<\/strong> (khoảng 10 phút, 1–2 phần)<\/p><p>Nguyên liệu: 2 tấm <mark>[LOẠI BÁNH]<\/mark>, thịt gà thái miếng nhỏ, tỏi, muối tiêu, xà lách, dưa leo, cà chua, rau thơm, mayo trộn chút chanh (hoặc nước mắm chua ngọt cho đúng vị Việt).<\/p><p>Cách làm:<\/p><ol><li>Ướp gà với tỏi, muối, tiêu. Áp chảo cho chín vàng.<\/li><li>Hâm bánh trên chảo nóng, mỗi mặt 10–15 giây cho mềm (tham khảo, tuỳ loại bánh).<\/li><li>Xếp rau, gà, rưới sốt vừa phải.<\/li><li>Gập hai mép, cuốn chặt. Cắt đôi là xong.<\/li><\/ol><p>Mẹo nhỏ: đừng rưới quá nhiều sốt kẻo bánh nhão nha.<\/p><p>👉 Lưu bài lại để tối nay thử. Cần mua bánh thì nhắn mình.<\/p><p>#wrapga #tortilla #monngondelam #comtrua #bepnha<\/p>", "raw": "Món \"Tây\" mà làm khoảng 10 phút thôi. Thật đó cả nhà! 🌯\n\nWrap gà áp chảo (khoảng 10 phút, 1–2 phần)\nNguyên liệu: 2 tấm [LOẠI BÁNH], thịt gà thái miếng nhỏ, tỏi, muối tiêu, xà lách, dưa leo, cà chua, rau thơm, mayo trộn chút chanh (hoặc nước mắm chua ngọt cho đúng vị Việt).\n\nCách làm:\n1. Ướp gà với tỏi, muối, tiêu. Áp chảo cho chín vàng.\n2. Hâm bánh trên chảo nóng, mỗi mặt 10–15 giây cho mềm (tham khảo, tuỳ loại bánh).\n3. Xếp rau, gà, rưới sốt vừa phải.\n4. Gập hai mép, cuốn chặt. Cắt đôi là xong.\n\nMẹo nhỏ: đừng rưới quá nhiều sốt kẻo bánh nhão nha.\n\n👉 Lưu bài lại để tối nay thử. Cần mua bánh thì nhắn mình.\n\n#wrapga #tortilla #monngondelam #comtrua #bepnha", "on": "Wrap gà mềm, dễ cuốn (nhãn: CÔNG THỨC · 10 PHÚT)", "alt": "", "note": "", "imgs": ["mau/b-the-cong-thuc-wrap-ga.png"]}, {"n": 4, "day": "T4 07/10", "time": "17:30", "kind": "Mẹo", "fmt": "Carousel 5 slide", "grp": "cong", "ads": false, "topic": "3 cách làm mềm bánh: chảo, lò vi sóng, hấp", "cap": "<p>Cuốn bánh bị khô, bị nứt? Thử hâm đúng cách, chỉ mất vài chục giây thôi. 🔥<\/p><p>3 cách làm mềm bánh trước khi cuốn:<\/p><ol><li><strong>Chảo nóng:<\/strong> mỗi mặt 10–15 giây.<\/li><li><strong>Lò vi sóng:<\/strong> bọc bánh bằng khăn hoặc giấy bếp ẩm, hâm 15–30 giây.<\/li><li><strong>Hấp:<\/strong> khoảng 30–45 giây.<\/li><\/ol><p>Hai lưu ý để bánh không hỏng:<\/p><ul><li>Đừng hâm quá lâu, bánh sẽ khô và dễ rách.<\/li><li>Đừng cho quá nhiều sốt, bánh sẽ nhão.<\/li><\/ul><p>Thời gian trên chỉ để tham khảo, tuỳ loại bánh. Cách nào cũng nhanh, cả nhà chọn cách tiện bếp nhà mình nhé. Lưu bài lại, đỡ phải nhớ.<\/p><p>👉 Bạn hay dùng cách nào? Kể mình nghe ở bình luận.<\/p><p>#meobep #tortilla #banhtortilla #wrap #bepnha<\/p>", "raw": "Cuốn bánh bị khô, bị nứt? Thử hâm đúng cách, chỉ mất vài chục giây thôi. 🔥\n\n3 cách làm mềm bánh trước khi cuốn:\n\n1. Chảo nóng: mỗi mặt 10–15 giây.\n2. Lò vi sóng: bọc bánh bằng khăn hoặc giấy bếp ẩm, hâm 15–30 giây.\n3. Hấp: khoảng 30–45 giây.\n\nHai lưu ý để bánh không hỏng:\n- Đừng hâm quá lâu, bánh sẽ khô và dễ rách.\n- Đừng cho quá nhiều sốt, bánh sẽ nhão.\n\nThời gian trên chỉ để tham khảo, tuỳ loại bánh. Cách nào cũng nhanh, cả nhà chọn cách tiện bếp nhà mình nhé. Lưu bài lại, đỡ phải nhớ.\n\n👉 Bạn hay dùng cách nào? Kể mình nghe ở bình luận.\n\n#meobep #tortilla #banhtortilla #wrap #bepnha", "on": "Hâm bánh mềm, không khô: 3 cách", "alt": "", "note": "Gợi ý slide: 1 tiêu đề; 2 chảo; 3 lò vi sóng; 4 hấp; 5 hai lưu ý.", "imgs": ["mau/a-carousel-ham-banh-1.png", "mau/a-carousel-ham-banh-2.png", "mau/a-carousel-ham-banh-3.png", "mau/a-carousel-ham-banh-4.png", "mau/a-carousel-ham-banh-5.png"]}, {"n": 5, "day": "T5 08/10", "time": "11:30", "kind": "Hỏi đáp", "fmt": "Ảnh đơn", "grp": "tuong", "ads": false, "topic": "Sợ khô, nứt và bảo quản: hỏi gì đáp nấy", "cap": "<p>\"Cuốn bánh là nứt, sao vậy?\" Mình giải đáp nhé. 🙋<\/p><p>Hỏi: Sao bánh khô, nứt khi cuốn?<\/p><p>Đáp: Có thể do hâm quá lâu nên bánh khô, dễ rách. Hâm nhẹ khoảng 10–15 giây mỗi mặt trên chảo nóng (tham khảo, tuỳ loại bánh), rồi cho sốt vừa phải kẻo bánh nhão.<\/p><p>Hỏi: Bánh nhà mình là loại nào?<\/p><p>Đáp: <mark>[LOẠI BÁNH]<\/mark>, <mark>[KÍCH CỠ/QUY CÁCH]<\/mark>.<\/p><p>Hỏi: Mở túi rồi bảo quản sao?<\/p><p>Đáp: <mark>[HẠN DÙNG/BẢO QUẢN]<\/mark>. Cả nhà làm theo hướng dẫn này nha.<\/p><p>Còn thắc mắc gì về bánh, cứ hỏi, mình trả lời từng bạn. 💬<\/p><p>👉 Để lại câu hỏi ở bình luận hoặc nhắn tin cho mình.<\/p><p>#tortilla #meobep #banhtortilla #hoidap<\/p>", "raw": "\"Cuốn bánh là nứt, sao vậy?\" Mình giải đáp nhé. 🙋\n\nHỏi: Sao bánh khô, nứt khi cuốn?\nĐáp: Có thể do hâm quá lâu nên bánh khô, dễ rách. Hâm nhẹ khoảng 10–15 giây mỗi mặt trên chảo nóng (tham khảo, tuỳ loại bánh), rồi cho sốt vừa phải kẻo bánh nhão.\n\nHỏi: Bánh nhà mình là loại nào?\nĐáp: [LOẠI BÁNH], [KÍCH CỠ/QUY CÁCH].\n\nHỏi: Mở túi rồi bảo quản sao?\nĐáp: [HẠN DÙNG/BẢO QUẢN]. Cả nhà làm theo hướng dẫn này nha.\n\nCòn thắc mắc gì về bánh, cứ hỏi, mình trả lời từng bạn. 💬\n\n👉 Để lại câu hỏi ở bình luận hoặc nhắn tin cho mình.\n\n#tortilla #meobep #banhtortilla #hoidap", "on": "Bánh khô, nứt? Mình giải đáp", "alt": "", "note": "", "imgs": []}, {"n": 6, "day": "T6 09/10", "time": "11:30", "kind": "Bán hàng", "fmt": "Ảnh đơn hoặc carousel", "grp": "ban", "ads": true, "topic": "Đặt hàng cuối tuần, [ƯU ĐÃI]", "cap": "<p>Cuối tuần này, cả nhà cuốn gì? Bánh để mình lo. 🌯<\/p><p><mark>[TÊN THƯƠNG HIỆU]<\/mark> đang nhận đặt bánh tortillas:<\/p><ul><li>Loại: <mark>[LOẠI BÁNH]<\/mark><\/li><li>Quy cách: <mark>[KÍCH CỠ/QUY CÁCH]<\/mark><\/li><li>Giá: <mark>[GIÁ]<\/mark><\/li><li>Ưu đãi: <mark>[ƯU ĐÃI]<\/mark><\/li><li>Giao: <mark>[KHU VỰC GIAO]<\/mark><\/li><\/ul><p>Cuốn gà, cuốn bò xào, làm pizza chảo hay quesadilla cho cả nhà đều được. Công thức mình có sẵn trên trang, bạn chỉ việc mua bánh về hâm rồi cuốn.<\/p><p>👉 Đặt hàng: <mark>[CÁCH ĐẶT HÀNG]<\/mark>. Nhắn mình để được tư vấn nhé.<\/p><p>#banhtortilla #tortilla #wrap #bepnha #cuoituan<\/p>", "raw": "Cuối tuần này, cả nhà cuốn gì? Bánh để mình lo. 🌯\n\n[TÊN THƯƠNG HIỆU] đang nhận đặt bánh tortillas:\n- Loại: [LOẠI BÁNH]\n- Quy cách: [KÍCH CỠ/QUY CÁCH]\n- Giá: [GIÁ]\n- Ưu đãi: [ƯU ĐÃI]\n- Giao: [KHU VỰC GIAO]\n\nCuốn gà, cuốn bò xào, làm pizza chảo hay quesadilla cho cả nhà đều được. Công thức mình có sẵn trên trang, bạn chỉ việc mua bánh về hâm rồi cuốn.\n\n👉 Đặt hàng: [CÁCH ĐẶT HÀNG]. Nhắn mình để được tư vấn nhé.\n\n#banhtortilla #tortilla #wrap #bepnha #cuoituan", "on": "Cuối tuần cuốn gì? Nhắn mình!", "alt": "", "note": "", "imgs": ["mau/c-bai-ban-hang.png"]}, {"n": 7, "day": "T6 09/10", "time": "18:00", "kind": "Công thức", "fmt": "Reels 30 giây", "grp": "cong", "ads": false, "topic": "Pizza tortilla chảo", "cap": "<p>Pizza không cần lò nướng, chỉ cần cái chảo. 🍕<\/p><p><strong>Pizza tortilla chảo<\/strong> (khoảng 10 phút)<\/p><p>Nguyên liệu: 1 tấm <mark>[LOẠI BÁNH]<\/mark>, sốt cà, phô mai, xúc xích hoặc nấm thái lát.<\/p><p>Cách làm:<\/p><ol><li>Đặt bánh vào chảo, lửa nhỏ.<\/li><li>Phết sốt cà, rải phô mai và xúc xích (hoặc nấm).<\/li><li>Đậy nắp cho phô mai chảy.<\/li><li>Cắt miếng, ăn nóng.<\/li><\/ol><p>Hợp cho bữa xế, bữa sáng hoặc tối cuối tuần. Bé nhà bạn có thể phụ rải topping nữa. 😄<\/p><p>👉 Lưu bài lại, làm xong khoe mình ảnh nha.<\/p><p>#pizzatortilla #tortilla #monngondelam #buasangnhanh #bepnha<\/p>", "raw": "Pizza không cần lò nướng, chỉ cần cái chảo. 🍕\n\nPizza tortilla chảo (khoảng 10 phút)\nNguyên liệu: 1 tấm [LOẠI BÁNH], sốt cà, phô mai, xúc xích hoặc nấm thái lát.\n\nCách làm:\n1. Đặt bánh vào chảo, lửa nhỏ.\n2. Phết sốt cà, rải phô mai và xúc xích (hoặc nấm).\n3. Đậy nắp cho phô mai chảy.\n4. Cắt miếng, ăn nóng.\n\nHợp cho bữa xế, bữa sáng hoặc tối cuối tuần. Bé nhà bạn có thể phụ rải topping nữa. 😄\n\n👉 Lưu bài lại, làm xong khoe mình ảnh nha.\n\n#pizzatortilla #tortilla #monngondelam #buasangnhanh #bepnha", "on": "Pizza chảo 10 phút, khỏi lò", "alt": "", "note": "", "imgs": []}, {"n": 8, "day": "T7 10/10", "time": "11:30", "kind": "Công thức kiểu Việt", "fmt": "Carousel 5 slide", "grp": "cong", "ads": false, "topic": "Tortilla cuốn kiểu Việt: bò xào sả, rau thơm, nước mắm chua ngọt", "cap": "<p>Tortilla mà cuốn kiểu Việt thì sao nhỉ? Ngon hơn mình nghĩ đó. 😋<\/p><p><strong>Tortilla cuốn bò xào sả<\/strong> (khoảng 10–12 phút)<\/p><p>Nguyên liệu: <mark>[LOẠI BÁNH]<\/mark>, thịt bò thái mỏng, sả băm, tỏi, dưa leo, rau thơm, hành tây; nước mắm chua ngọt.<\/p><p>Cách làm:<\/p><ol><li>Xào bò với sả, tỏi trên lửa lớn cho thơm. (Thay bằng gà nướng sả cũng được.)<\/li><li>Hâm bánh trên chảo nóng 10–15 giây mỗi mặt (tham khảo, tuỳ loại bánh).<\/li><li>Xếp dưa leo, rau thơm, hành tây, bò xào.<\/li><li>Rưới ít nước mắm chua ngọt, cuốn chặt.<\/li><\/ol><p>Mẹo: rưới nước mắm vừa phải, bánh mới không nhão.<\/p><p>👉 Lưu bài, cuối tuần thử liền. Cần bánh thì nhắn mình.<\/p><p>#tortillakieuviet #tortilla #wrap #monngondelam #bepnha<\/p>", "raw": "Tortilla mà cuốn kiểu Việt thì sao nhỉ? Ngon hơn mình nghĩ đó. 😋\n\nTortilla cuốn bò xào sả (khoảng 10–12 phút)\nNguyên liệu: [LOẠI BÁNH], thịt bò thái mỏng, sả băm, tỏi, dưa leo, rau thơm, hành tây; nước mắm chua ngọt.\n\nCách làm:\n1. Xào bò với sả, tỏi trên lửa lớn cho thơm. (Thay bằng gà nướng sả cũng được.)\n2. Hâm bánh trên chảo nóng 10–15 giây mỗi mặt (tham khảo, tuỳ loại bánh).\n3. Xếp dưa leo, rau thơm, hành tây, bò xào.\n4. Rưới ít nước mắm chua ngọt, cuốn chặt.\n\nMẹo: rưới nước mắm vừa phải, bánh mới không nhão.\n\n👉 Lưu bài, cuối tuần thử liền. Cần bánh thì nhắn mình.\n\n#tortillakieuviet #tortilla #wrap #monngondelam #bepnha", "on": "Tortilla cuốn bò xào sả", "alt": "", "note": "", "imgs": []}, {"n": 9, "day": "CN 11/10", "time": "11:30", "kind": "Bán hàng sỉ", "fmt": "Ảnh đơn", "grp": "ban", "ads": false, "topic": "Dành cho quán nhỏ, xe đồ ăn, quán cà phê", "cap": "<p>Chủ quán ơi, thêm một món cuốn vào menu chưa? 🌯<\/p><p>Mình là <mark>[TÊN THƯƠNG HIỆU]<\/mark>, bán bánh tortillas cho quán nhỏ, xe đồ ăn và quán cà phê.<\/p><p>Một loại bánh làm được nhiều món: wrap, burrito, quesadilla, cắt tam giác nướng ăn kèm sốt. Hâm bánh nhanh trên chảo, ra món gọn, phù hợp quán đông khách.<\/p><p>Thông tin lấy sỉ:<\/p><ul><li>Loại bánh: <mark>[LOẠI BÁNH]<\/mark><\/li><li>Quy cách: <mark>[KÍCH CỠ/QUY CÁCH]<\/mark><\/li><li>Giá sỉ: <mark>[GIÁ]<\/mark><\/li><li>Hạn dùng, bảo quản: <mark>[HẠN DÙNG/BẢO QUẢN]<\/mark><\/li><li>Giao: <mark>[KHU VỰC GIAO]<\/mark><\/li><li>Ưu đãi: <mark>[ƯU ĐÃI]<\/mark><\/li><\/ul><p>👉 Chủ quán nhắn mình số lượng cần mỗi tuần, mình báo thông tin theo <mark>[CÁCH ĐẶT HÀNG]<\/mark>.<\/p><p>#banhtortilla #nguyenlieuquan #banso #tortilla #quancafe<\/p>", "raw": "Chủ quán ơi, thêm một món cuốn vào menu chưa? 🌯\n\nMình là [TÊN THƯƠNG HIỆU], bán bánh tortillas cho quán nhỏ, xe đồ ăn và quán cà phê.\n\nMột loại bánh làm được nhiều món: wrap, burrito, quesadilla, cắt tam giác nướng ăn kèm sốt. Hâm bánh nhanh trên chảo, ra món gọn, phù hợp quán đông khách.\n\nThông tin lấy sỉ:\n- Loại bánh: [LOẠI BÁNH]\n- Quy cách: [KÍCH CỠ/QUY CÁCH]\n- Giá sỉ: [GIÁ]\n- Hạn dùng, bảo quản: [HẠN DÙNG/BẢO QUẢN]\n- Giao: [KHU VỰC GIAO]\n- Ưu đãi: [ƯU ĐÃI]\n\n👉 Chủ quán nhắn mình số lượng cần mỗi tuần, mình báo thông tin theo [CÁCH ĐẶT HÀNG].\n\n#banhtortilla #nguyenlieuquan #banso #tortilla #quancafe", "on": "Bánh tortillas cho quán nhỏ", "alt": "", "note": "", "imgs": []}, {"n": 10, "day": "CN 11/10", "time": "18:30", "kind": "Bán hàng nhẹ + tương tác", "fmt": "Ảnh đơn (ảnh ghép)", "grp": "ban", "ads": false, "topic": "Tổng kết tuần, nhắn tin đặt hàng", "cap": "<p>Hết tuần rồi! Cả nhà đã thử món nào chưa? 🌯<\/p><p>Tuần qua mình chia sẻ:<\/p><p>✅ 3 cách làm mềm bánh<\/p><p>✅ Wrap gà 10 phút<\/p><p>✅ Pizza tortilla chảo<\/p><p>✅ Tortilla cuốn bò xào sả kiểu Việt<\/p><p>Bạn thử món nào rồi, bình luận kể mình nghe nha. Ai khoe ảnh là mình mê luôn. 😆<\/p><p>Tuần tới cả nhà muốn nhà mình ra thêm công thức gì? Cứ gợi ý thoải mái.<\/p><p>Cần bánh cho tuần mới: <mark>[LOẠI BÁNH]<\/mark>, <mark>[KÍCH CỠ/QUY CÁCH]<\/mark>, <mark>[GIÁ]<\/mark>, <mark>[ƯU ĐÃI]<\/mark>, giao <mark>[KHU VỰC GIAO]<\/mark>.<\/p><p>👉 Đặt hàng: <mark>[CÁCH ĐẶT HÀNG]<\/mark>. Nhắn mình nhé.<\/p><p>#tortilla #banhtortilla #wrap #bepnha #monngondelam<\/p>", "raw": "Hết tuần rồi! Cả nhà đã thử món nào chưa? 🌯\n\nTuần qua mình chia sẻ:\n✅ 3 cách làm mềm bánh\n✅ Wrap gà 10 phút\n✅ Pizza tortilla chảo\n✅ Tortilla cuốn bò xào sả kiểu Việt\n\nBạn thử món nào rồi, bình luận kể mình nghe nha. Ai khoe ảnh là mình mê luôn. 😆\n\nTuần tới cả nhà muốn nhà mình ra thêm công thức gì? Cứ gợi ý thoải mái.\n\nCần bánh cho tuần mới: [LOẠI BÁNH], [KÍCH CỠ/QUY CÁCH], [GIÁ], [ƯU ĐÃI], giao [KHU VỰC GIAO].\n\n👉 Đặt hàng: [CÁCH ĐẶT HÀNG]. Nhắn mình nhé.\n\n#tortilla #banhtortilla #wrap #bepnha #monngondelam", "on": "Cuốn tiếp tuần mới nào!", "alt": "", "note": "", "imgs": []}];
+const days=document.getElementById('days'),detail=document.getElementById('detail');
+let cur=0;try{const s=localStorage.getItem('post');if(s!==null&&P[+s])cur=+s}catch(e){}
+const order=[];P.forEach(p=>{if(!order.includes(p.day))order.push(p.day)});
+function renderDays(){days.innerHTML=order.map(d=>{const [w,dt]=d.split(' ');return `<div class="dcol"><div class="dh">${w}<span class="mono">${dt||''}</span></div>${P.map((p,i)=>p.day!==d?'':`<button class="post g-${p.grp}" data-i="${i}" aria-pressed="${i===cur}"><span class="top"><b>Bài ${p.n}</b><span class="mono">${p.time}</span></span><span class="tp">${p.topic}</span><span class="k">${p.kind}</span>${p.ads?'<span class="ad">Gợi ý quảng cáo</span>':''}</button>`).join('')}</div>`}).join('')}
+function renderDetail(){const p=P[cur];let vis;
+  if(p.imgs.length){vis=`<img id="mainimg" src="${p.imgs[0]}" alt="Ảnh mẫu bài ${p.n}" width="1080" height="1350">`+(p.imgs.length>1?`<div class="strip">${p.imgs.map((s,i)=>`<button data-src="${s}" aria-current="${i===0}" aria-label="Slide ${i+1}"><img src="${s}" alt=""></button>`).join('')}</div>`:'')}
+  else vis=`<div class="noimg g-${p.grp}"><span class="eyebrow">Chữ trên ảnh · ảnh chưa dựng</span><span class="big">${p.on}</span><span class="tagS">Ý tưởng hình và prompt ảnh trong thiet-ke.md</span></div>`;
+  detail.innerHTML=`<div class="visual">${vis}</div><div class="caption"><div class="capbar"><span class="eyebrow">Bài ${p.n} · ${p.day} · <span class="mono">${p.time}</span> · ${p.fmt}</span><button class="btn" id="copy">Chép bài</button></div><h3>${p.topic}</h3><div class="body">${p.cap}</div>${p.note?`<p class="tagS">${p.note}</p>`:''}${p.alt?`<details><summary>Các phương án câu mở</summary><div class="in">${p.alt}</div></details>`:''}</div>`;
+  const strip=detail.querySelector('.strip');
+  if(strip)strip.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;document.getElementById('mainimg').src=b.dataset.src;strip.querySelectorAll('button').forEach(x=>x.setAttribute('aria-current',x===b))});
+  const c=document.getElementById('copy');
+  c.addEventListener('click',()=>{const done=()=>{c.textContent='Đã chép';setTimeout(()=>c.textContent='Chép bài',1500)};
+    navigator.clipboard?.writeText(p.raw).then(done).catch(()=>{const r=document.createRange();r.selectNodeContents(detail.querySelector('.body'));const s=getSelection();s.removeAllRanges();s.addRange(r);c.textContent='Đã chọn, bấm Ctrl+C'})});
+}
+days.addEventListener('click',e=>{const b=e.target.closest('.post');if(!b)return;cur=+b.dataset.i;try{localStorage.setItem('post',cur)}catch(e){}renderDays();renderDetail()});
+renderDays();renderDetail();
+</script>
