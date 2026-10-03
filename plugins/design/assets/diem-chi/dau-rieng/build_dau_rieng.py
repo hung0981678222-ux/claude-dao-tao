@@ -15,6 +15,14 @@ OPTS = [
      "Vân tay xoáy vẽ thành một đường xoắn liền, đuôi duỗi ra như mép bánh – đúng hình mặt cắt của một cuốn tortilla/kebab. Một hình, hai nghĩa: dấu tay cam kết và chiếc bánh cuộn.", "Cao"),
     ("dau-mu", "C · Dấu mũ â", lambda c=DO: D.dau_mu(c), lambda: D.dau_mu(K, DO),
      "Lấy chữ \"â\" trong chữ Tâm từ font riêng An Tâm Tròn Bánh – dấu mũ là ba đường vân tay. Biểu tượng và font là một hệ, rất dễ nhận ra ở cỡ nhỏ (ảnh đại diện, favicon, tem).", "Rất cao"),
+    ("an-a", "D · Ấn Â", lambda c=DO: D.an_a(c), lambda: D.an_a(K),
+     "Chữ Â hoa của font An Tâm Tròn Bánh (dấu mũ ba đường vân) đặt trong vòng vân tay đứt nét như dấu son vừa ấn. Chắc, trang trọng, hợp làm con dấu và tem niêm phong.", "Rất cao"),
+    ("van-at", "E · Vân AT", lambda c=DO: D.van_at(c), lambda: D.van_at(K),
+     "Phát triển từ A: lớp vân ngoài là mái lều (chữ A), lõi vân là chữ T – ghép thành AT (An Tâm) giấu trong một dấu vân tay.", "Cao"),
+    ("hat-lua-mi", "F · Vân hạt lúa mì", lambda c=DO: D.hat_lua_mi(c), lambda: D.hat_lua_mi(K),
+     "Đầu ngón tay vẽ thành hạt lúa mì – nguyên liệu làm vỏ bánh. Nói về sản phẩm và độ thật của bột, vẫn giữ cảm giác vân tay.", "Khá"),
+    ("giot-son", "G · Giọt son", lambda c=DO: D.giot_son(c), lambda: D.giot_son(K),
+     "Dấu vân tay trong dáng giọt mực son – đúng chất điểm chỉ. Lưu ý: hình giọt dễ bị liên tưởng tới dầu, nước – cần thử với khách.", "Trung bình"),
 ]
 
 
@@ -51,19 +59,20 @@ def card(i, key, name, f, g, story, score):
 
 def page():
     css = C.CSS + """.card svg{display:block;width:100%;height:auto}.sm{display:flex;gap:18px;align-items:end}.sm svg{width:auto!important}
-.hm{display:flex;gap:12px}.hm svg{width:33%!important}.verdict{max-width:1200px;margin:56px auto 0;padding:0 20px}"""
+.hm{display:flex;gap:12px}.hm svg{width:25%!important}.verdict{max-width:1200px;margin:56px auto 0;padding:0 20px}"""
     secs = "".join(card(i, *o) for i, o in enumerate(OPTS))
     toc = "".join(f'<a href="#{o[0]}">{o[1].split(" · ")[0]}</a>' for o in OPTS)
     return f"""<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Dấu riêng Điểm Chỉ</title><style>{C.faces()}\n{css}</style></head><body>
 <header class="hero"><div class="in"><div><div class="k">Điểm Chỉ · Làm biểu tượng có dấu riêng</div><h1>Vân tay của riêng An Tâm</h1>
-<p>Giữ ý điểm chỉ – cam kết bằng dấu tay son – nhưng cho dấu vân tay một chi tiết chỉ An Tâm có: chữ A, chiếc bánh cuộn, hoặc dấu mũ trong chữ Tâm.</p></div>
-<div class="card hm">{D.svg(D.mai_leu(), 120)}{D.svg(D.van_cuon(), 120)}{D.svg(D.dau_mu(DO), 120)}</div></div></header>
+<p>Giữ ý điểm chỉ – cam kết bằng dấu tay son – nhưng cho dấu vân tay một chi tiết chỉ An Tâm có: chữ A, chữ AT, chiếc bánh cuộn, hạt lúa mì, hoặc dấu mũ trong chữ Tâm. 7 phương án.</p></div>
+<div class="card hm">{D.svg(D.mai_leu(), 120)}{D.svg(D.van_cuon(), 120)}{D.svg(D.dau_mu(DO), 120)}{D.svg(D.an_a(), 120)}</div></div></header>
 <nav class="toc">{toc}</nav>{secs}
 <div class="verdict"><div class="card"><h4>Đề xuất của Thiết kế AN TÂM</h4>
-<p><b>C · Dấu mũ â</b> làm biểu tượng chính (ảnh đại diện, tem, con dấu) vì nó gắn chặt với font riêng – không thương hiệu nào khác có. <b>A · Vân mái lều</b> làm dấu vân tay lớn trong logo ngang nếu muốn giữ hình vân tay rõ ràng. <b>B · Vân cuộn</b> hợp làm hoạ tiết bao bì (lát cắt cuốn bánh). Có thể kết hợp: logo dùng A, ảnh đại diện dùng C.</p>
+<p><b>Nhóm mạnh nhất là hệ "dấu mũ vân tay": C · Dấu mũ â và D · Ấn Â.</b> Biểu tượng lấy thẳng từ font riêng nên không thương hiệu nào trùng được, rõ ở cỡ nhỏ, và cả hệ thống (logo, chữ, tem) nói cùng một ngôn ngữ. Gợi ý: <b>D</b> làm con dấu/tem niêm phong, <b>C</b> làm ảnh đại diện/favicon.</p>
+<p>Nếu muốn logo vẫn có hình vân tay rõ: <b>A · Vân mái lều</b> hoặc <b>E · Vân AT</b> cho logo ngang. <b>B · Vân cuộn</b> và <b>F · Hạt lúa mì</b> hợp làm hoạ tiết bao bì.</p>
 <p class="cap">Trước khi chốt nên tra cứu nhãn hiệu tại Cục Sở hữu trí tuệ để chắc không trùng.</p></div></div>
-<div class="end"><h2 style="color:var(--do);font-weight:800">Bạn chọn A, B hay C?</h2></div></body></html>"""
+<div class="end"><h2 style="color:var(--do);font-weight:800">Bạn chọn phương án nào (A–G)?</h2></div></body></html>"""
 
 
 if __name__ == "__main__":

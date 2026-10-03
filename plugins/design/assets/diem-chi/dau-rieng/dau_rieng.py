@@ -107,3 +107,91 @@ def hien_tai(color=DO):
 def svg(body, size=200, bg=None, label="Biểu tượng"):
     r = f'<rect x="-110" y="-110" width="220" height="220" rx="36" fill="{bg}"/>' if bg else ""
     return f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="-110 -110 220 220" width="{size}" height="{size}" role="img" aria-label="{label}">{r}{body}</svg>'
+
+
+def _nested(shape, n, color, w, rr, s0=0.18, gaps=1, inside=None):
+    """Vẽ n đường vân lồng nhau theo hàm shape(scale) -> list điểm."""
+    out = ""
+    for k in range(n):
+        sc = s0 + (1 - s0) * k / (n - 1)
+        pts = shape(sc)
+        if inside:
+            pts = [q for q in pts if inside(q)]
+        out += _stroke(_cat(pts, rr, gaps if k > 1 else 0, (3, 6)), color, w)
+    return out
+
+
+# 5 ─ Vân hạt lúa mì: đầu ngón tay thành hạt lúa mì – bánh làm từ bột mì
+def hat_lua_mi(color=DO, w=6.4, seed=6):
+    rr = random.Random(seed)
+
+    def lens(sc):
+        pts = []
+        for i in range(161):
+            t = -1 + 2 * i / 160
+            y = 96 * sc * t
+            x = 70 * sc * (1 - t * t) ** 0.72 * (1 + 0.04 * math.sin(4 * t))
+            pts.append((x, y))
+        return pts + [(-x, y) for x, y in reversed(pts)]
+    s = _nested(lens, 7, color, w, rr, 0.16)
+    s += _stroke([[(0, -78), (0, 78)]], color, w * 0.8).replace('stroke-width', 'stroke-dasharray="1 14" stroke-width') if False else ""
+    return s
+
+
+# 6 ─ Giọt son: dấu vân tay trong dáng giọt mực son, đỉnh nhọn như chữ A
+def giot_son(color=DO, w=6.4, seed=9):
+    rr = random.Random(seed)
+
+    def drop(sc):
+        pts = []
+        for i in range(201):
+            t = 2 * math.pi * i / 200
+            x = 74 * math.sin(t) * math.sin(t / 2) ** 0.9
+            y = -96 * math.cos(t)
+            pts.append((x * sc, y * sc + 30 * (1 - sc)))
+        return pts
+    s = _nested(drop, 8, color, w, rr, 0.12)
+    return f'<g transform="translate(0 -6)">{s}</g>'
+
+
+# 7 ─ Vân AT: vân mái lều bên ngoài (A), lõi vân là chữ T (Tâm)
+def van_at(color=DO, w=6.6, seed=4):
+    rr = random.Random(seed); s = ""
+    sl, gap = 1.25, 12.5
+    step = gap * math.sqrt(1 + sl * sl)
+    for k in range(6):
+        top = -20 - k * step; rho = 4 + k * 8
+        pts = [(x, top + sl * (math.sqrt(x * x + rho * rho) - rho) - 0.0009 * k * x * x) for x in [-130 + 260 * i / 160 for i in range(161)]]
+        pts = [q for q in pts if (q[0] / 80) ** 2 + ((q[1] - 4) / 96) ** 2 <= 1]
+        s += _stroke(_cat(pts, rr, 1 if k else 0, (3, 5)), color, w)
+    s += _stroke([[(-16, 6), (16, 6)], [(0, 6), (0, 44)]], color, w)          # chữ T ở lõi
+    for j, y in enumerate((82, 96)):
+        pts = [(x, y + 3 * math.sin(x / 20 + j)) for x in range(-90, 91, 2)]
+        pts = [q for q in pts if (q[0] / 80) ** 2 + ((q[1] - 4) / 96) ** 2 <= 1]
+        s += _stroke(_cat(pts, rr, 1, (4, 6)), color, w)
+    return s
+
+
+# 8 ─ Mới ra lò: nửa dưới là vân tay, phía trên ba làn hơi nóng (cũng là ba vân của dấu mũ)
+def moi_ra_lo(color=DO, w=6.6, seed=2):
+    rr = random.Random(seed); s = ""
+    for k in range(6):
+        r = 22 + k * 13
+        pts = [(r * math.cos(a), 30 + r * 0.95 * math.sin(a)) for a in [math.pi * (0.02 + 0.96 * i / 80) for i in range(81)]]
+        s += _stroke(_cat(pts, rr, 1 if k > 1 else 0, (3, 5)), color, w)
+    s += _stroke([[(-10, 30), (10, 30)]], color, w)
+    for j, x0 in enumerate((-30, 0, 30)):
+        pts = [(x0 + 7 * math.sin(y / 11 + j), y) for y in range(-92, 6, 2)]
+        s += _stroke([pts], color, w)
+    return s
+
+
+# 9 ─ Ấn Â: chữ Â hoa của font riêng trong vòng vân tay
+def an_a(color=DO, w=6, seed=7):
+    rr = random.Random(seed); s = ""
+    for k, r in enumerate((86, 98)):
+        pts = [(r * 0.86 * math.cos(a), r * math.sin(a)) for a in [2 * math.pi * i / 160 for i in range(161)]]
+        s += _stroke(_cat(pts, rr, 2, (5, 9)), color, w)
+    g, _ = V.text("Â", 150, "xb", 0, 0, color, "middle")
+    s += g.replace('<g fill', '<g transform="translate(0 48)"><g fill', 1) + "</g>"
+    return s
