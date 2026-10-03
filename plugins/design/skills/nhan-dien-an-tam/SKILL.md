@@ -57,6 +57,8 @@ Nền đường vân (`assets/nen-duong-van.svg`: Đỏ An Tâm + Đỏ son), d�
 - **Báo giá, thư A4:** logo ngang góc trái trên, chân trang dải đỏ mảnh; lề 15 mm.
 - Khổ khác: danh thiếp 90×54 mm (xén 2 mm), phiếu giao hàng A5, tem tròn Ø40 mm.
 
+- **Đồng phục:** kiểu Vân lan – vòng vân son toả ra từ chấm tâm ở ngực trái, nhạt dần (áo thun nền Kem, polo trắng kem cổ Đỏ, tạp dề Đỏ vân Kem).
+
 ## 6. Ảnh
 
 - Ưu tiên **ảnh/video thật** của An Tâm: kho Google Drive https://drive.google.com/drive/folders/1faO0hyZNPXgOjZmp6rSj8qp4vHBsMZR2 (xưởng, dây chuyền, sản phẩm, quán đối tác). Ánh sáng ấm, nền gỗ/kraft/kem; không lọc màu lạnh; không dùng ảnh mạng không rõ quyền.

@@ -410,8 +410,8 @@ def ho_so_nang_luc():
 
 
 def _ao2(n):
-    import ao2
-    return getattr(ao2, n)()
+    import ao5
+    return {"ao_thun": ao5.ao_thun, "ao_polo": ao5.ao_polo, "tap_de": ao5.tap_de}[n]()
 
 
 MOI = [

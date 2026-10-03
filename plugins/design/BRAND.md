@@ -78,6 +78,7 @@
 | Kho ảnh thật | Ảnh, video thật và ảnh sản phẩm: https://drive.google.com/drive/folders/1faO0hyZNPXgOjZmp6rSj8qp4vHBsMZR2 |
 | Ảnh | Ảnh thật: tay người làm bánh, bánh vừa ra lò, món ăn ở quán đối tác. Ánh sáng ấm, nền gỗ, kraft hoặc kem. Không lọc màu lạnh, không dùng ảnh mạng không rõ quyền |
 | Khổ chuẩn | Bài đăng 1080×1350 (lề 72 px); story 1080×1920; báo giá A4 (lề 15 mm); danh thiếp 90×54 mm (xén 2 mm); phiếu giao hàng A5; tem tròn Ø 40 mm |
+| Đồng phục | Kiểu **Vân lan** (chốt 03/10/2026): vòng vân son toả ra từ chấm tâm ở ngực trái, nhạt dần. Áo thun nhân viên nền Kem, cổ bo Đỏ; polo văn phòng trắng kem, cổ + viền tay Đỏ, chấm tâm thêu; tạp dề Đỏ An Tâm, vân Kem (bản yếm + ngang eo). Bản chi tiết: [assets/diem-chi/ung-dung-1.1/dong-phuc-chinh-thuc/](assets/diem-chi/ung-dung-1.1/dong-phuc-chinh-thuc/) |
 | Thư mục mẫu (Canva, Google Drive) | **[Cần điền]** |
 
 > Logo trước đây (chữ A ruy băng đỏ ôm bông lúa, [assets/logo-am-thuc-an-tam.jpg](assets/logo-am-thuc-an-tam.jpg)) chỉ giữ để đối chiếu, không dùng cho ấn phẩm mới (các hướng thiết kế khác đã xoá khỏi kho). Thẻ "Mẻ bánh hôm nay" và câu "người làm bánh xác nhận" chỉ dùng khi xưởng thật sự ghi lại người làm từng mẻ.
