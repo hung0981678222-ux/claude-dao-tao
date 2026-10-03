@@ -3,7 +3,7 @@
 Ngày soát: 2026-10-03 · Người soát: Biên tập
 Đã đọc: brief, nghien-cuu, lich-dang, bai-viet, thiet-ke, 3 file HTML và 8 PNG trong `mau/`; đối chiếu nội dung khoá với `/home/user/claude-dao-tao/index.html`.
 
-## KẾT LUẬN: CẦN SỬA
+## KẾT LUẬN VÒNG 1: CẦN SỬA (đã xử lý, xem "Vòng 2" ở cuối file: ĐẠT)
 
 Nội dung khoá, giọng văn và các điều cấm (số liệu, lời chứng thực, giá) cơ bản đạt. Chưa duyệt vì còn 5 chỗ lệch chữ và hình ở mức phải làm lại: carousel T4, ví dụ tháng 8 và tháng 9, định dạng T6, chữ trên ảnh các ngày, bố cục slide T4. Ngoài ra còn 2 chỗ sai nội dung khoá ở bài viết và hình, và ads chưa sạch để A/B test. Sửa xong thì gửi lại biên tập soát vòng 2. Chỉ cần soát phần đã sửa.
 
@@ -176,3 +176,60 @@ Hiện A = "Tìm hiểu thêm" (link), B = "Đăng ký" (link), C = "Gửi tin n
 3. Biên tập soát vòng 2: chữ ảnh so với bài, 7 slide T4 có mặt đủ, tháng 9 ở cả hai nơi, không còn "tháng 8" hay "học không cần mạng" trong file nào của chiến dịch.
 
 Việc sếp quyết (không thuộc lỗi biên tập): điền [ĐƠN VỊ], [GIÁ], [LINK ĐĂNG KÝ], [HẠN ƯU ĐÃI], [HÌNH THỨC HỌC] trước T7; có người trực inbox cho CTA "XEM KHOÁ" của T6; Bài 7 chỉ dùng "ưu đãi" nếu thật sự có.
+
+---
+
+# Vòng 2
+
+Ngày soát: 2026-10-03 · Đã đọc lại `bai-viet.md`, `thiet-ke.md`, `lich-dang.md`, xem đủ 11 PNG (T2, T4 slide 1-7, ads A/B/C), đối chiếu `/home/user/claude-dao-tao/index.html`.
+
+## KẾT LUẬN VÒNG 2: ĐẠT
+
+Không còn lỗi thật ảnh hưởng đăng bài. Còn 1 gợi ý nhỏ (mục 5) không chặn.
+
+## 1. V1–V12 và T1–T12
+
+| Mục | Kết quả |
+|---|---|
+| V1, T1 | Đạt. Bài 3 và thiết kế đều 7 slide, chữ từng slide khớp bản chốt. |
+| V2 | Đạt. Slide 5 đủ 5 thành phần, không còn "5 dòng" theo nghĩa độ dài. |
+| V3, T9 | Đạt. Slide 7 và cuối caption có "Muốn xem khoá, nhắn tin cho page."; không có [GIÁ], [HẠN ƯU ĐÃI] ở T4. |
+| V4 | Đạt. Đếm lại Bài 4 (từ "Hộp xin phép hiện lên" đến "nếu thấy hữu ích", không tính hashtag và chân bài): 13+10+15+32+5+8+19+23+36+29 = 190 chữ. Đúng mốc ≤190, nhưng không còn dư; ai thêm chữ nào thì phải cắt chỗ khác. |
+| V5 | Đạt. 5 bước khớp `index.html` slide "Vòng đời dự án: 5 bước" (1 Ý tưởng, viết 5 dòng tóm tắt; 5 Chốt và lưu, cập nhật sổ tay, sao lưu). Ví dụ báo cáo cuối tháng đã sửa theo. |
+| V6, V7, V8 | Đạt. "Chữ trên ảnh (chốt)" của Bài 1 đến 7 khớp `thiet-ke.md` (đối chiếu từng ngày). |
+| V9 | Đạt. Cả 3 mẫu: "Tìm hiểu thêm", [LINK ĐĂNG KÝ]; ghi chú A/B cập nhật. |
+| V10 | Đạt. "Mục tiêu · Ai dùng · Kết quả · Hạn chót · Ràng buộc" thống nhất ở Bài 3, ads C, thiết kế, và khớp `index.html`. |
+| V11, T12 | Đạt. Không còn "yên tâm hơn" ở bài và thiết kế; không còn nút giả trong ảnh; 3 hình ads dựng riêng. |
+| V12 | Đạt. Hashtag đã đổi sang #HocClaude. |
+| T2 | Đạt. "Tháng 9" ở T2, slide 4, ads C, bài; không còn "tháng 8" ở file nào của chiến dịch (chỉ còn trong nhật ký). |
+| T3 | Đạt. T6 là 1 ảnh đơn. |
+| T4 | Đạt. Đã xem PNG: slide 2 và 6 có 3 thẻ ở nửa dưới, slide 5 dàn đều; không slide nào trống quá khoảng 1/5. |
+| T5 | Đạt. T3 chốt 3 chỗ. |
+| T6 | Đạt. Cột "Từ chối khi" có "thấy việc lạ"; khớp ads B. |
+| T7, T8 | Đạt. Tiêu đề T6 "5 bước từ ý tưởng đến kết quả"; "Slide chạy không cần mạng"; không còn "học không cần mạng" ở bài hay thiết kế (chỉ còn trong `nghien-cuu.md` nội bộ và `brief.md`, không đăng). |
+| T10 | Đạt. CN có 4 thẻ khớp Bài 7, không còn [CHỜ XÁC NHẬN]. |
+| T11 | Đạt. Chân ảnh/chân bài cùng một câu: "Khoá do [ĐƠN VỊ] biên soạn, không phải sản phẩm chính thức của Anthropic." (Bài 4 thêm câu về pháp lý/bảo mật phía trước, hợp lý). Chân ảnh trong PNG T2, slide 7, ads A/B/C đều đúng câu này. |
+
+## 2. Soát lại `bai-viet.md`
+- Chính tả, dấu, dấu câu: không còn lỗi. Xưng hô "mình" và "anh chị" nhất quán.
+- Quy trình 5 bước (Bài 5) và 5 thành phần (Bài 3, ads C) khớp `index.html`.
+- Headline ads: A 36, B 34, C 36 ký tự (<40). Câu đầu primary text A 94, B 101, C 94 ký tự (<125).
+- Không có số liệu thống kê, lời chứng thực. Các số còn lại (8 phần, 100 slide, 6 bài tập, 3 câu hỏi, 3 chỗ) đều lấy từ khoá.
+- Chỗ trống thống nhất 5 tên: [ĐƠN VỊ], [GIÁ], [LINK ĐĂNG KÝ], [HẠN ƯU ĐÃI], [HÌNH THỨC HỌC]. Không còn tên lạ ở file nào.
+
+## 3. Khớp chữ và hình
+- T4: 7 slide PNG khớp từng chữ với "Chữ từng slide" của Bài 3 (tiêu đề, thẻ, chú thích, tháng 9, nhãn "Claude có thể hỏi", khối "Lưu bài để dùng lần sau", chân ảnh).
+- Ads A/B/C: chữ trên ảnh, dòng phụ và khối dưới khớp bảng ads trong `thiet-ke.md` và mẫu trong bài. Không có logo Anthropic, không nút giả, không giá.
+- T2: chữ trên ảnh khớp Bài 1.
+
+## 4. Đã tự sửa trong vòng 2 (`thiet-ke.md`)
+| # | Lỗi | Đã sửa |
+|---|---|---|
+| A5 | Quy tắc chữ trên ảnh số 8 còn "anh chị/bạn", trái quy ước xưng hô | Đổi thành "anh chị", không dùng "bạn" |
+| A6 | Đếm chữ tiêu đề sai: T2 ghi 11 (thực tế 12), T3 ghi 10 (thực tế 11) | Sửa 12 và 11; cả hai vẫn trong ngưỡng ≤12 |
+
+## 5. Gợi ý nhỏ, không chặn đăng
+- Thẻ "giao việc rõ" trong `t2-mo-man.png` có dòng "Đủ ý để làm đúng hơn ngay lần đầu." Câu này chỉ có trên hình, không có trong bài hay `thiet-ke.md`, và hơi hứa kết quả. Ví dụ trong thẻ cũng chưa có hạn chót, ràng buộc. Nếu thiet-ke có dịp chụp lại thì đổi thành "Claude không còn phải đoán." (đúng giọng caption Bài 3). Nếu không, đăng nguyên vẫn chấp nhận được vì không có số liệu hay cam kết cụ thể.
+- Bài 4 vừa đủ 190 chữ; sửa bài này thì đếm lại.
+
+Việc sếp quyết trước khi đăng giữ nguyên như mục F: điền 5 chỗ trống, người trực inbox cho "XEM KHOÁ" (T6), Bài 7 chỉ dùng "ưu đãi" nếu thật sự có, kiểm lại chính sách Meta về tỉ lệ chữ trên ảnh ads.
