@@ -65,7 +65,16 @@ def bang(title, sub, items, u, w=1080, h=560):
     for x in (190, 540, 890):
         s += bong(x, 470, 120, 12, u)
     s += items
-    s += W(title, 26, 40, 50, DO, "xb") + W(sub, 15, 40, 78, "#6b5a55", "md")
+    s += W(title, 26, 40, 50, DO, "xb")
+    words, lines, cur = sub.split(), [], ""
+    for wd in words:
+        if len(cur) + len(wd) > 62:
+            lines.append(cur); cur = wd
+        else:
+            cur = (cur + " " + wd).strip()
+    lines.append(cur)
+    for i, ln in enumerate(lines[:3]):
+        s += W(ln, 14, 40, 76 + i * 19, "#6b5a55", "md")
     s += nhan("ÁO THUN NHÂN VIÊN", 190, 530) + nhan("ÁO VĂN PHÒNG", 540, 530) + nhan("TẠP DỀ", 890, 530)
     return S(w, h, s, title)
 
@@ -141,3 +150,87 @@ def huong_3():
 
 
 HUONG = [("huong-1-dai-van", huong_1), ("huong-2-dau-tay-lon", huong_2), ("huong-3-thu-cong", huong_3)]
+
+
+SLV = "M -98,-140 C -118,-132 -134,-118 -146,-100 L -124,-50 C -116,-54 -106,-58 -98,-62 Z M 98,-140 C 118,-132 134,-118 146,-100 L 124,-50 C 116,-54 106,-58 98,-62 Z"
+SLV_TEE = "M -98,-140 C -122,-132 -142,-116 -160,-92 L -134,-32 C -122,-38 -110,-45 -98,-52 Z M 98,-140 C 122,-132 142,-116 160,-92 L 134,-32 C 122,-38 110,-45 98,-52 Z"
+
+
+def _clip(cid, d, inner):
+    return f'<clipPath id="{cid}"><path d="{d}"/></clipPath><g clip-path="url(#{cid})">{inner}</g>'
+
+
+# ───────── Hướng 4 · KHỐI MÀU: thân Mực, cầu vai + tay Đỏ, đường cắt chéo – kiểu đồng phục thể thao
+def huong_4():
+    u = "h4"; ts = .95
+    yoke = lambda cx, cy: f'<path d="M{cx - 200},{cy - 200} L{cx + 200},{cy - 200} L{cx + 200},{cy - 70} L{cx - 200},{cy - 30} Z" fill="{DO}"/>'
+    td = yoke(190, 290) + _clip(f"s4t", _P(190, 290, ts, SLV_TEE), f'<rect x="0" y="0" width="400" height="600" fill="{DO}"/>')
+    td += f'<path d="M{190 - 200},{290 - 26} L{190 + 200},{290 - 66}" stroke="{NGO}" stroke-width="5"/>'
+    t = garm(190, 290, ts, MUC, u, "t", A.TEE, td) + A._co_tron(190, 290, ts, DO2)
+    t += W("AN TÂM", 26, 190, 290 + 40, KEM, "xb", "middle", .12) + mark(190, 290 + 92, 22, DO)
+    pd = f'<path d="M{540 - 200},{290 - 200} L{540 + 200},{290 - 200} L{540 + 200},{290 - 76} L{540 - 200},{290 - 40} Z" fill="{DO}"/>'
+    pd += f'<path d="M{540 - 200},{290 - 36} L{540 + 200},{290 - 72}" stroke="{NGO}" stroke-width="4"/>'
+    p = garm(540, 290, ts, MUC, u, "p", A.POLO, pd) + collar_polo(540, 290, ts, MUC, u)
+    p += fit(V.logo_ngang(KEM, KEM), 540 + 54 * ts, 290 - 8 * ts, w=66 * ts)
+    ad = f'<path d="M{890 - 160},{300 - 260} L{890 + 160},{300 - 260} L{890 + 160},{300 - 20} L{890 - 160},{300 + 30} Z" fill="{DO}"/>'
+    ad += f'<path d="M{890 - 160},{300 + 34} L{890 + 160},{300 - 16}" stroke="{NGO}" stroke-width="5"/>'
+    a = tie(890, 300, .9, MUC) + garm(890, 300, .9, MUC, u, "a", APRON, ad, seams=False) + stitch(890, 300, .9, KEM)
+    a += mark(890, 300 - 130 * .9, 26, KEM) + W("An Tâm", 24, 890, 300 - 60, KEM, "xb", "middle")
+    a += W("Mỗi mẻ bánh, một lời cam kết", 11, 890, 300 + 100, KEM, "xb", "middle")
+    return bang("Hướng 4 · Khối màu", "Thân màu Mực, cầu vai và tay Đỏ An Tâm, cắt chéo bằng một sọc vàng bánh – khoẻ, nhanh nhẹn như đồng phục thể thao, ít bám bẩn.", t + p + a, u)
+
+
+# ───────── Hướng 5 · CHỮ LỚN: chữ AN TÂM rất lớn, cắt mép – kiểu streetwear
+def huong_5():
+    u = "h5"; ts = .95
+    big = lambda cx, cy, size, c, rot=0: f'<g transform="rotate({rot} {cx} {cy})">' + W("AN TÂM", size, cx, cy, c, "xb", "middle", -.02) + "</g>"
+    t = garm(190, 290, ts, KEM, u, "t", A.TEE, big(190, 290 + 120, 118, DO)) + A._co_tron(190, 290, ts, DO)
+    t += mark(190 + 52, 290 - 94, 15, DO) + W("Mỗi mẻ bánh, một lời cam kết", 10, 190, 290 - 18, MUC, "xb", "middle")
+    p = garm(540, 290, ts, TRANG, u, "p", A.POLO, big(540 - 20, 290 + 150, 100, DO)) + collar_polo(540, 290, ts, DO, u)
+    p += fit(V.logo_ngang(), 540 - 50 * ts, 290 - 82 * ts, w=66 * ts)
+    a = tie(890, 300, .9, DO) + garm(890, 300, .9, DO, u, "a", APRON, big(890, 300 + 196, 112, DO2), seams=False) + stitch(890, 300, .9, KEM)
+    a += mark(890, 300 - 130 * .9, 26, KEM) + W("Ẩm Thực An Tâm", 20, 890, 300 - 62, KEM, "xb", "middle")
+    a += W("Mỗi mẻ bánh, một lời cam kết", 11, 890, 300 - 34, "#FFD6D3", "md", "middle")
+    return bang("Hướng 5 · Chữ lớn", "Chữ AN TÂM bằng font riêng in rất lớn, tràn và cắt mép áo – trẻ, kiểu streetwear, dấu mũ vân tay nhìn rõ từ xa.", t + p + a, u)
+
+
+def _lap(x, y, w, h, c, r=11, gap=46, op=1):
+    o = ""
+    for j, yy in enumerate(range(int(y), int(y + h) + gap, gap)):
+        for xx in range(int(x) - (gap // 2 if j % 2 else 0), int(x + w) + gap, gap):
+            o += f'<g opacity="{op}">{mark(xx, yy, r, c, rings=6)}</g>'
+    return o
+
+
+# ───────── Hướng 6 · HOẠ TIẾT LẶP: vân tay nhỏ lặp kín (monogram)
+def huong_6():
+    u = "h6"; ts = .95
+    t = garm(190, 290, ts, DO, u, "t", A.TEE, _lap(10, 110, 360, 380, DO2, 11, 44)) + A._co_tron(190, 290, ts, DO2)
+    t += f'<rect x="{190 - 80}" y="{290 - 8}" width="160" height="56" rx="28" fill="{KEM}"/>' + W("An Tâm", 26, 190, 290 + 30, DO, "xb", "middle")
+    pd = _clip("s6p", _P(540, 290, ts, SLV), f'<rect x="360" y="120" width="360" height="240" fill="{DO}"/>' + _lap(360, 130, 360, 200, KEM, 7, 26))
+    p = garm(540, 290, ts, KEM, u, "p", A.POLO, pd) + collar_polo(540, 290, ts, DO, u)
+    p += f'<rect x="{540 + 30 * ts}" y="{290 - 100 * ts}" width="{46 * ts}" height="{50 * ts}" rx="4" fill="{DO}"/>' + _clip("pk6", f"M{540 + 30 * ts},{290 - 100 * ts} h{46 * ts} v{50 * ts} h{-46 * ts}Z", _lap(540 + 20, 290 - 104, 70, 60, KEM, 6, 20))
+    p += fit(V.logo_ngang(), 540 - 52 * ts, 290 - 82 * ts, w=60 * ts)
+    a = tie(890, 300, .9, DO) + garm(890, 300, .9, KEM, u, "a", APRON, _lap(740, 90, 300, 440, DO, 10, 42, .22), seams=False) + stitch(890, 300, .9, DO)
+    a += f'<rect x="{890 - 96}" y="{300 - 150}" width="192" height="120" rx="10" fill="{KEM}"/>'
+    a += mark(890, 300 - 112, 26, DO) + W("An Tâm", 26, 890, 300 - 52, DO, "xb", "middle")
+    return bang("Hướng 6 · Hoạ tiết lặp", "Dấu vân tay nhỏ lặp kín như hoa văn monogram: áo thun đỏ vân chìm, polo kem có tay và túi ngực in hoạ tiết, tạp dề in lặp mờ.", t + p + a, u)
+
+
+# ───────── Hướng 7 · TỐI GIẢN: chỉ một chấm son – nét riêng của biểu tượng 1.1
+def huong_7():
+    u = "h7"; ts = .95
+    dot = lambda cx, cy, r: f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="{DO}"/>'
+    t = garm(190, 290, ts, KEM, u, "t", A.TEE, "") + A._co_tron(190, 290, ts, KEM)
+    t += dot(190 + 54, 290 - 96, 9) + W("an tâm", 12, 190 + 54, 290 - 72, MUC, "xb", "middle", .2)
+    t += f'<rect x="{190 - 104 * ts}" y="{290 + 120 * ts}" width="{208 * ts}" height="6" fill="{DO}"/>'
+    p = garm(540, 290, ts, MUC, u, "p", A.POLO, "") + collar_polo(540, 290, ts, MUC, u)
+    p += f'<path d="{_P(540, 290, ts, "M -40,-150 C -20,-160 20,-160 40,-150")}" fill="none" stroke="{DO}" stroke-width="3"/>'
+    p += dot(540 + 54 * ts, 290 - 90 * ts, 7) + W("an tâm", 10, 540 + 54 * ts, 290 - 68 * ts, KEM, "xb", "middle", .2)
+    a = tie(890, 300, .9, MUC) + garm(890, 300, .9, "#EDE3D6", u, "a", APRON, "", seams=False) + stitch(890, 300, .9, MUC)
+    a += dot(890, 300 - 130, 14) + W("an tâm", 18, 890, 300 - 92, MUC, "xb", "middle", .2)
+    a += f'<rect x="{890 - 112}" y="{300 + 150}" width="224" height="5" fill="{DO}"/>'
+    return bang("Hướng 7 · Tối giản chấm tâm", "Bỏ hết, chỉ giữ chấm son – lõi của dấu vân tay chấm tâm – và chữ an tâm nhỏ. Cao cấp, hợp văn phòng, showroom, sự kiện.", t + p + a, u)
+
+
+HUONG += [("huong-4-khoi-mau", huong_4), ("huong-5-chu-lon", huong_5), ("huong-6-hoa-tiet-lap", huong_6), ("huong-7-toi-gian", huong_7)]
