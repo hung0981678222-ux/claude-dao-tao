@@ -237,7 +237,7 @@ Cách làm:
 
 Vị rau thơm, nước mắm chua ngọt cuốn trong bánh tortilla, ăn là thấy quen.
 
-Nhà mình thích cuốn gà hay bò? Bình luận cho An Tâm biết, và lưu bài lại để cuối tuần làm nhé.
+Nhà mình thích cuốn gà hay bò? Bình luận cho An Tâm biết, và lưu bài lại để lần sau làm nhé.
 
 #tortilla #wrap #monngondelam #bepnha #antamfoods
 

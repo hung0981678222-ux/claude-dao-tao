@@ -22,6 +22,8 @@ thiet-ke.md (chữ trên ảnh các bài chưa dựng mẫu, cho khớp "chốt"
 lich-dang.md
 8. Cột "Mẫu thiết kế" đổi cho khớp thiet-ke: bài 1 mau/a-gioi-thieu; bài 2 mau/b-chon-co-banh; bài 6 và 8 mau/c-nhan-bang-gia; bài 3, 7, 9 mau/d-the-cong-thuc. (Trước đó lịch ghi bai-nguoi-lam-banh, bai-thong-bao, "ảnh món", còn thiet-ke dùng mẫu khác.)
 
+(Lưu ý: mục 8 ở trên là tên mẫu cũ `d-the-cong-thuc`, đã thay ở vòng 2 bằng `d-cong-thuc-bai-3/7/9`.)
+
 ## Kết quả kiểm theo từng mục
 
 1. Thông tin An Tâm: đạt. 3 dòng tortilla, 4 cỡ 22/25/28/31, 15 chiếc/túi, 4 loại vỏ kebab, Zalo 0398 431 300, antamfoods.com, "Mỗi mẻ bánh, một lời cam kết" (chỉ bài 1, 6, 10), "Cần thêm bánh gấp? Gọi An Tâm, tụi mình lo." đều khớp. Không giá, ô giá, thử mẫu, chứng thực, số 1/ngon nhất/rẻ/"!". Nguyên cám không kèm công dụng. Câu "Bảng giá đại lý rõ ràng" và "mềm dẻo, cuộn gì cũng vừa" là câu mẫu chính thức.
@@ -54,3 +56,41 @@ V2. Nếu thiet-ke giữ chữ trên ảnh bài 6 là "Nhắn Zalo để nhận 
 - Bài 1: câu mở "Sáng nay xưởng đã nướng xong mẻ đầu tiên" có đúng sự thật không; giờ trực Zalo (bài chủ quán đều dẫn về Zalo).
 - Gợi ý cỡ–món bài 2, công thức bài 3, 7, 9 cần người trong xưởng/bếp duyệt và nấu thử.
 - Ảnh thật xưởng, người làm bánh đồng ý lên hình.
+
+---
+
+# Vòng 2 (2026-10-03)
+
+Đã xem: 6 PNG trong `mau/` (a, b, c, d-bai-3, d-bai-7, d-bai-9), HTML mẫu A, grep toàn thư mục `mau/`, đối chiếu "Chữ trên ảnh (chốt)" và nội dung trong `bai-viet.md`, `lich-dang.md`, `thiet-ke.md`.
+
+## KẾT LUẬN VÒNG 2: ĐẠT
+
+Không còn lỗi chặn đăng. Các việc còn lại là điền `[Cần điền]` trong chữ bài, duyệt công thức/cỡ–món, ảnh thật (đã nằm trong danh sách việc của sếp).
+
+## T1–T7 đã xử lý
+
+- T1 đạt: ảnh bài 1 chỉ còn "Bánh làm mới mỗi ngày" (2 dòng, 5 chữ) + nút Zalo 0398 431 300; không nhãn, huy hiệu, dòng phụ. Một vân lớn (nền), chữ nằm trong panel kem.
+- T2, T3 đạt: tiêu đề bài 2 "Đúng cỡ cho đúng món"; 4 dòng gợi ý cỡ–món đúng từng chữ bài 2; chú thích "3 dòng... 4 cỡ, 15 chiếc/túi" khớp; không còn dòng `[Cần điền]`.
+- T4, T5 đạt: bài 6 "Nhắn Zalo nhận báo giá"; còn 3 dòng ý đúng thiet-ke, bỏ dòng giờ chốt đơn; không giá, không "thử mẫu".
+- T6 đạt: 3 thẻ công thức riêng. Bài 3: 4 bước, nguyên liệu, chân "Lưu bài để mai nấu nhé" khớp bài. Bài 7: 4 bước, nguyên liệu, "Chia sẻ bài cho cả nhà" khớp. Bài 9: 4 bước, nguyên liệu (gà nướng sả hoặc bò xào), "Lưu bài để cuối tuần làm nhé" khớp. Không `[Cần điền]` trên ảnh nào (grep `mau/` sạch; `.cd` trong chung.css chỉ là lớp CSS không dùng).
+- T7 đạt: thiet-ke.md bài 1 và 6 không còn nhắc bai-uu-dai/bai-doi-tac làm mẫu.
+- T8 đạt: mẫu C chỉ dùng vân tay nhỏ làm gạch đầu dòng.
+
+## Quy tắc nhận diện (6 PNG)
+
+Đạt: font An Tâm Tròn Bánh, dấu tiếng Việt đúng, logo ngang đỏ trên kem / kem trên đỏ, nhãn vàng chỉ trên nền đỏ cỡ lớn, không "!", không giá, không chữ hứa quá đà, mỗi ảnh tối đa một vân lớn, khung ảnh thật là hình khối giữ chỗ có nhãn "Ảnh thật: ...". Chữ nhỏ nhất (chú thích bài 2, nguyên liệu thẻ D) đủ lớn, đọc rõ.
+
+## Đã tự sửa (vòng 2)
+
+- `lich-dang.md` dòng 17, 21, 23: cột mẫu còn `mau/d-the-cong-thuc` (file đã xoá) đổi thành `mau/d-cong-thuc-bai-3`, `-bai-7`, `-bai-9`.
+
+## Khớp chéo (đạt)
+
+10 bài, ngày, giờ (09:30, 15:00, 11:30, 21:00, 15:00, 10:00, 18:30, 10:00, 10:30, 21:00), nhóm khách, chữ "chốt" của 10 bài khớp giữa bai-viet, lich-dang, thiet-ke. Bảng "Bản mẫu đã dựng" trong thiet-ke khớp tên 6 file PNG/HTML. Bài 4, 5, 8, 10 chưa dựng ảnh: lich-dang và thiet-ke ghi mẫu nền khớp nhau (bai-san-pham.svg, c-nhan-bang-gia, bai-thong-bao.svg).
+
+## Lưu ý nhẹ (không chặn đăng)
+
+1. Thẻ bài 3 và 9: vùng đầu đỏ có khoảng trống lớn dưới tiêu đề một dòng; bài 7 tiêu đề xuống dòng chỉ còn chữ "chảo". Chỉ là thẩm mỹ, thiet-ke có thể chỉnh nếu có thời gian.
+2. Thẻ công thức có "antamfoods.com" ở chân, bài viết 3, 7, 9 không có dòng này. Không sai, nhưng nếu muốn chưa dẫn về web cho nhóm "nhà" (chưa rõ có bán lẻ) thì bỏ dòng này (việc sếp mục 11).
+3. Bài 9 đăng Chủ nhật nhưng kêu gọi "để cuối tuần làm nhé" hơi lệch. Nếu viet-bai đổi (ví dụ "để lần sau làm nhé") thì sửa luôn chân thẻ `mau/d-cong-thuc-bai-9.html` và chụp lại.
+4. Ảnh thật vẫn cần thay vào khung giữ chỗ trước khi đăng; ảnh AI phải ghi "Ảnh minh hoạ AI".
