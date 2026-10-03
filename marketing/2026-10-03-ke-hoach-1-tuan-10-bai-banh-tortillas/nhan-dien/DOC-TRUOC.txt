@@ -1,0 +1,27 @@
+BỘ NHẬN DIỆN ĐIỂM CHỈ – ẨM THỰC AN TÂM (phiên bản 1.1 – đóng gói 03/10/2026)
+Công ty TNHH SX-TM Ẩm Thực An Tâm · antamfoods.com · Hotline/Zalo: 0398 431 300 (số duy nhất)
+Ý tưởng: dấu vân tay son đỏ – lời cam kết điểm chỉ của người làm bánh.
+Nét riêng: lõi vân tay là một CHẤM TÂM son tròn – tâm của dấu tay, cũng là chữ "Tâm". Câu thương hiệu: "Mỗi mẻ bánh, một lời cam kết".
+Đây là bộ nhận diện chính thức DUY NHẤT – không dùng các hướng thiết kế cũ.
+
+1-Logo      Logo ngang (bản chính), logo đứng, biểu tượng vân tay, biểu tượng bản nhỏ (dùng ở cỡ ≤ 24 px / 8 mm), dấu tròn "Cam kết từ tâm".
+            SVG cho in ấn/thiết kế; PNG nền trong suốt 2000 px cho văn phòng, mạng xã hội.
+            Nền kem/trắng: logo đỏ. Nền đỏ/tối: dùng bản "kem"/"nen-do".
+            Cấm: bỏ/đổi màu/dời chấm tâm, kéo méo, đổi màu ngoài bảng, xoay, đổ bóng, vẽ lại vân tay, đổi font.
+2-Font      An Tâm Tròn Bánh (Regular / SemiBold / ExtraBold) – cách cài trong HUONG-DAN.txt. Giấy phép SIL OFL.
+3-Mau       Bảng màu HEX/RGB.
+4-Hoa-tiet  Nền đường vân.
+5-Cam-nang  Cẩm nang đầy đủ – mở bằng trình duyệt (Chrome, Edge…).
+6-Mau-ung-dung  Mẫu ứng dụng (mạng xã hội, ấn phẩm, bao bì, đồng phục, điểm bán) – SVG, mở bằng trình duyệt hoặc Illustrator.
+            Bản thiết kế lại 1.1 (có PNG kèm): ly giấy, hộp taco, túi tortilla, quầy kiosk, xe giao hàng, standee,
+            hồ sơ năng lực, mũ bếp – xem ung-dung-thiet-ke-lai.html.
+            Đồng phục chính thức kiểu VÂN LAN (dong-phuc/): áo thun nhân viên, áo văn phòng (polo), tạp dề –
+            vòng vân son toả ra từ chấm tâm ở ngực trái. Bảng thông số trong dong-phuc-van-lan.html.
+7-Bao-bi-in Túi bánh tortilla 300 × 330: file PDF in (mặt trước + mặt sau), SVG, bản vẽ kỹ thuật, mockup.
+8-Website   31 ảnh cho antamfoods.com: banner trang chủ 1920×720 + bản điện thoại 750×1000, danh mục 1200×400,
+            thẻ sản phẩm 800×800, banner trang con 1920×480, dải kêu gọi, ảnh chia sẻ 1200×630, icon, nút Zalo/Gọi,
+            favicon, app icon. Xem nhanh: website-anh.html. Thẻ sản phẩm đang là hình minh hoạ – thay ảnh chụp thật.
+
+Quy tắc nội dung: không bịa giá/số liệu (ghi [Cần điền]); không nói "số 1", "giá rẻ"; không nêu tên đối thủ;
+ảnh AI phải ghi "Ảnh minh hoạ AI"; khung "ảnh thật" chỉ dùng ảnh thật từ kho ảnh công ty.
+Chỗ ghi [Cần điền] là thông tin công ty phải bổ sung thật trước khi in/đăng.

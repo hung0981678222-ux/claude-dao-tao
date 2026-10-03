@@ -1,0 +1,10 @@
+BẢNG MÀU ĐIỂM CHỈ – ẨM THỰC AN TÂM (v1.1 – 03/10/2026)
+
+Đỏ An Tâm   #D2141E   RGB 210 20 30    – màu chính (~60%): logo, nền lớn, tiêu đề
+Kem giấy    #FFF6EA   RGB 255 246 234  – nền (~25%), chữ trên nền đỏ
+Mực         #231716   RGB 35 23 22     – chữ thân (~10%)
+Đỏ son      #E2332B   RGB 226 51 43    – chỉ dùng cho dấu vân tay, con dấu
+Đỏ đậm      #8F0D14   RGB 143 13 20    – nền sâu
+Vàng bánh   #F5B82E   RGB 245 184 46   – nhấn, tối đa 5%; chữ vàng trên đỏ chỉ dùng cỡ lớn (≥24 px)
+
+CMYK / Pantone: [Cần điền – chốt sau khi in thử với nhà in]

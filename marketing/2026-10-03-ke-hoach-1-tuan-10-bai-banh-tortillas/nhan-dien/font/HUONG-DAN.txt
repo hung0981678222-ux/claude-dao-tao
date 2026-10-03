@@ -1,0 +1,26 @@
+FONT AN TÂM TRÒN BÁNH (tên cài đặt: "An Tam Tron Banh") – phiên bản 1.000
+Font thương hiệu của Ẩm Thực An Tâm, dựng từ Baloo 2 (giấy phép SIL Open Font License 1.1, xem OFL.txt).
+Nét riêng: dấu mũ â ê ô là ba đường vân tay; dấu chấm (i, j, dấu nặng, dấu câu) là vòng xoáy vân tay; góc chữ bo như mực son loang.
+
+CÁC ĐỘ ĐẬM
+  AnTamTronBanh-ExtraBold  – logo, tiêu đề, chữ lớn trên bao bì, biển hiệu
+  AnTamTronBanh-SemiBold   – tiêu đề phụ, nút, bảng giá, nhãn
+  AnTamTronBanh-Regular    – đoạn văn, hợp đồng, báo giá dài
+
+CÀI ĐẶT
+  Windows: chọn cả 3 file .ttf -> chuột phải -> "Install for all users" (hoặc "Install").
+  macOS:   bấm đúp từng file .ttf -> "Install Font" (Font Book).
+  Canva:   Brand Kit -> Fonts -> Upload font -> chọn 3 file .ttf.
+  Figma:   cài vào máy trước (Windows/macOS), Figma tự nhận; trên trình duyệt cần cài Figma font installer.
+  Trong Word/PowerPoint/Illustrator/Photoshop: chọn họ font "An Tam Tron Banh", rồi chọn độ đậm.
+
+DÙNG TRÊN WEBSITE
+  @font-face{font-family:"An Tam Tron Banh";font-weight:400;src:url(AnTamTronBanh-Regular.woff2) format("woff2");font-display:swap}
+  @font-face{font-family:"An Tam Tron Banh";font-weight:600;src:url(AnTamTronBanh-SemiBold.woff2) format("woff2");font-display:swap}
+  @font-face{font-family:"An Tam Tron Banh";font-weight:800;src:url(AnTamTronBanh-ExtraBold.woff2) format("woff2");font-display:swap}
+  body{font-family:"An Tam Tron Banh","Baloo 2",system-ui,sans-serif}
+
+LƯU Ý
+  - Font hỗ trợ đầy đủ tiếng Việt và chữ Latin. Không có chữ nghiêng.
+  - Khi không cài được font (ví dụ máy khách hàng), dùng "Baloo 2" (Google Fonts) làm font thay thế.
+  - Theo giấy phép OFL: được dùng, chia sẻ, nhúng vào ấn phẩm và website miễn phí; không bán riêng file font.

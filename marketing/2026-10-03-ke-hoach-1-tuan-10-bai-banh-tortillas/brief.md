@@ -1,4 +1,6 @@
-# Brief: Kế hoạch 1 tuần, 10 bài Facebook — bánh tortillas
+# Brief: Kế hoạch 1 tuần, 10 bài Facebook — bánh tortillas Ẩm Thực An Tâm (bản 2)
+
+> **Cập nhật 03/10 (bản 2):** sếp gửi bộ nhận diện chính thức → thương hiệu là **Ẩm Thực An Tâm**, bán chủ yếu cho quán ăn/nhà hàng/cửa hàng/đối tác tại TP.HCM. Sếp chốt: **chủ quán là khách chính** (khoảng 7 bài), giữ khoảng 3 bài công thức cho người nấu ở nhà để tăng tương tác. Thông tin xác nhận và quy tắc thương hiệu: `thong-tin-thuong-hieu.md` (ưu tiên hơn mọi giả định bên dưới). Chỗ trống dùng `[Cần điền: ...]` theo quy ước của bộ nhận diện. Bản 1 (hướng người nấu ở nhà) còn trong lịch sử git.
 
 Ngày lập: 2026-10-03 · Người lập: Trưởng phòng marketing
 
