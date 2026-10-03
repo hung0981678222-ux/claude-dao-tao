@@ -409,9 +409,14 @@ def ho_so_nang_luc():
     return S(w, h, s, "Hồ sơ năng lực")
 
 
+def _ao2(n):
+    import ao2
+    return getattr(ao2, n)()
+
+
 MOI = [
-    ("ly-giay", "Ly giấy", ly_giay), ("ao-thun", "Áo thun nhân viên", ao_thun), ("ao-van-phong", "Áo văn phòng", ao_polo),
-    ("tap-de", "Tạp dề", tap_de), ("mu-bep", "Mũ bếp", mu_bep), ("quay-kiosk", "Quầy kiosk", kiosk),
+    ("ly-giay", "Ly giấy", ly_giay), ("ao-thun", "Áo thun nhân viên", lambda: _ao2("ao_thun")), ("ao-van-phong", "Áo văn phòng", lambda: _ao2("ao_polo")),
+    ("tap-de", "Tạp dề", lambda: _ao2("tap_de")), ("mu-bep", "Mũ bếp", mu_bep), ("quay-kiosk", "Quầy kiosk", kiosk),
     ("xe-giao-hang", "Xe giao hàng", xe_giao_hang), ("hop-taco", "Hộp taco", hop_taco), ("tui-tortilla", "Túi bánh tortilla", tui_tortilla),
     ("standee", "Standee", standee), ("ho-so-nang-luc", "Hồ sơ năng lực", ho_so_nang_luc),
 ]
