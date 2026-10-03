@@ -54,7 +54,7 @@ def run(out):
 <nav class="toc">{toc}</nav>
 <div class="note" style="margin-top:36px"><div class="card"><h4>Trước khi in</h4><p>Các chỗ trong <code>[ ]</code> (giá, ngày, địa chỉ, mã số, thành phần, hạn dùng…) là thông tin công ty cần điền thật – không in khi còn để trống. Màu in cần chốt mã CMYK/Pantone với nhà in bằng bản in thử. Ảnh sản phẩm trong mẫu là hình minh hoạ, thay bằng ảnh chụp thật.</p></div></div>
 {secs}
-<div class="end"><h2 style="color:var(--do);font-weight:800;font-size:clamp(30px,4vw,48px)">Sản Phẩm Tận Tâm – Phát Triển Xứng Tầm</h2><p>antamfoods.com · 0348.635.222</p></div>
+<div class="end"><h2 style="color:var(--do);font-weight:800;font-size:clamp(30px,4vw,48px)">Sản Phẩm Tận Tâm – Phát Triển Xứng Tầm</h2><p>antamfoods.com · 0398 431 300</p></div>
 </body></html>"""
     open(os.path.join(out, "bo-ung-dung.html"), "w").write(html)
 

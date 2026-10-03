@@ -13,7 +13,7 @@
 | Sản phẩm chủ lực | Bánh tortillas, Doner kebab |
 | Mô hình | Bán sỉ bánh tortillas cho doanh nghiệp; cửa hàng thực phẩm; nhượng quyền cửa hàng |
 | Website | antamfoods.com |
-| Hotline | 0348.635.222 (viết đúng dạng này) |
+| Hotline / Zalo | 0398 431 300 (hotline duy nhất – viết đúng dạng này; chốt 03/10/2026) |
 | Zalo OA, fanpage | **[Cần điền]** |
 
 ## Khách hàng và người đọc

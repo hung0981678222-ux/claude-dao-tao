@@ -9,7 +9,7 @@ import build_chuan as C
 
 V = C.V
 DO, DO2, KEM, MUC, NGO, GIAY = V.DO, V.DO2, V.KEM, V.MUC, V.NGO, V.GIAY
-HOTLINE = "0398 431 300"   # theo yêu cầu phiên chăm sóc fanpage – BRAND.md đang ghi 0348.635.222, cần anh Hùng xác nhận
+HOTLINE = "0398 431 300"   # hotline duy nhất – đã chốt 03/10/2026
 CHAN = f"Ẩm Thực An Tâm  |  Hotline/Zalo: {HOTLINE}  |  antamfoods.com"
 
 

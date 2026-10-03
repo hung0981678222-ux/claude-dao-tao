@@ -58,7 +58,7 @@ def bia_facebook():
     s += f'<rect x="0" y="0" width="900" height="624" fill="{KEM}"/>'
     s += place(LOGO_N(), 120, 120, 640, 230)
     s += W("Mỗi mẻ bánh, một lời cam kết", 46, 126, 440, MUC, "xb")
-    s += W("Tortilla · Taco · Doner kebab giao tận bếp tại TP.HCM · 0348.635.222", 24, 126, 490, MUC, "md")
+    s += W("Tortilla · Taco · Doner kebab giao tận bếp tại TP.HCM · 0398 431 300", 24, 126, 490, MUC, "md")
     s += vt(1260, 312, 210, KEM, seed=9)
     s += f'<rect x="0" y="0" width="1640" height="624" fill="none" stroke="#fff" stroke-width="3" stroke-dasharray="14 10" opacity=".0"/>'
     return S(1640, 624, s, "Ảnh bìa Facebook 1640×624")
@@ -69,7 +69,7 @@ def post_san_pham():
     s += W("BÁNH TORTILLA", 18, 40, 58, NGO, "xb", track=.24) + W("Mềm dẻo, cuộn gì cũng vừa", 34, 40, 108, KEM, "xb")
     s += f'<circle cx="270" cy="350" r="150" fill="#fff"/>' + banh(140, 250, 260, 200)
     s += W("Gói [số] chiếc · cỡ [inch]", 22, 270, 560, MUC, "xb", "middle") + W("Làm mới mỗi ngày tại xưởng TP.HCM", 16, 270, 590, MUC, "md", "middle")
-    s += f'<rect x="0" y="625" width="540" height="50" fill="{DO}"/>' + W("0348.635.222 · antamfoods.com", 17, 270, 657, KEM, "xb", "middle", .04)
+    s += f'<rect x="0" y="625" width="540" height="50" fill="{DO}"/>' + W("0398 431 300 · antamfoods.com", 17, 270, 657, KEM, "xb", "middle", .04)
     s += place(V.bieu_tuong(DO, "#fff"), 452, 172, 64, 64)
     return S(540, 675, s, "Bài đăng giới thiệu sản phẩm")
 
@@ -81,7 +81,7 @@ def post_uu_dai():
     s += img("taco", 150, 270, 240, 180)
     s += f'<circle cx="408" cy="300" r="62" fill="{NGO}"/>' + W("[giá]", 30, 408, 300, DO2, "xb", "middle") + W("/gói", 14, 408, 322, DO2, "md", "middle")
     s += W("Áp dụng [ngày] – [ngày]. Chưa gồm VAT.", 15, 270, 500, MUC, "md", "middle")
-    s += f'<rect x="150" y="530" width="240" height="56" rx="28" fill="{DO}"/>' + W("Gọi 0348.635.222", 22, 270, 566, KEM, "xb", "middle")
+    s += f'<rect x="150" y="530" width="240" height="56" rx="28" fill="{DO}"/>' + W("Gọi 0398 431 300", 22, 270, 566, KEM, "xb", "middle")
     return S(540, 675, s, "Bài đăng ưu đãi")
 
 
@@ -102,7 +102,7 @@ def post_dai_ly():
     for i, t in enumerate(items):
         y = 330 + i * 62
         s += vt(66, y - 8, 16, DO, seed=20 + i, rings=6) + W(t, 22, 100, y, MUC, "xb")
-    s += f'<rect x="40" y="590" width="460" height="56" rx="28" fill="{DO}"/>' + W("Nhắn Zalo: 0348.635.222", 22, 270, 626, KEM, "xb", "middle")
+    s += f'<rect x="40" y="590" width="460" height="56" rx="28" fill="{DO}"/>' + W("Nhắn Zalo: 0398 431 300", 22, 270, 626, KEM, "xb", "middle")
     return S(540, 675, s, "Bài đăng tìm đối tác")
 
 
@@ -171,7 +171,7 @@ def dien_thoai():
 # ======================= ẤN PHẨM VĂN PHÒNG =======================
 def tieu_de_thu():
     s = f'<rect width="595" height="842" fill="#fff"/>' + place(LOGO_N(), 40, 36, 200, 64)
-    s += W("Công ty TNHH SX-TM Ẩm Thực An Tâm", 10, 555, 56, MUC, "xb", "end") + W("[Cần điền: địa chỉ]", 9, 555, 72, MUC, "md", "end") + W("0348.635.222 · antamfoods.com", 9, 555, 88, MUC, "md", "end")
+    s += W("Công ty TNHH SX-TM Ẩm Thực An Tâm", 10, 555, 56, MUC, "xb", "end") + W("[Cần điền: địa chỉ]", 9, 555, 72, MUC, "md", "end") + W("0398 431 300 · antamfoods.com", 9, 555, 88, MUC, "md", "end")
     s += f'<rect x="40" y="116" width="515" height="3" fill="{DO}"/>'
     for i in range(14):
         s += f'<rect x="40" y="{170 + i * 26}" width="{515 if i % 4 != 3 else 300}" height="6" rx="3" fill="#EFE7DC"/>'
@@ -183,7 +183,7 @@ def tieu_de_thu():
 def phong_bi():
     s = f'<rect width="660" height="330" fill="#fff"/>' + place(LOGO_N(), 30, 26, 220, 70)
     s += W("Kính gửi: [Cần điền]", 18, 330, 190, MUC, "md") + f'<path d="M330,210 H610 M330,240 H610" stroke="#E5DBCB"/>'
-    s += f'<rect x="0" y="300" width="660" height="30" fill="{DO}"/>' + W("[địa chỉ] · 0348.635.222 · antamfoods.com", 12, 30, 320, KEM, "md")
+    s += f'<rect x="0" y="300" width="660" height="30" fill="{DO}"/>' + W("[địa chỉ] · 0398 431 300 · antamfoods.com", 12, 30, 320, KEM, "md")
     s += f'<g opacity=".9">{vt(600, 300, 34, SON, seed=40, rings=8)}</g>'
     return S(660, 330, s, "Phong bì DL")
 
@@ -202,7 +202,7 @@ def bao_gia():
         s += f'<rect x="40" y="{y - 20}" width="515" height="32" fill="{"#FBF5EC" if i % 2 else "#fff"}"/>' + W(a, 11, 50, y, MUC, "md") + W(b, 11, 300, y, MUC, "md") + W("[ ]", 11, 420, y, MUC, "md") + W("[giá]", 11, 545, y, DO, "xb", "end")
     s += W("Giá chưa gồm VAT. Báo giá có hiệu lực đến [ngày].", 10, 40, 430, MUC, "md")
     s += W("Người lập báo giá", 10, 420, 500, MUC, "md", "middle") + vt(420, 560, 32, SON, seed=41, rings=9) + W("[Tên]", 11, 420, 620, MUC, "xb", "middle")
-    s += f'<rect x="0" y="812" width="595" height="30" fill="{DO}"/>' + W("0348.635.222 · antamfoods.com · [địa chỉ]", 10, 297, 831, KEM, "md", "middle")
+    s += f'<rect x="0" y="812" width="595" height="30" fill="{DO}"/>' + W("0398 431 300 · antamfoods.com · [địa chỉ]", 10, 297, 831, KEM, "md", "middle")
     return S(595, 842, s, "Báo giá A4")
 
 
@@ -234,7 +234,7 @@ def to_roi():
     s += W("Vì sao chọn An Tâm?", 22, 28, 450, DO, "xb")
     for i, t in enumerate(["Bánh làm mới mỗi ngày", "Giao tận nơi tại TP.HCM", "Báo giá đại lý rõ ràng"]):
         s += vt(40, 478 + i * 30, 9, DO, seed=50 + i, rings=5) + W(t, 15, 58, 484 + i * 30, MUC, "md")
-    s += f'<rect x="0" y="564" width="420" height="30" fill="{DO}"/>' + W("0348.635.222 · antamfoods.com", 13, 210, 584, KEM, "xb", "middle")
+    s += f'<rect x="0" y="564" width="420" height="30" fill="{DO}"/>' + W("0398 431 300 · antamfoods.com", 13, 210, 584, KEM, "xb", "middle")
     return S(420, 594, s, "Tờ rơi A5")
 
 
@@ -263,7 +263,7 @@ def menu_treo():
 def nhan_san_pham():
     s = f'<rect width="520" height="320" fill="#fff" stroke="#E5DBCB"/>' + f'<rect width="180" height="320" fill="{DO}"/>'
     s += place(LOGO_DK(), 14, 40, 152, 170) + W("BÁNH TORTILLA", 16, 90, 260, NGO, "xb", "middle", .1) + W("[inch] · [số] chiếc", 13, 90, 284, KEM, "md", "middle")
-    rows = ["Thành phần: [Cần điền]", "Khối lượng tịnh: [ ] g", "NSX: [dd/mm/yyyy]   HSD: [dd/mm/yyyy]", "Bảo quản: [Cần điền]", "Hướng dẫn dùng: [Cần điền]", "Sản xuất bởi: Công ty TNHH SX-TM Ẩm Thực An Tâm", "Địa chỉ: [Cần điền]", "Hotline: 0348.635.222"]
+    rows = ["Thành phần: [Cần điền]", "Khối lượng tịnh: [ ] g", "NSX: [dd/mm/yyyy]   HSD: [dd/mm/yyyy]", "Bảo quản: [Cần điền]", "Hướng dẫn dùng: [Cần điền]", "Sản xuất bởi: Công ty TNHH SX-TM Ẩm Thực An Tâm", "Địa chỉ: [Cần điền]", "Hotline: 0398 431 300"]
     for i, t in enumerate(rows):
         s += W(t, 12, 200, 40 + i * 30, MUC, "xb" if i in (0, 2) else "md")
     s += vt(470, 270, 26, SON, seed=60, rings=8)
@@ -367,7 +367,7 @@ def mu_bep():
 def bien_hieu():
     s = f'<rect width="760" height="440" fill="#E8DFD2"/><rect y="390" width="760" height="50" fill="#CFC3B1"/>'
     s += f'<rect x="60" y="40" width="640" height="120" fill="{DO}"/>' + place(LOGO_NK(), 215, 52, 330, 100)
-    s += f'<rect x="60" y="160" width="640" height="230" fill="#F7EEE2"/><rect x="60" y="160" width="640" height="30" fill="{MUC}"/>' + W("TORTILLA · TACO · DONER · 0348.635.222", 15, 380, 181, NGO, "xb", "middle", .14)
+    s += f'<rect x="60" y="160" width="640" height="230" fill="#F7EEE2"/><rect x="60" y="160" width="640" height="30" fill="{MUC}"/>' + W("TORTILLA · TACO · DONER · 0398 431 300", 15, 380, 181, NGO, "xb", "middle", .14)
     s += f'<rect x="100" y="200" width="250" height="190" fill="#BFD8E4"/><rect x="390" y="200" width="270" height="190" fill="#5A3B2A"/>'
     s += img("doner-tru-quay", 160, 210, 140, 170) + vt(525, 280, 50, KEM, seed=96)
     return S(760, 440, s, "Biển hiệu cửa hàng")
@@ -405,7 +405,7 @@ def sticker():
 def chu_ky_email():
     s = f'<rect width="640" height="180" fill="#fff"/><rect x="20" y="20" width="4" height="140" fill="{DO}"/>'
     s += W("[Họ tên]", 22, 44, 52, MUC, "xb") + W("[Chức danh] · Ẩm Thực An Tâm", 14, 44, 76, DO, "md")
-    s += W("0348.635.222 · antamfoods.com", 13, 44, 110, MUC, "md") + W("[địa chỉ], TP.HCM", 13, 44, 132, MUC, "md")
+    s += W("0398 431 300 · antamfoods.com", 13, 44, 110, MUC, "md") + W("[địa chỉ], TP.HCM", 13, 44, 132, MUC, "md")
     s += place(LOGO_N(), 420, 50, 200, 64)
     return S(640, 180, s, "Chữ ký email")
 

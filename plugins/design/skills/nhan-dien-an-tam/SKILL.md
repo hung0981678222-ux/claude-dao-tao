@@ -68,7 +68,7 @@ Nền đường vân (`assets/nen-duong-van.svg`: Đỏ An Tâm + Đỏ son), d�
 - **Không bịa số liệu, giá, chứng nhận, thành tích.** Chỗ chưa có thông tin → ghi `[Cần điền]` hoặc `[giá]`.
 - Không "số 1", "rẻ nhất", "giá rẻ"; không nêu tên hay so sánh đối thủ; không hứa mẫu thử nếu chưa được duyệt.
 - Giọng: ấm, thẳng thắn, dễ hiểu, xưng "An Tâm" – gọi khách "anh chị"/"quán mình".
-- Thông tin công ty: Công ty TNHH SX-TM Ẩm Thực An Tâm · antamfoods.com · Hotline/Zalo: **[Cần xác nhận: 0348.635.222 hay 0398 431 300]** – hỏi người dùng nếu bài cần hotline mà chưa rõ.
+- Thông tin công ty: Công ty TNHH SX-TM Ẩm Thực An Tâm · antamfoods.com · Hotline/Zalo: **0398 431 300** (số duy nhất, viết đúng dạng này).
 - Sản phẩm (theo antamfoods.com): tortilla 22/25/28/31 cm, 15 chiếc/túi, loại tươi/nướng/nguyên cám; vỏ kebab bánh vàng, mè đen, mè trắng, than tre.
 
 ## 8. Trước khi giao, tự kiểm

@@ -144,7 +144,7 @@ def page():
 <h3>Thông tin cố định</h3><table><tr><th>Mục</th><th>Nội dung</th></tr>
 <tr><td>Tên trên ấn phẩm quảng bá</td><td>ẨM THỰC AN TÂM</td></tr><tr><td>Tên pháp lý (nhãn, hoá đơn, hợp đồng)</td><td>Công ty TNHH SX-TM Ẩm Thực An Tâm</td></tr>
 <tr><td>Khẩu hiệu</td><td>Sản Phẩm Tận Tâm – Phát Triển Xứng Tầm</td></tr><tr><td>Câu thương hiệu</td><td>Mỗi mẻ bánh, một lời cam kết</td></tr>
-<tr><td>Liên hệ</td><td>antamfoods.com · 0348.635.222</td></tr></table></section>
+<tr><td>Liên hệ</td><td>antamfoods.com · 0398 431 300</td></tr></table></section>
 
 <section class="s" id="c2"><div class="num">02 · Logo</div><h2>Các phiên bản logo</h2>
 <p class="lead">Logo gồm biểu tượng dấu vân tay và chữ "An Tâm" viết bằng font thương hiệu. Ưu tiên bản ngang; dùng bản đứng khi khung hẹp; biểu tượng riêng chỉ dùng khi tên thương hiệu đã xuất hiện ở chỗ khác hoặc ở cỡ rất nhỏ. Từ 24 px / 8 mm trở xuống dùng <b>biểu tượng bản nhỏ</b> (ít vân, nét dày, vẫn giữ chấm tâm).</p>

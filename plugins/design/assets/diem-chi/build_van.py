@@ -94,7 +94,7 @@ def bai_dang():
 <rect x="40" y="40" width="460" height="595" fill="{KEM}"/>
 {W("Mỗi mẻ bánh", 56, 270, 130, DO, "xb", "middle", -.02)}{W("một lời cam kết", 56, 270, 196, DO, "xb", "middle", -.02)}
 {V.van_tay(270, 360, 110, SON, seed=41)}
-{W("Tortilla · Taco · Doner kebab giao tận bếp", 18, 270, 548, MUC, "md", "middle")}{W("0348.635.222", 30, 270, 594, DO, "xb", "middle", .02)}
+{W("Tortilla · Taco · Doner kebab giao tận bếp", 18, 270, 548, MUC, "md", "middle")}{W("0398 431 300", 30, 270, 594, DO, "xb", "middle", .02)}
 </svg>'''
 
 
@@ -103,7 +103,7 @@ def danh_thiep():
 <rect x="40" y="40" width="440" height="220" fill="{DO}"/>{place(V.logo_ngang(KEM, KEM), 56, 70, 408, 160)}</svg>'''
     b = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 300" role="img" aria-label="Danh thiếp mặt sau"><rect width="520" height="300" fill="{KEM}"/>
 {W("[Cần điền: Họ tên]", 30, 44, 88, DO)}{W("[Cần điền: Chức danh]", 15, 44, 116, MUC, "md")}
-{W("0348.635.222", 16, 44, 182, MUC, "xb")}{W("antamfoods.com", 16, 44, 210, MUC, "md")}{W("[Cần điền: địa chỉ xưởng, TP.HCM]", 14, 44, 238, MUC, "md")}
+{W("0398 431 300", 16, 44, 182, MUC, "xb")}{W("antamfoods.com", 16, 44, 210, MUC, "md")}{W("[Cần điền: địa chỉ xưởng, TP.HCM]", 14, 44, 238, MUC, "md")}
 {V.van_tay(420, 150, 62, SON, seed=51)}</svg>'''
     return a, b
 
@@ -112,7 +112,7 @@ def xe():
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" role="img" aria-label="Xe giao hàng">
 <rect width="720" height="380" fill="#EFE7DB"/><rect y="318" width="720" height="62" fill="#D7CBB8"/>
 <path d="M60,90 H470 V300 H60 Z" fill="{DO}"/><path d="M470,150 H580 L650,210 V300 H470 Z" fill="{KEM}"/><path d="M490,165 H572 L622,212 H490 Z" fill="#BFD8E4"/>
-{place(V.logo_ngang(KEM, KEM), 80, 110, 330, 110)}{W("Giao bánh tận bếp · 0348.635.222", 17, 84, 262, KEM, "md")}
+{place(V.logo_ngang(KEM, KEM), 80, 110, 330, 110)}{W("Giao bánh tận bếp · 0398 431 300", 17, 84, 262, KEM, "md")}
 <g opacity=".35">{V.van_tay(420, 150, 90, KEM, seed=61)}</g>
 <circle cx="160" cy="310" r="36" fill="{MUC}"/><circle cx="160" cy="310" r="14" fill="#888"/><circle cx="560" cy="310" r="36" fill="{MUC}"/><circle cx="560" cy="310" r="14" fill="#888"/>
 </svg>'''

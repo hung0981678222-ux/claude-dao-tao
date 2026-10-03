@@ -146,8 +146,8 @@ def mat_sau():
     s += f'<rect x="150" y="{by}" width="26" height="26" fill="#fff" stroke="{MUC}" stroke-width=".4"/>' + W("[QR]", 3.4, 163, by + 14.6, "#8a7a74", "xb", "middle")
     s += W("antamfoods.com", 2.6, 163, by + 30, MUC, "md", "middle")
     s += W("Đặt hàng & hỗ trợ đại lý", 3.6, gx, by + 6, DO, "xb")
-    s += W("0348.635.222", 9, gx, by + 17.5, DO, "xb")
-    s += W("antamfoods.com · Zalo 0348.635.222", 3.3, gx, by + 25, MUC, "md")
+    s += W("0398 431 300", 9, gx, by + 17.5, DO, "xb")
+    s += W("antamfoods.com · Zalo 0398 431 300", 3.3, gx, by + 25, MUC, "md")
     # dải chân
     s += nen(-BL, 268, TW + 2 * BL, TH - 268 + BL) + f'<rect x="{-BL}" y="268" width="{TW + 2 * BL}" height="3" fill="{DO2}"/>'
     s += V.van_tay(150, 287, 9, KEM, seed=31, rings=8)
