@@ -13,11 +13,11 @@ Bản 2, theo `thong-tin-thuong-hieu.md` và khung B2.6 trong `nghien-cuu.md`.
 | # | Ngày | Giờ | Nhóm khách | Loại bài | Chủ đề | Định dạng | Mẫu thiết kế gợi ý (nhan-dien/mxh/) | Mục tiêu | CTA | Quảng cáo |
 |---|---|---|---|---|---|---|---|---|---|---|
 | 1 | T2 05/10 | 09:30 | Chủ quán | Hậu trường / giới thiệu | Bánh làm mới mỗi ngày tại xưởng, giao tận bếp | Ảnh đơn (hoặc album 3 ảnh xưởng) | bai-nguoi-lam-banh.svg (khung ảnh thật; không ghi tên người làm bánh) | Nhận diện, tin nhắn | Nhắn Zalo 0398 431 300 | Không |
-| 2 | T3 06/10 | 15:00 | Chủ quán | Hữu ích / lưu bài | Đúng cỡ cho đúng món: 22/25/28/31 cm | Ảnh đơn dạng bảng gợi ý | bai-san-pham.svg | Lưu, chia sẻ, tin nhắn | Nhắn Zalo hỏi bảng giá đại lý | CÓ (gợi ý) |
+| 2 | T3 06/10 | 15:00 | Chủ quán | Hữu ích / lưu bài | Đúng cỡ cho đúng món: 22/25/28/31 cm | Ảnh đơn dạng bảng gợi ý | bai-san-pham.svg | Lưu, chia sẻ, tin nhắn | Nhắn Zalo 0398 431 300 để nhận báo giá | CÓ (gợi ý) |
 | 3 | T4 07/10 | 11:30 | Nhà | Công thức | Wrap gà áp chảo, khoảng 10 phút | Ảnh món + công thức trong bài | Ảnh món (không dùng khung sản phẩm); AI thì ghi "Ảnh minh hoạ AI" | Tương tác, lưu bài | Lưu bài, bình luận | Không |
 | 4 | T4 07/10 | 21:00 | Chủ quán | Giới thiệu sản phẩm | 3 dòng tortilla: tươi, nướng, nguyên cám; 4 cỡ; 15 chiếc/túi | Ảnh đơn | bai-san-pham.svg | Tin nhắn | Nhắn Zalo | Không |
 | 5 | T5 08/10 | 15:00 | Chủ quán | Giới thiệu sản phẩm | 4 loại vỏ kebab: bánh vàng, mè đen, mè trắng, than tre | Ảnh đơn hoặc album 4 ảnh | bai-san-pham.svg | Tin nhắn | Nhắn Zalo | Không |
-| 6 | T6 09/10 | 10:00 | Chủ quán | Chuyển đổi | Nhận bảng giá đại lý rõ ràng qua Zalo | Ảnh đơn | bai-thong-bao.svg (không dùng bai-uu-dai vì chưa có ưu đãi) | Tin nhắn (chỉ số chính) | Nhắn Zalo 0398 431 300 nhận bảng giá | CÓ (gợi ý), nhắm chủ quán/khởi nghiệp F&B TP.HCM |
+| 6 | T6 09/10 | 10:00 | Chủ quán | Chuyển đổi | Nhận báo giá qua Zalo (giá chỉ báo qua Zalo) | Ảnh đơn | bai-thong-bao.svg (không dùng bai-uu-dai vì chưa có ưu đãi) | Tin nhắn (chỉ số chính) | Nhắn Zalo 0398 431 300 để nhận báo giá | CÓ (gợi ý), nhắm chủ quán/khởi nghiệp F&B TP.HCM |
 | 7 | T6 09/10 | 18:30 | Nhà | Công thức | Pizza tortilla chảo | Ảnh món + công thức | Ảnh món; AI thì ghi "Ảnh minh hoạ AI" | Tương tác, chia sẻ | Lưu, chia sẻ | Không |
 | 8 | T7 10/10 | 10:00 | Chủ quán / người muốn mở quán | Bài mềm, tìm đối tác | Mở điểm bán tortilla – kebab cùng An Tâm | Ảnh đơn | bai-thong-bao.svg | Tin nhắn từ người muốn mở điểm | Nhắn Zalo | Không |
 | 9 | CN 11/10 | 10:30 | Nhà | Công thức | Tortilla cuốn kiểu Việt (gà nướng sả, rau thơm) | Ảnh món + công thức | Ảnh món; AI thì ghi "Ảnh minh hoạ AI" | Lưu, bình luận | Lưu, bình luận | Không |
@@ -27,11 +27,11 @@ Bản 2, theo `thong-tin-thuong-hieu.md` và khung B2.6 trong `nghien-cuu.md`.
 
 1. Giờ đăng chủ quán: 09:30, 10:00, 15:00, 21:00, tránh 11–13h và 17–20h (chủ quán bận bán). Đây là [SUY LUẬN], sau tuần đầu xem Insights của trang để chỉnh. Bài nhà (3, 7, 9) đăng giờ người ăn.
 2. Bài 3 và 4 cùng ngày T4, cách nhau gần 10 tiếng; bài 6 và 7 cùng ngày T6; bài 9 và 10 cùng ngày CN. Nếu thấy dày thì dời bài nhà sang hôm trước hoặc sau.
-3. Quảng cáo: bài 2 (nội dung có ích, kéo tin nhắn) và bài 6 (mời nhận bảng giá, hướng thẳng tới tin nhắn). Ngân sách, thời gian chạy, nhắm đối tượng: [Cần điền]. Không có số liệu chi phí quảng cáo đã xác minh.
+3. Quảng cáo: bài 2 (nội dung có ích, kéo tin nhắn) và bài 6 (mời nhận báo giá qua Zalo, hướng thẳng tới tin nhắn). Ngân sách, thời gian chạy, nhắm đối tượng: [Cần điền]. Không có số liệu chi phí quảng cáo đã xác minh.
 4. Bài chủ quán đều dẫn về Zalo, nên cần có người trực Zalo 0398 431 300 trong giờ làm việc. Giờ trực và người phụ trách trả lời: [Cần điền].
 5. Ảnh: ưu tiên ảnh thật xưởng và bánh thật của An Tâm (bài 1, 2, 4, 5). Chưa có thì dùng ảnh minh hoạ AI và ghi "Ảnh minh hoạ AI" trên ảnh. Không dùng ảnh mẫu nước ngoài cho sản phẩm.
 6. Chưa có đồng ý của quán đối tác nên tuần này KHÔNG đăng bài đối tác (bai-doi-tac.svg không dùng). Tên người làm bánh chưa dùng; cần họ đồng ý trước.
-7. Bài 6: chưa xác nhận thử mẫu nên bài chỉ mời nhận bảng giá. Nếu An Tâm có thử mẫu, báo lại để sửa CTA. [Cần điền: có thử mẫu không]
+7. Giá chỉ báo qua Zalo 0398 431 300 (sếp đã xác nhận): không bài nào đăng giá; mọi CTA về giá viết "Nhắn Zalo 0398 431 300 để nhận báo giá".
 8. Các gợi ý cỡ–món ở bài 2 và công thức ở bài 3, 7, 9 cần người trong xưởng/bếp duyệt và nấu thử, bấm giờ trước khi đăng.
 9. Trước khi đăng, rà lại mọi `[Cần điền]` còn trong bài (danh sách ở cuối `bai-viet.md`).
 10. Thiết kế chi tiết nằm ở `thiet-ke.md`; lịch này chỉ gợi ý mẫu. Nếu `thiet-ke.md` còn theo bản 1, cần cập nhật theo bản 2.
