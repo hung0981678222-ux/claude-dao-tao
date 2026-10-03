@@ -1,7 +1,7 @@
 # Bài viết: chiến dịch Facebook 7 ngày, khoá "Làm chủ Claude trong công việc"
 
 Góc xuyên suốt: Claude là nhân viên mới rất nhanh, giao việc rõ, kiểm tra kỹ. Page xưng "mình", gọi người đọc là "anh chị".
-Quy ước: mỗi bài dài khoảng 120 đến 190 chữ (không tính hashtag và dòng chân bài). Không dùng số liệu thống kê. Dòng chân bài "Khoá do [ĐƠN VỊ] biên soạn, không phải khoá chính thức của Anthropic" nên giữ ở mọi bài có nhắc khoá.
+Quy ước: mỗi bài dài khoảng 120 đến 190 chữ (không tính hashtag và dòng chân bài). Không dùng số liệu thống kê. Dòng chân bài "Khoá do [ĐƠN VỊ] biên soạn, không phải sản phẩm chính thức của Anthropic" nên giữ ở mọi bài có nhắc khoá.
 Chỗ trống sếp cần điền: [ĐƠN VỊ], [GIÁ], [LINK ĐĂNG KÝ], [HẠN ƯU ĐÃI], [HÌNH THỨC HỌC].
 
 ---
@@ -21,7 +21,7 @@ Chuyện này mình gặp hoài. Gõ "viết email xin báo giá", AI trả về
 
 Lỗi không hẳn ở AI. Anh chị thử hình dung Claude như một nhân viên mới rất nhanh: làm không biết mệt, nhưng chưa biết công ty mình, chưa biết khách là ai, chưa biết sếp thích giọng văn nào. Sếp chỉ nói "làm cho anh cái báo cáo" thì người giỏi mấy cũng phải đoán.
 
-Giao việc rõ, rồi đọc lại kỹ trước khi dùng. Hai việc nhỏ, nhưng đổi cả cách làm việc với AI.
+Giao việc rõ, rồi đọc lại kỹ trước khi dùng. Hai việc nhỏ, nhưng làm đều thì khác nhiều.
 
 Cả tuần này mình sẽ chia sẻ từng bước, bằng ví dụ quen thuộc: email, báo cáo, tóm tắt họp.
 
@@ -29,7 +29,10 @@ Anh chị hay nhờ AI làm việc gì nhất? Bình luận cho mình biết nh�
 
 #LamChuClaude #AIvanPhong #KyNangVanPhong
 
-**Chữ trên ảnh:** "AI làm chưa đúng ý? Có thể do cách giao việc"
+*Khoá do [ĐƠN VỊ] biên soạn, không phải sản phẩm chính thức của Anthropic.*
+
+### Chữ trên ảnh (chốt)
+"Dùng AI vẫn mệt? Hãy giao việc như với nhân viên mới."
 
 ---
 
@@ -54,9 +57,10 @@ Lưu bài này để lần sau mở Claude khỏi bối rối, và gắn thẻ m
 
 #LamChuClaude #AIvanPhong #HocClaude #KyNangVanPhong
 
-*Khoá do [ĐƠN VỊ] biên soạn, không phải khoá chính thức của Anthropic.*
+*Khoá do [ĐƠN VỊ] biên soạn, không phải sản phẩm chính thức của Anthropic.*
 
-**Chữ trên ảnh:** "3 nút cần nhớ khi mới dùng Claude"
+### Chữ trên ảnh (chốt)
+"Nhiều nút quá? Nhớ 3 chỗ này là đủ bắt đầu."
 
 ---
 
@@ -66,45 +70,66 @@ Lưu bài này để lần sau mở Claude khỏi bối rối, và gắn thẻ m
 - "Gõ ngắn quá thì AI phải đoán. Đây là công thức 5 dòng để khỏi đoán."
 - "Mất một phút viết cho đủ, đỡ sửa đi sửa lại cả buổi."
 
-### Chữ từng slide
-**Slide 1 (bìa):** "Gõ ngắn quá, AI phải đoán" · phụ: "Công thức 5 dòng giao việc"
+### Chữ từng slide (chốt, 7 slide, khung 1080x1350)
 
-**Slide 2 (trước):**
-- Tiêu đề: "Cách gõ hay gặp"
-- Khung: "Làm cho tôi cái báo cáo"
-- Chú thích: "Báo cáo gì? Cho ai? Dài bao nhiêu? Claude phải đoán."
+**Slide 1 (bìa)**
+- Tiêu đề: "5 dòng giúp Claude làm đúng việc"
+- Phụ: "Công thức giao việc cho nhân viên mới rất nhanh. Mất 1 phút viết, đỡ nhiều lần sửa."
+- 5 nhãn: Mục tiêu · Ai dùng · Kết quả · Hạn chót · Ràng buộc
+- Chân: "Vuốt để xem ví dụ"
 
-**Slide 3 (công thức):**
-- Tiêu đề: "5 dòng giao việc"
-- 1. Mục tiêu: việc cần đạt được
-- 2. Ai dùng: ai sẽ đọc kết quả
-- 3. Kết quả: email, bảng Excel hay báo cáo?
-- 4. Hạn chót: cần xong lúc nào
-- 5. Ràng buộc: thứ không được làm, giới hạn
+**Slide 2 (trước)**
+- Tiêu đề: "Một dòng mơ hồ"
+- Khung trích dẫn lớn: "Làm cho tôi cái báo cáo"
+- Chú thích: "Claude phải đoán: báo cáo gì, cho ai, dài bao nhiêu."
+- 3 thẻ nửa dưới: "Báo cáo gì?" · "Cho ai?" · "Dài bao nhiêu?"
 
-**Slide 4 (sau, ví dụ báo cáo):**
+**Slide 3 (công thức)**
+- Tiêu đề: "5 dòng, theo thứ tự này"
+- Thẻ 1. Mục tiêu: việc cần đạt được
+- Thẻ 2. Ai dùng: ai sẽ đọc kết quả
+- Thẻ 3. Kết quả: email, bảng Excel hay báo cáo?
+- Thẻ 4. Hạn chót: cần xong lúc nào
+- Thẻ 5. Ràng buộc: thứ không được làm, giới hạn
+
+**Slide 4 (sau, ví dụ báo cáo tháng 9)**
 - Tiêu đề: "Viết lại cho đủ 5 dòng"
-- Khung: "Lập báo cáo doanh thu tháng 9 cho giám đốc, gồm 1 bảng và 3 nhận xét, trước 5 giờ chiều, không dùng số liệu ước đoán."
-- Chú thích: "Đủ người đọc, kết quả, hạn, giới hạn."
+- Thẻ 1. Mục tiêu: Lập báo cáo doanh thu tháng 9
+- Thẻ 2. Ai dùng: Giám đốc đọc
+- Thẻ 3. Kết quả: 1 bảng và 3 nhận xét
+- Thẻ 4. Hạn chót: Trước 5 giờ chiều
+- Thẻ 5. Ràng buộc: Không dùng số liệu ước đoán
+- Chú thích: "Đủ người đọc, kết quả, hạn chót, ràng buộc."
 
-**Slide 5 (sau, ví dụ tin nhắn khách):**
-- Trước: "Viết tin nhắn cho khách"
-- Sau: "Soạn tin Zalo 5 dòng gửi chủ doanh nghiệp nhỏ, mời xin báo giá, giọng lịch sự, không nêu giá."
+**Slide 5 (sau, ví dụ tin nhắn khách)**
+- Tiêu đề: "Cùng cách ấy với tin nhắn khách"
+- Dòng "Trước": "Viết tin nhắn cho khách"
+- Dòng "Sau", chia 5 thẻ như slide 4:
+  - Thẻ 1. Mục tiêu: Mời khách xin báo giá chính thức
+  - Thẻ 2. Ai dùng: Chủ doanh nghiệp nhỏ đọc
+  - Thẻ 3. Kết quả: 1 tin Zalo ngắn
+  - Thẻ 4. Hạn chót: Gửi trong hôm nay
+  - Thẻ 5. Ràng buộc: Giọng lịch sự, không nêu giá
+- Chú thích: "Cùng 5 thành phần, đổi việc là dùng được."
 
-**Slide 6 (mẹo):**
+**Slide 6 (mẹo)**
 - Tiêu đề: "Chưa biết viết gì?"
-- Khung: "Hãy hỏi tôi 3 câu trước khi làm."
+- Khung trích dẫn lớn: "Hãy hỏi tôi 3 câu trước khi làm."
 - Chú thích: "Để Claude hỏi lại, anh chị chỉ cần trả lời ngắn."
+- 3 thẻ nửa dưới, nhãn "Claude có thể hỏi": "Mục tiêu là gì?" · "Ai sẽ đọc?" · "Cần xong khi nào?"
 
-**Slide 7 (kết + CTA):**
-- "Viết xong, nhớ đọc lại kết quả trước khi dùng"
-- "Phần Cách viết yêu cầu trong khoá còn nhiều ví dụ theo từng phòng ban"
-- "Lưu bài để dùng lần sau"
+**Slide 7 (kết + CTA)**
+- Tiêu đề: "Viết xong, nhớ đọc lại kết quả trước khi dùng"
+- Dòng 2: "Phần Cách viết yêu cầu trong khoá còn nhiều ví dụ theo từng phòng ban"
+- Dòng 3 (nổi bật): "Lưu bài để dùng lần sau"
+- Dòng mềm: "Muốn xem khoá, nhắn tin cho page."
+- Chân ảnh: "Khoá do [ĐƠN VỊ] biên soạn, không phải sản phẩm chính thức của Anthropic."
+- Không có [GIÁ], [HẠN ƯU ĐÃI]. Nếu slide chật, thay tiêu đề bằng: "Claude làm nhanh. Anh chị vẫn là người đọc kỹ, kiểm tra số liệu rồi mới dùng."
 
 ### Nội dung caption
 Gõ "làm cho tôi cái báo cáo", AI trả lời chung chung. Không hẳn AI dở, mà là mình chưa nói đủ.
 
-Thử công thức 5 dòng: Mục tiêu, Ai dùng, Kết quả, Hạn chót, Ràng buộc.
+Thử công thức 5 dòng: Mục tiêu, Ai dùng, Kết quả, Hạn chót, Ràng buộc (giới hạn).
 
 Ví dụ: "Lập báo cáo doanh thu tháng 9 cho giám đốc, gồm 1 bảng và 3 nhận xét, trước 5 giờ chiều, không dùng số liệu ước đoán." Cùng một việc, nhưng Claude không còn phải đoán.
 
@@ -112,11 +137,11 @@ Vuốt qua xem thêm ví dụ trước và sau nhé. Chưa biết viết gì th�
 
 Phần "Cách viết yêu cầu" trong khoá còn nhiều ví dụ theo từng việc: báo cáo, tin nhắn khách, bảng tính, bài đăng.
 
-Lưu lại để dùng lần sau, và gửi cho đồng nghiệp hay viết yêu cầu hơi ngắn.
+Lưu lại để dùng lần sau, và gửi cho đồng nghiệp hay gõ yêu cầu quá ngắn. Muốn xem khoá, nhắn tin cho page.
 
-#LamChuClaude #AIvanPhong #VietPromptChoDanVanPhong #KyNangVanPhong
+#LamChuClaude #AIvanPhong #HocClaude #KyNangVanPhong
 
-*Khoá do [ĐƠN VỊ] biên soạn, không phải khoá chính thức của Anthropic.*
+*Khoá do [ĐƠN VỊ] biên soạn, không phải sản phẩm chính thức của Anthropic.*
 
 ---
 
@@ -129,7 +154,7 @@ Lưu lại để dùng lần sau, và gửi cho đồng nghiệp hay viết yêu
 ### Nội dung
 Hộp xin phép hiện lên. Anh chị bấm Cho phép hay Từ chối?
 
-Claude xin phép trước khi chạy lệnh hay sửa file. Mình hay nhớ thế này:
+Claude xin phép trước khi chạy lệnh hay sửa file.
 
 Cho phép khi đúng việc anh chị vừa giao và hiểu Claude định làm gì.
 
@@ -140,15 +165,18 @@ Thêm 3 thói quen nhỏ:
 - Dữ liệu nhạy cảm như hợp đồng, thông tin khách: che tên (Khách A) hoặc hỏi cấp trên trước.
 - Số liệu Claude đưa ra là bản nháp, cho đến khi anh chị tự kiểm tra. Người bấm gửi vẫn là anh chị.
 
-Claude là nhân viên mới rất nhanh, nhưng người chịu trách nhiệm cuối cùng là người giao việc. Phần "Nguyên tắc an toàn" trong khoá dạy riêng những thói quen này, kèm các tình huống để luyện phản xạ.
+Claude là nhân viên mới rất nhanh, nhưng người chịu trách nhiệm cuối cùng vẫn là người giao việc. Phần "Nguyên tắc an toàn" trong khoá luyện những thói quen này qua tình huống cụ thể.
 
 Công ty anh chị đã có quy định dùng AI chưa? Bình luận cho mình biết, và gửi bài này cho sếp hoặc đồng nghiệp nếu thấy hữu ích.
 
 #LamChuClaude #DungAIantoan #AIvanPhong #KyNangVanPhong
 
-*Đây là thói quen dùng, không phải tư vấn pháp lý hay bảo mật. Khoá do [ĐƠN VỊ] biên soạn, không phải khoá chính thức của Anthropic.*
+*Đây là thói quen dùng, không phải tư vấn pháp lý hay bảo mật. Khoá do [ĐƠN VỊ] biên soạn, không phải sản phẩm chính thức của Anthropic.*
 
-**Chữ trên ảnh:** "Không chắc thì Từ chối. Không hỏng gì."
+### Chữ trên ảnh (chốt)
+- Tiêu đề: "Hộp xin phép hiện lên: bấm gì?"
+- Phụ: "Không chắc thì Từ chối, rồi hỏi lại Claude."
+- Dải dưới: "Từ chối không làm hỏng gì."
 
 ---
 
@@ -162,12 +190,12 @@ Công ty anh chị đã có quy định dùng AI chưa? Bình luận cho mình b
 Giao cả một việc lớn cho Claude trong một tin nhắn thì dễ lệch hướng. Mình chia thành 5 bước:
 
 1. Ý tưởng: viết 5 dòng tóm tắt việc cần làm.
-2. Kế hoạch: nhờ Claude đề xuất vài cách làm, anh chị chọn.
+2. Kế hoạch: chia bước, so sánh vài cách làm rồi chọn cách hợp nhất.
 3. Làm từng bước: mỗi bước một kết quả, xem ngay.
 4. Chỉnh sửa: chỉ đúng chỗ sai, sửa từng ý.
-5. Chốt và lưu: đọc lại lần cuối, lưu đúng thư mục, ghi việc tiếp theo.
+5. Chốt và lưu: đọc lại lần cuối, cập nhật sổ tay, sao lưu.
 
-Ví dụ với báo cáo cuối tháng: viết 5 dòng về báo cáo (cho ai, gồm gì), nhờ Claude đề xuất khung, rồi làm lần lượt dàn ý, bảng, phần nhận xét. Xem xong từng phần mới sang phần sau. Cuối cùng đọc lại, lưu file và ghi chú để lần sau làm tiếp.
+Ví dụ với báo cáo cuối tháng: viết 5 dòng về báo cáo (cho ai, gồm gì), nhờ Claude đề xuất khung, rồi làm lần lượt dàn ý, bảng, phần nhận xét. Xem xong từng phần mới sang phần sau. Cuối cùng đọc lại, cập nhật sổ tay và sao lưu để lần sau làm tiếp.
 
 Claude làm nhanh, nhưng người giao việc vẫn là người duyệt và chịu trách nhiệm.
 
@@ -175,9 +203,11 @@ Quy trình này nằm trong phần "Quy trình làm dự án" của khoá. Anh c
 
 #LamChuClaude #AIvanPhong #KyNangVanPhong #HocClaude
 
-*Khoá do [ĐƠN VỊ] biên soạn, không phải khoá chính thức của Anthropic.*
+*Khoá do [ĐƠN VỊ] biên soạn, không phải sản phẩm chính thức của Anthropic.*
 
-**Chữ trên ảnh:** "5 bước từ ý tưởng đến kết quả"
+### Chữ trên ảnh (chốt)
+"5 bước từ ý tưởng đến kết quả"
+Chân ảnh: "Bình luận XEM KHOÁ để nhận thông tin"
 
 ---
 
@@ -205,9 +235,10 @@ Hình thức học: [HÌNH THỨC HỌC]. Học phí: [GIÁ].
 
 #LamChuClaude #HocClaude #AIvanPhong #KyNangVanPhong
 
-*Khoá do [ĐƠN VỊ] biên soạn, không phải khoá chính thức của Anthropic.*
+*Khoá do [ĐƠN VỊ] biên soạn, không phải sản phẩm chính thức của Anthropic.*
 
-**Chữ trên ảnh:** "8 phần, 100 slide, học bằng làm"
+### Chữ trên ảnh (chốt)
+"Bên trong khoá: 8 phần, 100 slide, có bài tập."
 
 ---
 
@@ -238,7 +269,13 @@ Tóm lại: giao việc rõ, kiểm tra kỹ. Hai thói quen đó là điều m�
 
 #LamChuClaude #HocClaude #AIvanPhong #DungAIantoan
 
-**Chữ trên ảnh:** "Còn phân vân? Hỏi trước, học sau"
+*Khoá do [ĐƠN VỊ] biên soạn, không phải sản phẩm chính thức của Anthropic.*
+
+### Chữ trên ảnh (chốt)
+- Tiêu đề: "Còn phân vân? Mình trả lời trước vài câu hỏi hay gặp."
+- 4 thẻ hỏi đáp: "Mới dùng AI có theo được không?" · "Có cần trả tiền gói Claude không?" · "Dùng cho cả phòng được không?" · "Đây có phải khoá chính thức của Anthropic không? Không."
+- CTA chân ảnh: "Đăng ký tại [LINK ĐĂNG KÝ] trước [HẠN ƯU ĐÃI]"
+- Chân ảnh: "Khoá do [ĐƠN VỊ] biên soạn, không phải sản phẩm chính thức của Anthropic."
 
 ---
 
@@ -248,7 +285,7 @@ Cùng đối tượng (nhân viên văn phòng 22 đến 40 tuổi), cùng hình
 
 ## Mẫu A · Góc "Nhân viên mới rất nhanh" (chủ đạo)
 - **Primary text:** Claude giống một nhân viên mới rất nhanh: giỏi, nhưng cần được giao việc rõ và có người duyệt. *(94 ký tự)*
-  Khoá "Làm chủ Claude trong công việc" hướng dẫn giao việc bằng công thức 5 dòng, qua ví dụ email, báo cáo, bảng tính. Khoá do [ĐƠN VỊ] biên soạn, không phải khoá chính thức của Anthropic.
+  Khoá "Làm chủ Claude trong công việc" hướng dẫn giao việc bằng công thức 5 dòng, qua ví dụ email, báo cáo, bảng tính. Khoá do [ĐƠN VỊ] biên soạn, không phải sản phẩm chính thức của Anthropic.
 - **Headline:** Giao việc rõ cho Claude, kiểm tra kỹ *(36 ký tự)*
 - **Mô tả (tuỳ chọn):** 8 phần, 100 slide, có bài tập thực hành
 - **CTA button:** Tìm hiểu thêm
@@ -257,24 +294,25 @@ Cùng đối tượng (nhân viên văn phòng 22 đến 40 tuổi), cùng hình
 
 ## Mẫu B · Góc "An toàn: Cho phép hay Từ chối" (điểm khác biệt)
 - **Primary text:** Hộp xin phép hiện lên, anh chị bấm Cho phép hay Từ chối? Khoá dạy thói quen dùng Claude có kiểm soát. *(101 ký tự)*
-  Phần Nguyên tắc an toàn: không đưa mật khẩu, che dữ liệu nhạy cảm, kiểm tra kết quả trước khi gửi. Khoá do [ĐƠN VỊ] biên soạn, không phải khoá chính thức của Anthropic.
+  Phần Nguyên tắc an toàn: không đưa mật khẩu, che dữ liệu nhạy cảm, kiểm tra kết quả trước khi gửi. Khoá do [ĐƠN VỊ] biên soạn, không phải sản phẩm chính thức của Anthropic.
 - **Headline:** Khi nào Cho phép, khi nào Từ chối? *(34 ký tự)*
-- **Mô tả (tuỳ chọn):** Học cách dùng Claude yên tâm hơn
-- **CTA button:** Đăng ký
+- **Mô tả (tuỳ chọn):** Học thói quen dùng Claude có kiểm soát
+- **CTA button:** Tìm hiểu thêm
 - **Link:** [LINK ĐĂNG KÝ]
 - **Chữ trên ảnh:** "Không chắc thì Từ chối"
 
 ## Mẫu C · Góc "Công thức 5 dòng"
-- **Primary text:** Gõ "làm báo cáo" thì AI đoán. Viết đủ 5 dòng: mục tiêu, người đọc, kết quả, hạn chót, giới hạn. *(95 ký tự)*
-  Khoá "Làm chủ Claude trong công việc" có bài tập viết lại yêu cầu từ bài đăng Facebook đến email. Khoá do [ĐƠN VỊ] biên soạn, không phải khoá chính thức của Anthropic.
+- **Primary text:** Gõ "làm báo cáo" thì AI đoán. Viết đủ 5 dòng: mục tiêu, ai dùng, kết quả, hạn chót, ràng buộc. *(94 ký tự)*
+  Khoá "Làm chủ Claude trong công việc" có bài tập viết lại yêu cầu từ bài đăng Facebook đến email. Khoá do [ĐƠN VỊ] biên soạn, không phải sản phẩm chính thức của Anthropic.
 - **Headline:** Công thức 5 dòng để giao việc cho AI *(36 ký tự)*
 - **Mô tả (tuỳ chọn):** Học bằng làm, có file PowerPoint sửa được
-- **CTA button:** Gửi tin nhắn
-- **Link:** nhắn tin cho page (hoặc [LINK ĐĂNG KÝ])
-- **Chữ trên ảnh:** "Mục tiêu · Ai dùng · Kết quả · Hạn · Giới hạn"
+- **CTA button:** Tìm hiểu thêm
+- **Link:** [LINK ĐĂNG KÝ]
+- **Chữ trên ảnh:** "Mục tiêu · Ai dùng · Kết quả · Hạn chót · Ràng buộc"
 
 ### Gợi ý đọc kết quả A/B
-- So theo chỉ số chính của brief: lượt nhắn tin/đăng ký trên mỗi lượt bấm. Mẫu B và C dùng CTA button khác nhau, nên khi đọc kết quả nhớ rằng khác biệt có thể đến từ nút bấm chứ không chỉ từ nội dung. Nếu muốn so sạch hơn, đặt cùng một nút cho cả ba.
+- Cả 3 mẫu dùng cùng nút "Tìm hiểu thêm" và cùng đích [LINK ĐĂNG KÝ]. Giữ cố định đối tượng, giờ chạy, ngân sách, định dạng và bố cục hình; chỉ đổi primary text, headline, chữ trên ảnh.
+- So từng cặp trên cùng một chỉ số chính của brief (lượt đăng ký trên mỗi lượt bấm) và chỉ đánh giá khi mỗi nhóm đã có đủ lượt chuyển đổi (Meta thường khuyến nghị tối thiểu 50 lượt/nhóm; sếp kiểm lại).
 - Chưa có ngân sách, nên chưa đề xuất phân bổ.
 
 ---
@@ -284,5 +322,26 @@ Cùng đối tượng (nhân viên văn phòng 22 đến 40 tuổi), cùng hình
 2. Xác nhận ngôn ngữ giao diện Claude trước khi bổ sung bất kỳ câu nào về giao diện. Bài hiện chỉ nói "giao việc bằng tiếng Việt" và ghi chú tên nút có thể khác theo phiên bản; không hứa giao diện tiếng Việt.
 3. Bài 5 mời bình luận "XEM KHOÁ": cần người trả lời.
 4. Bài 7 chỉ viết "câu hỏi mình nhận nhiều nhất" nếu có thật; nếu không dùng câu mở dự phòng ghi trong bài.
-5. Hashtag #LamChuClaude (tự đặt) cần kiểm chưa bị trùng. #VietPromptChoDanVanPhong trong bài 3 là tag em đề xuất thêm, chưa kiểm; có thể bỏ.
+5. Hashtag #LamChuClaude (tự đặt) cần kiểm chưa bị trùng.
 6. Tên nút lấy theo slide khoá (Hộp xin phép, Nút Dừng, Đính kèm...). Nếu bản Claude hiện tại đổi tên, sửa trước khi đăng.
+
+---
+
+# Nhật ký sửa vòng 1
+
+| # | Đã xử lý |
+|---|---|
+| V1 | Viết lại "Chữ từng slide" Bài 3 thành bản 7 slide chốt (C1): bìa "5 dòng giúp Claude làm đúng việc", trước, công thức, sau (báo cáo), sau (tin nhắn khách), mẹo, kết. Tiêu đề bài giữ "Carousel 7 slide". |
+| V2 | Slide 5 viết lại đủ 5 thành phần (Mục tiêu, Ai dùng, Kết quả, Hạn chót "gửi trong hôm nay", Ràng buộc), bỏ chữ "5 dòng" theo nghĩa độ dài. Ví dụ báo cáo slide 4 cũng tách 5 thẻ, dùng "tháng 9". |
+| V3 | Thêm "Muốn xem khoá, nhắn tin cho page." vào slide 7 và cuối caption. Không có [GIÁ], [HẠN ƯU ĐÃI] ở T4. |
+| V4 | Bài 4: bỏ "Mình hay nhớ thế này:", rút câu kết (khoảng 185 chữ, trong quy ước 120-190). Cập nhật chữ trên ảnh theo mục D. |
+| V5 | Đối chiếu `index.html`. Bước 2 = "chia bước, so sánh vài cách làm"; bước 5 = "đọc lại lần cuối, cập nhật sổ tay, sao lưu". Ví dụ báo cáo cuối tháng đổi thành "cập nhật sổ tay và sao lưu". |
+| V6 | Bài 5: chữ trên ảnh "5 bước từ ý tưởng đến kết quả", chân ảnh CTA "Bình luận XEM KHOÁ để nhận thông tin". |
+| V7 | Bài 6: "Bên trong khoá: 8 phần, 100 slide, có bài tập." Bài 7: tiêu đề mới và 4 thẻ hỏi đáp khớp mục D, CTA theo bài. |
+| V8 | Bài 1: "Dùng AI vẫn mệt? Hãy giao việc như với nhân viên mới." Bài 2: "Nhiều nút quá? Nhớ 3 chỗ này là đủ bắt đầu." |
+| V9 | Cả 3 mẫu ads dùng nút "Tìm hiểu thêm" và đích [LINK ĐĂNG KÝ]. Cập nhật ghi chú đọc kết quả A/B (giữ cố định mọi thứ trừ nội dung). |
+| V10 | Dùng đúng tên công thức "Mục tiêu · Ai dùng · Kết quả · Hạn chót · Ràng buộc" (đối chiếu `index.html`) ở chữ trên ảnh ads C, primary text mẫu C (câu đầu 94 ký tự), Bài 3; ghi "Ràng buộc (giới hạn)" ở lần đầu trong caption. |
+| V11 | Mô tả mẫu B đổi thành "Học thói quen dùng Claude có kiểm soát". |
+| V12 | Bỏ #VietPromptChoDanVanPhong, thay #HocClaude; xoá ghi chú liên quan ở danh sách kiểm trước khi đăng. |
+
+Xử lý thêm theo quyết định của trưởng phòng: chân bài đồng nhất ở Bài 1 và mọi bài ("Khoá do [ĐƠN VỊ] biên soạn, không phải sản phẩm chính thức của Anthropic."); chữ trên ảnh từng ngày ghi dưới mục "Chữ trên ảnh (chốt)" theo bảng D; ads A và B giữ chữ trên ảnh "Claude: nhân viên mới rất nhanh" và "Không chắc thì Từ chối"; `lich-dang.md` sửa lại câu chân bài cho khớp.

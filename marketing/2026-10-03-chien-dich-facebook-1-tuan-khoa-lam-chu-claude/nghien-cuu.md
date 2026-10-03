@@ -8,7 +8,7 @@ Quy ước nhãn: [NGUỒN] = có link; [KN] = kinh nghiệm/giả định, cầ
 1. Dân văn phòng VN đã dùng AI nhiều (PwC: 38% dùng AI tạo sinh hằng ngày), nên nỗi đau không còn là "chưa biết AI" mà là "dùng chưa bài bản, ngại sai, lo lộ dữ liệu".
 2. Mối lo dữ liệu rất lớn (khảo sát Decision Lab: 90% lo AI thu thập dữ liệu không có đồng ý) và phần "Nguyên tắc an toàn" là điểm khoá mình có mà khoá ChatGPT thường không nhấn.
 3. Claude chưa có số liệu mức dùng riêng cho dân văn phòng VN. Đừng nói "ai cũng dùng Claude"; hãy định vị là "người mới bắt đầu có hướng dẫn".
-4. Đối thủ chủ yếu bán công cụ/mẹo/kiếm tiền, giá thấp (vài trăm nghìn) hoặc lớp ngắn 3 buổi. Khoảng trống: dạy cách giao việc và kiểm tra kết quả, có bài tập thực hành, học không cần mạng.
+4. Đối thủ chủ yếu bán công cụ/mẹo/kiếm tiền, giá thấp (vài trăm nghìn) hoặc lớp ngắn 3 buổi. Khoảng trống: dạy cách giao việc và kiểm tra kết quả, có bài tập thực hành, slide chạy không cần mạng.
 5. Khuyên chọn góc 1: "Claude là nhân viên mới rất nhanh: giao việc rõ, kiểm tra kỹ". Giờ đăng gợi ý: 11h30–13h và 19h45–21h [KN, có nguồn tham khảo].
 
 ## 2. Chân dung khách hàng
@@ -75,7 +75,7 @@ Quan sát chung ([KN] từ mô tả các trang trên):
 2. Công thức 5 dòng giao việc và quy trình dự án 5 bước: dễ nhớ, dùng lại được.
 3. Ẩn dụ "nhân viên mới rất nhanh": giải thích rào cản tâm lý bằng một câu.
 4. Học bằng làm: slide tương tác, 13 slide bài tập, bài tập vừa gói miễn phí (không cần trả tiền công cụ trước).
-5. Có bản PowerPoint sửa được cho trưởng nhóm đào tạo phòng; chạy không cần mạng.
+5. Có bản PowerPoint sửa được cho trưởng nhóm đào tạo phòng; slide chạy không cần mạng (thử với Claude thật vẫn cần mạng).
 Không công kích đối thủ; chỉ nói "khoá này tập trung vào..." (đúng điều cấm của brief).
 
 ## 5. Từ khoá, hashtag, giờ đăng
@@ -114,7 +114,7 @@ Cấu trúc: nhận ra vấn đề, giải thích bằng ẩn dụ, ba kỹ năn
 | T4 07/10 | Làm: công thức 5 dòng giao việc, ví dụ viết email/tóm tắt họp trước-sau | Lượt lưu, nhắn tin |
 | T5 08/10 | An toàn: khi nào bấm Cho phép/Từ chối; kiểm tra trước khi dùng | Tin cậy, chia sẻ cho sếp/đồng nghiệp |
 | T6 09/10 | Quy trình làm dự án 5 bước, ví dụ báo cáo tháng | Chuyển đổi (CTA mềm) |
-| T7 10/10 | Bên trong khoá: 8 phần, 100 slide, bài tập thực hành, học không cần mạng | Chuyển đổi (CTA rõ, `[LINK ĐĂNG KÝ]`) |
+| T7 10/10 | Bên trong khoá: 8 phần, 100 slide, bài tập thực hành, slide chạy không cần mạng | Chuyển đổi (CTA rõ, `[LINK ĐĂNG KÝ]`) |
 | CN 11/10 | Chốt: câu hỏi hay gặp (giá, hình thức, có cần trả tiền gói Claude không) + `[HẠN ƯU ĐÃI]` | Chuyển đổi cuối |
 
 Cần sếp điền: `[GIÁ]`, `[LINK ĐĂNG KÝ]`, `[HẠN ƯU ĐÃI]`, hình thức học (tự học online hay lớp). Cần xác nhận trước khi đăng: khoá không phải sản phẩm chính thức của Anthropic (ghi rõ ở chân bài/ads); giao diện Claude có tiếng Việt đến đâu; kiểm lại các số [CHƯA XÁC MINH] nếu muốn in lên bài.

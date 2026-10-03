@@ -15,7 +15,7 @@ Giờ đăng theo `nghien-cuu.md` (mục 5): xen kẽ 12h00 và 19h45 trong T2 �
 
 ## Ghi chú vận hành
 - Khung giờ T7 và CN khác gợi ý trong nghiên cứu (T7 9h30 đến 10h, CN 20h00). Em giữ 12h/19h45 theo chỉ đạo; nếu muốn test thì đổi riêng hai ngày này.
-- Mọi bài có dòng chân bài: khoá do [ĐƠN VỊ] biên soạn, không phải khoá chính thức của Anthropic. Không dùng logo Anthropic trên hình.
+- Mọi bài có dòng chân bài: khoá do [ĐƠN VỊ] biên soạn, không phải sản phẩm chính thức của Anthropic. Không dùng logo Anthropic trên hình.
 - Bài T6 mời "bình luận XEM KHOÁ": cần người trực inbox/bình luận trả lời trong ngày. Nếu chưa có người, đổi CTA thành bấm link.
 - Chưa có thông tin cần điền trước T7: [GIÁ], [LINK ĐĂNG KÝ], [HẠN ƯU ĐÃI], [HÌNH THỨC HỌC], [ĐƠN VỊ].
 - Ads: chạy từ T3 hoặc T4 cho 3 mẫu A/B (xem cuối `bai-viet.md`), tách 3 nhóm quảng cáo cùng đối tượng, chỉ khác nội dung.
