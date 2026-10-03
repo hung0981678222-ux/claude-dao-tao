@@ -1,0 +1,778 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ẩm Thực An Tâm – Sản Phẩm Tận Tâm, Phát Triển Xứng Tầm</title>
+<meta name="description" content="Sản xuất và cung ứng vỏ bánh Tortilla, vỏ bánh mì Kebab, thịt ướp sẵn, nước sốt và thiết bị. Giao hoả tốc 2H, gửi xe toàn quốc.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #C4121A;
+    --red-700: #A10F15;
+    --red-900: #750A0E;
+    --red-50: #FEF2F2;
+    --gold: #E59800;
+    --gold-50: #FFF7E6;
+    --ink: #1A1A1A;
+    --ink-2: #4B5563;
+    --line: #E5E7EB;
+    --bg: #FFFFFF;
+    --bg-soft: #F7F5F2;
+    --radius: 14px;
+    --shadow: 0 10px 30px -12px rgba(117, 10, 14, .25);
+    --wrap: 1200px;
+  }
+  * { box-sizing: border-box; }
+  .i { width: 1em; height: 1em; flex: none; vertical-align: -0.14em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 16px/1.6 "Be Vietnam Pro", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  h1, h2, h3, .display { font-family: Montserrat, "Be Vietnam Pro", sans-serif; line-height: 1.2; margin: 0; }
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 20px; }
+  section { padding: 88px 0; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font: 700 13px/1 Montserrat, sans-serif; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--red);
+  }
+  .eyebrow::before { content: ""; width: 24px; height: 2px; background: var(--gold); }
+  .section-head { max-width: 680px; margin-bottom: 44px; }
+  .section-head h2 { font-size: clamp(28px, 4vw, 40px); margin-top: 12px; }
+  .section-head p { color: var(--ink-2); margin: 14px 0 0; }
+  .center { text-align: center; margin-left: auto; margin-right: auto; }
+  .center .eyebrow::after { content: ""; width: 24px; height: 2px; background: var(--gold); }
+
+  .btn {
+    white-space: nowrap;
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    padding: 14px 24px; border-radius: 999px; border: 2px solid transparent;
+    font: 700 15px/1 Montserrat, sans-serif; cursor: pointer; transition: .2s;
+  }
+  .btn-primary { background: var(--red); color: #fff; box-shadow: var(--shadow); }
+  .btn-primary:hover { background: var(--red-700); transform: translateY(-2px); }
+  .btn-gold { background: var(--gold); color: var(--ink); }
+  .btn-gold:hover { background: #F5A800; transform: translateY(-2px); }
+  .btn-ghost { border-color: rgba(255,255,255,.7); color: #fff; }
+  .btn-ghost:hover { background: #fff; color: var(--red); }
+  .btn-outline { border-color: var(--red); color: var(--red); }
+  .btn-outline:hover { background: var(--red); color: #fff; }
+
+  /* Topbar */
+  .topbar { background: var(--red-900); color: #FDE8E8; font-size: 13.5px; }
+  .topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 40px; }
+  .topbar .info { display: flex; gap: 22px; flex-wrap: wrap; }
+  .topbar .i { color: var(--gold); margin-right: 6px; }
+  .topbar a:hover { color: #fff; }
+  .topbar .links { display: flex; gap: 18px; font-weight: 600; }
+
+  /* Header */
+  header.site {
+    position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.96);
+    backdrop-filter: blur(8px); border-bottom: 1px solid var(--line);
+  }
+  header.site .wrap { display: flex; align-items: center; gap: 28px; height: 78px; }
+  .logo img { height: 52px; width: auto; }
+  nav.main { display: flex; gap: 4px; margin-left: auto; }
+  nav.main a {
+    padding: 10px 12px; border-radius: 8px; white-space: nowrap; font: 600 15px/1 Montserrat, sans-serif; color: var(--ink);
+    position: relative;
+  }
+  nav.main a:hover, nav.main a.active { color: var(--red); }
+  nav.main a.active::after {
+    content: ""; position: absolute; left: 12px; right: 12px; bottom: 2px; height: 2px; background: var(--red);
+  }
+  .header-cta { display: flex; align-items: center; gap: 14px; }
+  .hotline { display: flex; align-items: center; gap: 10px; line-height: 1.2; }
+  .hotline .ico {
+    width: 40px; height: 40px; border-radius: 50%; background: var(--red-50); color: var(--red);
+    display: grid; place-items: center;
+  }
+  .hotline small { display: block; color: var(--ink-2); font-size: 12px; }
+  .hotline b { white-space: nowrap; font: 800 16px Montserrat, sans-serif; color: var(--red); }
+  .menu-btn { display: none; margin-left: auto; background: none; border: 0; font-size: 24px; color: var(--ink); cursor: pointer; }
+
+  /* Hero */
+  .hero {
+    position: relative; color: #fff; padding: 0; overflow: hidden;
+    background: radial-gradient(120% 140% at 0% 0%, var(--red) 0%, var(--red-700) 45%, var(--red-900) 100%);
+  }
+  .hero-visual {
+    position: absolute; top: 0; right: 0; bottom: 0; width: 46%;
+    background: url("images/food-right.webp") 30% 55%/cover no-repeat;
+  }
+  .hero-visual::before {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(90deg, var(--red-700) 0%, rgba(161,15,21,.55) 18%, rgba(161,15,21,0) 45%);
+  }
+  .hero .wrap { position: relative; padding-top: 104px; padding-bottom: 136px; }
+  .hero-copy { max-width: 600px; }
+  .hero .badge {
+    display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px;
+    background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25);
+    font-size: 13.5px; font-weight: 600;
+  }
+  .hero .badge .i { color: var(--gold); }
+  .hero h1 { font-size: clamp(34px, 5.4vw, 58px); font-weight: 800; margin: 22px 0 18px; }
+  .hero h1 em { font-style: normal; color: var(--gold); }
+  .hero p { font-size: 18px; color: #FDE8E8; margin: 0 0 32px; max-width: 540px; }
+  .hero .actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  .trust {
+    position: relative; z-index: 2; margin-top: -56px;
+  }
+  .trust-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); background: #fff;
+    border-radius: var(--radius); box-shadow: 0 20px 50px -20px rgba(0,0,0,.25); overflow: hidden;
+  }
+  .trust-item { display: flex; gap: 14px; align-items: center; padding: 24px 22px; border-right: 1px solid var(--line); }
+  .trust-item:last-child { border-right: 0; }
+  .trust-item .ico {
+    flex: none; width: 50px; height: 50px; border-radius: 12px; display: grid; place-items: center;
+    background: var(--red-50); color: var(--red); font-size: 20px;
+  }
+  .trust-item b { display: block; font: 700 15px Montserrat, sans-serif; }
+  .trust-item span { font-size: 13.5px; color: var(--ink-2); }
+
+  /* Products */
+  .cats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; }
+  .cat {
+    border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 22px; background: #fff;
+    transition: .25s; display: flex; flex-direction: column; gap: 10px;
+  }
+  .cat:hover { border-color: var(--red); transform: translateY(-4px); box-shadow: var(--shadow); }
+  .cat .ico {
+    width: 58px; height: 58px; border-radius: 16px; display: grid; place-items: center; font-size: 24px;
+    background: linear-gradient(135deg, var(--red), var(--red-900)); color: var(--gold); margin-bottom: 6px;
+  }
+  .cat h3 { font-size: 17px; }
+  .cat p { margin: 0; font-size: 14px; color: var(--ink-2); flex: 1; }
+  .cat .more { font: 700 13.5px Montserrat, sans-serif; color: var(--red); display: flex; justify-content: space-between; }
+  .cat .count { color: var(--ink-2); font-weight: 600; }
+
+  /* Ecosystem */
+  .eco { background: var(--bg-soft); }
+  .eco-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .eco-card { background: #fff; border-radius: var(--radius); overflow: hidden; box-shadow: 0 6px 24px -14px rgba(0,0,0,.2); display: flex; flex-direction: column; }
+  .eco-card .img { aspect-ratio: 16/10; overflow: hidden; position: relative; }
+  .eco-card .img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+  .eco-card:hover .img img { transform: scale(1.06); }
+  .eco-card .num {
+    position: absolute; left: 16px; top: 16px; background: var(--gold); color: var(--ink);
+    font: 800 13px Montserrat, sans-serif; padding: 6px 10px; border-radius: 8px;
+  }
+  .eco-card .body { padding: 26px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+  .eco-card h3 { font-size: 21px; }
+  .eco-card p { margin: 0; color: var(--ink-2); font-size: 15px; flex: 1; }
+  .eco-card ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; font-size: 14.5px; }
+  .eco-card li .i { color: var(--red); margin-right: 8px; }
+  .link-arrow { font: 700 14.5px Montserrat, sans-serif; color: var(--red); margin-top: 6px; }
+  .link-arrow .i { transition: .2s; margin-left: 6px; }
+  .link-arrow:hover .i { transform: translateX(4px); }
+
+  /* Delivery */
+  .delivery { background: linear-gradient(120deg, var(--red-900), var(--red)); color: #fff; overflow: hidden; }
+  .delivery .wrap { display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: center; }
+  .delivery .eyebrow { color: var(--gold); }
+  .delivery h2 { font-size: clamp(28px, 4vw, 42px); margin: 12px 0 16px; }
+  .delivery p { color: #FDE8E8; margin: 0 0 26px; }
+  .hubs { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 30px; }
+  .hub {
+    padding: 10px 16px; border-radius: 10px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2);
+    font-weight: 600; font-size: 14.5px;
+  }
+  .hub .i { color: var(--gold); margin-right: 6px; }
+  .phones { display: flex; gap: 14px; flex-wrap: wrap; }
+  .delivery .visual { position: relative; }
+  .delivery .visual img { border-radius: 18px; box-shadow: 0 30px 60px -20px rgba(0,0,0,.5); }
+  .delivery .stamp {
+    position: absolute; left: -22px; bottom: -22px; background: var(--gold); color: var(--ink);
+    border-radius: 16px; padding: 16px 20px; box-shadow: 0 16px 30px -12px rgba(0,0,0,.4);
+  }
+  .delivery .stamp b { display: block; font: 800 34px/1 Montserrat, sans-serif; }
+  .delivery .stamp span { font-size: 13px; font-weight: 600; }
+
+  /* Stats */
+  .stats { padding: 64px 0; border-bottom: 1px solid var(--line); }
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
+  .stat b { display: block; font: 800 clamp(34px, 4.4vw, 48px)/1 Montserrat, sans-serif; color: var(--red); }
+  .stat b sup { font-size: .5em; color: var(--gold); vertical-align: top; margin-left: 2px; }
+  .stat strong { display: block; margin-top: 10px; font: 700 16px Montserrat, sans-serif; }
+  .stat span { font-size: 14px; color: var(--ink-2); }
+
+  /* About */
+  .about .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .about .visual { position: relative; }
+  .about .visual img { border-radius: 18px; aspect-ratio: 4/3.4; object-fit: cover; width: 100%; }
+  .about .seal {
+    position: absolute; right: -18px; top: 28px; background: #fff; border-radius: 14px; padding: 14px 18px;
+    box-shadow: 0 16px 40px -16px rgba(0,0,0,.3); display: flex; gap: 12px; align-items: center; max-width: 250px;
+  }
+  .about .seal .i { font-size: 28px; color: var(--gold); }
+  .about .seal b { display: block; font: 700 14px Montserrat, sans-serif; }
+  .about .seal span { font-size: 12.5px; color: var(--ink-2); }
+  .about h2 { font-size: clamp(28px, 4vw, 40px); margin: 12px 0 18px; }
+  .about h2 span { color: var(--red); }
+  .about p { color: var(--ink-2); margin: 0 0 24px; }
+  .pillars { display: grid; gap: 16px; margin-bottom: 30px; }
+  .pillar { display: flex; gap: 14px; }
+  .pillar .ico { flex: none; width: 42px; height: 42px; border-radius: 10px; background: var(--gold-50); color: var(--gold); display: grid; place-items: center; }
+  .pillar b { display: block; font: 700 15.5px Montserrat, sans-serif; }
+  .pillar span { font-size: 14.5px; color: var(--ink-2); }
+
+  /* Testimonials */
+  .reviews { background: var(--bg-soft); }
+  .review-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .review { background: #fff; border-radius: var(--radius); padding: 26px 22px; display: flex; flex-direction: column; gap: 16px; border-top: 3px solid var(--red); }
+  .review .stars { color: var(--gold); font-size: 13px; display: flex; justify-content: space-between; align-items: center; }
+  .review .verified { color: #15803D; font-size: 12px; font-weight: 600; }
+  .review q { font-size: 15px; color: var(--ink); flex: 1; quotes: "“" "”"; }
+  .review .who { display: flex; gap: 12px; align-items: center; }
+  .review .av {
+    width: 42px; height: 42px; border-radius: 50%; background: var(--red); color: #fff; display: grid; place-items: center;
+    font: 700 14px Montserrat, sans-serif; flex: none;
+  }
+  .review .who b { display: block; font: 700 14.5px Montserrat, sans-serif; }
+  .review .who span { font-size: 12.5px; color: var(--ink-2); }
+
+  /* Partners */
+  .partners { padding: 72px 0; }
+  .marquee { overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+  .marquee-track { display: flex; gap: 56px; width: max-content; animation: scroll 40s linear infinite; }
+  .marquee-track img { height: 46px; width: auto; filter: grayscale(1); opacity: .65; transition: .2s; }
+  .marquee-track img:hover { filter: none; opacity: 1; }
+  @keyframes scroll { to { transform: translateX(-50%); } }
+
+  /* Lead form */
+  .lead { padding: 0 0 88px; }
+  .lead-box {
+    display: grid; grid-template-columns: 1fr 1.1fr; border-radius: 22px; overflow: hidden;
+    background: var(--red-900); color: #fff; box-shadow: 0 30px 60px -30px rgba(117,10,14,.6);
+  }
+  .lead-copy {
+    padding: 52px 48px; position: relative;
+    background: linear-gradient(160deg, rgba(117,10,14,.9), rgba(196,18,26,.85)), url("images/franchise-hero.webp") center/cover;
+  }
+  .lead-copy .eyebrow { color: var(--gold); }
+  .lead-copy h2 { font-size: clamp(26px, 3.4vw, 36px); margin: 12px 0 14px; }
+  .lead-copy p { color: #FDE8E8; margin: 0 0 26px; }
+  .lead-copy ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+  .lead-copy li .i { color: var(--gold); margin-right: 10px; }
+  form.lead-form { background: #fff; color: var(--ink); padding: 44px 44px; display: grid; gap: 16px; }
+  .field label { display: block; font: 600 13.5px Montserrat, sans-serif; margin-bottom: 6px; }
+  .field input, .field textarea {
+    width: 100%; padding: 13px 14px; border: 1.5px solid var(--line); border-radius: 10px; font: inherit; background: #fff; color: var(--ink);
+  }
+  .field input:focus, .field textarea:focus { outline: none; border-color: var(--red); box-shadow: 0 0 0 4px var(--red-50); }
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .needs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .need { position: relative; }
+  .need input { position: absolute; opacity: 0; inset: 0; margin: 0; }
+  .need span {
+    display: flex; gap: 10px; align-items: center; padding: 12px; border: 1.5px solid var(--line); border-radius: 10px;
+    font-size: 14px; cursor: pointer; transition: .15s; height: 100%;
+  }
+  .need span .i { color: var(--red); font-size: 18px; }
+  .need input:checked + span { border-color: var(--red); background: var(--red-50); font-weight: 600; }
+  .need input:focus-visible + span { box-shadow: 0 0 0 4px var(--red-50); }
+  .form-note { font-size: 13px; color: var(--ink-2); text-align: center; margin: 0; }
+  .form-ok { display: none; background: #F0FDF4; color: #166534; border-radius: 10px; padding: 12px 14px; font-size: 14px; }
+
+  /* Footer */
+  footer { background: #141414; color: #C9C9C9; padding: 64px 0 0; font-size: 14.5px; }
+  .foot-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 40px; }
+  .foot-logo { background: #fff; display: inline-block; padding: 10px 14px; border-radius: 10px; margin-bottom: 18px; }
+  .foot-logo img { height: 40px; width: auto; }
+  footer h4 { font: 700 15px Montserrat, sans-serif; color: #fff; margin: 0 0 16px; }
+  footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  footer a:hover { color: var(--gold); }
+  footer .contact li { display: flex; gap: 10px; }
+  footer .contact .i { color: var(--gold); margin-top: 4px; width: 16px; }
+  .foot-bottom {
+    margin-top: 48px; border-top: 1px solid #2A2A2A; padding: 20px 0; display: flex; justify-content: space-between;
+    gap: 16px; flex-wrap: wrap; font-size: 13px; color: #8A8A8A;
+  }
+
+  /* Floating contact */
+  .float { position: fixed; right: 18px; bottom: 18px; display: grid; gap: 12px; z-index: 60; }
+  .float a {
+    width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-size: 22px;
+    box-shadow: 0 10px 24px -8px rgba(0,0,0,.4); transition: .2s;
+  }
+  .float a:hover { transform: scale(1.08); }
+  .float .zalo { background: #0068FF; font: 800 13px Montserrat, sans-serif; }
+  .float .call { background: var(--red); animation: pulse 2s infinite; }
+  @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(196,18,26,.55); } 70% { box-shadow: 0 0 0 16px rgba(196,18,26,0); } 100% { box-shadow: 0 0 0 0 rgba(196,18,26,0); } }
+
+  /* Responsive */
+  @media (max-width: 1280px) { .hotline { display: none; } }
+  @media (max-width: 1100px) {
+    .cats { grid-template-columns: repeat(3, 1fr); }
+    .review-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 960px) {
+    section { padding: 64px 0; }
+    .topbar .links, .topbar .hours { display: none; }
+    nav.main {
+      display: none; position: absolute; top: 78px; left: 0; right: 0; background: #fff; flex-direction: column;
+      padding: 10px 20px 20px; border-bottom: 1px solid var(--line); box-shadow: 0 20px 30px -20px rgba(0,0,0,.2);
+    }
+    nav.main.open { display: flex; }
+    nav.main a { padding: 14px 4px; border-bottom: 1px solid var(--line); }
+    nav.main a.active::after { display: none; }
+    .menu-btn { display: block; }
+    .header-cta .btn { display: none; }
+    .hero-visual { width: 40%; }
+    .hero-visual::before { background: linear-gradient(90deg, var(--red-700) 0%, rgba(161,15,21,.4) 35%, rgba(161,15,21,0) 70%); }
+    .trust-grid { grid-template-columns: repeat(2, 1fr); }
+    .trust-item:nth-child(2) { border-right: 0; }
+    .trust-item:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+    .eco-grid { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; }
+    .delivery .wrap, .about .wrap { grid-template-columns: 1fr; gap: 48px; }
+    .delivery .stamp { left: 12px; }
+    .about .seal { right: 12px; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); row-gap: 40px; }
+    .lead-box { grid-template-columns: 1fr; }
+    .foot-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .wrap { padding: 0 16px; }
+    header.site .wrap { height: 66px; }
+    nav.main { top: 66px; }
+    .logo img { height: 40px; }
+    .hero .wrap { padding-top: 64px; padding-bottom: 100px; }
+    .hero-visual { position: relative; width: 100%; height: 240px; background-position: 30% 60%; }
+    .hero-visual::before { background: linear-gradient(0deg, var(--red-700) 0%, rgba(161,15,21,0) 50%); }
+    .hero .wrap { padding-top: 8px; }
+    .hero p { font-size: 16px; }
+    .hero .actions .btn { flex: 1 1 100%; }
+    .cats { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .cat { padding: 20px 16px; }
+    .trust-grid { grid-template-columns: 1fr; }
+    .trust-item { border-right: 0 !important; border-bottom: 1px solid var(--line); }
+    .trust-item:last-child { border-bottom: 0; }
+    .review-grid { grid-template-columns: 1fr; }
+    .lead-copy, form.lead-form { padding: 32px 22px; }
+    .row2, .needs { grid-template-columns: 1fr; }
+    .foot-grid { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></symbol>
+  <symbol id="i-bars" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+  <symbol id="i-basket-shopping" viewBox="0 0 24 24"><path d="M2 11h20M3.5 11l1.6 7.4a2 2 0 0 0 2 1.6h9.8a2 2 0 0 0 2-1.6l1.6-7.4M5 11l4-7M19 11l-4-7M9 11l1 9M15 11l-1 9"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></symbol>
+  <symbol id="i-bottle-droplet" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5S12.5 5.5 12 3c-.5 2.5-2 4.9-4 6.5S5 13 5 15a7 7 0 0 0 7 7z"/></symbol>
+  <symbol id="i-bread-slice" viewBox="0 0 24 24"><path d="M6 21a2 2 0 0 1-2-2v-8.3A4 4 0 0 1 6 3h12a4 4 0 0 1 2 7.7V19a2 2 0 0 1-2 2z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-circle-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-circle-dot" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-drumstick-bite" viewBox="0 0 24 24"><circle cx="15" cy="9" r="6"/><path d="m10.8 13.2-5 5"/><circle cx="4.5" cy="19.5" r="1.8"/></symbol>
+  <symbol id="i-file-invoice-dollar" viewBox="0 0 24 24"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z"/><path d="M15 8h-5a2 2 0 0 0 0 4h4a2 2 0 0 1 0 4H9M12 6v12"/></symbol>
+  <symbol id="i-fire-burner" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.4-.5-2-1-3-1.1-2.1-.2-4 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.2.4-2.3 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></symbol>
+  <symbol id="i-gears" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-2.6-6.4L21 8M21 3v5h-5"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/></symbol>
+  <symbol id="i-graduation-cap" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5zM6 12v5c3 3 9 3 12 0v-5"/></symbol>
+  <symbol id="i-handshake" viewBox="0 0 24 24"><path d="m11 17 2 2a1 1 0 1 0 3-3M14 14l2.5 2.5a1 1 0 1 0 3-3l-3.9-3.9a3 3 0 0 0-4.2 0l-.9.9a1 1 0 1 1-3-3l2.8-2.8a5.8 5.8 0 0 1 7.1-.9l.5.3a2 2 0 0 0 1.4.3L21 4M21 11l-1.5 1.5M3 3l1 11 6.5 6.5a1 1 0 1 0 3-3M3 4h8"/></symbol>
+  <symbol id="i-headset" viewBox="0 0 24 24"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></symbol>
+  <symbol id="i-industry" viewBox="0 0 24 24"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2zM17 18h1M12 18h1M7 18h1"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10zM2 21c0-3 1.9-5.4 5.1-6C9.5 14.5 12 13 13 12"/></symbol>
+  <symbol id="i-location-dot" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-paper-plane" viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-seedling" viewBox="0 0 24 24"><path d="M7 20h10M10 20c5.5-2.5.8-6.4 3-10M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8zM14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></symbol>
+  <symbol id="i-shield-halved" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M3 9l1.5-5h15L21 9M4 9v11a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9M3 9h18M9 21v-6h6v6"/></symbol>
+  <symbol id="i-truck-fast" viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2M15 18H9M19 18h2a1 1 0 0 0 1-1v-3.6a1 1 0 0 0-.2-.6l-3.5-4.4a1 1 0 0 0-.8-.4H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></symbol>
+  <symbol id="i-xmark" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+</svg>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="info">
+      <span><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:0348635222">0348 635 222</a> – <a href="tel:0398431300">0398 431 300</a></span>
+      <span class="hours"><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg>07:30 – 18:00 (T2 – CN)</span>
+      <span><svg class="i" aria-hidden="true"><use href="#i-truck-fast"/></svg>Giao hoả tốc 2H &amp; gửi xe toàn quốc</span>
+    </div>
+    <div class="links">
+      <a href="#bao-gia">Nhận báo giá sỉ</a>
+      <a href="#bao-gia">Tư vấn đại lý</a>
+    </div>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="#"><img src="images/logo.png" alt="Ẩm Thực An Tâm" width="262" height="52"></a>
+    <button class="menu-btn" aria-label="Mở menu" aria-expanded="false"><svg class="i" aria-hidden="true"><use href="#i-bars"/></svg></button>
+    <nav class="main" id="nav">
+      <a class="active" href="#">Trang chủ</a>
+      <a href="#san-pham">Sản phẩm</a>
+      <a href="#he-sinh-thai">Nhượng quyền</a>
+      <a href="#he-sinh-thai">Đào tạo nghề</a>
+      <a href="#ve-chung-toi">Về chúng tôi</a>
+      <a href="#lien-he">Liên hệ</a>
+    </nav>
+    <div class="header-cta">
+      <div class="hotline">
+        <div class="ico"><svg class="i" aria-hidden="true"><use href="#i-headset"/></svg></div>
+        <div><small>Hotline tư vấn</small><b>0348 635 222</b></div>
+      </div>
+      <a class="btn btn-primary" href="#bao-gia">Báo giá sỉ</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-visual" role="img" aria-label="Bánh mì Kebab nhân thịt nướng của An Tâm"></div>
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="badge"><svg class="i" aria-hidden="true"><use href="#i-shield-halved"/></svg> Chuẩn VSATTP · ISO &amp; HACCP</span>
+        <h1>Nguyên liệu Kebab &amp; Tortilla <em>chuẩn vị</em>, giao tận quán trong 2 giờ</h1>
+        <p>Vỏ bánh, thịt ướp sẵn, nước sốt độc quyền và thiết bị cho quán Bánh mì Thổ Nhĩ Kỳ, cùng một nhà cung cấp. Hơn 500 đại lý trên 63 tỉnh thành đang dùng.</p>
+        <div class="actions">
+          <a class="btn btn-gold" href="#bao-gia"><svg class="i" aria-hidden="true"><use href="#i-file-invoice-dollar"/></svg> Nhận báo giá đại lý</a>
+          <a class="btn btn-ghost" href="#san-pham">Xem sản phẩm <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust">
+    <div class="wrap">
+      <div class="trust-grid">
+        <div class="trust-item"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-leaf"/></svg></div><div><b>100% nguyên liệu sạch</b><span>Không chất bảo quản độc hại</span></div></div>
+        <div class="trust-item"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-bolt"/></svg></div><div><b>Giao siêu tốc 2H</b><span>Kho Hà Nội, Đà Nẵng, TP.HCM</span></div></div>
+        <div class="trust-item"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-industry"/></svg></div><div><b>10.000 vỏ bánh/ngày</b><span>Không lo đứt nguồn hàng</span></div></div>
+        <div class="trust-item"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-gift"/></svg></div><div><b>Gửi mẫu dùng thử</b><span>Miễn phí, tận nơi</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="san-pham">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Danh mục sản phẩm</span>
+        <h2>Mọi thứ một quán Kebab cần, từ vỏ bánh đến máy nướng</h2>
+        <p>Đặt một lần, đủ nguyên liệu cho cả tuần. Giá sỉ theo số lượng, giao tận nơi mỗi ngày.</p>
+      </div>
+      <div class="cats">
+        <a class="cat" href="#bao-gia">
+          <div class="ico"><svg class="i" aria-hidden="true"><use href="#i-circle-dot"/></svg></div>
+          <h3>Vỏ bánh Tortilla</h3>
+          <p>Tươi, nướng, nguyên cám. Kích thước 22 – 31 cm.</p>
+          <div class="more"><span>Xem ngay →</span><span class="count">3 sp</span></div>
+        </a>
+        <a class="cat" href="#bao-gia">
+          <div class="ico"><svg class="i" aria-hidden="true"><use href="#i-bread-slice"/></svg></div>
+          <h3>Vỏ bánh mì Kebab</h3>
+          <p>Bánh vàng, mè đen, mè trắng, than tre.</p>
+          <div class="more"><span>Xem ngay →</span><span class="count">4 sp</span></div>
+        </a>
+        <a class="cat" href="#bao-gia">
+          <div class="ico"><svg class="i" aria-hidden="true"><use href="#i-drumstick-bite"/></svg></div>
+          <h3>Nhân thịt nướng</h3>
+          <p>Thịt Kebab tươi/chín, gà xay, bò xay ướp sẵn.</p>
+          <div class="more"><span>Xem ngay →</span><span class="count">3 sp</span></div>
+        </a>
+        <a class="cat" href="#bao-gia">
+          <div class="ico"><svg class="i" aria-hidden="true"><use href="#i-bottle-droplet"/></svg></div>
+          <h3>Nước sốt</h3>
+          <p>Mayonnaise, Samurai, trứng muối và sốt độc quyền.</p>
+          <div class="more"><span>Xem ngay →</span><span class="count">6 sp</span></div>
+        </a>
+        <a class="cat" href="#bao-gia">
+          <div class="ico"><svg class="i" aria-hidden="true"><use href="#i-fire-burner"/></svg></div>
+          <h3>Thiết bị &amp; máy</h3>
+          <p>Máy nướng thịt, Tiross TS965, dao cắt Kebab.</p>
+          <div class="more"><span>Xem ngay →</span><span class="count">4 sp</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="eco" id="he-sinh-thai">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="eyebrow">Hệ sinh thái toàn diện</span>
+        <h2>Một đối tác cho cả hành trình kinh doanh F&amp;B</h2>
+        <p>Dù bạn cần nguyên liệu cho quán đang chạy hay muốn mở quán mới từ con số 0, An Tâm đồng hành từng bước.</p>
+      </div>
+      <div class="eco-grid">
+        <article class="eco-card">
+          <div class="img"><span class="num">01</span><img src="images/food-left.webp" alt="Bánh cuốn Tortilla và nước sốt" loading="lazy"></div>
+          <div class="body">
+            <h3>Sản phẩm &amp; nguyên liệu</h3>
+            <p>Nguồn nguyên liệu ổn định, chất lượng đồng đều mỗi mẻ cho quán và chuỗi.</p>
+            <ul>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Giá sỉ cạnh tranh theo số lượng</li>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Giao hằng ngày, kể cả đơn gấp</li>
+            </ul>
+            <a class="link-arrow" href="#san-pham">Xem sản phẩm<svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+          </div>
+        </article>
+        <article class="eco-card">
+          <div class="img"><span class="num">02</span><img src="images/franchise-hero.webp" alt="Ki-ốt nhượng quyền Bánh mì An Tâm" loading="lazy"></div>
+          <div class="body">
+            <h3>Hợp tác &amp; nhượng quyền</h3>
+            <p>Mô hình ki-ốt và cửa hàng đã chạy thực tế, hỗ trợ từ chọn mặt bằng đến khai trương.</p>
+            <ul>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Trọn gói thiết bị và nhận diện</li>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Công thức sốt và thịt độc quyền</li>
+            </ul>
+            <a class="link-arrow" href="#bao-gia">Tư vấn nhượng quyền<svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+          </div>
+        </article>
+        <article class="eco-card">
+          <div class="img"><span class="num">03</span><img src="images/training-hero.webp" alt="Lớp đào tạo nghề làm bánh Kebab" loading="lazy"></div>
+          <div class="body">
+            <h3>Đào tạo &amp; hướng dẫn</h3>
+            <p>Khoá học nghề làm bánh Kebab, Tortilla với quy trình chuẩn hoá, dễ làm theo.</p>
+            <ul>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Thực hành trực tiếp tại bếp</li>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Hỗ trợ sau khoá học</li>
+            </ul>
+            <a class="link-arrow" href="#bao-gia">Đăng ký học<svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="delivery">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">Giao hàng siêu tốc 2H</span>
+        <h2>Đặt hàng liền tay, giao ngay đến quán</h2>
+        <p>Hệ thống kho vận hiện đại giao vỏ bánh Tortilla, Kebab và nhân thịt tươi tận nơi cho đại lý mỗi ngày. Tỉnh xa gửi chành xe toàn quốc.</p>
+        <div class="hubs">
+          <span class="hub"><svg class="i" aria-hidden="true"><use href="#i-location-dot"/></svg>Hà Nội</span>
+          <span class="hub"><svg class="i" aria-hidden="true"><use href="#i-location-dot"/></svg>Đà Nẵng</span>
+          <span class="hub"><svg class="i" aria-hidden="true"><use href="#i-location-dot"/></svg>TP. Hồ Chí Minh</span>
+        </div>
+        <div class="phones">
+          <a class="btn btn-gold" href="tel:0348635222"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg> 0348 635 222</a>
+          <a class="btn btn-ghost" href="tel:0398431300"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg> 0398 431 300</a>
+        </div>
+      </div>
+      <div class="visual">
+        <img src="images/delivery-truck.webp" alt="Xe giao hàng Ẩm Thực An Tâm" loading="lazy">
+        <div class="stamp"><b>2H</b><span>Giao hoả tốc nội thành</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="wrap stats-grid">
+      <div class="stat"><b>500<sup>+</sup></b><strong>Đại lý &amp; đối tác</strong><span>Phủ khắp 63 tỉnh thành</span></div>
+      <div class="stat"><b>10.000</b><strong>Vỏ bánh mỗi ngày</strong><span>Dây chuyền chuẩn công nghiệp</span></div>
+      <div class="stat"><b>99,8<sup>%</sup></b><strong>Khách hài lòng</strong><span>Tin tưởng và gắn bó lâu dài</span></div>
+      <div class="stat"><b>10</b><strong>Năm kinh nghiệm</strong><span>Tiên phong ngành ẩm thực nhanh</span></div>
+    </div>
+  </section>
+
+  <section class="about" id="ve-chung-toi">
+    <div class="wrap">
+      <div class="visual">
+        <img src="images/training-hero.webp" alt="Đội ngũ bếp Ẩm Thực An Tâm" loading="lazy">
+        <div class="seal"><svg class="i" aria-hidden="true"><use href="#i-award"/></svg><div><b>Tiêu chuẩn ISO &amp; HACCP</b><span>Quy trình sản xuất khép kín</span></div></div>
+      </div>
+      <div>
+        <span class="eyebrow">Về chúng tôi</span>
+        <h2>Hành trình tận tâm, <span>kiến tạo chất lượng xứng tầm</span></h2>
+        <p>Ẩm Thực An Tâm sản xuất và cung ứng chuyên sâu vỏ bánh Tortilla, vỏ bánh Kebab tam giác, thịt ướp sẵn và nước sốt chuẩn vị Thổ Nhĩ Kỳ. Chúng tôi đồng hành cùng hàng nghìn chủ quán, chuỗi cửa hàng và đại lý trên toàn quốc.</p>
+        <div class="pillars">
+          <div class="pillar"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-seedling"/></svg></div><div><b>Nguyên liệu tự nhiên</b><span>Chọn lọc 100%, dẻo dai, giòn thơm chuẩn vị.</span></div></div>
+          <div class="pillar"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-gears"/></svg></div><div><b>Dây chuyền tự động</b><span>Công suất lớn, nguồn hàng không đứt gãy.</span></div></div>
+          <div class="pillar"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-handshake"/></svg></div><div><b>Hỗ trợ trọn gói</b><span>Gửi mẫu thử, công thức nướng bánh và máy móc.</span></div></div>
+        </div>
+        <a class="btn btn-outline" href="#lien-he">Khám phá thêm về chúng tôi</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="eyebrow">Khách hàng nói gì</span>
+        <h2>Chủ quán và đại lý tin dùng An Tâm</h2>
+      </div>
+      <div class="review-grid">
+        <figure class="review" style="margin:0">
+          <div class="stars"><span>★★★★★</span><span class="verified"><svg class="i" aria-hidden="true"><use href="#i-circle-check"/></svg> Đã xác thực</span></div>
+          <q>Giá cả cạnh tranh so với chất lượng nhận được. Thịt ướp sẵn đậm vị, nướng dậy mùi thơm cuốn hút khách từ xa.</q>
+          <div class="who"><div class="av">VT</div><div><b>Anh Vũ Đức Trọng</b><span>Chủ ki-ốt Bánh mì – Bình Dương</span></div></div>
+        </figure>
+        <figure class="review" style="margin:0">
+          <div class="stars"><span>★★★★★</span><span class="verified"><svg class="i" aria-hidden="true"><use href="#i-circle-check"/></svg> Đã xác thực</span></div>
+          <q>Nhập vỏ Tortilla và bánh Kebab hơn 2 năm. Chất lượng đồng đều, không rách khi cuộn, sốt rất vừa miệng người Việt.</q>
+          <div class="who"><div class="av">TV</div><div><b>Chị Trương Vi</b><span>Chủ chuỗi Takeaway – Đà Nẵng</span></div></div>
+        </figure>
+        <figure class="review" style="margin:0">
+          <div class="stars"><span>★★★★★</span><span class="verified"><svg class="i" aria-hidden="true"><use href="#i-circle-check"/></svg> Đã xác thực</span></div>
+          <q>Giao hàng nhanh, đúng hẹn. Có hôm quán đông đột xuất gọi thêm hàng lúc 5h sáng vẫn được hỗ trợ nhiệt tình.</q>
+          <div class="who"><div class="av">LB</div><div><b>Anh Lê Ngọc Bảo</b><span>Đại lý phân phối – Cần Thơ</span></div></div>
+        </figure>
+        <figure class="review" style="margin:0">
+          <div class="stars"><span>★★★★★</span><span class="verified"><svg class="i" aria-hidden="true"><use href="#i-circle-check"/></svg> Đã xác thực</span></div>
+          <q>Học làm bánh Kebab ở An Tâm giúp mình tự tin mở quán ngay tháng đầu. Quy trình chuẩn hoá rất dễ làm theo.</q>
+          <div class="who"><div class="av">MH</div><div><b>Chị Mai Thu Huyền</b><span>Học viên khởi nghiệp – Hải Phòng</span></div></div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="partners">
+    <div class="wrap">
+      <div class="section-head center" style="margin-bottom:32px">
+        <span class="eyebrow">Đối tác của chúng tôi</span>
+        <p>Đồng hành cùng các chuỗi bán lẻ, siêu thị, cửa hàng tiện lợi và hơn 500 đại lý F&amp;B trên toàn quốc.</p>
+      </div>
+      <div class="marquee">
+        <div class="marquee-track" id="partners"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lead" id="bao-gia">
+    <div class="wrap">
+      <div class="lead-box">
+        <div class="lead-copy">
+          <span class="eyebrow">Cơ hội kinh doanh</span>
+          <h2>Nhận bảng giá đại lý &amp; mẫu thử miễn phí</h2>
+          <p>Để lại số điện thoại, chuyên viên An Tâm gửi bảng giá đại lý tốt nhất trong 15 phút.</p>
+          <ul>
+            <li><svg class="i" aria-hidden="true"><use href="#i-circle-check"/></svg>Giá sỉ theo số lượng, minh bạch</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-circle-check"/></svg>Gửi mẫu dùng thử tận nơi</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-circle-check"/></svg>Tư vấn mô hình và công thức miễn phí</li>
+          </ul>
+        </div>
+        <form class="lead-form" id="leadForm" novalidate>
+          <div class="row2">
+            <div class="field"><label for="name">Họ và tên *</label><input id="name" name="name" required placeholder="Nguyễn Văn A"></div>
+            <div class="field"><label for="phone">Số điện thoại *</label><input id="phone" name="phone" type="tel" required placeholder="09xx xxx xxx" pattern="0[0-9 ]{9,12}"></div>
+          </div>
+          <div class="field">
+            <label>Bạn quan tâm đến</label>
+            <div class="needs">
+              <label class="need"><input type="radio" name="need" value="nguyen-lieu" checked><span><svg class="i" aria-hidden="true"><use href="#i-basket-shopping"/></svg>Mua nguyên liệu</span></label>
+              <label class="need"><input type="radio" name="need" value="nhuong-quyen"><span><svg class="i" aria-hidden="true"><use href="#i-store"/></svg>Nhượng quyền ki-ốt</span></label>
+              <label class="need"><input type="radio" name="need" value="dao-tao"><span><svg class="i" aria-hidden="true"><use href="#i-graduation-cap"/></svg>Đào tạo nghề</span></label>
+              <label class="need"><input type="radio" name="need" value="mau-thu"><span><svg class="i" aria-hidden="true"><use href="#i-gift"/></svg>Nhận mẫu thử</span></label>
+            </div>
+          </div>
+          <div class="field"><label for="msg">Lời nhắn</label><textarea id="msg" name="msg" rows="3" placeholder="Ví dụ: Quán ở Thủ Đức, cần 200 vỏ bánh/ngày"></textarea></div>
+          <button class="btn btn-primary" type="submit"><svg class="i" aria-hidden="true"><use href="#i-paper-plane"/></svg> Nhận báo giá ngay</button>
+          <div class="form-ok" id="formOk" role="status"></div>
+          <p class="form-note">Hoặc gọi trực tiếp <a href="tel:0348635222" style="color:var(--red);font-weight:700">0348 635 222</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="lien-he">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo"><img src="images/logo.png" alt="Ẩm Thực An Tâm" loading="lazy"></div>
+        <p style="margin:0 0 8px;color:#fff;font-weight:600">CÔNG TY TNHH SX-TM ẨM THỰC AN TÂM</p>
+        <p style="margin:0">MST: 0319372669</p>
+      </div>
+      <div>
+        <h4>Sản phẩm</h4>
+        <ul>
+          <li><a href="#san-pham">Vỏ bánh Tortilla</a></li>
+          <li><a href="#san-pham">Vỏ bánh mì Kebab</a></li>
+          <li><a href="#san-pham">Nhân thịt nướng</a></li>
+          <li><a href="#san-pham">Nước sốt</a></li>
+          <li><a href="#san-pham">Thiết bị &amp; máy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Chính sách</h4>
+        <ul>
+          <li><a href="#">Chính sách &amp; quy định chung</a></li>
+          <li><a href="#">Giao hàng &amp; thanh toán</a></li>
+          <li><a href="#">Bảo mật thông tin</a></li>
+          <li><a href="#">Tra cứu hoá đơn</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Liên hệ</h4>
+        <ul class="contact">
+          <li><svg class="i" aria-hidden="true"><use href="#i-location-dot"/></svg><span>55F Nguyễn Thị Thơi, P. Tân Thới Hiệp, TP. Hồ Chí Minh</span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg><span><a href="tel:0348635222">0348 635 222</a> · <a href="tel:0398431300">0398 431 300</a></span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>07:30 – 18:00, thứ 2 – Chủ nhật</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© Ẩm Thực An Tâm. All rights reserved.</span>
+      <span>Sản Phẩm Tận Tâm – Phát Triển Xứng Tầm</span>
+    </div>
+  </div>
+</footer>
+
+<div class="float">
+  <a class="zalo" href="https://zalo.me/0398431300" target="_blank" rel="noopener" aria-label="Chat Zalo">Zalo</a>
+  <a class="call" href="tel:0348635222" aria-label="Gọi ngay"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg></a>
+</div>
+
+<script>
+  // Menu mobile
+  const btn = document.querySelector('.menu-btn');
+  const nav = document.getElementById('nav');
+  btn.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+    btn.innerHTML = open ? '<svg class="i" aria-hidden="true"><use href="#i-xmark"/></svg>' : '<svg class="i" aria-hidden="true"><use href="#i-bars"/></svg>';
+  });
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('open'); btn.setAttribute('aria-expanded', false);
+    btn.innerHTML = '<svg class="i" aria-hidden="true"><use href="#i-bars"/></svg>';
+  }));
+
+  // Logo đối tác chạy ngang (nhân đôi để lặp liền mạch)
+  const partners = { aeonmall: 'AEON Mall', takashimaya: 'Takashimaya', gs25: 'GS25', fahasa: 'Fahasa', kohnan: 'Kohnan', sasco: 'SASCO',
+    longbeachmart: 'Long Beach Mart', taseco: 'Taseco', ipp: 'IPP', kbiz: 'K-Biz', cias: 'CIAS', haitran: 'Hải Trần' };
+  const track = document.getElementById('partners');
+  const keys = Object.keys(partners);
+  [...keys, ...keys].forEach((p, i) => {
+    const img = document.createElement('img');
+    img.src = `images/partners/${p}.svg`; img.alt = i < keys.length ? partners[p] : ''; img.loading = 'lazy';
+    track.appendChild(img);
+  });
+
+  // Form báo giá (bản thiết kế: chưa nối máy chủ)
+  document.getElementById('leadForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const f = e.target, ok = document.getElementById('formOk');
+    const phone = f.phone.value.replace(/\s/g, '');
+    if (!f.name.value.trim() || !/^0\d{9,10}$/.test(phone)) {
+      ok.style.display = 'block'; ok.style.background = '#FEF2F2'; ok.style.color = '#991B1B';
+      ok.textContent = 'Vui lòng nhập họ tên và số điện thoại hợp lệ.';
+      return;
+    }
+    ok.style.display = 'block'; ok.style.background = ''; ok.style.color = '';
+    ok.textContent = `Cảm ơn ${f.name.value.trim()}! Chuyên viên An Tâm sẽ gọi lại số ${phone} trong 15 phút.`;
+    f.reset();
+  });
+</script>
+</body>
+</html>

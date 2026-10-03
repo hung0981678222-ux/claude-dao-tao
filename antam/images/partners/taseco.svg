@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 50" width="160" height="50">
+  <text x="15" y="31" font-family="Arial Black, Impact, sans-serif" font-size="17" font-style="italic" font-weight="900" fill="#00529b" letter-spacing="1">TASECO</text>
+  <text x="106" y="31" font-family="Arial, sans-serif" font-size="11" font-style="italic" font-weight="bold" fill="#e63946">Airs</text>
+  <path d="M20,36 L130,36" stroke="#00529b" stroke-width="1.5" stroke-dasharray="3,2"/>
+</svg>

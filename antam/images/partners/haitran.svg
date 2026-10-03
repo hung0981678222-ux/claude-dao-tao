@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 50" width="160" height="50">
+  <g transform="translate(15, 14)">
+    <rect x="0" y="0" width="5" height="22" fill="#f77f00" rx="1"/>
+    <rect x="9" y="0" width="5" height="22" fill="#f77f00" rx="1"/>
+    <rect x="0" y="8" width="14" height="5" fill="#f77f00"/>
+  </g>
+  <text x="38" y="28" font-family="Arial Black, sans-serif" font-size="14" font-weight="900" fill="#f77f00" letter-spacing="1">HAITRAN</text>
+  <text x="39" y="37" font-family="Arial, sans-serif" font-size="6" font-weight="bold" fill="#0096c7" letter-spacing="1.5">MEDIA & AIRS</text>
+</svg>
