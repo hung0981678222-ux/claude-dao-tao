@@ -38,6 +38,8 @@ Cowork hoặc claude.ai: quản trị viên tổ chức thêm kho `hung098167822
 
 Kỹ năng `user-research` tự chạy khi cần lập kế hoạch khảo sát, phỏng vấn khách, thử vị.
 
+Kỹ năng `nhan-dien-an-tam` (bộ nhận diện Điểm Chỉ 1.1: logo, màu, font, khung bài, luật nội dung) tự chạy mỗi khi tạo ấn phẩm mang tên An Tâm. Bản tải riêng cho claude.ai: [assets/diem-chi/skill-nhan-dien-an-tam.zip](assets/diem-chi/skill-nhan-dien-an-tam.zip).
+
 ## Ví dụ
 
 ```
