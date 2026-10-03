@@ -58,7 +58,7 @@ Chụp lại: `cd mau && node chup.js`. Khung "Ảnh thật: ..." trong mẫu l�
 - Định dạng: 1080×1350 px, lề 72 px
 - Mẫu nền: `bai-san-pham.svg`
 - Bố cục: đầu đỏ nhãn "BÁNH TORTILLA" + tiêu đề; giữa: 3 khung ảnh tròn/ngang cho 3 dòng; chân: "15 chiếc/túi · 22/25/28/31 cm"; nút Zalo
-- Chữ trên ảnh (≤10 chữ): "Ba dòng bánh, đủ bốn cỡ" (6 chữ)
+- Chữ trên ảnh (≤10 chữ): "3 dòng tortilla, 4 cỡ" (5 chữ)
 - Logo: biểu tượng vân tay trong ô trắng bo góc phải trên (như mẫu), hoặc logo ngang kem ở đầu đỏ
 - Ảnh thật cần: Chụp 3 loại bánh cạnh nhau, thấy rõ màu/độ nướng/hạt cám
 - Prompt AI (chỉ khi thiếu ảnh thật; phải ghi "Ảnh minh hoạ AI" trên ảnh): Three stacks of tortillas (plain, toasted with light brown spots, wholewheat with visible bran) on a kraft paper background, warm light, no logos, no text, 4:5
@@ -67,7 +67,7 @@ Chụp lại: `cd mau && node chup.js`. Khung "Ảnh thật: ..." trong mẫu l�
 - Định dạng: 1080×1350 px, lề 72 px
 - Mẫu nền: `bai-san-pham.svg` (bản lưới 2×2) 
 - Bố cục: đầu đỏ + tiêu đề; lưới 2×2 khung ảnh thật, mỗi ô có nhãn tên vỏ (chữ ≥28 px, nền kem, không nằm trên vân); chân đỏ Zalo. Quy cách: [Cần điền]
-- Chữ trên ảnh (≤10 chữ): "Bốn loại vỏ kebab" (4 chữ)
+- Chữ trên ảnh (≤10 chữ): "4 loại vỏ kebab" (4 chữ)
 - Logo: logo ngang kem, đầu đỏ
 - Ảnh thật cần: Ảnh từng loại vỏ (vàng, mè đen, mè trắng, than tre), kèm một chiếc doner cuộn ở quán đối tác nếu được phép
 - Prompt AI (chỉ khi thiếu ảnh thật; phải ghi "Ảnh minh hoạ AI" trên ảnh): Four kinds of doner kebab flatbread wraps (golden, black sesame, white sesame, bamboo charcoal black) laid on wooden board, warm light, no logos, no text, 4:5
@@ -85,7 +85,7 @@ Chụp lại: `cd mau && node chup.js`. Khung "Ảnh thật: ..." trong mẫu l�
 - Định dạng: 1080×1350 px, lề 72 px
 - Mẫu nền: `mau/d-the-cong-thuc` (đổi tiêu đề và 3 bước)
 - Bố cục: như bài 3
-- Chữ trên ảnh (≤10 chữ): "Pizza tortilla chảo" (3 chữ)
+- Chữ trên ảnh (≤10 chữ): "Pizza tortilla trên chảo" (4 chữ)
 - Logo: logo ngang đỏ, dưới trái
 - Ảnh thật cần: Pizza chảo thành phẩm, cảnh cắt miếng kéo phô mai
 - Prompt AI (chỉ khi thiếu ảnh thật; phải ghi "Ảnh minh hoạ AI" trên ảnh): Overhead photo of a round tortilla pizza with melted cheese and toppings in a cast-iron pan, warm natural light, wooden table, no logos, no text, 4:5
@@ -94,25 +94,25 @@ Chụp lại: `cd mau && node chup.js`. Khung "Ảnh thật: ..." trong mẫu l�
 - Định dạng: 1080×1350 px, lề 72 px
 - Mẫu nền: `bai-doi-tac.svg` (dựng lại như mẫu c, 4 dòng: bảng giá rõ ràng, giao tận nơi, Hỗ trợ: [Cần điền], Chính sách: [Cần điền])
 - Bố cục: đầu đỏ, 4 dòng có vân tay nhỏ, nút Zalo
-- Chữ trên ảnh (≤10 chữ): "Mở điểm bán tortilla – kebab" (6 chữ)
+- Chữ trên ảnh (≤10 chữ): "Mở điểm bán cùng An Tâm" (6 chữ)
 - Logo: logo ngang kem, trên trái đầu đỏ
 - Ảnh thật cần: Ảnh quầy/xe đối tác thật (khi được đồng ý), hoặc không dùng
 - Prompt AI (chỉ khi thiếu ảnh thật; phải ghi "Ảnh minh hoạ AI" trên ảnh): Không cần ảnh (mẫu chữ). Tuỳ chọn: Vietnamese street food stall owner preparing wraps, warm light, no logos, no text
 
-### Bài 9 (CN 11/10 10:30): Quesadilla gà phô mai (công thức nấu ở nhà)
+### Bài 9 (CN 11/10 10:30): Tortilla cuốn kiểu Việt (công thức nấu ở nhà)
 - Định dạng: 1080×1350 px, lề 72 px
 - Mẫu nền: `mau/d-the-cong-thuc`
 - Bố cục: như bài 3
-- Chữ trên ảnh (≤10 chữ): "Quesadilla gà phô mai" (4 chữ)
+- Chữ trên ảnh (≤10 chữ): "Tortilla cuốn kiểu Việt" (4 chữ)
 - Logo: logo ngang đỏ, dưới trái
-- Ảnh thật cần: Quesadilla cắt miếng, phô mai kéo sợi
-- Prompt AI (chỉ khi thiếu ảnh thật; phải ghi "Ảnh minh hoạ AI" trên ảnh): Close-up of a sliced golden-brown chicken and cheese quesadilla with melted cheese pulling, wooden board, warm light, no logos, no text, 4:5
+- Ảnh thật cần: Tortilla cuốn gà nướng sả, rau thơm, dưa leo, cắt đôi, kèm chén nước mắm chua ngọt
+- Prompt AI (chỉ khi thiếu ảnh thật; phải ghi "Ảnh minh hoạ AI" trên ảnh): Close-up of a tortilla wrap filled with lemongrass grilled chicken, herbs, cucumber and lettuce, cut in half, small bowl of sweet fish sauce beside it, wooden board, warm light, no logos, no text, 4:5
 
 ### Bài 10 (CN 11/10 21:00): Lịch giao tuần mới; "Cần thêm bánh gấp? Gọi An Tâm, tụi mình lo."
 - Định dạng: 1080×1350 px, lề 72 px
 - Mẫu nền: `bai-thong-bao.svg` (khung viền đỏ, dấu tròn, bảng 3 dòng)
 - Bố cục: dấu tròn "Cam kết từ tâm" trên (một hoạ tiết lớn), nhãn, tiêu đề, bảng giờ giao/giờ chốt: [Cần điền], câu "Cần thêm bánh gấp?..." và số Zalo/Gọi
-- Chữ trên ảnh (≤10 chữ): "Cần thêm bánh gấp? Gọi An Tâm." (7 chữ)
+- Chữ trên ảnh (≤10 chữ): "Cần thêm bánh gấp? Gọi An Tâm" (6 chữ)
 - Logo: dấu tròn (không cần logo ngang), nền kem
 - Ảnh thật cần: Không cần
 - Prompt AI (chỉ khi thiếu ảnh thật; phải ghi "Ảnh minh hoạ AI" trên ảnh): Không cần ảnh.

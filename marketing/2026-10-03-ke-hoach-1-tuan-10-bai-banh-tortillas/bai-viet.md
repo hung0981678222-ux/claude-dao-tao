@@ -22,7 +22,7 @@ Với chủ quán, bánh đều tay mỗi ngày và giao đúng hẹn quan trọ
 
 Mỗi mẻ bánh, một lời cam kết.
 
-Anh chị đang tìm chỗ lấy bánh tortilla hay vỏ kebab ổn định? Nhắn Zalo 0398 431 300, tụi mình trả lời ngay trong giờ làm việc.
+Anh chị đang tìm chỗ lấy bánh tortilla hay vỏ kebab ổn định? Nhắn Zalo 0398 431 300 để tụi mình trao đổi với anh chị.
 antamfoods.com
 
 #antamfoods #tortilla #vokebab #nguyenlieuquanan #tphcm
@@ -90,11 +90,11 @@ Ghi chú: thời gian là ước tính, cần nấu thử.
 
 ## Bài 4 · T4 07/10 · 21:00 · Chủ quán · 3 dòng tortilla
 
-**Câu mở:** Quán xong ca, mình xem lại menu một chút nhé.
+**Câu mở:** Quán xong ca, anh chị xem lại menu một chút nhé.
 
 **Bài đăng**
 
-Quán xong ca, mình xem lại menu một chút nhé.
+Quán xong ca, anh chị xem lại menu một chút nhé.
 
 An Tâm có 3 dòng tortilla:
 - Tortilla tươi
@@ -105,7 +105,7 @@ Mỗi dòng có 4 cỡ 22, 25, 28, 31 cm, đóng 15 chiếc/túi. Bánh làm m�
 
 [Cần điền: một câu về đặc điểm riêng của từng dòng, do xưởng cung cấp]
 
-Anh chị đang dùng loại nào cho món nào, nhắn tụi mình để chọn dòng và cỡ cho hợp. Zalo 0398 431 300.
+Anh chị đang dùng loại nào cho món nào? Nhắn tụi mình để chọn dòng và cỡ cho hợp. Zalo 0398 431 300.
 
 #antamfoods #tortilla #banhtortilla #nguyenlieuquanan #tphcm
 
@@ -129,7 +129,7 @@ An Tâm có 4 loại vỏ kebab:
 
 Quy cách: [Cần điền: quy cách từng loại vỏ kebab]
 
-Bánh làm mới mỗi ngày tại xưởng, giao tận bếp tại TP.HCM. Cần thêm bánh gấp giữa ngày? Gọi An Tâm, tụi mình lo.
+Bánh làm mới mỗi ngày tại xưởng, giao tận bếp tại TP.HCM. Cần thêm bánh gấp? Gọi An Tâm, tụi mình lo.
 
 Muốn biết loại nào hợp ổ bánh của quán, nhắn Zalo 0398 431 300.
 
@@ -208,7 +208,7 @@ Hỗ trợ cho đối tác: [Cần điền: chính sách hỗ trợ, điều ki�
 Anh chị quan tâm, nhắn Zalo 0398 431 300 để tụi mình trao đổi thêm.
 antamfoods.com
 
-#antamfoods #khoinghiepfnb #nhuongquyen #banhmithonhiky #tphcm
+#antamfoods #khoinghiepfnb #moquan #banhmithonhiky #tphcm
 
 **Chữ trên ảnh (chốt):** Mở điểm bán cùng An Tâm (6 chữ)
 Ghi chú: bài mềm, chưa hứa chính sách cụ thể. Điền hoặc bỏ dòng "Hỗ trợ" tuỳ sếp.
@@ -279,10 +279,11 @@ antamfoods.com
 3. Đặc điểm riêng của từng dòng tortilla tươi/nướng/nguyên cám (bài 4); nếu không có thì bỏ dòng đó.
 4. Chính sách hỗ trợ đối tác "Mở điểm bán tortilla – kebab" (bài 8); chưa có thì bỏ dòng "Hỗ trợ".
 5. Đơn tối thiểu; xuất hoá đơn VAT; đổi trả (chưa bài nào nhắc, mới biết giá chưa gồm VAT).
-7. Hạn dùng, bảo quản (không bài nào nhắc; cần nếu muốn làm bài hướng dẫn bảo quản).
-8. Xưởng duyệt gợi ý cỡ–món ở bài 2; người nấu thử, bấm giờ công thức bài 3, 7, 9.
-9. Ảnh thật xưởng và bánh cho bài 1, 2, 4, 5. Chưa có thì dùng ảnh minh hoạ AI, ghi "Ảnh minh hoạ AI".
-10. Người trực Zalo/hotline 0398 431 300 và giờ trực trong tuần đăng.
-11. Ngân sách và nhắm đối tượng quảng cáo cho bài 2, 6.
-12. Bài nhà (3, 7, 9) chưa dẫn mua hàng vì chưa biết An Tâm có bán lẻ cho người nấu ở nhà không: [Cần điền: có bán lẻ không, mua ở đâu]. Nếu có, thêm CTA mua ở cuối bài.
+6. Hạn dùng, bảo quản (không bài nào nhắc; cần nếu muốn làm bài hướng dẫn bảo quản).
+7. Xưởng duyệt gợi ý cỡ–món ở bài 2; người nấu thử, bấm giờ công thức bài 3, 7, 9.
+8. Ảnh thật xưởng và bánh cho bài 1, 2, 4, 5. Chưa có thì dùng ảnh minh hoạ AI, ghi "Ảnh minh hoạ AI".
+9. Người trực Zalo/hotline 0398 431 300 và giờ trực trong tuần đăng.
+10. Ngân sách và nhắm đối tượng quảng cáo cho bài 2, 6.
+11. Bài nhà (3, 7, 9) chưa dẫn mua hàng vì chưa biết An Tâm có bán lẻ cho người nấu ở nhà không: [Cần điền: có bán lẻ không, mua ở đâu]. Nếu có, thêm CTA mua ở cuối bài.
+12. Bài 1 mở bằng "Sáng nay xưởng đã nướng xong mẻ đầu tiên": xác nhận đúng sự thật vào sáng 05/10 (xưởng có nướng buổi sáng), nếu không thì dùng phương án B.
 13. Kiểm hashtag trong ô tìm kiếm Facebook trước khi đăng (độ phổ biến là [KN], chưa kiểm).
