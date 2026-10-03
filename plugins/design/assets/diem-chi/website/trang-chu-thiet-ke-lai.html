@@ -70,6 +70,12 @@ nav a{text-decoration:none}nav a:hover{color:var(--do)}
 .khung-anh.vuong{aspect-ratio:1/1}
 .khung-anh.ngang{aspect-ratio:16/10;border-radius:20px}
 
+.anh-that{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block;background:#f6e7d6}
+.anh-that.vuong{aspect-ratio:1/1}
+.anh-that.ngang{aspect-ratio:16/10;border-radius:20px}
+.anh-xuong{position:relative;margin:0}
+.anh-xuong figcaption{position:absolute;left:14px;bottom:14px;background:var(--kem);color:var(--muc);font-size:12.5px;font-weight:600;padding:5px 12px;border-radius:999px}
+
 /* Giới thiệu */
 .gioi-thieu .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 .gioi-thieu p{margin-bottom:16px}
@@ -197,8 +203,8 @@ footer a{text-decoration:none}footer a:hover{color:var(--vang)}
   <h2>Đủ nguyên liệu cho quán Tortilla &amp; Kebab</h2>
   <p>Năm nhóm hàng chính, giao theo đơn sỉ.</p>
   <div class="luoi-sp">
-    <a class="the-sp" href="#lien-he"><div class="khung-anh vuong">Ảnh thật: Vỏ bánh Tortilla<small>Lấy từ kho Google Drive An Tâm</small></div><div class="noi"><h3>Vỏ bánh Tortilla</h3><p>Tươi, nướng, nguyên cám (22 – 31 cm)</p><div class="so">3 sản phẩm</div></div></a>
-    <a class="the-sp" href="#lien-he"><div class="khung-anh vuong">Ảnh thật: Vỏ bánh mì Kebab<small>Lấy từ kho Google Drive An Tâm</small></div><div class="noi"><h3>Vỏ bánh mì Kebab</h3><p>Bánh vàng, mè đen, mè trắng, than tre</p><div class="so">4 sản phẩm</div></div></a>
+    <a class="the-sp" href="#lien-he"><img class="anh-that vuong" src="anh/vo-banh-tortilla.webp" width="800" height="800" loading="lazy" alt="Các gói vỏ bánh Tortilla An Tâm xếp chồng, nhìn rõ lớp bánh trong túi"><div class="noi"><h3>Vỏ bánh Tortilla</h3><p>Tươi, nướng, nguyên cám (22 – 31 cm)</p><div class="so">3 sản phẩm</div></div></a>
+    <a class="the-sp" href="#lien-he"><img class="anh-that vuong" src="anh/vo-banh-mi-kebab.webp" width="800" height="800" loading="lazy" alt="Vỏ bánh mì Kebab vàng vừa nướng trên khay tại xưởng An Tâm"><div class="noi"><h3>Vỏ bánh mì Kebab</h3><p>Bánh vàng, mè đen, mè trắng, than tre</p><div class="so">4 sản phẩm</div></div></a>
     <a class="the-sp" href="#lien-he"><div class="khung-anh vuong">Ảnh thật: Nhân thịt nướng<small>Lấy từ kho Google Drive An Tâm</small></div><div class="noi"><h3>Nhân thịt nướng</h3><p>Thịt Kebab tươi/chín, gà xay, bò xay</p><div class="so">3 sản phẩm</div></div></a>
     <a class="the-sp" href="#lien-he"><div class="khung-anh vuong">Ảnh thật: Nước sốt<small>Lấy từ kho Google Drive An Tâm</small></div><div class="noi"><h3>Nước sốt</h3><p>Mayonnaise, Samurai, trứng muối…</p><div class="so">6 sản phẩm</div></div></a>
     <a class="the-sp" href="#lien-he"><div class="khung-anh vuong">Ảnh thật: Thiết bị &amp; máy<small>Lấy từ kho Google Drive An Tâm</small></div><div class="noi"><h3>Thiết bị &amp; máy</h3><p>Máy nướng thịt, Tiross TS965, dao cắt</p><div class="so">4 sản phẩm</div></div></a>
@@ -206,7 +212,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--vang)}
 </div></section>
 
 <section id="gioi-thieu" class="gioi-thieu"><div class="wrap">
-  <div class="khung-anh ngang">Ảnh thật tại xưởng An Tâm<small>Dây chuyền / mẻ bánh – lấy từ kho Google Drive An Tâm</small></div>
+  <figure class="anh-xuong"><img class="anh-that ngang" src="anh/xuong-banh-kebab-tren-gia.webp" width="1600" height="1000" loading="lazy" alt="Hàng bánh mì Kebab xếp đứng trên giá inox tại xưởng An Tâm"><figcaption>Ảnh thật tại xưởng An Tâm</figcaption></figure>
   <div>
     <span class="nhan">Về chúng tôi</span>
     <h2>Sản phẩm tận tâm,<br>phát triển xứng tầm</h2>
@@ -224,7 +230,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--vang)}
   <span class="nhan">Hệ sinh thái cho quán</span>
   <h2>Một đầu mối, ba cách đồng hành</h2>
   <div class="luoi-dv">
-    <div class="the-dv"><div class="khung-anh">Ảnh thật: kho / sản phẩm<small>Kho Google Drive An Tâm</small></div><div class="noi"><h3>Sản phẩm &amp; nguyên liệu</h3><p>Vỏ bánh, nhân thịt, sốt, thiết bị – đặt sỉ theo nhu cầu quán.</p><br><a href="#san-pham">Xem sản phẩm →</a></div></div>
+    <div class="the-dv"><img class="anh-that" src="anh/nguyen-lieu-banh-kebab-tai-xuong.webp" width="1200" height="900" loading="lazy" alt="Giá bánh mì Kebab thành phẩm chờ đóng gói tại xưởng An Tâm"><div class="noi"><h3>Sản phẩm &amp; nguyên liệu</h3><p>Vỏ bánh, nhân thịt, sốt, thiết bị – đặt sỉ theo nhu cầu quán.</p><br><a href="#san-pham">Xem sản phẩm →</a></div></div>
     <div class="the-dv"><div class="khung-anh">Ảnh thật: ki-ốt đối tác<small>Kho Google Drive An Tâm</small></div><div class="noi"><h3>Hợp tác &amp; nhượng quyền</h3><p>Tư vấn mô hình ki-ốt, cửa hàng cho người mới khởi nghiệp.</p><br><a href="#lien-he">Tư vấn nhượng quyền →</a></div></div>
     <div class="the-dv"><div class="khung-anh">Ảnh thật: lớp đào tạo<small>Kho Google Drive An Tâm</small></div><div class="noi"><h3>Đào tạo nghề</h3><p>Hướng dẫn vận hành, công thức làm bánh từ A đến Z.</p><br><a href="#lien-he">Đăng ký học →</a></div></div>
   </div>
