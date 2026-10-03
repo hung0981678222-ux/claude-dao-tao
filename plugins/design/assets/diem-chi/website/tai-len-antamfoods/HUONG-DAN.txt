@@ -1,0 +1,24 @@
+BỘ ẢNH THAY THẾ CHO ANTAMFOODS.COM – ĐIỂM CHỈ v1.1
+Cách dùng: chép đè từng file vào đúng đường dẫn trên máy chủ web (cùng tên, cùng kích thước, cùng định dạng). Sau khi chép, xoá cache trình duyệt/CDN để thấy ảnh mới.
+
+Thư mục gốc web (/):
+  favicon.ico            16+32+48 px – biểu tượng vân tay nhỏ trên nền đỏ
+  favicon-16x16.png      thay /favicon-16x16.png
+  favicon-32x32.png      thay /favicon-32x32.png
+  apple-touch-icon.png   180x180 – vân tay đỏ trên nền kem
+
+/client/images/:
+  logo.png               780x155 – logo ngang Điểm Chỉ, nền trong suốt, căn trái
+  hero-food-banner.webp  4000x2060 – ẢNH THẬT kho bánh mì Kebab đóng túi (không chữ, vì trang đặt nút play và thẻ chữ lên ảnh)
+  franchise-hero.webp    1376x768 – đồ hoạ "Hợp tác & nhượng quyền" + ảnh thật bánh trên giá tại xưởng
+  training-hero.webp     1376x768 – đồ hoạ "Đào tạo nghề" + ảnh thật bánh cắt tam giác tại xưởng
+  delivery-truck.webp    1750x1020 – đồ hoạ "Giao hoả tốc 2H" + hotline 0398 431 300 + ảnh thật kho
+  phone-call-icon.png    550x550 – nút gọi tròn đỏ, tay nghe kem
+
+GIỮ NGUYÊN (không có trong gói):
+  zalo-icon-official.png, zalo-icon.svg – biểu tượng chính thức của Zalo, không vẽ lại.
+
+LƯU Ý:
+  - Ảnh thật lấy từ kho Google Drive An Tâm. Túi bánh trong ảnh là bao bì cũ (có số 0348 635 222 và tem HACCP in nhỏ); khi có ảnh bao bì mới nên thay.
+  - Trang hiện vẫn ghi hotline 0348 635 222 ở nhiều chỗ; theo bộ nhận diện chỉ dùng 0398 431 300 – cần sửa trong mã trang.
+  - Script dựng: dung_anh.py + render.js (cùng thư mục trong repo).
