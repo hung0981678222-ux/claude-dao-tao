@@ -1,18 +1,18 @@
-/* Bo nhan dien TAM (de xuat) - thay khi co thuong hieu that */
-:root{
-  --kem:#FFF4DC; --bot:#F3DDB0; --vang:#E9A23B; --ot:#C8452D; --la:#3F7D4E; --nau:#2B1D14; --xam:#6B5A4A;
-}
+/* Mẫu bài MXH Ẩm Thực An Tâm — theo cẩm nang nhận diện v1.1. Chỉ dùng màu/font trong bộ chính thức. */
+@font-face{font-family:"An Tam Tron Banh";font-weight:400;src:url(../nhan-dien/font/AnTamTronBanh-Regular.woff2) format("woff2")}
+@font-face{font-family:"An Tam Tron Banh";font-weight:600;src:url(../nhan-dien/font/AnTamTronBanh-SemiBold.woff2) format("woff2")}
+@font-face{font-family:"An Tam Tron Banh";font-weight:800;src:url(../nhan-dien/font/AnTamTronBanh-ExtraBold.woff2) format("woff2")}
+:root{--do:#D2141E;--kem:#FFF6EA;--muc:#231716;--son:#E2332B;--dam:#8F0D14;--vang:#F5B82E}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:#ddd;font-family:'Be Vietnam Pro','Liberation Sans',Arial,sans-serif;color:var(--nau)}
-.slide{width:1080px;height:1350px;position:relative;overflow:hidden;background:var(--kem);padding:80px;display:flex;flex-direction:column}
-.h1{font-weight:800;font-size:112px;line-height:1.08;letter-spacing:-1px}
-.h2{font-weight:800;font-size:76px;line-height:1.12}
-.body{font-size:44px;line-height:1.4;font-weight:400}
-.tag{display:inline-block;background:var(--ot);color:var(--kem);font-weight:700;font-size:34px;padding:12px 28px;border-radius:40px;align-self:flex-start}
-.foot{position:absolute;left:80px;right:80px;bottom:56px;display:flex;justify-content:space-between;align-items:center;font-size:28px;color:var(--xam)}
-.logo{border:3px dashed var(--xam);padding:6px 18px;border-radius:10px;font-weight:700}
-.photo{border-radius:36px;overflow:hidden;position:relative;background:var(--bot);border:4px dashed var(--vang)}
-.photo svg{width:100%;height:100%;display:block}
-.photo .cap{position:absolute;left:20px;bottom:16px;background:rgba(43,29,20,.85);color:var(--kem);font-size:26px;padding:6px 16px;border-radius:8px}
-.blank{display:inline-block;border:3px dashed var(--ot);color:var(--ot);font-weight:700;padding:2px 14px;border-radius:10px;background:#fff}
-.dot{position:absolute;border-radius:50%;opacity:.35}
+body{background:#ccc;font-family:"An Tam Tron Banh","Baloo 2",system-ui,sans-serif;color:var(--muc)}
+.slide{width:1080px;height:1350px;position:relative;overflow:hidden;background:var(--kem);display:flex;flex-direction:column}
+.nhan{font-weight:800;font-size:30px;letter-spacing:.2em;text-transform:uppercase;line-height:1.2}
+.h1{font-weight:800;line-height:1.12}
+.pill{background:var(--do);color:var(--kem);font-weight:800;border-radius:999px;display:flex;align-items:center;justify-content:center;text-align:center}
+.logo{display:block}
+/* Khung ảnh thật (hình khối giữ chỗ, KHÔNG phải ảnh) */
+.anh{position:relative;background:#fff;border:4px dashed var(--do);border-radius:28px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:24px;text-align:center;overflow:hidden}
+.anh svg{width:240px;height:auto;flex:none}
+.anh .t{font-weight:600;font-size:30px;line-height:1.3;color:var(--muc);max-width:700px}
+.anh .t b{font-weight:800;color:var(--do)}
+.cd{font-weight:800;color:var(--do)} /* chỗ [Cần điền] */

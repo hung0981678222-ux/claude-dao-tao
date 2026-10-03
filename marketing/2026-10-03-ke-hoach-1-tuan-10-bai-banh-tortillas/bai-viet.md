@@ -1,267 +1,288 @@
-# 10 bài Facebook: bánh tortillas (T2 05/10 – CN 11/10/2026)
+# 10 bài Facebook: Ẩm Thực An Tâm (T2 05/10 – CN 11/10/2026)
 
-Quy ước giọng: shop xưng "mình" (đôi khi "nhà mình"); gọi người đọc là "cả nhà", hỏi riêng thì "bạn". Emoji vừa phải.
-Chỗ trống trong [ngoặc vuông] cần chủ trang điền trước khi đăng. Không thêm giá, ưu đãi, chứng nhận hay công dụng sức khoẻ khi chưa có xác nhận.
-Thời gian nấu là ước tính, cần nấu thử và bấm giờ trước khi đăng.
-
----
-
-## Bài 1 | T2 05/10, 11:30 | Giới thiệu | Ảnh đơn
-
-**Câu mở (chọn 1 trong 3):**
-- Phương án chính: "Một tấm bánh, cuốn gì cũng thành bữa. 🌯"
-- Phương án A: "Hôm nay ăn gì? Hay là... thử cuốn?"
-- Phương án B: "Bánh mì ăn mãi cũng ngán, cơm hộp cũng vậy. Cả nhà thử đổi vị bằng một tấm bánh tròn dẹt chưa?"
-
-**Nội dung (dùng với phương án chính):**
-Một tấm bánh, cuốn gì cũng thành bữa. 🌯
-
-Chào cả nhà, mình là [TÊN THƯƠNG HIỆU], bán bánh tortillas: loại vỏ bánh tròn dẹt để cuốn hoặc gập thành wrap, burrito, taco, quesadilla.
-
-Nhà mình đang có [LOẠI BÁNH], [KÍCH CỠ/QUY CÁCH].
-
-Ăn với gì? Gà áp chảo, bò xào, trứng, rau sống, dưa leo, chút phô mai. Hâm bánh một chút rồi cuốn là xong bữa.
-
-Tuần này mình chia sẻ mẹo làm bánh mềm và mấy công thức khoảng 10 phút. Cả nhà theo dõi trang để không lỡ nha.
-
-👉 Muốn hỏi về bánh, nhắn mình ngay nhé.
-
-#tortilla #banhtortilla #wrap #monngondelam #bepnha
-
-**Chữ trên ảnh:** Một tấm bánh, cuốn gì cũng ngon
+Quy ước giọng: ngắn, thật, ấm. Bài chủ quán: xưng "An Tâm"/"tụi mình", gọi "anh chị"/"chủ quán". Bài nhà (3, 7, 9): xưng "An Tâm"/"tụi mình", gọi "cả nhà".
+Chỗ trống `[Cần điền: ...]` phải điền hoặc bỏ câu đó trước khi đăng. Bài không có giá, % giảm, đánh giá, tên quán, tên người, công dụng sức khoẻ.
+Công thức bài 3, 7, 9 là công thức tự viết, cần nấu thử và bấm giờ trước khi đăng. Mẹo hâm bánh ở các bài nhà ghi "tham khảo".
 
 ---
 
-## Bài 2 | T2 05/10, 18:30 | Tương tác | Ảnh đơn
+## Bài 1 · T2 05/10 · 09:30 · Chủ quán · Hậu trường xưởng
 
-**Câu mở:** Tối nay cuốn gì đây cả nhà? 🤔
+**Phương án câu mở**
+- A (chọn): Sáng nay xưởng đã nướng xong mẻ đầu tiên.
+- B: Bánh anh chị nhận hôm nay được làm từ sáng nay.
 
-**Nội dung:**
-Tối nay cuốn gì đây cả nhà? 🤔
+**Bài đăng**
 
-Cùng một tấm bánh, mỗi nhà cuốn một kiểu. Mình tò mò nhà bạn hay chọn nhân nào nhất:
+Sáng nay xưởng đã nướng xong mẻ đầu tiên.
 
-A. Gà áp chảo + rau sống
-B. Bò xào + hành tây
-C. Trứng + phô mai
-D. Nhân khác (kể mình nghe với)
+Ở An Tâm, bánh được làm mới mỗi ngày tại xưởng TP.HCM, rồi giao tận bếp quán ăn, nhà hàng của anh chị. Tụi mình làm từng mẻ như làm cho nhà mình ăn.
 
-Bình luận chữ cái bạn chọn nha. Mình đọc hết và sẽ lấy ý tưởng cho các bài công thức tới. 😋
+Với chủ quán, bánh đều tay mỗi ngày và giao đúng hẹn quan trọng hơn mọi lời quảng cáo. Nên tụi mình chọn nói ít, làm kỹ.
 
-#tortilla #wrap #cuonlatuthich #bepnha
+Mỗi mẻ bánh, một lời cam kết.
 
-**Chữ trên ảnh:** Cuốn gì tối nay? A, B, C hay D?
+Anh chị đang tìm chỗ lấy bánh tortilla hay vỏ kebab ổn định? Nhắn Zalo 0398 431 300, tụi mình trả lời ngay trong giờ làm việc.
+antamfoods.com
+
+#antamfoods #tortilla #vokebab #nguyenlieuquanan #tphcm
+
+**Chữ trên ảnh (chốt):** Bánh làm mới mỗi ngày (5 chữ)
+Ghi chú ảnh: dùng ảnh thật xưởng. Chưa có thì dùng ảnh minh hoạ AI và ghi "Ảnh minh hoạ AI".
 
 ---
 
-## Bài 3 | T3 06/10, 11:00 | Công thức | Reels 30–45 giây | Gợi ý chạy quảng cáo
+## Bài 2 · T3 06/10 · 15:00 · Chủ quán · Đúng cỡ cho đúng món (gợi ý quảng cáo)
 
-**Câu mở:** Món "Tây" mà làm khoảng 10 phút thôi. Thật đó cả nhà! 🌯
+**Câu mở:** Bánh to quá thì thừa, nhỏ quá thì tràn nhân.
 
-**Nội dung:**
-Món "Tây" mà làm khoảng 10 phút thôi. Thật đó cả nhà! 🌯
+**Bài đăng**
 
-**Wrap gà áp chảo** (khoảng 10 phút, 1–2 phần)
-Nguyên liệu: 2 tấm [LOẠI BÁNH], thịt gà thái miếng nhỏ, tỏi, muối tiêu, xà lách, dưa leo, cà chua, rau thơm, mayo trộn chút chanh (hoặc nước mắm chua ngọt cho đúng vị Việt).
+Bánh to quá thì thừa, nhỏ quá thì tràn nhân.
+
+Tortilla An Tâm có 4 cỡ: 22, 25, 28 và 31 cm, ở cả ba dòng tortilla tươi, nướng và nguyên cám.
+
+Gợi ý để anh chị dễ chọn:
+- 22 cm: món cuốn nhỏ, taco, phần ăn nhẹ
+- 25 cm: wrap suất vừa
+- 28 cm: wrap đầy nhân, burrito
+- 31 cm: burrito lớn, phần cuốn nhiều nhân
+
+Món của quán mình hợp cỡ nào, còn phân vân thì nhắn tụi mình tư vấn. Nhắn Zalo 0398 431 300 để nhận báo giá.
+
+Lưu bài lại để lúc lên menu mới còn xem nhé.
+
+#antamfoods #tortilla #vobanhtaco #nhacungcapthucpham #khoinghiepfnb
+
+**Chữ trên ảnh (chốt):** Đúng cỡ cho đúng món (5 chữ)
+Ghi chú ảnh: bảng 4 cỡ 22/25/28/31 cm. Gợi ý cỡ–món cần xưởng duyệt trước khi đăng.
+
+---
+
+## Bài 3 · T4 07/10 · 11:30 · Nhà · Công thức: wrap gà áp chảo
+
+**Câu mở:** Trưa nay chưa biết ăn gì? Thử wrap gà, khoảng 10 phút là xong.
+
+**Bài đăng**
+
+Trưa nay chưa biết ăn gì? Thử wrap gà, khoảng 10 phút là xong.
+
+Cho cả nhà:
+- 1 chiếc tortilla
+- Gà áp chảo hoặc gà xé
+- Rau xà lách, dưa leo
+- Mayonnaise trộn chút nước cốt chanh
 
 Cách làm:
-1. Ướp gà với tỏi, muối, tiêu. Áp chảo cho chín vàng.
-2. Hâm bánh trên chảo nóng, mỗi mặt 10–15 giây cho mềm (tham khảo, tuỳ loại bánh).
-3. Xếp rau, gà, rưới sốt vừa phải.
-4. Gập hai mép, cuốn chặt. Cắt đôi là xong.
+1. Áp chảo gà với chút muối tiêu, để nguội bớt rồi cắt miếng.
+2. Làm nóng bánh trên chảo, mỗi mặt khoảng 10–15 giây cho mềm (tham khảo). Không hâm quá lâu kẻo bánh khô.
+3. Xếp rau, gà, quét sốt. Đừng cho quá nhiều sốt, bánh dễ nhão.
+4. Cuộn chặt tay, cắt đôi.
 
-Mẹo nhỏ: đừng rưới quá nhiều sốt kẻo bánh nhão nha.
+Nhà mình hay cuốn gì với tortilla? Bình luận cho An Tâm biết, và lưu bài lại để mai nấu nhé.
 
-👉 Lưu bài lại để tối nay thử. Cần mua bánh thì nhắn mình.
+#tortilla #wrap #monngondelam #comtrua #antamfoods
 
-#wrapga #tortilla #monngondelam #comtrua #bepnha
-
-**Chữ trên ảnh:** Wrap gà mềm, dễ cuốn (nhãn: CÔNG THỨC · 10 PHÚT)
-
----
-
-## Bài 4 | T4 07/10, 17:30 | Mẹo | Carousel 5 slide
-
-**Câu mở:** Cuốn bánh bị khô, bị nứt? Thử hâm đúng cách, chỉ mất vài chục giây thôi. 🔥
-
-**Nội dung:**
-Cuốn bánh bị khô, bị nứt? Thử hâm đúng cách, chỉ mất vài chục giây thôi. 🔥
-
-3 cách làm mềm bánh trước khi cuốn:
-
-1. **Chảo nóng:** mỗi mặt 10–15 giây.
-2. **Lò vi sóng:** bọc bánh bằng khăn hoặc giấy bếp ẩm, hâm 15–30 giây.
-3. **Hấp:** khoảng 30–45 giây.
-
-Hai lưu ý để bánh không hỏng:
-- Đừng hâm quá lâu, bánh sẽ khô và dễ rách.
-- Đừng cho quá nhiều sốt, bánh sẽ nhão.
-
-Thời gian trên chỉ để tham khảo, tuỳ loại bánh. Cách nào cũng nhanh, cả nhà chọn cách tiện bếp nhà mình nhé. Lưu bài lại, đỡ phải nhớ.
-
-👉 Bạn hay dùng cách nào? Kể mình nghe ở bình luận.
-
-#meobep #tortilla #banhtortilla #wrap #bepnha
-
-**Chữ trên ảnh:** Hâm bánh mềm, không khô: 3 cách
-
-Gợi ý slide: 1 tiêu đề; 2 chảo; 3 lò vi sóng; 4 hấp; 5 hai lưu ý.
+**Chữ trên ảnh (chốt):** Wrap gà, 10 phút (4 chữ)
+Ghi chú: thời gian là ước tính, cần nấu thử.
 
 ---
 
-## Bài 5 | T5 08/10, 11:30 | Hỏi đáp | Ảnh đơn
+## Bài 4 · T4 07/10 · 21:00 · Chủ quán · 3 dòng tortilla
 
-**Câu mở:** "Cuốn bánh là nứt, sao vậy?" Mình giải đáp nhé. 🙋
+**Câu mở:** Quán xong ca, mình xem lại menu một chút nhé.
 
-**Nội dung:**
-"Cuốn bánh là nứt, sao vậy?" Mình giải đáp nhé. 🙋
+**Bài đăng**
 
-Hỏi: Sao bánh khô, nứt khi cuốn?
-Đáp: Có thể do hâm quá lâu nên bánh khô, dễ rách. Hâm nhẹ khoảng 10–15 giây mỗi mặt trên chảo nóng (tham khảo, tuỳ loại bánh), rồi cho sốt vừa phải kẻo bánh nhão.
+Quán xong ca, mình xem lại menu một chút nhé.
 
-Hỏi: Bánh nhà mình là loại nào?
-Đáp: [LOẠI BÁNH], [KÍCH CỠ/QUY CÁCH].
+An Tâm có 3 dòng tortilla:
+- Tortilla tươi
+- Tortilla nướng
+- Tortilla nguyên cám
 
-Hỏi: Mở túi rồi bảo quản sao?
-Đáp: [HẠN DÙNG/BẢO QUẢN]. Cả nhà làm theo hướng dẫn này nha.
+Mỗi dòng có 4 cỡ 22, 25, 28, 31 cm, đóng 15 chiếc/túi. Bánh làm mới mỗi ngày tại xưởng, mềm dẻo, cuộn gì cũng vừa.
 
-Còn thắc mắc gì về bánh, cứ hỏi, mình trả lời từng bạn. 💬
+[Cần điền: một câu về đặc điểm riêng của từng dòng, do xưởng cung cấp]
 
-👉 Để lại câu hỏi ở bình luận hoặc nhắn tin cho mình.
+Anh chị đang dùng loại nào cho món nào, nhắn tụi mình để chọn dòng và cỡ cho hợp. Zalo 0398 431 300.
 
-#tortilla #meobep #banhtortilla #hoidap
+#antamfoods #tortilla #banhtortilla #nguyenlieuquanan #tphcm
 
-**Chữ trên ảnh:** Bánh khô, nứt? Mình giải đáp
-
----
-
-## Bài 6 | T6 09/10, 11:30 | Bán hàng | Ảnh đơn | Gợi ý chạy quảng cáo
-
-**Câu mở:** Cuối tuần này, cả nhà cuốn gì? Bánh để mình lo. 🌯
-
-**Nội dung:**
-Cuối tuần này, cả nhà cuốn gì? Bánh để mình lo. 🌯
-
-[TÊN THƯƠNG HIỆU] đang nhận đặt bánh tortillas:
-- Loại: [LOẠI BÁNH]
-- Quy cách: [KÍCH CỠ/QUY CÁCH]
-- Giá: [GIÁ]
-- Ưu đãi: [ƯU ĐÃI]
-- Giao: [KHU VỰC GIAO]
-
-Cuốn gà, cuốn bò xào, làm pizza chảo hay quesadilla cho cả nhà đều được. Công thức mình có sẵn trên trang, bạn chỉ việc mua bánh về hâm rồi cuốn.
-
-👉 Đặt hàng: [CÁCH ĐẶT HÀNG]. Nhắn mình để được tư vấn nhé.
-
-#banhtortilla #tortilla #wrap #bepnha #cuoituan
-
-**Chữ trên ảnh:** Cuối tuần cuốn gì? Nhắn mình!
+**Chữ trên ảnh (chốt):** 3 dòng tortilla, 4 cỡ (5 chữ)
 
 ---
 
-## Bài 7 | T6 09/10, 18:00 | Công thức | Reels 30 giây
+## Bài 5 · T5 08/10 · 15:00 · Chủ quán · 4 loại vỏ kebab
 
-**Câu mở:** Pizza không cần lò nướng, chỉ cần cái chảo. 🍕
+**Câu mở:** Vỏ kebab nào cho ổ bánh của quán mình?
 
-**Nội dung:**
-Pizza không cần lò nướng, chỉ cần cái chảo. 🍕
+**Bài đăng**
 
-**Pizza tortilla chảo** (khoảng 10 phút, ước tính)
-Nguyên liệu: 1 tấm [LOẠI BÁNH], sốt cà, phô mai, xúc xích hoặc nấm thái lát mỏng (hoặc loại ăn liền như giăm bông).
+Vỏ kebab nào cho ổ bánh của quán mình?
+
+An Tâm có 4 loại vỏ kebab:
+- Vỏ kebab bánh vàng
+- Vỏ kebab mè đen
+- Vỏ kebab mè trắng
+- Vỏ kebab than tre
+
+Quy cách: [Cần điền: quy cách từng loại vỏ kebab]
+
+Bánh làm mới mỗi ngày tại xưởng, giao tận bếp tại TP.HCM. Cần thêm bánh gấp giữa ngày? Gọi An Tâm, tụi mình lo.
+
+Muốn biết loại nào hợp ổ bánh của quán, nhắn Zalo 0398 431 300.
+
+#antamfoods #vokebab #banhmithonhiky #donerkebab #tphcm
+
+**Chữ trên ảnh (chốt):** 4 loại vỏ kebab (4 chữ)
+
+---
+
+## Bài 6 · T6 09/10 · 10:00 · Chủ quán · Nhận báo giá (gợi ý quảng cáo)
+
+**Câu mở:** Tính giá vốn mà chưa có bảng giá thì khó lắm.
+
+**Bài đăng**
+
+Tính giá vốn mà chưa có bảng giá thì khó lắm.
+
+Ở An Tâm, bảng giá đại lý rõ ràng. Tụi mình nói thẳng giá và cam kết ngay từ đầu, để anh chị tính toán yên tâm.
+
+Bánh tortilla và vỏ kebab làm mới mỗi ngày tại xưởng, giao tận bếp quán ăn, nhà hàng tại TP.HCM. Mỗi mẻ bánh, một lời cam kết.
+
+Anh chị là chủ quán, đang mở quán hay muốn đổi nơi lấy bánh? Nhắn Zalo 0398 431 300 để nhận báo giá.
+antamfoods.com
+
+#antamfoods #tortilla #vokebab #nhacungcapthucpham #khoinghiepfnb
+
+**Chữ trên ảnh (chốt):** Nhắn Zalo nhận báo giá (5 chữ)
+
+---
+
+## Bài 7 · T6 09/10 · 18:30 · Nhà · Công thức: pizza tortilla chảo
+
+**Câu mở:** Tối nay muốn ăn pizza mà lười nhào bột?
+
+**Bài đăng**
+
+Tối nay muốn ăn pizza mà lười nhào bột? Dùng tortilla, làm ngay trên chảo.
+
+Cho cả nhà:
+- 1 chiếc tortilla
+- Sốt cà chua
+- Phô mai bào
+- Xúc xích hoặc nấm thái lát
 
 Cách làm:
-1. Xúc xích hoặc nấm: áp chảo sơ cho chín trước, để ráo. Loại ăn liền thì bỏ qua bước này.
-2. Đặt bánh vào chảo, lửa nhỏ.
-3. Phết sốt cà, rải phô mai và topping đã chín.
-4. Đậy nắp cho phô mai chảy.
-5. Cắt miếng, ăn nóng.
+1. Đặt bánh vào chảo chống dính, lửa nhỏ.
+2. Phết sốt cà, rải phô mai, xếp xúc xích hoặc nấm.
+3. Đậy nắp vài phút cho phô mai chảy, đáy bánh vàng nhẹ.
+4. Cắt miếng, ăn nóng.
 
-Hợp cho bữa xế, bữa sáng hoặc tối cuối tuần. Bé nhà bạn có thể phụ chuẩn bị topping nữa (người lớn lo phần chảo nóng nhé). 😄
+Mẹo nhỏ: đừng phết sốt quá nhiều, bánh sẽ mềm nhũn.
 
-👉 Lưu bài lại, làm xong khoe mình ảnh nha.
+Nhà mình thích topping gì? Bình luận cho An Tâm biết, và chia sẻ cho người hay hỏi "tối nay ăn gì" nhé.
 
-#pizzatortilla #tortilla #monngondelam #buasangnhanh #bepnha
+#tortilla #pizza #monngondelam #bepnha #antamfoods
 
-**Chữ trên ảnh:** Pizza chảo 10 phút, khỏi lò
-
-*Sửa vòng 1: bài 7 thêm bước áp chảo sơ xúc xích/nấm (hoặc dùng loại ăn liền) trước khi đậy nắp; giữ "khoảng 10 phút (ước tính)", cần nấu thử bấm giờ lại.*
+**Chữ trên ảnh (chốt):** Pizza tortilla trên chảo (4 chữ)
+Ghi chú: cần nấu thử để chốt thời gian đậy nắp.
 
 ---
 
-## Bài 8 | T7 10/10, 11:30 | Công thức kiểu Việt | Carousel 5 slide
+## Bài 8 · T7 10/10 · 10:00 · Chủ quán / người muốn mở quán · Mở điểm bán
 
-**Câu mở:** Tortilla mà cuốn kiểu Việt thì sao nhỉ? Ngon hơn mình nghĩ đó. 😋
+**Câu mở:** Anh chị muốn mở quán tortilla hay kebab?
 
-**Nội dung:**
-Tortilla mà cuốn kiểu Việt thì sao nhỉ? Ngon hơn mình nghĩ đó. 😋
+**Bài đăng**
 
-**Tortilla cuốn bò xào sả** (khoảng 10–12 phút)
-Nguyên liệu: [LOẠI BÁNH], thịt bò thái mỏng, sả băm, tỏi, dưa leo, rau thơm, hành tây; nước mắm chua ngọt.
+Anh chị muốn mở quán tortilla hay kebab?
+
+An Tâm đang tìm đối tác cho chương trình "Mở điểm bán tortilla – kebab". Mở quán lần đầu có nhiều việc phải lo, và nguồn bánh ổn định là một trong những việc đó.
+
+Tụi mình muốn đồng hành cùng chủ quán: bánh làm mới mỗi ngày tại xưởng, giao tận bếp tại TP.HCM, bảng giá rõ ràng.
+
+Hỗ trợ cho đối tác: [Cần điền: chính sách hỗ trợ, điều kiện tham gia]
+
+Anh chị quan tâm, nhắn Zalo 0398 431 300 để tụi mình trao đổi thêm.
+antamfoods.com
+
+#antamfoods #khoinghiepfnb #nhuongquyen #banhmithonhiky #tphcm
+
+**Chữ trên ảnh (chốt):** Mở điểm bán cùng An Tâm (6 chữ)
+Ghi chú: bài mềm, chưa hứa chính sách cụ thể. Điền hoặc bỏ dòng "Hỗ trợ" tuỳ sếp.
+
+---
+
+## Bài 9 · CN 11/10 · 10:30 · Nhà · Công thức: tortilla cuốn kiểu Việt
+
+**Câu mở:** Sáng Chủ nhật, thử tortilla cuốn kiểu quen vị nhà mình.
+
+**Bài đăng**
+
+Sáng Chủ nhật, thử tortilla cuốn kiểu quen vị nhà mình.
+
+Cho cả nhà:
+- 1 chiếc tortilla
+- Gà nướng sả (hoặc bò xào)
+- Rau thơm, dưa leo, xà lách
+- Nước mắm chua ngọt
 
 Cách làm:
-1. Xào bò với sả, tỏi trên lửa lớn cho thơm. (Thay bằng gà nướng sả cũng được.)
-2. Hâm bánh trên chảo nóng 10–15 giây mỗi mặt (tham khảo, tuỳ loại bánh).
-3. Xếp dưa leo, rau thơm, hành tây, bò xào.
-4. Rưới ít nước mắm chua ngọt, cuốn chặt.
+1. Làm nóng bánh trên chảo cho mềm. Mỗi mặt khoảng 10–15 giây, hoặc lò vi sóng 15–30 giây với khăn ẩm bọc ngoài (tham khảo).
+2. Xếp rau, dưa leo, thịt lên bánh.
+3. Rưới ít nước mắm chua ngọt, vừa đủ thôi để bánh không nhão.
+4. Cuộn chặt, ăn ngay khi còn ấm.
 
-Mẹo: rưới nước mắm vừa phải, bánh mới không nhão.
+Vị rau thơm, nước mắm chua ngọt cuốn trong bánh tortilla, ăn là thấy quen.
 
-👉 Lưu bài, cuối tuần thử liền. Cần bánh thì nhắn mình.
+Nhà mình thích cuốn gà hay bò? Bình luận cho An Tâm biết, và lưu bài lại để cuối tuần làm nhé.
 
-#tortillakieuviet #tortilla #wrap #monngondelam #bepnha
+#tortilla #wrap #monngondelam #bepnha #antamfoods
 
-**Chữ trên ảnh:** Tortilla cuốn bò xào sả
-
----
-
-## Bài 9 | CN 11/10, 11:30 | Bán hàng sỉ | Ảnh đơn
-
-**Câu mở:** Chủ quán ơi, thêm một món cuốn vào menu chưa? 🌯
-
-**Nội dung:**
-Chủ quán ơi, thêm một món cuốn vào menu chưa? 🌯
-
-Mình là [TÊN THƯƠNG HIỆU], bán bánh tortillas cho quán nhỏ, xe đồ ăn và quán cà phê.
-
-Một loại bánh làm được nhiều món: wrap, burrito, quesadilla, cắt tam giác nướng ăn kèm sốt. Hâm bánh nhanh trên chảo, ra món gọn, phù hợp quán đông khách.
-
-Thông tin lấy sỉ:
-- Loại bánh: [LOẠI BÁNH]
-- Quy cách: [KÍCH CỠ/QUY CÁCH]
-- Giá sỉ: [GIÁ]
-- Hạn dùng, bảo quản: [HẠN DÙNG/BẢO QUẢN]
-- Giao: [KHU VỰC GIAO]
-- Ưu đãi: [ƯU ĐÃI]
-
-👉 Chủ quán nhắn mình số lượng cần mỗi tuần, mình báo thông tin theo [CÁCH ĐẶT HÀNG].
-
-#banhtortilla #nguyenlieuquan #banso #tortilla #quancafe
-
-**Chữ trên ảnh:** Bánh tortillas cho quán nhỏ
+**Chữ trên ảnh (chốt):** Tortilla cuốn kiểu Việt (4 chữ)
+Ghi chú: công thức tự viết, cần nấu thử.
 
 ---
 
-## Bài 10 | CN 11/10, 18:30 | Bán hàng nhẹ + tương tác | Ảnh đơn (ảnh ghép)
+## Bài 10 · CN 11/10 · 21:00 · Chủ quán · Lịch giao tuần mới
 
-**Câu mở:** Hết tuần rồi! Cả nhà đã thử món nào chưa? 🌯
+**Câu mở:** Tuần mới sắp bắt đầu, bếp quán mình đã đủ bánh chưa?
 
-**Nội dung:**
-Hết tuần rồi! Cả nhà đã thử món nào chưa? 🌯
+**Bài đăng**
 
-Tuần qua mình chia sẻ:
-✅ 3 cách làm mềm bánh
-✅ Wrap gà 10 phút
-✅ Pizza tortilla chảo
-✅ Tortilla cuốn bò xào sả kiểu Việt
+Tuần mới sắp bắt đầu, bếp quán mình đã đủ bánh chưa?
 
-Bạn thử món nào rồi, bình luận kể mình nghe nha. Ai khoe ảnh là mình mê luôn. 😆
+Tuần này An Tâm tiếp tục làm bánh mới mỗi ngày tại xưởng và giao tận bếp quán ăn, nhà hàng tại TP.HCM.
 
-Tuần tới cả nhà muốn nhà mình ra thêm công thức gì? Cứ gợi ý thoải mái.
+- Giao bánh: [Cần điền: giờ giao, khu vực giao]
+- Đặt trước [Cần điền: giờ chốt đơn] để nhận trong ngày
 
-Cần bánh cho tuần mới: [LOẠI BÁNH], [KÍCH CỠ/QUY CÁCH], [GIÁ], [ƯU ĐÃI], giao [KHU VỰC GIAO].
+Cần thêm bánh gấp? Gọi An Tâm, tụi mình lo.
 
-👉 Đặt hàng: [CÁCH ĐẶT HÀNG]. Nhắn mình nhé.
+Mỗi mẻ bánh, một lời cam kết. Chúc anh chị một tuần đông khách.
 
-#tortilla #banhtortilla #wrap #bepnha #monngondelam
+Gọi hoặc nhắn Zalo 0398 431 300 để đặt bánh.
+antamfoods.com
 
-**Chữ trên ảnh:** Cuốn tiếp tuần mới nào!
+#antamfoods #tortilla #vokebab #nhacungcapthucpham #tphcm
+
+**Chữ trên ảnh (chốt):** Cần thêm bánh gấp? Gọi An Tâm (6 chữ)
+
+---
+
+## Việc sếp cần điền/xác nhận
+
+1. Giờ giao, khu vực giao cụ thể trong TP.HCM, giờ chốt đơn (bài 10; có thể ảnh hưởng bài 1 và 5).
+2. Quy cách vỏ kebab (bài 5) và vỏ taco (chưa có bài nào dùng).
+3. Đặc điểm riêng của từng dòng tortilla tươi/nướng/nguyên cám (bài 4); nếu không có thì bỏ dòng đó.
+4. Chính sách hỗ trợ đối tác "Mở điểm bán tortilla – kebab" (bài 8); chưa có thì bỏ dòng "Hỗ trợ".
+5. Đơn tối thiểu; xuất hoá đơn VAT; đổi trả (chưa bài nào nhắc, mới biết giá chưa gồm VAT).
+7. Hạn dùng, bảo quản (không bài nào nhắc; cần nếu muốn làm bài hướng dẫn bảo quản).
+8. Xưởng duyệt gợi ý cỡ–món ở bài 2; người nấu thử, bấm giờ công thức bài 3, 7, 9.
+9. Ảnh thật xưởng và bánh cho bài 1, 2, 4, 5. Chưa có thì dùng ảnh minh hoạ AI, ghi "Ảnh minh hoạ AI".
+10. Người trực Zalo/hotline 0398 431 300 và giờ trực trong tuần đăng.
+11. Ngân sách và nhắm đối tượng quảng cáo cho bài 2, 6.
+12. Bài nhà (3, 7, 9) chưa dẫn mua hàng vì chưa biết An Tâm có bán lẻ cho người nấu ở nhà không: [Cần điền: có bán lẻ không, mua ở đâu]. Nếu có, thêm CTA mua ở cuối bài.
+13. Kiểm hashtag trong ô tìm kiếm Facebook trước khi đăng (độ phổ biến là [KN], chưa kiểm).

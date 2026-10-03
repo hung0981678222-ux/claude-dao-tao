@@ -26,8 +26,12 @@ Nguồn: `nhan-dien/DOC-TRUOC.txt`, `nhan-dien/BANG-MAU.txt`, `nhan-dien/cam-nan
 - Có chương trình tìm đối tác "Mở điểm bán tortilla – kebab" (hỗ trợ, chính sách: [Cần điền]).
 - Mẫu ưu đãi đại lý: "Đặt từ [số lượng] giảm [số]%" — chỉ dùng khi có số thật.
 
+## Sếp xác nhận thêm (03/10)
+- **Giá chỉ báo qua Zalo 0398 431 300.** Không đăng giá trong bài/ảnh, không để ô [Cần điền: giá]; CTA giá = "Nhắn Zalo 0398 431 300 để nhận báo giá".
+- **Chưa có chương trình thử mẫu.** Không nhắc "thử mẫu", "bánh mẫu", "dùng thử miễn phí".
+
 ## Chưa có, phải để [Cần điền]
-Giá; giờ chốt đơn ("Đặt hàng trước [giờ] để nhận trong ngày"); đơn tối thiểu; khu vực giao cụ thể trong TP.HCM; hạn dùng, bảo quản; chính sách đối tác/hỗ trợ; ưu đãi; tên người làm bánh (bài người làm bánh cần đồng ý).
+Giờ chốt đơn ("Đặt hàng trước [giờ] để nhận trong ngày"); đơn tối thiểu; khu vực giao cụ thể trong TP.HCM; hạn dùng, bảo quản; chính sách đối tác/hỗ trợ; ưu đãi; tên người làm bánh (bài người làm bánh cần đồng ý).
 
 ## Giọng nói (cẩm nang mục 10)
 Như người làm bánh có tâm nói với chủ quán: **ngắn, thật, ấm**. Xưng "An Tâm"/"tụi mình", gọi khách "anh chị"/"chủ quán". Không nói quá, không so sánh hạ thấp ai.
