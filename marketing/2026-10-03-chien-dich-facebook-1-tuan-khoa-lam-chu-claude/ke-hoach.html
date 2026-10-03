@@ -1,0 +1,189 @@
+<title>Tuần Facebook Làm chủ Claude</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Bảng điều phối: tóm tắt + việc cần quyết ở trên, dải 7 ngày, chi tiết từng ngày, ads. Màu theo 3 nhóm kỹ năng của khoá. */
+:root{
+  --bg:#F6F5F2; --surface:#FFFFFF; --ink:#22211F; --muted:#6A665F; --line:#E2DFD8;
+  --clay:#B5583A; --clay-soft:#F6E6DF; --teal:#1F6F6B; --teal-soft:#DDEDEB; --amber:#9A620F; --amber-soft:#F5E9D3;
+  --ink-soft:#ECEAE5; --mark:#FFF1B8; --mark-ink:#5A4300;
+  --f-body:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#171716; --surface:#21201E; --ink:#ECE9E3; --muted:#A39E95; --line:#36342F;
+  --clay:#E58A6A; --clay-soft:#3A2820; --teal:#5FB8B1; --teal-soft:#1C3332; --amber:#E2A84A; --amber-soft:#382C17;
+  --ink-soft:#2C2B28; --mark:#4A3D10; --mark-ink:#FFE38A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#171716; --surface:#21201E; --ink:#ECE9E3; --muted:#A39E95; --line:#36342F;
+  --clay:#E58A6A; --clay-soft:#3A2820; --teal:#5FB8B1; --teal-soft:#1C3332; --amber:#E2A84A; --amber-soft:#382C17;
+  --ink-soft:#2C2B28; --mark:#4A3D10; --mark-ink:#FFE38A; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.6;margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px;padding-block:32px 64px;display:flex;flex-direction:column;gap:40px}
+h1,h2,h3{text-wrap:balance;margin:0;line-height:1.25}
+h1{font-size:clamp(26px,4.4vw,38px);font-weight:800;letter-spacing:-.01em}
+h2{font-size:21px;font-weight:700}
+h3{font-size:16px;font-weight:700}
+p{margin:0}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+mark{background:var(--mark);color:var(--mark-ink);padding:0 3px;border-radius:3px;font-weight:600}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+header{display:flex;flex-direction:column;gap:14px}
+.lede{max-width:66ch;color:var(--muted);font-size:16px}
+.lede strong{color:var(--ink)}
+.status{display:flex;flex-wrap:wrap;gap:8px}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;padding:4px 11px;border-radius:999px;background:var(--ink-soft);color:var(--ink)}
+.pill.ok{background:var(--teal-soft);color:var(--teal)}
+.pill.ok::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.grid2{display:grid;grid-template-columns:1.15fr 1fr;gap:20px}
+@media (max-width:760px){.grid2{grid-template-columns:1fr}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.decide ol{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px}
+.decide li::marker{color:var(--clay);font-weight:700}
+.angle{font-size:19px;font-weight:700;line-height:1.35}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:14px}
+.kv dt{color:var(--muted)} .kv dd{margin:0}
+/* dải tuần */
+.week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
+@media (max-width:860px){.week{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.day{all:unset;cursor:pointer;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:6px;border-top:4px solid var(--g)}
+.day:hover{border-color:var(--g)}
+.day:focus-visible{outline:2px solid var(--g);outline-offset:2px}
+.day[aria-pressed="true"]{background:var(--gs);border-color:var(--g)}
+.day .dd{display:flex;justify-content:space-between;align-items:baseline;font-weight:700}
+.day .t{font-size:12px;color:var(--muted)}
+.day .tp{font-size:13px;line-height:1.4}
+.day .f{font-size:11px;font-weight:600;color:var(--g);text-transform:uppercase;letter-spacing:.06em}
+.g-hieu{--g:var(--clay);--gs:var(--clay-soft)} .g-lam{--g:var(--teal);--gs:var(--teal-soft)} .g-an{--g:var(--amber);--gs:var(--amber-soft)} .g-cta{--g:var(--ink);--gs:var(--ink-soft)}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:12px;height:4px;border-radius:2px;background:var(--g)}
+/* chi tiết */
+.detail{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:24px;align-items:start}
+@media (max-width:760px){.detail{grid-template-columns:1fr}}
+.visual{display:flex;flex-direction:column;gap:10px}
+.visual img{width:100%;border-radius:8px;border:1px solid var(--line);display:block;background:var(--surface)}
+.strip{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}
+.strip button{all:unset;cursor:pointer;flex:0 0 56px;border-radius:5px;overflow:hidden;border:2px solid transparent}
+.strip button[aria-current="true"]{border-color:var(--teal)}
+.strip button:focus-visible{outline:2px solid var(--teal)}
+.strip img{width:56px;display:block;border:0;border-radius:3px}
+.noimg{border:1px dashed var(--line);border-radius:8px;padding:20px;display:flex;flex-direction:column;gap:8px;background:var(--surface)}
+.noimg .eyebrow{color:var(--g)}
+.caption{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.caption .body{display:flex;flex-direction:column;gap:10px;max-width:62ch}
+.caption ul{margin:0;padding-left:20px}
+.caption em{color:var(--muted);font-style:normal;font-size:13px}
+.capbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.btn{all:unset;cursor:pointer;font-size:13px;font-weight:600;padding:6px 12px;border-radius:7px;border:1px solid var(--line);background:var(--bg)}
+.btn:hover{border-color:var(--ink)} .btn:focus-visible{outline:2px solid var(--teal)}
+details{border-top:1px solid var(--line);padding-top:10px;font-size:14px}
+summary{cursor:pointer;font-weight:600;color:var(--muted)}
+details .in{padding-top:8px;display:flex;flex-direction:column;gap:6px}
+details ul{margin:0;padding-left:20px}
+/* ads */
+.ads{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:860px){.ads{grid-template-columns:1fr}}
+.ad{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.ad img{width:100%;display:block;aspect-ratio:1/1;max-width:100%}
+.ad .in{padding:16px;display:flex;flex-direction:column;gap:10px;font-size:14px}
+.ad .hl{font-weight:700;font-size:15px}
+.ad em{font-style:normal;color:var(--muted);font-size:12px}
+.ad .row{display:flex;justify-content:space-between;gap:8px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px}
+.note{font-size:14px;color:var(--muted);max-width:75ch}
+.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:760px){.cols3{grid-template-columns:1fr}}
+.cols3 ul{margin:0;padding-left:18px;font-size:14px;display:flex;flex-direction:column;gap:6px}
+footer{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+footer code{font-family:var(--f-mono);font-size:12px}
+@media (prefers-reduced-motion:no-preference){.day,.btn{transition:border-color .15s,background .15s}}
+</style>
+
+<div class="wrap">
+<header>
+  <span class="eyebrow">Kế hoạch chiến dịch · Facebook · 05–11/10/2026</span>
+  <h1>Một tuần quảng bá “Làm chủ Claude trong công việc”</h1>
+  <p class="lede">7 bài đăng cho nhân viên văn phòng, xoay quanh một ý: <strong>Claude là nhân viên mới rất nhanh. Giao việc rõ, kiểm tra kỹ.</strong> Kèm 3 mẫu quảng cáo để thử. Chỗ <mark>[tô vàng]</mark> là thông tin sếp cần điền.</p>
+  <div class="status"><span class="pill ok">Biên tập: ĐẠT (vòng 2)</span><span class="pill">7 bài · 3 mẫu ads · 11 ảnh mẫu</span><span class="pill">Chưa có ngân sách ads</span></div>
+</header>
+
+<section class="grid2">
+  <div class="panel decide">
+    <span class="eyebrow">Cần sếp quyết trước khi đăng</span>
+    <ol>
+      <li>Điền 5 chỗ trống: <mark>[ĐƠN VỊ]</mark> <mark>[GIÁ]</mark> <mark>[LINK ĐĂNG KÝ]</mark> <mark>[HẠN ƯU ĐÃI]</mark> <mark>[HÌNH THỨC HỌC]</mark>. Cần có trước bài T7.</li>
+      <li>Có người trực bình luận và tin nhắn cho bài T4, T6 không? Nếu không, đổi lời kêu gọi sang bấm link.</li>
+      <li>Ảnh T3: vẽ khối đơn giản (đề xuất) hay chụp màn hình Claude thật?</li>
+      <li>Ngân sách và đối tượng nhắm cho quảng cáo.</li>
+      <li>Dựng tiếp ảnh cho T3, T5, T6, T7, CN (hiện mới có mô tả).</li>
+    </ol>
+  </div>
+  <div class="panel">
+    <span class="eyebrow">Hướng đã chọn</span>
+    <p class="angle">“Claude là nhân viên mới rất nhanh: giao việc rõ, kiểm tra kỹ.”</p>
+    <dl class="kv">
+      <dt>Khác đối thủ</dt><dd>Phần An toàn: khi nào bấm Cho phép, khi nào Từ chối. Khoá ChatGPT của đối thủ chủ yếu bán mẹo và công cụ.</dd>
+      <dt>Giờ đăng</dt><dd>Xen kẽ <span class="mono">12:00</span> và <span class="mono">19:45</span> để xem giờ nào tốt hơn.</dd>
+      <dt>Hình</dt><dd>Phong cách ghi chú văn phòng, cùng màu với slide khoá.</dd>
+    </dl>
+  </div>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:14px">
+  <div class="capbar"><h2>Lịch 7 ngày</h2>
+    <div class="legend"><span class="g-hieu"><i></i>Hiểu</span><span class="g-lam"><i></i>Làm</span><span class="g-an"><i></i>An toàn</span><span class="g-cta"><i></i>Chốt đăng ký</span></div></div>
+  <div class="week" id="week" role="group" aria-label="Chọn ngày"></div>
+  <div class="detail" id="detail"></div>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:14px">
+  <h2>3 mẫu quảng cáo để thử A/B</h2>
+  <p class="note">Cả 3 dùng cùng nút “Tìm hiểu thêm”, cùng link, cùng đối tượng và bố cục hình. Chỉ đổi nội dung, nên chênh lệch kết quả là do thông điệp.</p>
+  <div class="ads" id="ads"></div>
+</section>
+
+<section class="cols3">
+  <div class="panel"><span class="eyebrow">Ai làm phần nào</span><ul>
+    <li><b>Nghiên cứu:</b> khách hàng, đối thủ, giờ đăng, 3 góc tiếp cận</li>
+    <li><b>Viết bài:</b> lịch, 7 bài, 3 mẫu ads</li>
+    <li><b>Thiết kế:</b> màu, bố cục, 11 ảnh mẫu</li>
+    <li><b>Biên tập:</b> vòng 1 tìm 24 lỗi, vòng 2 duyệt ĐẠT</li></ul></div>
+  <div class="panel"><span class="eyebrow">Giả định đã dùng</span><ul>
+    <li>Không đưa số liệu thống kê vào bài: các số tìm được chưa kiểm được từ nguồn gốc.</li>
+    <li>Mọi bài và ảnh ghi rõ khoá không phải sản phẩm chính thức của Anthropic.</li>
+    <li>Ảnh mẫu dùng font thay thế, dáng chữ hơi khác bản thật.</li></ul></div>
+  <div class="panel"><span class="eyebrow">Nguyên tắc nội dung</span><ul>
+    <li>Không lời chứng thực, không hứa kết quả cụ thể.</li>
+    <li>“Không cần mạng” chỉ nói cho việc xem slide.</li>
+    <li>Xưng “mình”, gọi người đọc là “anh chị”.</li></ul></div>
+</section>
+
+<footer>Hồ sơ đầy đủ trong repo, thư mục <code>marketing/2026-10-03-chien-dich-facebook-1-tuan-khoa-lam-chu-claude/</code>: brief, nghiên cứu, bài viết, thiết kế, biên tập, báo cáo.</footer>
+</div>
+
+<script>
+const DATA={"days": [{"d": "T2", "date": "05/10", "t": "12:00", "topic": "Vấn đề + ẩn dụ nhân viên mới", "fmt": "Ảnh đơn", "goal": "Tiếp cận, bình luận", "grp": "hieu", "imgs": ["mau/t2-mo-man.png"], "cap_html": "<p>Anh chị có bao giờ nhờ AI soạn một cái email, rồi ngồi sửa lâu hơn cả tự viết?<\/p><p>Chuyện này mình gặp hoài. Gõ &quot;viết email xin báo giá&quot;, AI trả về một bản chung chung, ai đọc cũng như ai.<\/p><p>Lỗi không hẳn ở AI. Anh chị thử hình dung Claude như một nhân viên mới rất nhanh: làm không biết mệt, nhưng chưa biết công ty mình, chưa biết khách là ai, chưa biết sếp thích giọng văn nào. Sếp chỉ nói &quot;làm cho anh cái báo cáo&quot; thì người giỏi mấy cũng phải đoán.<\/p><p>Giao việc rõ, rồi đọc lại kỹ trước khi dùng. Hai việc nhỏ, nhưng làm đều thì khác nhiều.<\/p><p>Cả tuần này mình sẽ chia sẻ từng bước, bằng ví dụ quen thuộc: email, báo cáo, tóm tắt họp.<\/p><p>Anh chị hay nhờ AI làm việc gì nhất? Bình luận cho mình biết nhé, mình sẽ chọn vài việc làm ví dụ.<\/p><p>#LamChuClaude #AIvanPhong #KyNangVanPhong<\/p><p><em>Khoá do <mark>[ĐƠN VỊ]<\/mark> biên soạn, không phải sản phẩm chính thức của Anthropic.<\/em><\/p>", "cap_raw": "Anh chị có bao giờ nhờ AI soạn một cái email, rồi ngồi sửa lâu hơn cả tự viết?\n\nChuyện này mình gặp hoài. Gõ \"viết email xin báo giá\", AI trả về một bản chung chung, ai đọc cũng như ai.\n\nLỗi không hẳn ở AI. Anh chị thử hình dung Claude như một nhân viên mới rất nhanh: làm không biết mệt, nhưng chưa biết công ty mình, chưa biết khách là ai, chưa biết sếp thích giọng văn nào. Sếp chỉ nói \"làm cho anh cái báo cáo\" thì người giỏi mấy cũng phải đoán.\n\nGiao việc rõ, rồi đọc lại kỹ trước khi dùng. Hai việc nhỏ, nhưng làm đều thì khác nhiều.\n\nCả tuần này mình sẽ chia sẻ từng bước, bằng ví dụ quen thuộc: email, báo cáo, tóm tắt họp.\n\nAnh chị hay nhờ AI làm việc gì nhất? Bình luận cho mình biết nhé, mình sẽ chọn vài việc làm ví dụ.\n\n#LamChuClaude #AIvanPhong #KyNangVanPhong\n\nKhoá do [ĐƠN VỊ] biên soạn, không phải sản phẩm chính thức của Anthropic.", "on": "<p>&quot;Dùng AI vẫn mệt? Hãy giao việc như với nhân viên mới.&quot;<\/p>", "alt": "<ul><li><strong>Phương án A (đang dùng trong bài):<\/strong> &quot;Anh chị có bao giờ nhờ AI soạn một cái email, rồi ngồi sửa lâu hơn cả tự viết?&quot;<\/li><li><strong>Phương án B:<\/strong> &quot;Nhân viên mới giỏi đến mấy, sếp chỉ nói &#x27;làm cho anh cái báo cáo&#x27; thì cũng phải đoán. AI cũng vậy.&quot;<\/li><\/ul><p>Em nghiêng về A vì là tình huống ai cũng từng gặp, dễ gõ &quot;có&quot; ở phần bình luận. B hợp nếu muốn vào thẳng ẩn dụ.<\/p>"}, {"d": "T3", "date": "06/10", "t": "19:45", "topic": "Bản đồ nút: 3 chỗ cần nhớ", "fmt": "Ảnh đơn", "goal": "Lượt lưu, chia sẻ", "grp": "hieu", "imgs": [], "cap_html": "<p>Mở Claude lên, thấy cả đống nút. Anh chị bấm đâu, bỏ qua nút nào?<\/p><p>Mẹo của mình: đừng học hết một lúc. Nhớ 3 chỗ này trước là đủ để bắt đầu:<\/p><p>1. Hộp xin phép. Claude dừng lại hỏi anh chị trước khi chạy lệnh hay sửa file. Không chắc thì bấm Từ chối. Từ chối không làm hỏng gì.<\/p><p>2. Nút Dừng. Thấy Claude đi sai hướng thì dừng ngay, rồi nhắn sửa tiếp.<\/p><p>3. Ô nhập tin nhắn. Nơi giao việc bằng tiếng Việt. Có sẵn file Excel hay PDF thì dùng nút Đính kèm, khỏi gõ lại từng số. (Đừng đính kèm file có mật khẩu hay dữ liệu nhạy cảm nhé.)<\/p><p>Trong khoá có hẳn một phần &quot;Bản đồ nút&quot;, giải thích từng nút dùng để làm gì, khi nào nên bấm. Tên nút có thể khác chút tuỳ phiên bản.<\/p><p>Lưu bài này để lần sau mở Claude khỏi bối rối, và gắn thẻ một đồng nghiệp đang ngại bấm nút nào đó nhé.<\/p><p>#LamChuClaude #AIvanPhong #HocClaude #KyNangVanPhong<\/p><p><em>Khoá do <mark>[ĐƠN VỊ]<\/mark> biên soạn, không phải sản phẩm chính thức của Anthropic.<\/em><\/p>", "cap_raw": "Mở Claude lên, thấy cả đống nút. Anh chị bấm đâu, bỏ qua nút nào?\n\nMẹo của mình: đừng học hết một lúc. Nhớ 3 chỗ này trước là đủ để bắt đầu:\n\n1. Hộp xin phép. Claude dừng lại hỏi anh chị trước khi chạy lệnh hay sửa file. Không chắc thì bấm Từ chối. Từ chối không làm hỏng gì.\n2. Nút Dừng. Thấy Claude đi sai hướng thì dừng ngay, rồi nhắn sửa tiếp.\n3. Ô nhập tin nhắn. Nơi giao việc bằng tiếng Việt. Có sẵn file Excel hay PDF thì dùng nút Đính kèm, khỏi gõ lại từng số. (Đừng đính kèm file có mật khẩu hay dữ liệu nhạy cảm nhé.)\n\nTrong khoá có hẳn một phần \"Bản đồ nút\", giải thích từng nút dùng để làm gì, khi nào nên bấm. Tên nút có thể khác chút tuỳ phiên bản.\n\nLưu bài này để lần sau mở Claude khỏi bối rối, và gắn thẻ một đồng nghiệp đang ngại bấm nút nào đó nhé.\n\n#LamChuClaude #AIvanPhong #HocClaude #KyNangVanPhong\n\nKhoá do [ĐƠN VỊ] biên soạn, không phải sản phẩm chính thức của Anthropic.", "on": "<p>&quot;Nhiều nút quá? Nhớ 3 chỗ này là đủ bắt đầu.&quot;<\/p>", "alt": "<ul><li>&quot;Mở Claude lên, thấy cả đống nút. Anh chị bấm đâu?&quot;<\/li><li>&quot;Đừng học hết các nút trong một buổi. Nhớ 3 chỗ này trước.&quot;<\/li><\/ul>"}, {"d": "T4", "date": "07/10", "t": "12:00", "topic": "Công thức 5 dòng, trước và sau", "fmt": "Carousel 7 slide", "goal": "Lượt lưu, chia sẻ", "grp": "lam", "imgs": ["mau/t4-slide-1.png", "mau/t4-slide-2.png", "mau/t4-slide-3.png", "mau/t4-slide-4.png", "mau/t4-slide-5.png", "mau/t4-slide-6.png", "mau/t4-slide-7.png"], "cap_html": "<p>Gõ &quot;làm cho tôi cái báo cáo&quot;, AI trả lời chung chung. Không hẳn AI dở, mà là mình chưa nói đủ.<\/p><p>Thử công thức 5 dòng: Mục tiêu, Ai dùng, Kết quả, Hạn chót, Ràng buộc (giới hạn).<\/p><p>Ví dụ: &quot;Lập báo cáo doanh thu tháng 9 cho giám đốc, gồm 1 bảng và 3 nhận xét, trước 5 giờ chiều, không dùng số liệu ước đoán.&quot; Cùng một việc, nhưng Claude không còn phải đoán.<\/p><p>Vuốt qua xem thêm ví dụ trước và sau nhé. Chưa biết viết gì thì cứ gõ: &quot;Hãy hỏi tôi 3 câu trước khi làm.&quot;<\/p><p>Phần &quot;Cách viết yêu cầu&quot; trong khoá còn nhiều ví dụ theo từng việc: báo cáo, tin nhắn khách, bảng tính, bài đăng.<\/p><p>Lưu lại để dùng lần sau, và gửi cho đồng nghiệp hay gõ yêu cầu quá ngắn. Muốn xem khoá, nhắn tin cho page.<\/p><p>#LamChuClaude #AIvanPhong #HocClaude #KyNangVanPhong<\/p><p><em>Khoá do <mark>[ĐƠN VỊ]<\/mark> biên soạn, không phải sản phẩm chính thức của Anthropic.<\/em><\/p>", "cap_raw": "Gõ \"làm cho tôi cái báo cáo\", AI trả lời chung chung. Không hẳn AI dở, mà là mình chưa nói đủ.\n\nThử công thức 5 dòng: Mục tiêu, Ai dùng, Kết quả, Hạn chót, Ràng buộc (giới hạn).\n\nVí dụ: \"Lập báo cáo doanh thu tháng 9 cho giám đốc, gồm 1 bảng và 3 nhận xét, trước 5 giờ chiều, không dùng số liệu ước đoán.\" Cùng một việc, nhưng Claude không còn phải đoán.\n\nVuốt qua xem thêm ví dụ trước và sau nhé. Chưa biết viết gì thì cứ gõ: \"Hãy hỏi tôi 3 câu trước khi làm.\"\n\nPhần \"Cách viết yêu cầu\" trong khoá còn nhiều ví dụ theo từng việc: báo cáo, tin nhắn khách, bảng tính, bài đăng.\n\nLưu lại để dùng lần sau, và gửi cho đồng nghiệp hay gõ yêu cầu quá ngắn. Muốn xem khoá, nhắn tin cho page.\n\n#LamChuClaude #AIvanPhong #HocClaude #KyNangVanPhong\n\nKhoá do [ĐƠN VỊ] biên soạn, không phải sản phẩm chính thức của Anthropic.", "on": "", "alt": "<ul><li>&quot;Gõ ngắn quá thì AI phải đoán. Đây là công thức 5 dòng để khỏi đoán.&quot;<\/li><li>&quot;Mất một phút viết cho đủ, đỡ sửa đi sửa lại cả buổi.&quot;<\/li><\/ul>"}, {"d": "T5", "date": "08/10", "t": "19:45", "topic": "An toàn: Cho phép hay Từ chối", "fmt": "Ảnh đơn", "goal": "Tin cậy, điểm khác biệt", "grp": "an", "imgs": [], "cap_html": "<p>Hộp xin phép hiện lên. Anh chị bấm Cho phép hay Từ chối?<\/p><p>Claude xin phép trước khi chạy lệnh hay sửa file.<\/p><p>Cho phép khi đúng việc anh chị vừa giao và hiểu Claude định làm gì.<\/p><p>Từ chối khi không hiểu, không chắc, hoặc thấy việc lạ (ví dụ Claude xin xoá một file). Từ chối không làm hỏng gì, cứ hỏi lại lý do rồi tính tiếp.<\/p><p>Thêm 3 thói quen nhỏ:<\/p><ul><li>Không đưa mật khẩu, mã OTP, số thẻ.<\/li><li>Dữ liệu nhạy cảm như hợp đồng, thông tin khách: che tên (Khách A) hoặc hỏi cấp trên trước.<\/li><li>Số liệu Claude đưa ra là bản nháp, cho đến khi anh chị tự kiểm tra. Người bấm gửi vẫn là anh chị.<\/li><\/ul><p>Claude là nhân viên mới rất nhanh, nhưng người chịu trách nhiệm cuối cùng vẫn là người giao việc. Phần &quot;Nguyên tắc an toàn&quot; trong khoá luyện những thói quen này qua tình huống cụ thể.<\/p><p>Công ty anh chị đã có quy định dùng AI chưa? Bình luận cho mình biết, và gửi bài này cho sếp hoặc đồng nghiệp nếu thấy hữu ích.<\/p><p>#LamChuClaude #DungAIantoan #AIvanPhong #KyNangVanPhong<\/p><p><em>Đây là thói quen dùng, không phải tư vấn pháp lý hay bảo mật. Khoá do <mark>[ĐƠN VỊ]<\/mark> biên soạn, không phải sản phẩm chính thức của Anthropic.<\/em><\/p>", "cap_raw": "Hộp xin phép hiện lên. Anh chị bấm Cho phép hay Từ chối?\n\nClaude xin phép trước khi chạy lệnh hay sửa file.\n\nCho phép khi đúng việc anh chị vừa giao và hiểu Claude định làm gì.\n\nTừ chối khi không hiểu, không chắc, hoặc thấy việc lạ (ví dụ Claude xin xoá một file). Từ chối không làm hỏng gì, cứ hỏi lại lý do rồi tính tiếp.\n\nThêm 3 thói quen nhỏ:\n- Không đưa mật khẩu, mã OTP, số thẻ.\n- Dữ liệu nhạy cảm như hợp đồng, thông tin khách: che tên (Khách A) hoặc hỏi cấp trên trước.\n- Số liệu Claude đưa ra là bản nháp, cho đến khi anh chị tự kiểm tra. Người bấm gửi vẫn là anh chị.\n\nClaude là nhân viên mới rất nhanh, nhưng người chịu trách nhiệm cuối cùng vẫn là người giao việc. Phần \"Nguyên tắc an toàn\" trong khoá luyện những thói quen này qua tình huống cụ thể.\n\nCông ty anh chị đã có quy định dùng AI chưa? Bình luận cho mình biết, và gửi bài này cho sếp hoặc đồng nghiệp nếu thấy hữu ích.\n\n#LamChuClaude #DungAIantoan #AIvanPhong #KyNangVanPhong\n\nĐây là thói quen dùng, không phải tư vấn pháp lý hay bảo mật. Khoá do [ĐƠN VỊ] biên soạn, không phải sản phẩm chính thức của Anthropic.", "on": "<ul><li>Tiêu đề: &quot;Hộp xin phép hiện lên: bấm gì?&quot;<\/li><li>Phụ: &quot;Không chắc thì Từ chối, rồi hỏi lại Claude.&quot;<\/li><li>Dải dưới: &quot;Từ chối không làm hỏng gì.&quot;<\/li><\/ul>", "alt": "<ul><li>&quot;Hộp xin phép hiện lên. Bấm Cho phép hay Từ chối?&quot;<\/li><li>&quot;Dán hợp đồng lên AI có sao không? Trước hết, hỏi lại mình đã che gì chưa.&quot;<\/li><\/ul>"}, {"d": "T6", "date": "09/10", "t": "12:00", "topic": "Quy trình làm dự án 5 bước", "fmt": "Ảnh đơn", "goal": "Chuyển đổi, CTA mềm", "grp": "lam", "imgs": [], "cap_html": "<p>Giao cả một việc lớn cho Claude trong một tin nhắn thì dễ lệch hướng. Mình chia thành 5 bước:<\/p><p>1. Ý tưởng: viết 5 dòng tóm tắt việc cần làm.<\/p><p>2. Kế hoạch: chia bước, so sánh vài cách làm rồi chọn cách hợp nhất.<\/p><p>3. Làm từng bước: mỗi bước một kết quả, xem ngay.<\/p><p>4. Chỉnh sửa: chỉ đúng chỗ sai, sửa từng ý.<\/p><p>5. Chốt và lưu: đọc lại lần cuối, cập nhật sổ tay, sao lưu.<\/p><p>Ví dụ với báo cáo cuối tháng: viết 5 dòng về báo cáo (cho ai, gồm gì), nhờ Claude đề xuất khung, rồi làm lần lượt dàn ý, bảng, phần nhận xét. Xem xong từng phần mới sang phần sau. Cuối cùng đọc lại, cập nhật sổ tay và sao lưu để lần sau làm tiếp.<\/p><p>Claude làm nhanh, nhưng người giao việc vẫn là người duyệt và chịu trách nhiệm.<\/p><p>Quy trình này nằm trong phần &quot;Quy trình làm dự án&quot; của khoá. Anh chị muốn xem khoá có gì? Bình luận &quot;XEM KHOÁ&quot;, mình nhắn thông tin chi tiết nhé.<\/p><p>#LamChuClaude #AIvanPhong #KyNangVanPhong #HocClaude<\/p><p><em>Khoá do <mark>[ĐƠN VỊ]<\/mark> biên soạn, không phải sản phẩm chính thức của Anthropic.<\/em><\/p>", "cap_raw": "Giao cả một việc lớn cho Claude trong một tin nhắn thì dễ lệch hướng. Mình chia thành 5 bước:\n\n1. Ý tưởng: viết 5 dòng tóm tắt việc cần làm.\n2. Kế hoạch: chia bước, so sánh vài cách làm rồi chọn cách hợp nhất.\n3. Làm từng bước: mỗi bước một kết quả, xem ngay.\n4. Chỉnh sửa: chỉ đúng chỗ sai, sửa từng ý.\n5. Chốt và lưu: đọc lại lần cuối, cập nhật sổ tay, sao lưu.\n\nVí dụ với báo cáo cuối tháng: viết 5 dòng về báo cáo (cho ai, gồm gì), nhờ Claude đề xuất khung, rồi làm lần lượt dàn ý, bảng, phần nhận xét. Xem xong từng phần mới sang phần sau. Cuối cùng đọc lại, cập nhật sổ tay và sao lưu để lần sau làm tiếp.\n\nClaude làm nhanh, nhưng người giao việc vẫn là người duyệt và chịu trách nhiệm.\n\nQuy trình này nằm trong phần \"Quy trình làm dự án\" của khoá. Anh chị muốn xem khoá có gì? Bình luận \"XEM KHOÁ\", mình nhắn thông tin chi tiết nhé.\n\n#LamChuClaude #AIvanPhong #KyNangVanPhong #HocClaude\n\nKhoá do [ĐƠN VỊ] biên soạn, không phải sản phẩm chính thức của Anthropic.", "on": "<p>&quot;5 bước từ ý tưởng đến kết quả&quot;<\/p><p>Chân ảnh: &quot;Bình luận XEM KHOÁ để nhận thông tin&quot;<\/p>", "alt": "<ul><li>&quot;Giao cả dự án cho Claude một lần? Dễ lệch hướng lắm.&quot;<\/li><li>&quot;Việc lớn thì chia nhỏ. Mình đi theo 5 bước này.&quot;<\/li><\/ul>"}, {"d": "T7", "date": "10/10", "t": "19:45", "topic": "Bên trong khoá: 8 phần, 100 slide", "fmt": "Ảnh đơn", "goal": "Chuyển đổi, CTA rõ", "grp": "cta", "imgs": [], "cap_html": "<p>Bên trong khoá &quot;Làm chủ Claude trong công việc&quot; có gì? Mình tóm tắt cho anh chị:<\/p><p>8 phần, 100 slide, đi từ dễ đến khó:<\/p><p>Mở đầu và làm quen · Bản đồ nút · Cách viết yêu cầu · Nguyên tắc an toàn · Quy trình làm dự án · Ứng dụng cho công ty · Bài tập thực hành · Tổng kết và kiểm tra.<\/p><p>Học theo kiểu làm:<\/p><ul><li>Slide tương tác: bấm vào ô, gõ bài tập ngay trên slide.<\/li><li>6 bài tập viết lại yêu cầu cho rõ, từ bài đăng Facebook đến email.<\/li><li>Có file PowerPoint sửa được, trưởng nhóm có thể thêm ví dụ riêng của phòng.<\/li><li>Slide chạy trên máy, không cần mạng để xem. Phần thử với Claude thật dùng tài khoản của anh chị, bài tập được thiết kế ngắn để làm vừa giới hạn gói miễn phí.<\/li><\/ul><p>Hình thức học: <mark>[HÌNH THỨC HỌC]<\/mark>. Học phí: <mark>[GIÁ]<\/mark>.<\/p><p>Đăng ký tại <mark>[LINK ĐĂNG KÝ]<\/mark>, hoặc nhắn tin cho page nếu anh chị muốn hỏi thêm.<\/p><p>#LamChuClaude #HocClaude #AIvanPhong #KyNangVanPhong<\/p><p><em>Khoá do <mark>[ĐƠN VỊ]<\/mark> biên soạn, không phải sản phẩm chính thức của Anthropic.<\/em><\/p>", "cap_raw": "Bên trong khoá \"Làm chủ Claude trong công việc\" có gì? Mình tóm tắt cho anh chị:\n\n8 phần, 100 slide, đi từ dễ đến khó:\nMở đầu và làm quen · Bản đồ nút · Cách viết yêu cầu · Nguyên tắc an toàn · Quy trình làm dự án · Ứng dụng cho công ty · Bài tập thực hành · Tổng kết và kiểm tra.\n\nHọc theo kiểu làm:\n- Slide tương tác: bấm vào ô, gõ bài tập ngay trên slide.\n- 6 bài tập viết lại yêu cầu cho rõ, từ bài đăng Facebook đến email.\n- Có file PowerPoint sửa được, trưởng nhóm có thể thêm ví dụ riêng của phòng.\n- Slide chạy trên máy, không cần mạng để xem. Phần thử với Claude thật dùng tài khoản của anh chị, bài tập được thiết kế ngắn để làm vừa giới hạn gói miễn phí.\n\nHình thức học: [HÌNH THỨC HỌC]. Học phí: [GIÁ].\n\nĐăng ký tại [LINK ĐĂNG KÝ], hoặc nhắn tin cho page nếu anh chị muốn hỏi thêm.\n\n#LamChuClaude #HocClaude #AIvanPhong #KyNangVanPhong\n\nKhoá do [ĐƠN VỊ] biên soạn, không phải sản phẩm chính thức của Anthropic.", "on": "<p>&quot;Bên trong khoá: 8 phần, 100 slide, có bài tập.&quot;<\/p>", "alt": "<ul><li>&quot;Bên trong khoá &#x27;Làm chủ Claude trong công việc&#x27; có gì?&quot;<\/li><li>&quot;Học Claude theo kiểu làm thật, không chỉ nghe.&quot;<\/li><\/ul>"}, {"d": "CN", "date": "11/10", "t": "19:45", "topic": "Hỏi đáp và chốt", "fmt": "Ảnh đơn", "goal": "Chuyển đổi cuối", "grp": "cta", "imgs": [], "cap_html": "<p>Còn phân vân? Mình trả lời trước vài câu hỏi hay gặp.<\/p><p>Học phí và hình thức học thế nào? Học phí <mark>[GIÁ]<\/mark>, hình thức <mark>[HÌNH THỨC HỌC]<\/mark>.<\/p><p>Mình mới dùng AI, có theo được không? Khoá đi từ &quot;Claude là gì&quot; rồi mới tới cách viết yêu cầu, an toàn và làm dự án, học từ dễ đến khó.<\/p><p>Có phải trả tiền gói Claude không? Bài tập được thiết kế ngắn để làm vừa giới hạn gói miễn phí. Gói miễn phí có giới hạn số tin nhắn mỗi ngày nên anh chị chủ động chia việc.<\/p><p>Dùng cho cả phòng được không? Có file PowerPoint sửa được, trưởng nhóm thêm ví dụ riêng của phòng ban.<\/p><p>Đây có phải khoá chính thức của Anthropic không? Không. Khoá do <mark>[ĐƠN VỊ]<\/mark> biên soạn.<\/p><p>Tóm lại: giao việc rõ, kiểm tra kỹ. Hai thói quen đó là điều mình muốn anh chị mang về sau khoá.<\/p><p>Ưu đãi đến <mark>[HẠN ƯU ĐÃI]<\/mark>. Đăng ký tại <mark>[LINK ĐĂNG KÝ]<\/mark>.<\/p><p>#LamChuClaude #HocClaude #AIvanPhong #DungAIantoan<\/p><p><em>Khoá do <mark>[ĐƠN VỊ]<\/mark> biên soạn, không phải sản phẩm chính thức của Anthropic.<\/em><\/p>", "cap_raw": "Còn phân vân? Mình trả lời trước vài câu hỏi hay gặp.\n\nHọc phí và hình thức học thế nào? Học phí [GIÁ], hình thức [HÌNH THỨC HỌC].\n\nMình mới dùng AI, có theo được không? Khoá đi từ \"Claude là gì\" rồi mới tới cách viết yêu cầu, an toàn và làm dự án, học từ dễ đến khó.\n\nCó phải trả tiền gói Claude không? Bài tập được thiết kế ngắn để làm vừa giới hạn gói miễn phí. Gói miễn phí có giới hạn số tin nhắn mỗi ngày nên anh chị chủ động chia việc.\n\nDùng cho cả phòng được không? Có file PowerPoint sửa được, trưởng nhóm thêm ví dụ riêng của phòng ban.\n\nĐây có phải khoá chính thức của Anthropic không? Không. Khoá do [ĐƠN VỊ] biên soạn.\n\nTóm lại: giao việc rõ, kiểm tra kỹ. Hai thói quen đó là điều mình muốn anh chị mang về sau khoá.\n\nƯu đãi đến [HẠN ƯU ĐÃI]. Đăng ký tại [LINK ĐĂNG KÝ].\n\n#LamChuClaude #HocClaude #AIvanPhong #DungAIantoan\n\nKhoá do [ĐƠN VỊ] biên soạn, không phải sản phẩm chính thức của Anthropic.", "on": "<ul><li>Tiêu đề: &quot;Còn phân vân? Mình trả lời trước vài câu hỏi hay gặp.&quot;<\/li><li>4 thẻ hỏi đáp: &quot;Mới dùng AI có theo được không?&quot; · &quot;Có cần trả tiền gói Claude không?&quot; · &quot;Dùng cho cả phòng được không?&quot; · &quot;Đây có phải khoá chính thức của Anthropic không? Không.&quot;<\/li><li>CTA chân ảnh: &quot;Đăng ký tại <mark>[LINK ĐĂNG KÝ]<\/mark> trước <mark>[HẠN ƯU ĐÃI]<\/mark>&quot;<\/li><li>Chân ảnh: &quot;Khoá do <mark>[ĐƠN VỊ]<\/mark> biên soạn, không phải sản phẩm chính thức của Anthropic.&quot;<\/li><\/ul>", "alt": "<ul><li>&quot;Câu hỏi mình nhận nhiều nhất trong tuần qua, trả lời một lượt.&quot;<\/li><li>&quot;Còn đang phân vân? Đọc 5 câu hỏi này trước khi quyết định.&quot;<\/li><\/ul><p>(Lưu ý: tiêu đề &quot;nhận nhiều nhất trong tuần&quot; chỉ dùng nếu thật sự có câu hỏi từ inbox. Nếu chưa, dùng phương án đầu của bài: &quot;Còn phân vân? Mình trả lời trước vài câu hỏi hay gặp.&quot;)<\/p>"}], "ads": [{"title": "A · Góc \"Nhân viên mới rất nhanh\" (chủ đạo)", "primary": "<p>Claude giống một nhân viên mới rất nhanh: giỏi, nhưng cần được giao việc rõ và có người duyệt. <em>(94 ký tự)<\/em><\/p><p>  Khoá &quot;Làm chủ Claude trong công việc&quot; hướng dẫn giao việc bằng công thức 5 dòng, qua ví dụ email, báo cáo, bảng tính. Khoá do <mark>[ĐƠN VỊ]<\/mark> biên soạn, không phải sản phẩm chính thức của Anthropic.<\/p>", "headline": "Giao việc rõ cho Claude, kiểm tra kỹ <em>(36 ký tự)<\/em>", "desc": "8 phần, 100 slide, có bài tập thực hành", "cta": "Tìm hiểu thêm", "on": "Claude: nhân viên mới rất nhanh"}, {"title": "B · Góc \"An toàn: Cho phép hay Từ chối\" (điểm khác biệt)", "primary": "<p>Hộp xin phép hiện lên, anh chị bấm Cho phép hay Từ chối? Khoá dạy thói quen dùng Claude có kiểm soát. <em>(101 ký tự)<\/em><\/p><p>  Phần Nguyên tắc an toàn: không đưa mật khẩu, che dữ liệu nhạy cảm, kiểm tra kết quả trước khi gửi. Khoá do <mark>[ĐƠN VỊ]<\/mark> biên soạn, không phải sản phẩm chính thức của Anthropic.<\/p>", "headline": "Khi nào Cho phép, khi nào Từ chối? <em>(34 ký tự)<\/em>", "desc": "Học thói quen dùng Claude có kiểm soát", "cta": "Tìm hiểu thêm", "on": "Không chắc thì Từ chối"}, {"title": "C · Góc \"Công thức 5 dòng\"", "primary": "<p>Gõ &quot;làm báo cáo&quot; thì AI đoán. Viết đủ 5 dòng: mục tiêu, ai dùng, kết quả, hạn chót, ràng buộc. <em>(94 ký tự)<\/em><\/p><p>  Khoá &quot;Làm chủ Claude trong công việc&quot; có bài tập viết lại yêu cầu từ bài đăng Facebook đến email. Khoá do <mark>[ĐƠN VỊ]<\/mark> biên soạn, không phải sản phẩm chính thức của Anthropic.<\/p>", "headline": "Công thức 5 dòng để giao việc cho AI <em>(36 ký tự)<\/em>", "desc": "Học bằng làm, có file PowerPoint sửa được", "cta": "Tìm hiểu thêm", "on": "Mục tiêu · Ai dùng · Kết quả · Hạn chót · Ràng buộc"}]};
+const GN={hieu:'Hiểu',lam:'Làm',an:'An toàn',cta:'Chốt đăng ký'};
+const week=document.getElementById('week'),detail=document.getElementById('detail');
+let cur=0;try{const s=localStorage.getItem('day');if(s!==null&&DATA.days[+s])cur=+s}catch(e){}
+function renderWeek(){week.innerHTML=DATA.days.map((d,i)=>`<button class="day g-${d.grp}" aria-pressed="${i===cur}" data-i="${i}"><span class="dd"><span>${d.d}</span><span class="t mono">${d.date}</span></span><span class="t mono">${d.t}</span><span class="tp">${d.topic}</span><span class="f">${d.fmt}</span></button>`).join('')}
+function renderDetail(){const d=DATA.days[cur];
+  let vis;
+  if(d.imgs.length){vis=`<img id="mainimg" src="${d.imgs[0]}" alt="Ảnh mẫu ${d.d}" width="1080" height="1350">`+(d.imgs.length>1?`<div class="strip">${d.imgs.map((s,i)=>`<button data-src="${s}" aria-current="${i===0}" aria-label="Slide ${i+1}"><img src="${s}" alt=""></button>`).join('')}</div>`:'')}
+  else vis=`<div class="noimg g-${d.grp}"><span class="eyebrow">Chữ trên ảnh (chốt) · chưa dựng ảnh</span>${d.on}</div>`;
+  detail.innerHTML=`<div class="visual">${vis}</div>
+  <div class="caption"><div class="capbar"><span class="eyebrow">${d.d} ${d.date} · <span class="mono">${d.t}</span> · ${GN[d.grp]} · Mục tiêu: ${d.goal}</span><button class="btn" id="copy">Chép bài</button></div>
+  <h3>${d.topic}</h3><div class="body">${d.cap_html}</div>
+  ${d.alt?`<details><summary>Câu mở thay thế</summary><div class="in">${d.alt}</div></details>`:''}</div>`;
+  const strip=detail.querySelector('.strip');
+  if(strip)strip.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;document.getElementById('mainimg').src=b.dataset.src;strip.querySelectorAll('button').forEach(x=>x.setAttribute('aria-current',x===b))});
+  const c=document.getElementById('copy');
+  c.addEventListener('click',()=>{const done=()=>{c.textContent='Đã chép';setTimeout(()=>c.textContent='Chép bài',1500)};
+    navigator.clipboard?.writeText(d.cap_raw).then(done).catch(()=>{const r=document.createRange();r.selectNodeContents(detail.querySelector('.body'));const s=getSelection();s.removeAllRanges();s.addRange(r);c.textContent='Đã chọn, bấm Ctrl+C'})});
+}
+week.addEventListener('click',e=>{const b=e.target.closest('.day');if(!b)return;cur=+b.dataset.i;try{localStorage.setItem('day',cur)}catch(e){}renderWeek();renderDetail()});
+renderWeek();renderDetail();
+const IMG=['mau/ads-a.png','mau/ads-b.png','mau/ads-c.png'];
+document.getElementById('ads').innerHTML=DATA.ads.map((a,i)=>`<article class="ad"><img src="${IMG[i]}" alt="Ảnh quảng cáo mẫu ${'ABC'[i]}" width="1080" height="1080"><div class="in"><span class="eyebrow">Mẫu ${a.title}</span><div class="hl">${a.headline}</div>${a.primary}<div class="row"><span>${a.desc}</span><span>Nút: <b>${a.cta}</b></span></div></div></article>`).join('');
+</script>
