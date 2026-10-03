@@ -166,14 +166,15 @@ Cuốn gà, cuốn bò xào, làm pizza chảo hay quesadilla cho cả nhà đ�
 **Nội dung:**
 Pizza không cần lò nướng, chỉ cần cái chảo. 🍕
 
-**Pizza tortilla chảo** (khoảng 10 phút)
-Nguyên liệu: 1 tấm [LOẠI BÁNH], sốt cà, phô mai, xúc xích hoặc nấm thái lát.
+**Pizza tortilla chảo** (khoảng 10 phút (ước tính))
+Nguyên liệu: 1 tấm [LOẠI BÁNH], sốt cà, phô mai, xúc xích hoặc nấm thái lát mỏng (hoặc loại ăn liền như giăm bông).
 
 Cách làm:
-1. Đặt bánh vào chảo, lửa nhỏ.
-2. Phết sốt cà, rải phô mai và xúc xích (hoặc nấm).
-3. Đậy nắp cho phô mai chảy.
-4. Cắt miếng, ăn nóng.
+1. Xúc xích hoặc nấm: áp chảo sơ cho chín trước, để ráo. Loại ăn liền thì bỏ qua bước này.
+2. Đặt bánh vào chảo, lửa nhỏ.
+3. Phết sốt cà, rải phô mai và topping đã chín.
+4. Đậy nắp cho phô mai chảy.
+5. Cắt miếng, ăn nóng.
 
 Hợp cho bữa xế, bữa sáng hoặc tối cuối tuần. Bé nhà bạn có thể phụ rải topping nữa. 😄
 
@@ -182,6 +183,8 @@ Hợp cho bữa xế, bữa sáng hoặc tối cuối tuần. Bé nhà bạn có
 #pizzatortilla #tortilla #monngondelam #buasangnhanh #bepnha
 
 **Chữ trên ảnh:** Pizza chảo 10 phút, khỏi lò
+
+*Sửa vòng 1: bài 7 thêm bước áp chảo sơ xúc xích/nấm (hoặc dùng loại ăn liền) trước khi đậy nắp; giữ "khoảng 10 phút (ước tính)", cần nấu thử bấm giờ lại.*
 
 ---
 
