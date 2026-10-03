@@ -90,8 +90,8 @@ def con_dau(fg=DO, ink=KEM):
     import logo_vom as L
     L.SERIF = F["xb"]; L._fonts.cache_clear()
     s = f'<circle cx="200" cy="200" r="196" fill="{fg}"/><circle cx="200" cy="200" r="182" fill="none" stroke="{ink}" stroke-width="3"/>'
-    s += L._ring_text("ẨM THỰC AN TÂM", 30, 200, 200, 154, ink, -90, key="serif", track=.14)
-    s += L._ring_bottom("CAM KẾT TỪ TÂM", 26, 200, 200, 156, ink, key="serif", track=.16)
+    s += L._ring_text("ẨM THỰC AN TÂM", 28, 200, 200, 141, ink, -90, key="serif", track=.15)
+    s += L._ring_bottom("CAM KẾT TỪ TÂM", 26, 200, 200, 147, ink, key="serif", track=.16)
     s += f'<circle cx="200" cy="200" r="116" fill="{ink}"/>' + van_tay(200, 200, 84, fg, aspect=1.12)
     return svg((0, 0, 400, 400), s, "Dấu An Tâm")
 
