@@ -67,3 +67,59 @@ Chính tả, dấu câu, giọng: không thấy lỗi chính tả. Xưng "mình"
 - Lịch: 10 bài, ngày T2 05/10 đến CN 11/10/2026 đúng thứ. Giờ 11:30, 18:30, 11:00, 17:30, 11:30, 11:30, 18:00, 11:30, 11:30, 18:30 đều trong khung. Gợi ý quảng cáo bài 3 và 6 hợp lý (bài 6 chỉ chạy khi đã điền đủ chỗ trống).
 - Lưu ý chủ trang: ảnh bài 1, 3, 4, 5, 6, 8, 10 cần ảnh thật. Khung "KHUNG ẢNH THẬT" trong PNG chỉ là hình khối minh hoạ, phải thay bằng ảnh thật trước khi đăng. PNG dùng font dự phòng Liberation Sans, đã được thiet-ke.md ghi chú, không tính là lỗi.
 - "Chữ trên ảnh" của bài 3 và 4 đã được mình đổi theo PNG; bài 6 thì để thiet-ke sửa theo bài viết (B9).
+
+---
+
+# Vòng 2 (2026-10-03)
+
+Đã đọc lại: brief, nghien-cuu, lich-dang, bai-viet, thiet-ke (kể cả nhật ký sửa vòng 1), HTML/CSS mẫu và xem lại cả 7 PNG (a-carousel-ham-banh-1..5, b-the-cong-thuc-wrap-ga, c-bai-ban-hang).
+
+## KẾT LUẬN VÒNG 2: ĐẠT
+
+Không còn lỗi chặn đăng. Còn 3 việc nhỏ ở HTML/PNG (mục 3) và 1 việc ở kịch bản video bài 7; làm cùng lúc khi thay "KHUNG ẢNH THẬT" bằng ảnh thật và điền chỗ trống. Điều kiện đăng như vòng 1: chủ trang điền hết chỗ trống, thay khung ảnh bằng ảnh thật, nấu thử bấm giờ.
+
+## 1. Kiểm các mục vòng 1
+
+| Mục | Kết quả |
+|---|---|
+| A1–A8 (bai-viet) | Đạt, đã có trong file |
+| B1, B3, B4, B5, B6, B7, B8, B10, B11 (thiet-ke.md) | Đạt: giờ, định dạng, số slide, chữ ảnh, 4 thẻ A/B/C/D, kịch bản Reels bài 3 (7 cảnh, ~42s) và bài 7 (30s), carousel bài 8 5 slide, 8 chỗ trống bài 9 đều khớp lich-dang và bai-viet |
+| B2 (PNG bài 3) | Đạt: "2 tấm bánh · 1–2 phần · khoảng 10 phút (ước tính)"; "Chuẩn bị" có [LOẠI BÁNH]; bước 3 "rưới sốt vừa phải"; không còn [THEO CÔNG THỨC BÀI VIẾT] |
+| B9 (PNG bài 6) | Đạt: "Cuối tuần cuốn gì? Nhắn mình!", nhãn "ĐẶT BÁNH CUỐI TUẦN", bảng 7 dòng chỗ trống; chốt ảnh đơn |
+| B12–B14 (carousel) | Đạt: "MẸO BẾP NHANH"; slide 2 không còn "Không cần dầu...phồng nhẹ"; slide 3 "Bọc khăn/giấy bếp ẩm" (hết "1 lớp"); slide 2–5 đều có "Thời gian tham khảo, tuỳ loại bánh"; số khớp nghien-cuu (10–15, 15–30, 30–45 giây) |
+| B15 | Đạt phần chữ "giây" (ớt đỏ). Số lớn vẫn vàng: xem mục 2b |
+| B16 | Xử lý chưa gọn: thay bằng ô [TÊN THƯƠNG HIỆU] nhưng gây trùng ô: xem mục 2a. Một phần do mình đề xuất `[TÊN TRANG]` không thuộc 8 chỗ trống; designer dùng ô chuẩn là đúng |
+| C1 (bài 7) | Đạt: bước 1 áp chảo sơ xúc xích/nấm (hoặc loại ăn liền). Câu thay ở carousel slide 3 và 4 (trưởng phòng) đúng nghien-cuu mục 3 ("không cho quá nhiều sốt: nhão"; "không hâm quá lâu: khô"), PNG đã hiển thị đúng. D1, D2: lich-dang đã sửa (4 món, bài 6 ảnh đơn) |
+
+Mình tự sửa thêm (lỗi nhỏ):
+- bai-viet.md bài 7: "(khoảng 10 phút (ước tính))" thành "(khoảng 10 phút, ước tính)" (ngoặc lồng ngoặc).
+- bai-viet.md bài 7: "Bé nhà bạn có thể phụ rải topping" thành "phụ chuẩn bị topping (người lớn lo phần chảo nóng nhé)", vì bánh đang nằm trong chảo nóng khi rải topping.
+- thiet-ke.md, nhật ký vòng 1: dòng "Còn tồn" đã cũ (hai câu không nguồn đã được thay), cập nhật cho đúng hiện trạng.
+
+## 2. Hai điểm trưởng phòng nêu
+
+### 2a. Hai ô [TÊN THƯƠNG HIỆU] trùng ở chân ảnh: XÁC NHẬN (có ở cả 7 PNG)
+Chân mỗi ảnh có "[LOGO / TÊN THƯƠNG HIỆU]" (trái) và "[TÊN THƯƠNG HIỆU]" (phải). Bài 6 còn thêm dòng "Thương hiệu: [TÊN THƯƠNG HIỆU]" trong bảng, thành 3 ô cùng tên. Người điền dễ nhầm hoặc điền hai lần; sau khi có logo thật, ô phải dư. Không ảnh hưởng nội dung nên không chặn đăng.
+
+Cách sửa (giao thiet-ke, sửa HTML rồi `node chup.js`):
+- Xoá `<span class="blank" style="font-size:26px">[TÊN THƯƠNG HIỆU]</span>` trong `div.foot` ở: a-carousel-ham-banh.html (5 slide: dòng 14, 21, 29, 37, 48), b-the-cong-thuc-wrap-ga.html (dòng 27), c-bai-ban-hang.html (dòng 22).
+- Giữ một ô duy nhất bên trái, đổi chữ thành "[LOGO + TÊN THƯƠNG HIỆU]" (cùng một chỗ trống, viền đỏ theo quy tắc 3 mục "Chỗ trống"). Riêng bài 6 vẫn giữ dòng "Thương hiệu" trong bảng vì bảng 7 dòng khớp bài viết; chân trang chỉ còn ô logo.
+- Cập nhật thiet-ke.md các chỗ nhắc "ô logo + ô [TÊN THƯƠNG HIỆU]" ở chân trang (bài 1, bài 8, ghi chú mục 6) cho khớp.
+- Không đổi lại thành "@trang-cua-ban" hay `[TÊN TRANG]`.
+
+### 2b. Số lớn vàng ngô trên nền kem ở carousel: XÁC NHẬN, tương phản không đủ
+Đã tính: vàng `#E9A23B` (độ sáng 0,43) trên bột mì `#F3DDB0` (0,71) cho tỉ lệ khoảng 1,6:1; slide 3 nền còn sáng hơn nên còn thấp hơn chút. Chuẩn chữ lớn tối thiểu 3:1. Trong PNG, số 250 px đậm vẫn đọc được, nhưng đây là thông tin chính của slide (không lặp ở chỗ khác) và sẽ khó đọc khi điện thoại để sáng yếu hoặc ngoài nắng. Vòng 1 mình ghi "vẫn đọc được" là quá nhẹ tay. Quy tắc 1 của thiet-ke cũng đã cấm chữ vàng nhỏ trên kem, nay nên mở rộng ra cả chữ lớn.
+
+Cách sửa (giao thiet-ke), sửa dòng 3 của a-carousel-ham-banh.html: `.num{...color:var(--vang)...}` thành `color:var(--nau)` (nâu `#2B1D14`, tương phản trên 12:1) và giữ "giây" ớt đỏ; hoặc `var(--la)` xanh rau nếu muốn có màu (cũng trên 4:1). Khuyến nghị nâu. Slide 1 (nền vàng, chữ nâu) và slide 5 (vàng trên nền nâu, khoảng 8:1) giữ nguyên. Chụp lại slide 2–4 rồi xem lại.
+
+## 3. Việc còn lại (không chặn đăng)
+
+| # | Giao | Việc |
+|---|---|---|
+| E1 | thiet-ke | Sửa 2a (xoá ô trùng) ở 7 PNG |
+| E2 | thiet-ke | Sửa 2b (số lớn slide 2–4 sang nâu) |
+| E3 | thiet-ke | Kịch bản Reels bài 7: thêm một cảnh áp chảo xúc xích/nấm trước khi xếp lên bánh (khớp bước 1 mới của bai-viet), giữ tổng 30 giây (gộp bớt cảnh 3 và 6); phụ đề "Chỉ cần 4 món" chỉnh theo nguyên liệu thật. Dòng ghi chú "chỉnh phụ đề cảnh 4–5" trong thiet-ke xoá khi xong |
+| E4 | thiet-ke (tuỳ chọn) | Slide 2–4: "[LOẠI BÁNH]" trong chú thích đang là chữ xám thường, không có viền đỏ nên dễ bị đăng nguyên. Thêm class `blank` cho đúng quy tắc chỗ trống |
+| E5 | chủ trang | Như vòng 1: điền chỗ trống, ảnh thật, nấu thử bấm giờ (C2 giữ nguyên) |
+
+Ghi chú nhỏ, không sửa: bài 1 câu mở "cuốn gì cũng thành bữa" còn chữ trên ảnh "cuốn gì cũng ngon". Hai chỗ nói khác nhau là chấp nhận được, nhưng nếu muốn khớp tuyệt đối thì chọn một. Slide 5 có thêm "khó cuốn" không có trong nguồn (hậu quả hiển nhiên của bánh nhão/rách, rủi ro thấp).

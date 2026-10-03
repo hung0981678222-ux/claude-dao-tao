@@ -166,4 +166,5 @@ Nguồn chốt: lich-dang.md và bai-viet.md. Không sửa bai-viet.md, lich-dan
 - Carousel bài 4 (PNG chụp lại): slide 1 "MẸO BẾP NHANH" (bỏ "10 GIÂY"); slide 2 bỏ "Không cần dầu...phồng nhẹ và thơm"; slide 3 đổi "Bọc khăn/giấy bếp ẩm" (bỏ "1 lớp"); slide 5 thêm "Thời gian tham khảo, tuỳ loại bánh"; chữ "giây" đổi sang ớt đỏ ở slide 2–4.
 - Cả 3 mẫu: thay "@trang-cua-ban" bằng ô trống viền đỏ `[TÊN THƯƠNG HIỆU]`.
 - Chụp lại 7 PNG (giữ nguyên tên file) bằng `node chup.js`, đã xem lại cả 7 sau lần chụp cuối: không tràn chữ, dấu tiếng Việt rõ.
-- Còn tồn: slide 4 carousel còn dòng "Hợp khi hâm nhiều cái cùng lúc cho cả nhà" và slide 3 còn "Hơi ẩm giữ bánh mềm, dễ cuốn, ít nứt" (biên tập không nêu, nhưng không có trong nghien-cuu.md; có thể bỏ nếu muốn bám nguồn tuyệt đối). PNG vẫn dùng font dự phòng Liberation Sans.
+- Đã xử lý (trưởng phòng, sau vòng 1): hai câu không có nguồn ở slide 3 và 4 được thay bằng "Đừng cho quá nhiều sốt, bánh dễ nhão." (slide 3) và "Đừng hâm quá lâu, bánh dễ khô." (slide 4), theo nghien-cuu.md. PNG vẫn dùng font dự phòng Liberation Sans.
+- Việc còn lại (biên tập vòng 2): bỏ ô [TÊN THƯƠNG HIỆU] trùng ở chân ảnh; đổi số lớn carousel slide 2–4 sang màu nâu/ớt; bài 7 thêm cảnh áp chảo xúc xích/nấm vào kịch bản (xem bien-tap.md, mục Vòng 2).
