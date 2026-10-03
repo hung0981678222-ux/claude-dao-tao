@@ -135,7 +135,7 @@ Còn thắc mắc gì về bánh, cứ hỏi, mình trả lời từng bạn. �
 
 ---
 
-## Bài 6 | T6 09/10, 11:30 | Bán hàng | Ảnh đơn hoặc carousel | Gợi ý chạy quảng cáo
+## Bài 6 | T6 09/10, 11:30 | Bán hàng | Ảnh đơn | Gợi ý chạy quảng cáo
 
 **Câu mở:** Cuối tuần này, cả nhà cuốn gì? Bánh để mình lo. 🌯
 
