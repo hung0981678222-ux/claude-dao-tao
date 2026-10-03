@@ -133,13 +133,13 @@ def page():
     nav = "".join(f'<a href="#c{i}">{t}</a>' for i, t in enumerate(["Nền tảng", "Logo", "Quy tắc logo", "Màu", "Chữ", "Hoạ tiết", "Hình ảnh", "Bố cục", "Ứng dụng", "Giọng nói", "Tệp"], 1))
     return f"""<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Cẩm Nang An Tâm</title><style>{faces()}\n{CSS}</style></head><body>
-<header class="hero"><div class="bg">{B.nen_van(1400, 760)}</div><div class="in"><div><div class="k">Cẩm nang tiêu chuẩn nhận diện · Phiên bản 1.0</div>
+<header class="hero"><div class="bg">{B.nen_van(1400, 760)}</div><div class="in"><div><div class="k">Cẩm nang tiêu chuẩn nhận diện · Phiên bản 1.1</div>
 <h1>Ẩm Thực An Tâm</h1><p>Tài liệu này quy định cách dùng logo, màu, chữ, hoạ tiết và giọng nói của thương hiệu. Mọi ấn phẩm – từ phiếu giao hàng tới biển hiệu – làm theo cùng một chuẩn để khách hàng nhìn là nhận ra An Tâm.</p></div>
 <div class="card">{V.logo_dung()}</div></div></header>
 <nav class="toc">{nav}</nav>
 
 <section class="s" id="c1"><div class="num">01 · Nền tảng thương hiệu</div><h2>Mỗi mẻ bánh, một lời cam kết</h2>
-<p class="lead">Ẩm Thực An Tâm cung cấp bánh tortilla, vỏ taco và doner kebab cho quán ăn, nhà hàng, cửa hàng và đối tác nhượng quyền tại TP.HCM. Biểu tượng dấu vân tay son đỏ lấy từ tục điểm chỉ của người Việt: lăn tay để cam kết điều quan trọng.</p>
+<p class="lead">Ẩm Thực An Tâm cung cấp bánh tortilla, vỏ taco và doner kebab cho quán ăn, nhà hàng, cửa hàng và đối tác nhượng quyền tại TP.HCM. Biểu tượng dấu vân tay son đỏ lấy từ tục điểm chỉ của người Việt: lăn tay để cam kết điều quan trọng. Lõi vân tay là một <b>chấm tâm</b> son tròn – tâm của dấu tay, cũng là chữ "Tâm" – chi tiết riêng khiến dấu tay này chỉ có thể là của An Tâm.</p>
 <div class="g g4"><div class="card d"><h4>Tận tâm</h4><p>Làm từng mẻ bánh như làm cho nhà mình.</p></div><div class="card"><h4>Đáng tin</h4><p>Nói được làm được: đúng chất lượng, đúng hẹn.</p></div><div class="card"><h4>Gần gũi</h4><p>Ấm áp, dễ nói chuyện, đồng hành cùng chủ quán.</p></div><div class="card k2"><h4>Rõ ràng</h4><p>Thông tin minh bạch, giá và cam kết nói thẳng.</p></div></div>
 <h3>Thông tin cố định</h3><table><tr><th>Mục</th><th>Nội dung</th></tr>
 <tr><td>Tên trên ấn phẩm quảng bá</td><td>ẨM THỰC AN TÂM</td></tr><tr><td>Tên pháp lý (nhãn, hoá đơn, hợp đồng)</td><td>Công ty TNHH SX-TM Ẩm Thực An Tâm</td></tr>
@@ -147,7 +147,7 @@ def page():
 <tr><td>Liên hệ</td><td>antamfoods.com · 0348.635.222</td></tr></table></section>
 
 <section class="s" id="c2"><div class="num">02 · Logo</div><h2>Các phiên bản logo</h2>
-<p class="lead">Logo gồm biểu tượng dấu vân tay và chữ "An Tâm" viết bằng font thương hiệu. Ưu tiên bản ngang; dùng bản đứng khi khung hẹp; biểu tượng riêng chỉ dùng khi tên thương hiệu đã xuất hiện ở chỗ khác hoặc ở cỡ rất nhỏ.</p>
+<p class="lead">Logo gồm biểu tượng dấu vân tay và chữ "An Tâm" viết bằng font thương hiệu. Ưu tiên bản ngang; dùng bản đứng khi khung hẹp; biểu tượng riêng chỉ dùng khi tên thương hiệu đã xuất hiện ở chỗ khác hoặc ở cỡ rất nhỏ. Từ 24 px / 8 mm trở xuống dùng <b>biểu tượng bản nhỏ</b> (ít vân, nét dày, vẫn giữ chấm tâm).</p>
 <div class="g g2"><div class="card">{V.logo_ngang()}<p class="cap">Bản ngang – bản chính</p></div><div class="card d">{V.logo_ngang(KEM, KEM)}<p class="cap">Bản ngang trên nền đỏ</p></div>
 <div class="card">{V.logo_dung()}<p class="cap">Bản đứng</p></div><div class="g g2"><div class="card">{V.bieu_tuong()}<p class="cap">Biểu tượng</p></div><div class="card">{V.con_dau()}<p class="cap">Dấu tròn "Cam kết từ tâm" – dùng như con dấu, không thay logo</p></div></div></div>
 <h3>Màu logo theo nền</h3><table><tr><th>Nền</th><th>Logo</th></tr><tr><td>Kem, trắng, ảnh sáng</td><td>Đỏ An Tâm (chữ phụ màu Mực)</td></tr><tr><td>Đỏ An Tâm, đỏ đậm</td><td>Kem toàn bộ</td></tr><tr><td>Đen, ảnh tối</td><td>Kem toàn bộ</td></tr><tr><td>In một màu (dập nổi, khắc, fax)</td><td>Một màu đặc – đen hoặc đỏ</td></tr></table></section>
@@ -183,7 +183,7 @@ def page():
 <p class="lead">Ba yếu tố đồ hoạ: nền đường vân (phóng to một góc vân tay), dấu vân tay rời, và dấu tròn "Cam kết từ tâm".</p>
 <div class="card" style="padding:0;overflow:hidden">{B.nen_van(1200, 300)}</div>
 <div class="g g2" style="margin-top:18px"><div><div class="rule ok"><i>✓</i><p>Nền đường vân dùng 2 màu đỏ gần nhau (Đỏ An Tâm + Đỏ son), để chữ đặt trên khung kem.</p></div><div class="rule ok"><i>✓</i><p>Mỗi ấn phẩm tối đa một dấu vân tay lớn.</p></div><div class="rule ok"><i>✓</i><p>Dấu tròn dùng như con dấu: trên phiếu, tem niêm phong, góc hộp.</p></div></div>
-<div><div class="rule no"><i>✕</i><p>Không đổi dấu vân tay sang màu khác Đỏ son, Đỏ An Tâm, Kem.</p></div><div class="rule no"><i>✕</i><p>Không cắt mất lõi xoáy của vân tay.</p></div><div class="rule no"><i>✕</i><p>Không đặt chữ nhỏ trực tiếp trên nền đường vân.</p></div></div></div></section>
+<div><div class="rule no"><i>✕</i><p>Không đổi dấu vân tay sang màu khác Đỏ son, Đỏ An Tâm, Kem.</p></div><div class="rule no"><i>✕</i><p>Không bỏ, đổi màu hay dời chỗ chấm tâm ở lõi vân tay.</p></div><div class="rule no"><i>✕</i><p>Không đặt chữ nhỏ trực tiếp trên nền đường vân.</p></div></div></div></section>
 
 <section class="s" id="c7"><div class="num">07 · Hình ảnh</div><h2>Hướng chụp ảnh</h2>
 <p class="lead">Ảnh thật của xưởng, của người làm bánh và của món ăn ở quán khách hàng. Không dùng ảnh mẫu nước ngoài cho sản phẩm.</p>
@@ -219,7 +219,7 @@ def page():
 <tr><td>Logo PNG nền trong suốt</td><td><code>plugins/design/assets/diem-chi/logo-png/</code></td></tr>
 <tr><td>Hoạ tiết, ấn phẩm mẫu SVG</td><td><code>plugins/design/assets/diem-chi/hoa-tiet/</code>, <code>ung-dung/</code></td></tr></table></section>
 
-<div class="end"><div style="max-width:560px;margin:0 auto">{V.logo_ngang()}</div><p class="cap" style="margin-top:12px">Cẩm nang nhận diện Ẩm Thực An Tâm · Phiên bản 1.0</p></div>
+<div class="end"><div style="max-width:560px;margin:0 auto">{V.logo_ngang()}</div><p class="cap" style="margin-top:12px">Cẩm nang nhận diện Ẩm Thực An Tâm · Phiên bản 1.1</p></div>
 </body></html>"""
 
 

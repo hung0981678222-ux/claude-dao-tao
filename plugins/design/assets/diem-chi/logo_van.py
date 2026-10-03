@@ -33,8 +33,9 @@ def text(t, size, k="xb", x=0, y=0, fill=DO, anchor="start", track=0.0):
     return f'<g fill="{fill}" transform="translate({x + ox:.1f} {y:.1f})">{"".join(parts)}</g>', w
 
 
-def van_tay(cx, cy, r, fill=DO, seed=5, rings=11, sw=None, aspect=1.22):
-    """Dấu vân tay dạng xoáy: các vòng vân lượn sóng đồng pha, vài chỗ đứt, lõi vòng nhỏ, đuôi vân phía dưới."""
+def van_tay(cx, cy, r, fill=DO, seed=5, rings=11, sw=None, aspect=1.22, tam=True):
+    """Dấu vân tay Điểm Chỉ (bản chuẩn 1.1 – "Chấm tâm"): các vòng vân xoáy lượn sóng, vài chỗ đứt,
+    lõi là một chấm son tròn (tâm của dấu tay – chữ Tâm). tam=False trả về bản cũ không chấm."""
     rr = random.Random(seed); sw = sw or r * .052; out = []
     ph = [rr.uniform(0, 6.28) for _ in range(3)]
     for i in range(1, rings + 1):
@@ -49,9 +50,13 @@ def van_tay(cx, cy, r, fill=DO, seed=5, rings=11, sw=None, aspect=1.22):
             pts.append((x, y))
         # một chỗ đứt cho mỗi vòng (vân thật không khép kín)
         g0 = rr.randint(0, N - 1); gl = rr.randint(4, 12) if i > 1 else 0
+        if tam and i <= 2:
+            continue
         seg = [pts[(g0 + gl + j) % (N + 1)] for j in range(N - gl)]
         d = "M" + " L".join(f"{x:.1f},{y:.1f}" for x, y in seg)
         out.append(f'<path d="{d}" fill="none" stroke="{fill}" stroke-width="{sw:.1f}" stroke-linecap="round" stroke-linejoin="round"/>')
+    if tam:
+        out.append(f'<circle cx="{cx:.1f}" cy="{cy - r * .07:.1f}" r="{r * .13:.1f}" fill="{fill}"/>')
     clip = f'<ellipse cx="{cx}" cy="{cy}" rx="{r * 1.02:.1f}" ry="{r * aspect * 1.02:.1f}"/>'
     cid = f"vt{abs(hash((cx, cy, r, seed))) % 99999}"
     return f'<clipPath id="{cid}">{clip}</clipPath><g clip-path="url(#{cid})">{"".join(out)}</g>'
@@ -89,6 +94,15 @@ def con_dau(fg=DO, ink=KEM):
     s += L._ring_bottom("CAM KẾT TỪ TÂM", 26, 200, 200, 156, ink, key="serif", track=.16)
     s += f'<circle cx="200" cy="200" r="116" fill="{ink}"/>' + van_tay(200, 200, 84, fg, aspect=1.12)
     return svg((0, 0, 400, 400), s, "Dấu An Tâm")
+
+
+def van_tay_nho(cx, cy, r, fill=DO):
+    """Bản rút gọn cho cỡ ≤ 24 px / 8 mm: ít vân, nét dày, vẫn có chấm tâm."""
+    return van_tay(cx, cy, r, fill, seed=5, rings=6, sw=r * .11, aspect=1.15)
+
+
+def bieu_tuong_nho(fg=DO, bg=KEM):
+    return svg((0, 0, 300, 300), f'<rect width="300" height="300" rx="60" fill="{bg}"/>' + van_tay_nho(150, 150, 100, fg), "Biểu tượng vân tay An Tâm – bản cỡ nhỏ")
 
 
 def bieu_tuong(fg=DO, bg=KEM):

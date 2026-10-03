@@ -53,7 +53,7 @@
 7. Tên pháp lý "Công ty TNHH SX-TM Ẩm Thực An Tâm" chỉ dùng trên nhãn bao bì, hoá đơn, báo giá, hợp đồng. Ấn phẩm quảng bá ghi "ẨM THỰC AN TÂM" kèm logo, hotline hoặc website.
 8. Đơn vị tiền: đồng (ví dụ 45.000đ). Ngày: dd/mm/yyyy.
 
-## Bộ nhận diện (Điểm Chỉ, phiên bản 1.0)
+## Bộ nhận diện (Điểm Chỉ, phiên bản 1.1)
 
 > **Đã chốt: Điểm Chỉ là bộ nhận diện chính thức duy nhất.** Không dùng và không đề xuất lại các hướng thiết kế cũ.
 
@@ -61,11 +61,11 @@
 
 | Mục | Giá trị |
 |---|---|
-| Logo | Dấu vân tay son đỏ + chữ "An Tâm" (font thương hiệu) + "ẨM THỰC" + khẩu hiệu. Bản ngang (chính), bản đứng, biểu tượng vân tay, dấu tròn "Cam kết từ tâm" (chỉ dùng như con dấu). SVG: [assets/diem-chi/logo/](assets/diem-chi/logo/), PNG nền trong 2000px: [assets/diem-chi/logo-png/](assets/diem-chi/logo-png/) |
+| Logo | Dấu vân tay son đỏ **có chấm tâm** (lõi vân là một chấm son tròn – tâm của dấu tay, chữ "Tâm"; chốt ngày 03/10/2026, biến thể 3) + chữ "An Tâm" (font thương hiệu) + "ẨM THỰC" + khẩu hiệu. Bản ngang (chính), bản đứng, biểu tượng vân tay, dấu tròn "Cam kết từ tâm" (chỉ dùng như con dấu). SVG: [assets/diem-chi/logo/](assets/diem-chi/logo/), PNG nền trong 2000px: [assets/diem-chi/logo-png/](assets/diem-chi/logo-png/) |
 | Khoảng trống quanh logo | Ít nhất x = một nửa chiều cao dấu vân tay |
-| Cỡ nhỏ nhất | Bản ngang 30 mm / 140 px; bản đứng 20 mm / 96 px; biểu tượng 8 mm / 24 px |
+| Cỡ nhỏ nhất | Bản ngang 30 mm / 140 px; bản đứng 20 mm / 96 px; biểu tượng 8 mm / 24 px. Từ 24 px / 8 mm trở xuống dùng **biểu tượng bản nhỏ** (`bieu-tuong-nho`: ít vân, nét dày, giữ chấm tâm) |
 | Màu logo theo nền | Nền kem, trắng: logo đỏ, chữ phụ màu Mực. Nền đỏ, tối: logo kem toàn bộ. In một màu: đen hoặc đỏ đặc |
-| Cấm | Kéo méo, đổi màu ngoài bảng, xoay, đổ bóng, đặt trên nền rối, tách hoặc sắp lại các phần, đổi font, vẽ lại vân tay |
+| Cấm | Bỏ, đổi màu hay dời chấm tâm; kéo méo, đổi màu ngoài bảng, xoay, đổ bóng, đặt trên nền rối, tách hoặc sắp lại các phần, đổi font, vẽ lại vân tay |
 | Màu chính | Đỏ An Tâm `#D2141E` (RGB 210 20 30), khoảng 60% diện tích |
 | Nền | Kem giấy `#FFF6EA`, khoảng 25% |
 | Chữ thân | Mực `#231716`, khoảng 10% |
